@@ -3,7 +3,7 @@ import type { ReactNode } from "react"
 
 export const metadata = {
   title: "Agent Tobo",
-  description: "Cinematic Autonomous Builder"
+  description: "Cinematic Autonomous Builder",
 }
 
 export default function RootLayout({
@@ -16,4 +16,4 @@ export default function RootLayout({
       <body>{children}</body>
     </html>
   )
-}}
+}
