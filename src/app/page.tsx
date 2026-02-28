@@ -15,28 +15,40 @@ type Stage =
 
 export default function Home() {
   const [stage, setStage] = useState<Stage>("LOAD")
-  const [response, setResponse] = useState<any>(null)
+  const [scope, setScope] = useState<any>({})
+  const [question, setQuestion] = useState("Click Start to begin")
+  const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
 
-  async function advance() {
+  async function send() {
     setLoading(true)
+
+    let updatedScope = { ...scope }
+
+    if (!scope.businessName) {
+      updatedScope.businessName = input
+    } else if (!scope.platforms) {
+      updatedScope.platforms = [input]
+    } else if (!scope.features) {
+      updatedScope.features = input.split(",").map((f) => f.trim())
+    }
 
     const res = await fetch("/api/autonomous", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         projectId: "demo",
         stage,
-        scope: {},
+        scope: updatedScope,
       }),
     })
 
     const data = await res.json()
 
+    setScope(updatedScope)
     setStage(data.nextStage)
-    setResponse(data)
+    setQuestion(data.question)
+    setInput("")
     setLoading(false)
   }
 
@@ -44,25 +56,29 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 p-6">
       <h1 className="text-3xl font-bold">Agent Tobo Autonomous Engine</h1>
 
-      <div className="border p-4 rounded w-full max-w-md text-center">
-        <p className="text-lg">
-          Current Stage: <strong>{stage}</strong>
-        </p>
+      <div className="border p-4 rounded w-full max-w-md">
+        <p className="mb-2 text-sm text-gray-500">Stage: {stage}</p>
+        <p className="font-medium">{question}</p>
       </div>
 
+      <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        className="border p-2 rounded w-full max-w-md"
+        placeholder="Type your answer..."
+      />
+
       <button
-        onClick={advance}
+        onClick={send}
         disabled={loading}
         className="px-6 py-3 bg-black text-white rounded"
       >
-        {loading ? "Processing..." : "Advance Stage"}
+        {loading ? "Processing..." : "Send"}
       </button>
 
-      {response && (
-        <pre className="bg-gray-100 p-4 rounded w-full max-w-md overflow-auto text-sm">
-          {JSON.stringify(response, null, 2)}
-        </pre>
-      )}
+      <pre className="bg-gray-100 p-4 rounded w-full max-w-md text-xs overflow-auto">
+        {JSON.stringify(scope, null, 2)}
+      </pre>
     </main>
   )
 }
