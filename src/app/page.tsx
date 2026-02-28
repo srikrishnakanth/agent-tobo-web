@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 type Stage =
   | "LOAD"
@@ -13,24 +13,42 @@ type Stage =
   | "PAYMENT"
   | "DASHBOARD"
 
+type Message = {
+  sender: "user" | "system"
+  text: string
+}
+
 export default function Home() {
   const [stage, setStage] = useState<Stage>("LOAD")
   const [scope, setScope] = useState<any>({})
-  const [question, setQuestion] = useState("Click Start to begin")
+  const [messages, setMessages] = useState<Message[]>([
+    { sender: "system", text: "Welcome to Agent Tobo. Click Start to begin." },
+  ])
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
+  const chatEndRef = useRef<HTMLDivElement>(null)
 
-  async function send() {
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [messages])
+
+  async function start() {
+    await sendMessage("")
+  }
+
+  async function sendMessage(userInput: string) {
     setLoading(true)
 
     let updatedScope = { ...scope }
 
     if (!scope.businessName) {
-      updatedScope.businessName = input
+      updatedScope.businessName = userInput
     } else if (!scope.platforms) {
-      updatedScope.platforms = [input]
+      updatedScope.platforms = [userInput]
     } else if (!scope.features) {
-      updatedScope.features = input.split(",").map((f) => f.trim())
+      updatedScope.features = userInput
+        .split(",")
+        .map((f) => f.trim())
     }
 
     const res = await fetch("/api/autonomous", {
@@ -45,40 +63,65 @@ export default function Home() {
 
     const data = await res.json()
 
+    const newMessages: Message[] = []
+
+    if (userInput) {
+      newMessages.push({ sender: "user", text: userInput })
+    }
+
+    newMessages.push({ sender: "system", text: data.question })
+
+    setMessages((prev) => [...prev, ...newMessages])
     setScope(updatedScope)
     setStage(data.nextStage)
-    setQuestion(data.question)
     setInput("")
     setLoading(false)
   }
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center gap-6 p-6">
-      <h1 className="text-3xl font-bold">Agent Tobo Autonomous Engine</h1>
-
-      <div className="border p-4 rounded w-full max-w-md">
-        <p className="mb-2 text-sm text-gray-500">Stage: {stage}</p>
-        <p className="font-medium">{question}</p>
+    <main className="flex flex-col h-screen bg-gray-100">
+      <div className="flex-1 overflow-auto p-4 space-y-3">
+        {messages.map((msg, index) => (
+          <div
+            key={index}
+            className={`max-w-xs px-4 py-2 rounded-lg ${
+              msg.sender === "system"
+                ? "bg-white text-black"
+                : "bg-black text-white ml-auto"
+            }`}
+          >
+            {msg.text}
+          </div>
+        ))}
+        <div ref={chatEndRef} />
       </div>
 
-      <input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        className="border p-2 rounded w-full max-w-md"
-        placeholder="Type your answer..."
-      />
-
-      <button
-        onClick={send}
-        disabled={loading}
-        className="px-6 py-3 bg-black text-white rounded"
-      >
-        {loading ? "Processing..." : "Send"}
-      </button>
-
-      <pre className="bg-gray-100 p-4 rounded w-full max-w-md text-xs overflow-auto">
-        {JSON.stringify(scope, null, 2)}
-      </pre>
+      <div className="p-4 bg-white border-t flex gap-2">
+        {messages.length === 1 ? (
+          <button
+            onClick={start}
+            className="w-full py-3 bg-black text-white rounded"
+          >
+            Start
+          </button>
+        ) : (
+          <>
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="flex-1 border p-2 rounded"
+              placeholder="Type your response..."
+            />
+            <button
+              onClick={() => sendMessage(input)}
+              disabled={loading}
+              className="px-4 bg-black text-white rounded"
+            >
+              Send
+            </button>
+          </>
+        )}
+      </div>
     </main>
   )
 }
