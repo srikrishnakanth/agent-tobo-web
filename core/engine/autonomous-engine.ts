@@ -1,34 +1,27 @@
-import { advanceStage } from "../state/stage-machine"
-import { SessionState } from "../state/session-types"
 
-function nextQuestion(session: SessionState): string {
-  const s = session.scope
+import { nextStage } from "../state/stage-machine"
+import { getNextQuestion } from "./conversation-engine"
+import { calculatePrice } from "./pricing-engine"
+import { recommendHosting } from "./hosting-engine"
+import { generateAgreement } from "./agreement-engine"
 
-  if (!s.businessName)
-    return "What is your business name?"
+export function runAutonomous(session: any) {
+  const question = getNextQuestion(session)
 
-  if (!s.platforms || s.platforms.length === 0)
-    return "Which platform do you need? (web / android / ios)"
-
-  if (!s.features || s.features.length === 0)
-    return "List key features separated by comma."
-
-  return "All requirements captured."
-}
-
-export function runAutonomousCycle(session: SessionState) {
-  const question = nextQuestion(session)
-
-  if (question === "All requirements captured.") {
-    const nextStage = advanceStage(session)
-    return {
-      nextStage,
-      question: "Moving to next stage...",
-    }
+  if (question !== "Requirements captured.") {
+    return { stage: session.stage, question }
   }
 
+  const featureCount = session.scope.features.length
+  const pricing = calculatePrice(featureCount)
+  const hosting = recommendHosting(featureCount)
+  const agreement = generateAgreement(session.scope, pricing.total)
+
   return {
-    nextStage: session.stage,
-    question,
+    stage: nextStage(session.stage),
+    question: "Generating pricing and agreement...",
+    pricing,
+    hosting,
+    agreement,
   }
 }

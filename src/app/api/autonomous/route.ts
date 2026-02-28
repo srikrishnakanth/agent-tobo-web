@@ -1,14 +1,9 @@
+
 import { NextResponse } from "next/server"
-import { runAutonomousCycle } from "../../../../core/engine/autonomous-engine"
+import { runAutonomous } from "../../../../core/engine/autonomous-engine"
 
 export async function POST(req: Request) {
   const body = await req.json()
-
-  const result = runAutonomousCycle({
-    projectId: body.projectId,
-    stage: body.stage,
-    scope: body.scope || {},
-  })
-
+  const result = runAutonomous(body)
   return NextResponse.json(result)
 }
