@@ -1,4 +1,4 @@
-import { advanceStage } from "../state/stage-machine"
+import { nextStage as advanceStage } from "../state/stage-machine"
 import { SessionState } from "../state/session-types"
 
 export function runAutonomousCycle(session: SessionState) {
