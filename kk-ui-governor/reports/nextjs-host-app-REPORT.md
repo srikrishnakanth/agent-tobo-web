@@ -1,6 +1,6 @@
 # KK-UI-GOVERNOR Report — PASS
 
-- Transaction: 20260907-131553-92c348
+- Transaction: 20260907-132213-b14d3c
 - Project: /home/user/agent-tobo-web
 - Framework: nextjs · Adapter: nextjs
 - Direction: modern / landing / neutral-web / dark
@@ -33,7 +33,7 @@
 - MOBILE-ORIENT Mobile portrait / landscape: pass — fixed (baseline had 1)
 - FOLDABLE Foldable widths (closed / open / dual): pass — fixed (baseline had 1)
 - DPR Device pixel ratio 1× / 2× / 3×: pass — no findings
-- THEME Light / dark scheme: warn — 2 advisory finding(s)
+- THEME Light / dark scheme: pass — no findings
 - FONT-200 200% font scaling (no overflow / clipping): pass — no findings
 - KEYBOARD-NAV Keyboard navigation: pass — no findings
 - FOCUS-VISIBLE Focus visibility: pass — fixed (baseline had 14)

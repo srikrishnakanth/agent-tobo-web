@@ -2,7 +2,7 @@
 // module, dependency-free components, ThemeProvider) and injects a CSS import into the entry.
 import path from 'node:path';
 import { BaseAdapter } from './base.js';
-import { tailwindInfo, tailwindInjection, relImport } from './tailwind.js';
+import { tailwindInfo, tailwindInjection, relImport, emitTailwindBridge } from './tailwind.js';
 import { emitReactComponents } from '../pipeline/emit-react.js';
 import { exists } from '../core/fsutil.js';
 import { ProcessServer } from '../server/process-server.js';
@@ -19,20 +19,27 @@ export class ReactAdapter extends BaseAdapter {
     const tw = tailwindInfo(scan);
     const ts = scan.framework.language === 'ts' || (await exists(path.join(scan.root, 'tsconfig.json')));
     const deps = Object.keys({ ...(scan.packageJson?.dependencies || {}), ...(scan.packageJson?.devDependencies || {}) });
-    const { ops, remediations, fontsInlined } = await this.commonArtifacts(ctx, { dir, module: true, tailwindV4: tw.active && tw.version === '4', layer: tw.active && tw.version === '3' ? 'components' : null });
+    const { ops, remediations, fontsInlined } = await this.commonArtifacts(ctx, { dir, module: true, tailwindV4: false, layer: tw.active && tw.version === '3' && !scan.entryPoints.layouts[0] ? 'components' : null });
     const comps = emitReactComponents(tokens, selection, { ts, hasRecharts: deps.includes('recharts'), hasThree: deps.includes('three') });
     for (const [rel, content] of Object.entries(comps)) ops.push(await this.fileOp(scan.root, `${dir}/${rel}`, content));
     const notes = [], manualSteps = [];
     let injected = false;
-    if (tw.active && tw.globalsFile) {
-      const op = await tailwindInjection(this, scan, tw, relImport(tw.globalsFile, dir));
-      if (op) { ops.push(op); injected = true; notes.push(`theme imported from ${tw.globalsFile} (Tailwind v${tw.version})`); }
+    // 1. Theme goes through the JS entry AFTER the project's own stylesheet imports so it wins the cascade.
+    const entry = scan.entryPoints.layouts[0];
+    if (entry) {
+      const op = await this.injectOp(scan.root, entry, { kind: 'js', block: `import '${relImport(entry, dir)}/theme.css';`, anchor: { after: /^\s*import\s[^;]*;?\s*$/m }, position: 'start' });
+      if (op) { ops.push(op); injected = true; notes.push(`theme imported from ${entry} (after existing imports)`); }
     }
-    if (!injected) {
-      const entry = scan.entryPoints.layouts[0];
-      if (entry) {
-        const op = await this.injectOp(scan.root, entry, { kind: 'js', block: `import '${relImport(entry, dir)}/theme.css';`, anchor: { after: /^\s*import\s[^;]*;?\s*$/m }, position: 'start' });
-        if (op) { ops.push(op); injected = true; notes.push(`theme imported from ${entry}`); }
+    // 2. Tailwind: the @theme bridge must live inside the Tailwind sheet; the full theme only falls back there when no entry exists.
+    if (tw.active && tw.globalsFile) {
+      if (tw.version === '4') {
+        const bridgeOp = await this.fileOp(scan.root, `${dir}/tailwind-bridge.css`, emitTailwindBridge(tokens));
+        ops.push(bridgeOp);
+        const imp = await tailwindInjection(this, scan, tw, relImport(tw.globalsFile, dir), injected ? 'tailwind-bridge.css' : 'theme.css');
+        if (imp) { ops.push(imp); notes.push(`${injected ? 'Tailwind v4 bridge' : 'theme'} imported from ${tw.globalsFile}`); injected = true; }
+      } else if (!injected) {
+        const imp = await tailwindInjection(this, scan, tw, relImport(tw.globalsFile, dir), 'theme.css');
+        if (imp) { ops.push(imp); injected = true; notes.push(`theme imported from ${tw.globalsFile} (Tailwind v3, @layer components)`); }
       }
     }
     if (!injected) manualSteps.push(`Add \`import './${dir}/theme.css'\` to your application entry (no safe injection point was found).`);

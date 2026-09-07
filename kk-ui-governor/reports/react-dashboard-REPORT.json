@@ -1,10 +1,10 @@
 {
   "version": "1.0.0",
-  "txId": "20260907-132213-b14d3c",
-  "startedAt": "2026-09-07T13:22:13.510Z",
+  "txId": "20260907-132520-a53d4a",
+  "startedAt": "2026-09-07T13:25:20.575Z",
   "project": {
-    "root": "/home/user/agent-tobo-web",
-    "name": "web"
+    "root": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard",
+    "name": "fleet-ops-dashboard"
   },
   "audit": {
     "preflight": {
@@ -13,7 +13,7 @@
         {
           "id": "root-exists",
           "status": "pass",
-          "note": "/home/user/agent-tobo-web"
+          "note": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard"
         },
         {
           "id": "root-writable",
@@ -26,15 +26,15 @@
           "note": "2 uncommitted change(s) present (governor keeps its own backups regardless)",
           "data": {
             "dirty": [
-              " M .gitignore",
-              "?? kk-ui-governor/"
+              " M src/app/layout.tsx",
+              "?? src/app/kk-design/"
             ]
           }
         },
         {
           "id": "package-json",
           "status": "pass",
-          "note": "package \"web\""
+          "note": "package \"fleet-ops-dashboard\""
         },
         {
           "id": "node-modules",
@@ -44,7 +44,7 @@
         {
           "id": "disk-space",
           "status": "pass",
-          "note": "29940 MB free"
+          "note": "29918 MB free"
         }
       ]
     },
@@ -52,103 +52,103 @@
       "ok": true,
       "integrity": [
         {
-          "path": "src/app/kk-design/tokens.css",
+          "path": "src/kk-design/tokens.css",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/theme.css",
+          "path": "src/kk-design/theme.css",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/motion.js",
+          "path": "src/kk-design/motion.js",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/ATTRIBUTION.md",
+          "path": "src/kk-design/ATTRIBUTION.md",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/tokens.json",
+          "path": "src/kk-design/tokens.json",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/components/KkButton.tsx",
+          "path": "src/kk-design/components/KkButton.jsx",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/components/KkCard.tsx",
+          "path": "src/kk-design/components/KkCard.jsx",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/components/KkInput.tsx",
+          "path": "src/kk-design/components/KkInput.jsx",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/components/KkModal.tsx",
+          "path": "src/kk-design/components/KkModal.jsx",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/components/KkTable.tsx",
+          "path": "src/kk-design/components/KkTable.jsx",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/components/KkNav.tsx",
+          "path": "src/kk-design/components/KkNav.jsx",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/components/KkSidebar.tsx",
+          "path": "src/kk-design/components/KkSidebar.jsx",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/components/KkChart.tsx",
+          "path": "src/kk-design/components/KkChart.jsx",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/components/KkCarousel.tsx",
+          "path": "src/kk-design/components/KkCarousel.jsx",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/KkThemeProvider.tsx",
+          "path": "src/kk-design/KkThemeProvider.jsx",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/kk-design/index.ts",
+          "path": "src/kk-design/index.js",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         },
         {
-          "path": "src/app/layout.tsx",
+          "path": "src/index.css",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
@@ -160,32 +160,32 @@
   },
   "stages": {
     "inspect": {
-      "startedAt": "2026-09-07T13:22:13.522Z",
+      "startedAt": "2026-09-07T13:25:20.599Z",
       "status": "done",
       "summary": {
-        "framework": "nextjs",
+        "framework": "react",
         "cssStack": [
           "tailwind"
         ],
         "pages": 1,
-        "uxProblems": 5,
-        "genericPatterns": 2,
-        "brand": "#00f5c3"
+        "uxProblems": 7,
+        "genericPatterns": 4,
+        "brand": "#2f6f4e"
       },
-      "finishedAt": "2026-09-07T13:22:13.548Z"
+      "finishedAt": "2026-09-07T13:25:20.629Z"
     },
     "select": {
-      "startedAt": "2026-09-07T13:22:13.549Z",
+      "startedAt": "2026-09-07T13:25:20.630Z",
       "status": "done",
       "summary": {
         "preset": "auto",
         "auto": true,
-        "style": "modern",
-        "pageType": "landing",
+        "style": "enterprise",
+        "pageType": "dashboard",
         "platform": "neutral-web",
-        "theme": "dark",
-        "density": "comfortable",
-        "motion": "standard",
+        "theme": "light",
+        "density": "compact",
+        "motion": "subtle",
         "devices": [
           "mobile",
           "foldable",
@@ -203,22 +203,23 @@
           "screen-reader"
         ],
         "components": [
+          "sidebar",
           "navigation",
-          "buttons",
           "cards",
+          "tables",
+          "charts",
+          "buttons",
           "inputs"
         ],
         "effects": [
-          "micro-interactions",
-          "animations",
-          "scroll-effects"
+          "micro-interactions"
         ],
         "brandMode": "preserve",
         "threeD": false,
         "radius": null,
-        "fontDisplay": "Sora",
-        "fontBody": "Manrope",
-        "fontMono": "JetBrains Mono",
+        "fontDisplay": "IBM Plex Sans",
+        "fontBody": "IBM Plex Sans",
+        "fontMono": "IBM Plex Mono",
         "sources": {
           "style": "auto",
           "pageType": "auto",
@@ -229,39 +230,39 @@
           "a11y": "auto"
         },
         "adjustments": [
-          "brand primary #00f5c3 preserved (brandMode=preserve)"
+          "brand primary #2f6f4e preserved (brandMode=preserve)"
         ],
-        "vaultAssets": 12
+        "vaultAssets": 11
       },
-      "finishedAt": "2026-09-07T13:22:13.564Z"
+      "finishedAt": "2026-09-07T13:25:20.646Z"
     },
     "adapt": {
-      "startedAt": "2026-09-07T13:22:13.566Z",
+      "startedAt": "2026-09-07T13:25:20.647Z",
       "status": "done",
       "summary": {
-        "adapter": "nextjs",
+        "adapter": "react",
         "files": 17,
         "creates": 16,
         "modifies": 1,
         "notes": [
-          "theme imported from src/app/layout.tsx"
+          "theme imported from src/index.css (Tailwind v4)"
         ],
-        "remediations": 9
+        "remediations": 3
       },
-      "finishedAt": "2026-09-07T13:22:13.582Z"
+      "finishedAt": "2026-09-07T13:25:20.728Z"
     },
     "probe": {
-      "startedAt": "2026-09-07T13:22:13.583Z",
+      "startedAt": "2026-09-07T13:25:20.730Z",
       "status": "done",
       "summary": {
         "probeOk": true,
         "probeErrors": 0,
         "gatesFailed": []
       },
-      "finishedAt": "2026-09-07T13:22:13.962Z"
+      "finishedAt": "2026-09-07T13:25:21.118Z"
     },
     "preview": {
-      "startedAt": "2026-09-07T13:22:13.968Z",
+      "startedAt": "2026-09-07T13:25:21.121Z",
       "status": "done",
       "summary": {
         "browser": true,
@@ -269,21 +270,21 @@
         "candidate": true,
         "baseline": {
           "LOAD": 0,
-          "RESP-SWEEP": 2,
+          "RESP-SWEEP": 3,
           "MOBILE-ORIENT": 1,
           "FOLDABLE": 1,
           "DPR": 0,
           "THEME": 0,
-          "FONT-200": 0,
+          "FONT-200": 1,
           "KEYBOARD-NAV": 0,
-          "FOCUS-VISIBLE": 14,
+          "FOCUS-VISIBLE": 6,
           "CONTRAST": 0,
           "FORCED-COLORS": 1,
           "REDUCED-MOTION": 0,
-          "OVERFLOW": 2,
+          "OVERFLOW": 4,
           "LAYOUT-SHIFT": 0,
           "STICKY-FIXED": 0,
-          "TOUCH-TARGET": 0,
+          "TOUCH-TARGET": 4,
           "PERF": 0,
           "ANIM-3D-FALLBACK": 0,
           "CONSOLE-ERRORS": 0,
@@ -291,80 +292,73 @@
           "A11Y-BASICS": 0
         }
       },
-      "finishedAt": "2026-09-07T13:23:26.029Z"
+      "finishedAt": "2026-09-07T13:25:48.224Z"
     },
     "write": {
-      "startedAt": "2026-09-07T13:23:26.035Z",
+      "startedAt": "2026-09-07T13:25:48.235Z",
       "status": "done",
       "summary": {
         "files": 17,
         "integrity": true
       },
-      "finishedAt": "2026-09-07T13:23:26.086Z"
+      "finishedAt": "2026-09-07T13:25:48.282Z"
     },
     "verify": {
-      "startedAt": "2026-09-07T13:23:26.087Z",
+      "startedAt": "2026-09-07T13:25:48.283Z",
       "status": "done",
       "summary": {
         "ok": true,
-        "mode": "standard",
+        "mode": "quick",
         "failed": [],
         "warned": [
           "A11Y-BASICS"
         ],
-        "loads": 41
+        "loads": 17
       },
-      "finishedAt": "2026-09-07T13:24:34.514Z"
+      "finishedAt": "2026-09-07T13:26:11.077Z"
     },
     "decide": {
-      "startedAt": "2026-09-07T13:24:34.516Z",
+      "startedAt": "2026-09-07T13:26:11.078Z",
       "status": "done",
       "summary": {
         "decision": "keep",
         "reason": "verification passed on every gate"
       },
-      "finishedAt": "2026-09-07T13:24:34.518Z"
+      "finishedAt": "2026-09-07T13:26:11.081Z"
     }
   },
   "recovered": [],
   "scan": {
-    "root": "/home/user/agent-tobo-web",
-    "name": "web",
-    "scannedAt": "2026-09-07T13:22:13.547Z",
-    "durationMs": 24,
+    "root": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard",
+    "name": "fleet-ops-dashboard",
+    "scannedAt": "2026-09-07T13:25:20.628Z",
+    "durationMs": 28,
     "packageJson": {
-      "name": "web",
+      "name": "fleet-ops-dashboard",
       "version": "0.1.0",
       "dependencies": {
-        "next": "^14.2.35",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
       },
       "devDependencies": {
-        "@tailwindcss/postcss": "^4",
-        "@types/node": "^20",
-        "@types/react": "^19",
-        "@types/react-dom": "^19",
-        "eslint": "^9",
-        "eslint-config-next": "16.1.6",
-        "tailwindcss": "^4",
-        "typescript": "^5"
+        "@vitejs/plugin-react": "^4.3.4",
+        "vite": "^5.4.11",
+        "tailwindcss": "^4.1.0",
+        "@tailwindcss/vite": "^4.1.0"
       },
       "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "eslint"
-      }
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+      },
+      "type": "module"
     },
-    "fileCount": 17,
+    "fileCount": 5,
     "framework": {
-      "name": "nextjs",
-      "version": "14.2.35",
-      "router": "app",
-      "appDir": "src/app",
-      "pagesDir": null,
-      "language": "ts",
+      "name": "react",
+      "version": "18.3.1",
+      "bundler": "vite",
+      "language": "js",
       "supported": true,
       "family": "react"
     },
@@ -373,12 +367,12 @@
         "name": "tailwind",
         "version": "4",
         "configFile": null,
-        "globalsFile": null
+        "globalsFile": "src/index.css"
       }
     ],
     "components": {
       "summary": {
-        "other": 2
+        "other": 1
       },
       "existing": [
         "other"
@@ -386,148 +380,76 @@
       "hasDesignSystem": false,
       "list": [
         {
-          "name": "RootLayout",
+          "name": "App",
           "kind": "other",
-          "file": "src/app/layout.tsx"
-        },
-        {
-          "name": "Home",
-          "kind": "other",
-          "file": "src/app/page.tsx"
+          "file": "src/App.jsx"
         }
       ]
     },
     "brand": {
-      "name": "Agent Tobo",
-      "logos": [
-        "src/app/favicon.ico"
-      ],
-      "primaryColor": "#00f5c3",
-      "primarySource": "css variable --accent",
-      "secondaryColor": "#141c2d",
+      "name": "Fleet Ops — Northwind",
+      "logos": [],
+      "primaryColor": "#2f6f4e",
+      "primarySource": "css variable --brand",
+      "secondaryColor": null,
       "strength": "explicit",
-      "darkDefault": true,
-      "background": "#05070f"
+      "darkDefault": false,
+      "background": null
     },
     "colors": {
-      "total": 8,
+      "total": 1,
       "top": [
         {
-          "hex": "#05070f",
-          "count": 2,
-          "saturation": 0.5,
-          "lightness": 0.0392156862745098
-        },
-        {
-          "hex": "#0e1628",
-          "count": 2,
-          "saturation": 0.48148148148148145,
-          "lightness": 0.10588235294117647
-        },
-        {
-          "hex": "#ffffff",
-          "count": 2,
-          "saturation": 0,
-          "lightness": 1
-        },
-        {
-          "hex": "#141c2d",
+          "hex": "#2f6f4e",
           "count": 1,
-          "saturation": 0.3846153846153847,
-          "lightness": 0.12745098039215685
-        },
-        {
-          "hex": "#00f5c3",
-          "count": 1,
-          "saturation": 1,
-          "lightness": 0.4803921568627451
-        },
-        {
-          "hex": "#e8f0ff",
-          "count": 1,
-          "saturation": 1,
-          "lightness": 0.9549019607843137
-        },
-        {
-          "hex": "#7c8ba3",
-          "count": 1,
-          "saturation": 0.17488789237668156,
-          "lightness": 0.5627450980392157
-        },
-        {
-          "hex": "#0a0f19",
-          "count": 1,
-          "saturation": 0.42857142857142855,
-          "lightness": 0.06862745098039216
+          "saturation": 0.4050632911392405,
+          "lightness": 0.30980392156862746
         }
       ],
       "accents": [
         {
-          "hex": "#141c2d",
+          "hex": "#2f6f4e",
           "count": 1,
-          "saturation": 0.3846153846153847,
-          "lightness": 0.12745098039215685
-        },
-        {
-          "hex": "#00f5c3",
-          "count": 1,
-          "saturation": 1,
-          "lightness": 0.4803921568627451
-        },
-        {
-          "hex": "#7c8ba3",
-          "count": 1,
-          "saturation": 0.17488789237668156,
-          "lightness": 0.5627450980392157
+          "saturation": 0.4050632911392405,
+          "lightness": 0.30980392156862746
         }
       ],
-      "neutrals": [
-        {
-          "hex": "#ffffff",
-          "count": 2,
-          "saturation": 0,
-          "lightness": 1
-        }
-      ],
+      "neutrals": [],
       "variables": {
-        "--bg-main": "#05070f",
-        "--bg-surface": "#141c2d",
-        "--accent": "#00f5c3",
-        "--text-main": "#e8f0ff",
-        "--text-muted": "#7c8ba3"
+        "--brand": "#2f6f4e"
       },
-      "background": "#05070f",
-      "darkDefault": true
+      "background": null,
+      "darkDefault": false
     },
     "typography": {
       "families": [
         {
-          "name": "system-ui",
+          "name": "Inter",
           "count": 1
         }
       ],
-      "primary": "system-ui",
-      "usesSystemStack": true,
+      "primary": "Inter",
+      "usesSystemStack": false,
       "googleFonts": [],
       "nextFonts": [],
       "hasGeistPackage": false,
       "baseFontSize": null,
-      "minFontSizePx": 28,
+      "minFontSizePx": 11,
       "distinctSizes": 1,
-      "interDefault": false
+      "interDefault": true
     },
     "layout": {
       "system": "tailwind-utilities",
       "counts": {
-        "grid": 0,
-        "flex": 5,
+        "grid": 2,
+        "flex": 4,
         "floats": 0,
         "fixed": 1,
         "sticky": 0,
         "vh100": 1,
         "dvh": 0,
         "containerQueries": 0,
-        "cssVars": 5
+        "cssVars": 1
       },
       "containerMaxWidths": [],
       "breakpoints": [],
@@ -536,45 +458,40 @@
     "pages": [
       {
         "route": "/",
-        "file": "src/app/page.tsx",
+        "file": "src/App.jsx",
         "dynamic": false,
         "title": null
       }
     ],
     "pageTypes": {
-      "primary": "landing",
+      "primary": "dashboard",
       "ranked": [
         {
+          "type": "dashboard",
+          "score": 4.8,
+          "evidence": [
+            "2 content keyword hit(s)",
+            "package description mentions \"dashboard\"",
+            "package description mentions \"analytics\""
+          ]
+        },
+        {
           "type": "landing",
-          "score": 3,
+          "score": 1.4,
           "evidence": [
             "root route",
-            "5 content keyword hit(s)"
-          ]
-        },
-        {
-          "type": "ai-ui",
-          "score": 2.4,
-          "evidence": [
-            "6 content keyword hit(s)"
-          ]
-        },
-        {
-          "type": "inbox",
-          "score": 1.6,
-          "evidence": [
-            "4 content keyword hit(s)"
-          ]
-        },
-        {
-          "type": "onboarding",
-          "score": 0.4,
-          "evidence": [
             "1 content keyword hit(s)"
           ]
         },
         {
-          "type": "docs",
+          "type": "settings",
+          "score": 0.8,
+          "evidence": [
+            "2 content keyword hit(s)"
+          ]
+        },
+        {
+          "type": "onboarding",
           "score": 0.4,
           "evidence": [
             "1 content keyword hit(s)"
@@ -589,7 +506,7 @@
       ]
     },
     "responsive": {
-      "viewportMeta": "framework-default",
+      "viewportMeta": true,
       "userScalableNo": false,
       "mediaQueries": 0,
       "breakpoints": [],
@@ -605,73 +522,100 @@
     },
     "uxProblems": [
       {
-        "id": "focus-removed",
-        "severity": "critical",
-        "message": "outline:none removes the keyboard focus indicator without a :focus-visible replacement",
-        "file": "src/app/globals.css"
+        "id": "no-main-landmark",
+        "severity": "low",
+        "message": "no <main> landmark",
+        "file": "index.html"
       },
       {
-        "id": "no-reduced-motion",
-        "severity": "medium",
-        "message": "animations present but no prefers-reduced-motion handling anywhere in the project",
-        "file": "src/app/globals.css"
-      },
-      {
-        "id": "fixed-bottom-no-safe-area",
-        "severity": "medium",
-        "message": "bottom-fixed element ignores safe-area insets (notch/home indicator overlap)",
-        "file": "src/app/globals.css"
+        "id": "placeholder-only-label",
+        "severity": "high",
+        "message": "inputs use placeholder as the only label",
+        "file": "src/App.jsx"
       },
       {
         "id": "vh-mobile-bug",
         "severity": "medium",
         "message": "100vh layout without dvh/svh fallback (mobile browser chrome overlap)",
-        "file": "src/app/globals.css"
+        "file": "src/App.jsx"
+      },
+      {
+        "id": "focus-removed",
+        "severity": "critical",
+        "message": "outline:none removes the keyboard focus indicator without a :focus-visible replacement",
+        "file": "src/index.css"
+      },
+      {
+        "id": "tiny-text",
+        "severity": "high",
+        "message": "font-size 11px is below the 12px readability floor",
+        "file": "src/index.css"
       },
       {
         "id": "no-focus-visible-styles",
         "severity": "medium",
         "message": "no :focus-visible styling anywhere in the project",
         "file": null
+      },
+      {
+        "id": "tiny-text-global",
+        "severity": "high",
+        "message": "smallest declared font-size is 11px",
+        "file": null
       }
     ],
     "genericPatterns": [
       {
-        "id": "welcome-hero",
-        "message": "\"Welcome to …\" hero copy",
+        "id": "inter-default",
+        "message": "Inter used as the default typeface (training-data median choice)",
         "file": null,
         "count": 1
       },
       {
-        "id": "neon-on-navy",
-        "message": "near-black background with a neon cyan/acid accent (generic \"AI dashboard\" cliché)",
+        "id": "indigo-purple-gradient",
+        "message": "indigo/purple gradient palette (generic AI aesthetic)",
+        "file": null,
+        "count": 4
+      },
+      {
+        "id": "gradient-text",
+        "message": "gradient-filled text",
+        "file": null,
+        "count": 1
+      },
+      {
+        "id": "welcome-hero",
+        "message": "\"Welcome to …\" hero copy",
         "file": null,
         "count": 1
       }
     ],
     "entryPoints": {
       "styles": [
-        "src/app/globals.css"
+        "src/index.css"
       ],
       "layouts": [
-        "src/app/layout.tsx"
+        "src/main.jsx"
       ],
-      "html": []
+      "html": [
+        "index.html"
+      ]
     },
     "entryHashes": {
-      "src/app/globals.css": "41891861e2a1a1b9a61475a776e70e3d7c9df1f52f6733df526267030a1e37f7",
-      "src/app/layout.tsx": "1da19079751652920ae9cdb1aca421f07df1b95f56ff499c661bbfcafac356f5"
+      "src/index.css": "9668fc21445a2f60d8b269825e16674db8c8af6b42335b9f3aa9eddda3d6d3fd",
+      "src/main.jsx": "3fc145edded57586aa3c67096b7e7cb8933dfbf0c552720904e613faf4afe72a",
+      "index.html": "1d69a3376fbfc6ab28818151424ec9b26717f3dc146c03325016092a8eea0af5"
     }
   },
   "selection": {
     "preset": "auto",
     "auto": true,
-    "style": "modern",
-    "pageType": "landing",
+    "style": "enterprise",
+    "pageType": "dashboard",
     "platform": "neutral-web",
-    "theme": "dark",
-    "density": "comfortable",
-    "motion": "standard",
+    "theme": "light",
+    "density": "compact",
+    "motion": "subtle",
     "devices": [
       "mobile",
       "foldable",
@@ -689,22 +633,23 @@
       "screen-reader"
     ],
     "components": [
+      "sidebar",
       "navigation",
-      "buttons",
       "cards",
+      "tables",
+      "charts",
+      "buttons",
       "inputs"
     ],
     "effects": [
-      "micro-interactions",
-      "animations",
-      "scroll-effects"
+      "micro-interactions"
     ],
     "brandMode": "preserve",
     "threeD": false,
     "radius": null,
-    "fontDisplay": "Sora",
-    "fontBody": "Manrope",
-    "fontMono": "JetBrains Mono",
+    "fontDisplay": "IBM Plex Sans",
+    "fontBody": "IBM Plex Sans",
+    "fontMono": "IBM Plex Mono",
     "sources": {
       "style": "auto",
       "pageType": "auto",
@@ -716,22 +661,23 @@
     }
   },
   "recommendation": {
-    "style": "modern",
-    "pageType": "landing",
+    "style": "enterprise",
+    "pageType": "dashboard",
     "platform": "neutral-web",
-    "theme": "dark",
-    "density": "comfortable",
-    "motion": "standard",
+    "theme": "light",
+    "density": "compact",
+    "motion": "subtle",
     "threeD": false,
     "effects": [
-      "micro-interactions",
-      "animations",
-      "scroll-effects"
+      "micro-interactions"
     ],
     "components": [
+      "sidebar",
       "navigation",
-      "buttons",
       "cards",
+      "tables",
+      "charts",
+      "buttons",
       "inputs"
     ],
     "devices": [
@@ -752,32 +698,32 @@
     ],
     "fonts": {
       "display": {
-        "id": "font-sora",
-        "family": "Sora",
-        "stack": "'Sora', system-ui, sans-serif",
+        "id": "font-ibm-plex-sans",
+        "family": "IBM Plex Sans",
+        "stack": "'IBM Plex Sans', system-ui, sans-serif",
         "source": "vault",
         "license": "OFL-1.1",
         "commit": "5e35378e6bda803962ee6fd257e444a7d459660d"
       },
       "body": {
-        "id": "font-manrope",
-        "family": "Manrope",
-        "stack": "'Manrope', system-ui, sans-serif",
+        "id": "font-ibm-plex-sans",
+        "family": "IBM Plex Sans",
+        "stack": "'IBM Plex Sans', system-ui, sans-serif",
         "source": "vault",
         "license": "OFL-1.1",
         "commit": "5e35378e6bda803962ee6fd257e444a7d459660d"
       },
       "mono": {
-        "id": "font-jetbrains-mono",
-        "family": "JetBrains Mono",
-        "stack": "'JetBrains Mono', ui-monospace, monospace",
+        "id": "font-ibm-plex-mono",
+        "family": "IBM Plex Mono",
+        "stack": "'IBM Plex Mono', ui-monospace, monospace",
         "source": "vault",
         "license": "OFL-1.1",
         "commit": "5e35378e6bda803962ee6fd257e444a7d459660d"
       }
     },
     "cssStack": "tailwind",
-    "framework": "nextjs",
+    "framework": "react",
     "vaultPicks": [
       {
         "id": "shadcn-card",
@@ -786,26 +732,32 @@
         "missingDeps": []
       },
       {
-        "id": "font-nunito-sans",
+        "id": "shadcn-table",
+        "category": "components/table",
+        "score": 7,
+        "missingDeps": []
+      },
+      {
+        "id": "tabler-outline-core",
+        "category": "icons",
+        "score": 6,
+        "missingDeps": []
+      },
+      {
+        "id": "font-ibm-plex-mono",
         "category": "typography/font",
         "score": 5,
         "missingDeps": []
       },
       {
-        "id": "font-outfit",
+        "id": "font-ibm-plex-sans",
         "category": "typography/font",
         "score": 5,
         "missingDeps": []
       },
       {
-        "id": "font-sora",
+        "id": "font-public-sans",
         "category": "typography/font",
-        "score": 5,
-        "missingDeps": []
-      },
-      {
-        "id": "open-props-animations",
-        "category": "motion/keyframes",
         "score": 5,
         "missingDeps": []
       },
@@ -816,20 +768,14 @@
         "missingDeps": []
       },
       {
+        "id": "fluent-tokens",
+        "category": "tokens/platform",
+        "score": 3,
+        "missingDeps": []
+      },
+      {
         "id": "heroicons-outline-core",
         "category": "icons",
-        "score": 3,
-        "missingDeps": []
-      },
-      {
-        "id": "lucide-core",
-        "category": "icons",
-        "score": 3,
-        "missingDeps": []
-      },
-      {
-        "id": "material-tokens",
-        "category": "tokens/platform",
         "score": 3,
         "missingDeps": []
       },
@@ -840,121 +786,121 @@
         "missingDeps": []
       },
       {
-        "id": "font-figtree",
+        "id": "font-jetbrains-mono",
         "category": "typography/font",
         "score": 2,
         "missingDeps": []
       },
       {
-        "id": "font-geist",
-        "category": "typography/font",
+        "id": "shadcn-tabs",
+        "category": "components/tabs",
         "score": 2,
-        "missingDeps": []
+        "missingDeps": [
+          "@radix-ui/react-tabs"
+        ]
       },
       {
-        "id": "font-manrope",
-        "category": "typography/font",
-        "score": 2,
-        "missingDeps": []
-      },
-      {
-        "id": "font-plus-jakarta-sans",
-        "category": "typography/font",
-        "score": 2,
-        "missingDeps": []
-      },
-      {
-        "id": "motion-library",
-        "category": "motion/library",
+        "id": "chartjs-samples",
+        "category": "components/chart",
         "score": 1,
         "missingDeps": [
-          "motion"
+          "chart.js"
+        ]
+      },
+      {
+        "id": "font-noto-sans",
+        "category": "typography/font",
+        "score": 1,
+        "missingDeps": []
+      },
+      {
+        "id": "shadcn-chart",
+        "category": "components/chart",
+        "score": 1,
+        "missingDeps": [
+          "recharts"
         ]
       }
     ],
     "styleRanking": [
       {
-        "id": "modern",
-        "score": 11,
+        "id": "enterprise",
+        "score": 10,
         "reasons": [
-          "page type \"landing\" affinity 0.90",
-          "highly saturated brand colour suits expressive style",
-          "project already ships a dark default",
+          "page type \"dashboard\" affinity 0.95",
           "Tailwind stack"
         ]
       },
       {
-        "id": "premium",
-        "score": 10.5,
-        "reasons": [
-          "page type \"landing\" affinity 0.90",
-          "project already ships a dark default",
-          "Tailwind stack",
-          "remediates neon-on-navy cliché"
-        ]
-      },
-      {
-        "id": "creative",
-        "score": 10.5,
-        "reasons": [
-          "page type \"landing\" affinity 0.95",
-          "highly saturated brand colour suits expressive style"
-        ]
-      },
-      {
-        "id": "visual-rich",
-        "score": 10.5,
-        "reasons": [
-          "page type \"landing\" affinity 0.95",
-          "highly saturated brand colour suits expressive style"
-        ]
-      },
-      {
-        "id": "luxury",
+        "id": "data-dense",
         "score": 9.5,
         "reasons": [
-          "page type \"landing\" affinity 0.95"
+          "page type \"dashboard\" affinity 0.95"
+        ]
+      },
+      {
+        "id": "modern",
+        "score": 8.5,
+        "reasons": [
+          "page type \"dashboard\" affinity 0.80",
+          "Tailwind stack"
+        ]
+      },
+      {
+        "id": "native-app",
+        "score": 7,
+        "reasons": [
+          "page type \"dashboard\" affinity 0.70"
+        ]
+      },
+      {
+        "id": "premium",
+        "score": 6.5,
+        "reasons": [
+          "page type \"dashboard\" affinity 0.60",
+          "Tailwind stack"
         ]
       }
     ],
     "rationale": [
-      "Style \"Modern\" chosen: page type \"landing\" affinity 0.90; highly saturated brand colour suits expressive style; project already ships a dark default; Tailwind stack.",
-      "Page type \"Landing Page\" (root route; 5 content keyword hit(s)).",
-      "Brand primary #00f5c3 (css variable --accent) is preserved as the accent.",
-      "Theme \"dark\": project already defaults to dark.",
-      "Density \"comfortable\", motion \"standard\", 3D off.",
-      "Remediates 5 detected UX problem(s): focus-removed, no-reduced-motion, fixed-bottom-no-safe-area, vh-mobile-bug, no-focus-visible-styles.",
-      "Avoids 2 generic pattern(s): welcome-hero, neon-on-navy."
+      "Style \"Enterprise\" chosen: page type \"dashboard\" affinity 0.95; Tailwind stack.",
+      "Page type \"Dashboard\" (2 content keyword hit(s); package description mentions \"dashboard\"; package description mentions \"analytics\").",
+      "Brand primary #2f6f4e (css variable --brand) is preserved as the accent.",
+      "Theme \"light\": project has no dark-mode support; existing light scheme kept (pass --theme auto to add system dark mode).",
+      "Density \"compact\", motion \"subtle\", 3D off.",
+      "Remediates 7 detected UX problem(s): no-main-landmark, placeholder-only-label, vh-mobile-bug, focus-removed, tiny-text, no-focus-visible-styles, tiny-text-global.",
+      "Avoids 4 generic pattern(s): inter-default, indigo-purple-gradient, gradient-text, welcome-hero."
     ],
-    "signature": "Bold display headline with a tightly-set body scale and one signature accent.",
+    "signature": "Structured grid with a persistent sidebar and status colour system.",
     "antiPatterns": [
-      "indigo-purple-gradient",
-      "three-card-hero",
-      "inter-default"
+      "gradient-text",
+      "glass-blur-spam",
+      "emoji-icons",
+      "parallax"
     ]
   },
   "adjustments": [
-    "brand primary #00f5c3 preserved (brandMode=preserve)"
+    "brand primary #2f6f4e preserved (brandMode=preserve)"
   ],
   "tokens": {
     "color": {
-      "primary": "#00f5c3",
-      "primarySource": "brand (css variable --accent)",
+      "primary": "#2f6f4e",
+      "primarySource": "brand (css variable --brand)",
       "light": {
-        "bg": "#fcfdfd",
+        "bg": "#fcfdfc",
         "surface": "#ffffff",
-        "surface2": "#f2f3f3",
-        "border": "#d1d6d5",
-        "borderStrong": "#a4adab",
-        "text": "#2b302f",
-        "textMuted": "#626d6a",
-        "primary": "#00a986",
-        "primaryText": "#008268",
-        "onPrimary": "#0b0b0b",
-        "primaryHover": "#009576",
-        "primarySoft": "#e0f5f0",
-        "accent": "#0088a9",
-        "focus": "#009c7c",
+        "surface2": "#f2f3f2",
+        "border": "#d2d5d4",
+        "borderStrong": "#a5aca8",
+        "text": "#2c302e",
+        "textMuted": "#646b67",
+        "primary": "#2f6f4e",
+        "primaryText": "#2f6f4e",
+        "onPrimary": "#ffffff",
+        "primaryHover": "#296245",
+        "primarySoft": "#e6eeea",
+        "accent": "#2f6f68",
+        "focus": "#2f6f4e",
         "success": "#15803d",
         "warning": "#b45309",
         "danger": "#b91c1c",
@@ -963,19 +909,19 @@
       },
       "dark": {
         "bg": "#111312",
-        "surface": "#161818",
+        "surface": "#161817",
         "surface2": "#1d201f",
-        "border": "#353b3a",
-        "borderStrong": "#57615e",
-        "text": "#eceeee",
-        "textMuted": "#8e9a97",
-        "primary": "#00f5c3",
-        "primaryText": "#00f5c3",
+        "border": "#363a38",
+        "borderStrong": "#585f5c",
+        "text": "#eceeed",
+        "textMuted": "#909894",
+        "primary": "#77c59d",
+        "primaryText": "#77c59d",
         "onPrimary": "#0b0b0b",
-        "primaryHover": "#1ff6ca",
-        "primarySoft": "#0e3c32",
-        "accent": "#00c5f5",
-        "focus": "#59f9d8",
+        "primaryHover": "#87cca9",
+        "primarySoft": "#23332b",
+        "accent": "#77c5bc",
+        "focus": "#a7d9bf",
         "success": "#4ade80",
         "warning": "#fbbf24",
         "danger": "#f87171",
@@ -988,32 +934,32 @@
           "pairs": [
             {
               "pair": "text/surface",
-              "ratio": 13.41,
+              "ratio": 13.38,
               "passAA": true
             },
             {
               "pair": "textMuted/surface",
-              "ratio": 5.36,
+              "ratio": 5.47,
               "passAA": true
             },
             {
               "pair": "textMuted/surface2",
-              "ratio": 4.83,
+              "ratio": 4.92,
               "passAA": true
             },
             {
               "pair": "text/bg",
-              "ratio": 13.15,
+              "ratio": 13.12,
               "passAA": true
             },
             {
               "pair": "primaryText/surface",
-              "ratio": 4.78,
+              "ratio": 5.99,
               "passAA": true
             },
             {
               "pair": "onPrimary/primary",
-              "ratio": 6.58,
+              "ratio": 5.99,
               "passAA": true
             },
             {
@@ -1038,37 +984,37 @@
             },
             {
               "pair": "textMuted/surface",
-              "ratio": 6.13,
+              "ratio": 6.04,
               "passAA": true
             },
             {
               "pair": "textMuted/surface2",
-              "ratio": 5.65,
+              "ratio": 5.56,
               "passAA": true
             },
             {
               "pair": "text/bg",
-              "ratio": 16.02,
+              "ratio": 16.01,
               "passAA": true
             },
             {
               "pair": "primaryText/surface",
-              "ratio": 12.61,
+              "ratio": 8.71,
               "passAA": true
             },
             {
               "pair": "onPrimary/primary",
-              "ratio": 13.92,
+              "ratio": 9.61,
               "passAA": true
             },
             {
               "pair": "success/surface",
-              "ratio": 10.23,
+              "ratio": 10.24,
               "passAA": true
             },
             {
               "pair": "danger/surface",
-              "ratio": 6.44,
+              "ratio": 6.45,
               "passAA": true
             }
           ]
@@ -1098,12 +1044,12 @@
             },
             {
               "pair": "primaryText/surface",
-              "ratio": 14.85,
+              "ratio": 10.26,
               "passAA": true
             },
             {
               "pair": "onPrimary/primary",
-              "ratio": 13.92,
+              "ratio": 9.61,
               "passAA": true
             },
             {
@@ -1121,23 +1067,22 @@
       ]
     },
     "typography": {
-      "display": "'Sora', system-ui, sans-serif",
-      "body": "'Manrope', system-ui, sans-serif",
+      "display": "'IBM Plex Sans', system-ui, sans-serif",
+      "body": "'IBM Plex Sans', system-ui, sans-serif",
       "families": [
-        "Sora",
-        "Manrope",
-        "JetBrains Mono"
+        "IBM Plex Sans",
+        "IBM Plex Mono"
       ]
     },
     "motion": {
-      "level": "standard",
-      "fast": "150ms",
-      "base": "220ms",
-      "slow": "320ms",
+      "level": "subtle",
+      "fast": "120ms",
+      "base": "180ms",
+      "slow": "260ms",
       "easeOut": "cubic-bezier(0.22, 1, 0.36, 1)",
       "easeInOut": "cubic-bezier(0.65, 0, 0.35, 1)",
       "spring": "cubic-bezier(0.34, 1.56, 0.64, 1)",
-      "scroll": true,
+      "scroll": false,
       "parallax": false,
       "carousel": false,
       "threeD": false,
@@ -1147,129 +1092,129 @@
     },
     "density": {
       "controlHeight": "48px",
-      "rowHeight": "44px",
+      "rowHeight": "32px",
       "touchTarget": "48px",
-      "gutter": "1.25rem",
+      "gutter": "0.75rem",
       "contentMax": "90rem",
       "readingMax": "68ch"
     }
   },
   "adapter": {
-    "id": "nextjs",
+    "id": "react",
     "status": "supported"
   },
   "plan": {
     "files": [
       {
-        "path": "src/app/kk-design/tokens.css",
+        "path": "src/kk-design/tokens.css",
         "kind": "create",
         "owned": false,
-        "bytes": 28785
+        "bytes": 25520
       },
       {
-        "path": "src/app/kk-design/theme.css",
+        "path": "src/kk-design/theme.css",
         "kind": "create",
         "owned": false,
-        "bytes": 20859
+        "bytes": 19817
       },
       {
-        "path": "src/app/kk-design/motion.js",
+        "path": "src/kk-design/motion.js",
         "kind": "create",
         "owned": false,
-        "bytes": 7447
+        "bytes": 7446
       },
       {
-        "path": "src/app/kk-design/ATTRIBUTION.md",
+        "path": "src/kk-design/ATTRIBUTION.md",
         "kind": "create",
         "owned": false,
-        "bytes": 2101
+        "bytes": 1967
       },
       {
-        "path": "src/app/kk-design/tokens.json",
+        "path": "src/kk-design/tokens.json",
         "kind": "create",
         "owned": false,
-        "bytes": 4352
+        "bytes": 4331
       },
       {
-        "path": "src/app/kk-design/components/KkButton.tsx",
+        "path": "src/kk-design/components/KkButton.jsx",
         "kind": "create",
         "owned": false,
-        "bytes": 761
+        "bytes": 574
       },
       {
-        "path": "src/app/kk-design/components/KkCard.tsx",
+        "path": "src/kk-design/components/KkCard.jsx",
         "kind": "create",
         "owned": false,
-        "bytes": 818
+        "bytes": 634
       },
       {
-        "path": "src/app/kk-design/components/KkInput.tsx",
+        "path": "src/kk-design/components/KkInput.jsx",
         "kind": "create",
         "owned": false,
-        "bytes": 1232
+        "bytes": 1034
       },
       {
-        "path": "src/app/kk-design/components/KkModal.tsx",
+        "path": "src/kk-design/components/KkModal.jsx",
         "kind": "create",
         "owned": false,
-        "bytes": 1204
+        "bytes": 1018
       },
       {
-        "path": "src/app/kk-design/components/KkTable.tsx",
+        "path": "src/kk-design/components/KkTable.jsx",
         "kind": "create",
         "owned": false,
-        "bytes": 1440
+        "bytes": 1091
       },
       {
-        "path": "src/app/kk-design/components/KkNav.tsx",
+        "path": "src/kk-design/components/KkNav.jsx",
         "kind": "create",
         "owned": false,
-        "bytes": 1040
+        "bytes": 762
       },
       {
-        "path": "src/app/kk-design/components/KkSidebar.tsx",
+        "path": "src/kk-design/components/KkSidebar.jsx",
         "kind": "create",
         "owned": false,
-        "bytes": 1207
+        "bytes": 926
       },
       {
-        "path": "src/app/kk-design/components/KkChart.tsx",
+        "path": "src/kk-design/components/KkChart.jsx",
         "kind": "create",
         "owned": false,
-        "bytes": 2191
+        "bytes": 1988
       },
       {
-        "path": "src/app/kk-design/components/KkCarousel.tsx",
+        "path": "src/kk-design/components/KkCarousel.jsx",
         "kind": "create",
         "owned": false,
-        "bytes": 1522
+        "bytes": 1370
       },
       {
-        "path": "src/app/kk-design/KkThemeProvider.tsx",
+        "path": "src/kk-design/KkThemeProvider.jsx",
         "kind": "create",
         "owned": false,
-        "bytes": 2051
+        "bytes": 1782
       },
       {
-        "path": "src/app/kk-design/index.ts",
+        "path": "src/kk-design/index.js",
         "kind": "create",
         "owned": false,
-        "bytes": 851
+        "bytes": 897
       },
       {
-        "path": "src/app/layout.tsx",
+        "path": "src/index.css",
         "kind": "modify",
         "owned": false,
-        "bytes": 402
+        "bytes": 389
       }
     ],
     "notes": [
-      "theme imported from src/app/layout.tsx"
+      "theme imported from src/index.css (Tailwind v4)"
     ],
     "manualSteps": [
-      "Optional: wrap {children} in <KkThemeProvider> (client component in src/app/kk-design) to enable the motion runtime and theme toggle."
+      "Optional: wrap your app in <KkThemeProvider> from src/kk-design to enable the motion runtime and theme toggle (CSS-only behaviour works without it)."
     ],
-    "remediations": 9,
+    "remediations": 3,
     "pages": [
       "/"
     ],
@@ -1303,40 +1248,27 @@
       "noticePreserved": true
     },
     {
-      "id": "font-sora",
+      "id": "font-ibm-plex-sans",
       "category": "typography/font",
       "license": "OFL-1.1",
       "upstream": {
         "repo": "google/fonts",
         "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
         "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/sora/OFL.txt"
+        "path": "ofl/ibmplexsans/OFL.txt"
       },
       "note": "font family (OFL, loaded from Google Fonts; not vendored)",
       "noticePreserved": true
     },
     {
-      "id": "font-manrope",
+      "id": "font-ibm-plex-mono",
       "category": "typography/font",
       "license": "OFL-1.1",
       "upstream": {
         "repo": "google/fonts",
         "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
         "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/manrope/OFL.txt"
-      },
-      "note": "font family (OFL, loaded from Google Fonts; not vendored)",
-      "noticePreserved": true
-    },
-    {
-      "id": "font-jetbrains-mono",
-      "category": "typography/font",
-      "license": "OFL-1.1",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/jetbrainsmono/OFL.txt"
+        "path": "ofl/ibmplexmono/OFL.txt"
       },
       "note": "font family (OFL, loaded from Google Fonts; not vendored)",
       "noticePreserved": true
@@ -1407,27 +1339,27 @@
       "noticePreserved": true
     },
     {
-      "id": "open-props-animations",
-      "category": "motion/keyframes",
+      "id": "chartjs-samples",
+      "category": "components/chart",
       "license": "MIT",
       "upstream": {
-        "repo": "argyleink/open-props",
-        "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
-        "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
-        "path": "src/props.animations.css"
+        "repo": "chartjs/Chart.js",
+        "commit": "cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+        "url": "https://github.com/chartjs/Chart.js/tree/cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+        "path": "docs/samples/bar/vertical.md"
       },
-      "note": "keyframe intent (reduced-motion guarded)",
+      "note": "chart intent; adapted to dependency-free SVG when chart.js is absent",
       "noticePreserved": true
     },
     {
-      "id": "heroicons-outline-core",
+      "id": "tabler-outline-core",
       "category": "icons",
       "license": "MIT",
       "upstream": {
-        "repo": "tailwindlabs/heroicons",
-        "commit": "616b7a4dbbf3d011760af8066262cd5c6b3868f3",
-        "url": "https://github.com/tailwindlabs/heroicons/tree/616b7a4dbbf3d011760af8066262cd5c6b3868f3",
-        "path": "optimized/24/outline/bars-3.svg"
+        "repo": "tabler/tabler-icons",
+        "commit": "55f87a73f45cf1d9eaf16d7da705065483a9e4f9",
+        "url": "https://github.com/tabler/tabler-icons/tree/55f87a73f45cf1d9eaf16d7da705065483a9e4f9",
+        "path": "icons/outline/menu-2.svg"
       },
       "note": "icon set (inline SVG)",
       "noticePreserved": true
@@ -1459,7 +1391,7 @@
         "details": {
           "violations": [],
           "modified": [
-            "src/app/layout.tsx"
+            "src/index.css"
           ]
         }
       },
@@ -1468,10 +1400,10 @@
         "name": "brand-identity-preserved",
         "status": "pass",
         "details": {
-          "brandPrimary": "#00f5c3",
-          "candidatePrimary": "#00f5c3",
+          "brandPrimary": "#2f6f4e",
+          "candidatePrimary": "#2f6f4e",
           "brandMode": "preserve",
-          "note": "brand primary #00f5c3 preserved"
+          "note": "brand primary #2f6f4e preserved"
         }
       },
       {
@@ -1482,16 +1414,15 @@
           "assetsUsed": [
             "radix-colors-light (MIT)",
             "radix-colors-dark (MIT)",
-            "font-sora (OFL-1.1)",
-            "font-manrope (OFL-1.1)",
-            "font-jetbrains-mono (OFL-1.1)",
+            "font-ibm-plex-sans (OFL-1.1)",
+            "font-ibm-plex-mono (OFL-1.1)",
             "open-props-shadows (MIT)",
             "open-props-easing (MIT)",
             "open-props-sizes (MIT)",
             "open-props-borders (MIT)",
             "open-props-media (MIT)",
-            "open-props-animations (MIT)",
-            "heroicons-outline-core (MIT)"
+            "chartjs-samples (MIT)",
+            "tabler-outline-core (MIT)"
           ],
           "problems": []
         }
@@ -1517,7 +1448,7 @@
         "name": "candidate-size",
         "status": "pass",
         "details": {
-          "bytes": 78263,
+          "bytes": 71546,
           "limit": 6291456
         }
       },
@@ -1546,34 +1477,34 @@
   },
   "preview": {
     "current": {
-      "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/preview/current-1280.jpg",
-      "url": "http://127.0.0.1:41813/",
+      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/current-1280.jpg",
+      "url": "http://127.0.0.1:37247/",
       "width": 1280,
       "height": 800
     },
     "candidate": {
-      "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/preview/gallery-1280.jpg",
-      "url": "http://127.0.0.1:39727/gallery.html",
+      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/gallery-1280.jpg",
+      "url": "http://127.0.0.1:44701/gallery.html",
       "width": 1280,
       "height": 900,
       "note": "candidate component gallery (pre-write)"
     },
     "gallery": {
-      "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/preview/gallery.html"
+      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/gallery.html"
     },
-    "html": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/preview/preview.html",
+    "html": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/preview.html",
     "notes": [
       "framework project: candidate preview uses the component gallery pre-write; real page screenshots are captured by Verify before the keep/rollback decision"
     ],
     "currentMobile": {
-      "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/preview/current-390.jpg",
-      "url": "http://127.0.0.1:41813/",
+      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/current-390.jpg",
+      "url": "http://127.0.0.1:37247/",
       "width": 390,
       "height": 844
     },
     "galleryShot": {
-      "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/preview/gallery-1280.jpg",
-      "url": "http://127.0.0.1:39727/gallery.html",
+      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/gallery-1280.jpg",
+      "url": "http://127.0.0.1:44701/gallery.html",
       "width": 1280,
       "height": 900
     }
@@ -1582,21 +1513,21 @@
     "ok": false,
     "counts": {
       "LOAD": 0,
-      "RESP-SWEEP": 2,
+      "RESP-SWEEP": 3,
       "MOBILE-ORIENT": 1,
       "FOLDABLE": 1,
       "DPR": 0,
       "THEME": 0,
-      "FONT-200": 0,
+      "FONT-200": 1,
       "KEYBOARD-NAV": 0,
-      "FOCUS-VISIBLE": 14,
+      "FOCUS-VISIBLE": 6,
       "CONTRAST": 0,
       "FORCED-COLORS": 1,
       "REDUCED-MOTION": 0,
-      "OVERFLOW": 2,
+      "OVERFLOW": 4,
       "LAYOUT-SHIFT": 0,
       "STICKY-FIXED": 0,
-      "TOUCH-TARGET": 0,
+      "TOUCH-TARGET": 4,
       "PERF": 0,
       "ANIM-3D-FALLBACK": 0,
       "CONSOLE-ERRORS": 0,
@@ -1612,7 +1543,7 @@
       {
         "id": "RESP-SWEEP",
         "status": "fail",
-        "count": 2
+        "count": 3
       },
       {
         "id": "MOBILE-ORIENT",
@@ -1636,8 +1567,8 @@
       },
       {
         "id": "FONT-200",
-        "status": "pass",
-        "count": 0
+        "status": "fail",
+        "count": 1
       },
       {
         "id": "KEYBOARD-NAV",
@@ -1647,7 +1578,7 @@
       {
         "id": "FOCUS-VISIBLE",
         "status": "fail",
-        "count": 14
+        "count": 6
       },
       {
         "id": "CONTRAST",
@@ -1667,7 +1598,7 @@
       {
         "id": "OVERFLOW",
         "status": "fail",
-        "count": 2
+        "count": 4
       },
       {
         "id": "LAYOUT-SHIFT",
@@ -1681,8 +1612,8 @@
       },
       {
         "id": "TOUCH-TARGET",
-        "status": "warn",
-        "count": 0
+        "status": "fail",
+        "count": 4
       },
       {
         "id": "PERF",
@@ -1714,169 +1645,149 @@
   "files": [
     {
       "op": "write",
-      "path": "src/app/kk-design/tokens.css",
+      "path": "src/kk-design/tokens.css",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "ee3276b1dfc97ce0a1fb4ac53db27001aead31fde71a6da6217c96cb1e0fcfb8",
-      "bytes": 28785
+      "hashAfter": "88a6936256acd60d7fe193ec992ed0f15016c13c712d7c6a432cf9b84c18f456",
+      "bytes": 25520
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/theme.css",
+      "path": "src/kk-design/theme.css",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "4dc0f65151441fb37b8810aef9a35e1cfa92bb6d4c1d89f7e7fbc521f6253917",
-      "bytes": 20859
+      "hashAfter": "6571e8844175a7898c3f607574f3d75138049abac37b9177aeb200cf8fdc14b8",
+      "bytes": 19817
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/motion.js",
+      "path": "src/kk-design/motion.js",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "3b44a72b6b35ab5ea18f3409aa7fe52798380d16c21aa7b8491c06e1ea6c80ee",
-      "bytes": 7447
+      "hashAfter": "47f53b710f0ebd08c51b8c6e8a9d06d733854a545f5a55ab457716f60d8f0a49",
+      "bytes": 7446
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/ATTRIBUTION.md",
+      "path": "src/kk-design/ATTRIBUTION.md",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "ce874cdf6789b0ba87add1d7f2a9cbca897bc62999c08345e4f67fe0c5b550ee",
-      "bytes": 2101
+      "hashAfter": "17576706a8fc69b12409966b9194ba42d13d535d804e7a972ac62f6c433a3bb9",
+      "bytes": 1967
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/tokens.json",
+      "path": "src/kk-design/tokens.json",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "786e5216f396e3bc7bb3f4282886b281f6f796431ffc9a25932f21cacd453df2",
-      "bytes": 4352
+      "hashAfter": "bc5bba737fe78f5ce596aa65c892466486f5930fc59dfe64c253176d903524ff",
+      "bytes": 4331
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/components/KkButton.tsx",
+      "path": "src/kk-design/components/KkButton.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "b96b082976aa20ea7942eca6f53e057995238f79dc49d3cce9cbebdb0d39e56d",
-      "bytes": 761
+      "hashAfter": "10ac11c9227df4bb077b9cbd0dec7dc74b258cfc7b255ea5bbb094db707924e5",
+      "bytes": 574
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/components/KkCard.tsx",
+      "path": "src/kk-design/components/KkCard.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "ea688f4f86a6db30e85920ea698b41e2444be8000392d533d51cc10168d3cede",
-      "bytes": 818
+      "hashAfter": "da8699fb7db5fd14fb728ef30e809442209eacf0569e76e8877576887b81870b",
+      "bytes": 634
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/components/KkInput.tsx",
+      "path": "src/kk-design/components/KkInput.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "ef0b7e12e768315085da98e4a6f23869ec343400bb0469bcbeafcf7240a43922",
-      "bytes": 1232
+      "hashAfter": "7db256906c5ed1318c411714c518e72dd555e5d9d550ec6cd6bf620827989c60",
+      "bytes": 1034
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/components/KkModal.tsx",
+      "path": "src/kk-design/components/KkModal.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "690b719a46465fbfc8f7d2fc8b82ce2d406661f3fb063aa2a7bba4c5da2b10f8",
-      "bytes": 1204
+      "hashAfter": "dd06eefa9554dd8bf87c703d329701929fa65f737a9314d3e7d5c76b315a8750",
+      "bytes": 1018
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/components/KkTable.tsx",
+      "path": "src/kk-design/components/KkTable.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "fd73795d8197471b63e5cf05fdb5ed4a84969e92d720955e22f5145be2e0c2c1",
-      "bytes": 1440
+      "hashAfter": "60eb977e5510f6a1a411b76d20f0cf00f91721dc41b869947affdf6521ba3f83",
+      "bytes": 1091
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/components/KkNav.tsx",
+      "path": "src/kk-design/components/KkNav.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "2cd7013be78dc57f73b368c2439e75220e670636da14e7a442ddef338641ebcb",
-      "bytes": 1040
+      "hashAfter": "b60b19136b210b9ef3dd7b018121c034557e9a1064b3cd8e9ca7bec16feac265",
+      "bytes": 762
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/components/KkSidebar.tsx",
+      "path": "src/kk-design/components/KkSidebar.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "481ac981606521c19101203cd97d0855084b3ea6482c21f12438fa227e72068f",
-      "bytes": 1207
+      "hashAfter": "77c250f5bd15048eee4d968f42313cf31356f8b127ce772130f2345005d7a80a",
+      "bytes": 926
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/components/KkChart.tsx",
+      "path": "src/kk-design/components/KkChart.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "4715dcd9ca3bf23a8108459fd64ee84c8e845bb12d4d86b3545d66276f480eaf",
-      "bytes": 2191
+      "hashAfter": "37aaeea75c20a8bd57f9168da3fdc34e223fb67757b45fdf1e799853cd183a94",
+      "bytes": 1988
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/components/KkCarousel.tsx",
+      "path": "src/kk-design/components/KkCarousel.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "375c38f5c7c66ed5ac5f94a951b72f9dcd4265d3e0c7dd369a1a21d2c34af662",
-      "bytes": 1522
+      "hashAfter": "e3419b4f9d4cb1b1431f8e875acda0c76ee46c22e153a9d390d8aaa39250026e",
+      "bytes": 1370
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/KkThemeProvider.tsx",
+      "path": "src/kk-design/KkThemeProvider.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "706b683db493f47a818f464e7eb216e317326d7ee1c04198bb2d3134977f89de",
-      "bytes": 2051
+      "hashAfter": "b1f713b503c23caffc8b4f80f2f6f862011ff4a93b1fa9ec2c471f64f2b8fd2e",
+      "bytes": 1782
     },
     {
       "op": "write",
-      "path": "src/app/kk-design/index.ts",
+      "path": "src/kk-design/index.js",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "bc173c486249c22b8bcedfc22faa6df18d995633be56b3cf2fc845ecafb7b84e",
-      "bytes": 851
+      "hashAfter": "b888ff45a6b56b5f5fa7f67b38fa7118f7ea063eda05c024d9b5f81d77442214",
+      "bytes": 897
     },
     {
       "op": "write",
-      "path": "src/app/layout.tsx",
+      "path": "src/index.css",
       "kind": "modify",
-      "hashBefore": "1da19079751652920ae9cdb1aca421f07df1b95f56ff499c661bbfcafac356f5",
-      "hashAfter": "83e200a329b3bbba445530c7615223a217ec50c984dc85a924c7527276a5824b",
-      "bytes": 402
+      "hashBefore": "9668fc21445a2f60d8b269825e16674db8c8af6b42335b9f3aa9eddda3d6d3fd",
+      "hashAfter": "cb7717b726395459086246523ca1ea8591809753339c6454fb0827a073edc206",
+      "bytes": 389
     }
   ],
   "verification": {
     "ok": true,
-    "mode": "standard",
+    "mode": "quick",
     "engine": "chromium 141.0.7390.37 (playwright)",
     "pages": [
       "/"
     ],
     "devices": [
-      {
-        "id": "phone-360",
-        "label": "Phone 360 portrait",
-        "width": 360,
-        "height": 780,
-        "dpr": 3,
-        "colorScheme": "light",
-        "flags": [
-          "touch",
-          "portrait"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-phone-360.jpg",
-            "label": "home 360×780@3 light touch,portrait"
-          }
-        ]
-      },
       {
         "id": "phone-390",
         "label": "Phone 390 portrait (iPhone class)",
@@ -1892,69 +1803,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-phone-390.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-phone-390.jpg",
             "label": "home 390×844@3 light touch,portrait"
-          }
-        ]
-      },
-      {
-        "id": "phone-412",
-        "label": "Phone 412 portrait (Pixel class)",
-        "width": 412,
-        "height": 915,
-        "dpr": 2.625,
-        "colorScheme": "light",
-        "flags": [
-          "touch",
-          "portrait"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-phone-412.jpg",
-            "label": "home 412×915@2.625 light touch,portrait"
-          }
-        ]
-      },
-      {
-        "id": "phone-landscape",
-        "label": "Phone landscape 844×390",
-        "width": 844,
-        "height": 390,
-        "dpr": 3,
-        "colorScheme": "light",
-        "flags": [
-          "touch",
-          "landscape"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-phone-landscape.jpg",
-            "label": "home 844×390@3 light touch,landscape"
-          }
-        ]
-      },
-      {
-        "id": "phone-240",
-        "label": "Feature phone 240",
-        "width": 240,
-        "height": 320,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "touch",
-          "portrait",
-          "min-width"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-phone-240.jpg",
-            "label": "home 240×320@1 light touch,portrait,min-width"
           }
         ]
       },
@@ -1974,29 +1824,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-fold-closed.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-fold-closed.jpg",
             "label": "home 280×653@3 light touch,foldable,closed"
-          }
-        ]
-      },
-      {
-        "id": "fold-open",
-        "label": "Foldable open 717×512",
-        "width": 717,
-        "height": 512,
-        "dpr": 2,
-        "colorScheme": "light",
-        "flags": [
-          "touch",
-          "foldable",
-          "open"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-fold-open.jpg",
-            "label": "home 717×512@2 light touch,foldable,open"
           }
         ]
       },
@@ -2015,28 +1844,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-tablet-768.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-tablet-768.jpg",
             "label": "home 768×1024@2 light touch,portrait"
-          }
-        ]
-      },
-      {
-        "id": "tablet-1024",
-        "label": "Tablet 1024 landscape",
-        "width": 1024,
-        "height": 768,
-        "dpr": 2,
-        "colorScheme": "light",
-        "flags": [
-          "touch",
-          "landscape"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-tablet-1024.jpg",
-            "label": "home 1024×768@2 light touch,landscape"
           }
         ]
       },
@@ -2054,67 +1863,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-laptop-1280.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-laptop-1280.jpg",
             "label": "home 1280×800@1 light desktop"
-          }
-        ]
-      },
-      {
-        "id": "laptop-1440-hidpi",
-        "label": "Laptop 1440 @2x",
-        "width": 1440,
-        "height": 900,
-        "dpr": 2,
-        "colorScheme": "light",
-        "flags": [
-          "desktop",
-          "hidpi"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-laptop-1440-hidpi.jpg",
-            "label": "home 1440×900@2 light desktop,hidpi"
-          }
-        ]
-      },
-      {
-        "id": "desktop-1920",
-        "label": "Desktop 1920",
-        "width": 1920,
-        "height": 1080,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "desktop"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-desktop-1920.jpg",
-            "label": "home 1920×1080@1 light desktop"
-          }
-        ]
-      },
-      {
-        "id": "ultrawide-3440",
-        "label": "Ultrawide 3440",
-        "width": 3440,
-        "height": 1440,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "desktop",
-          "ultrawide"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-ultrawide-3440.jpg",
-            "label": "home 3440×1440@1 light desktop,ultrawide"
           }
         ]
       },
@@ -2133,28 +1883,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-4k-3840.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-4k-3840.jpg",
             "label": "home 3840×2160@1 light desktop,4k"
-          }
-        ]
-      },
-      {
-        "id": "dark-phone",
-        "label": "Dark scheme phone 390",
-        "width": 390,
-        "height": 844,
-        "dpr": 3,
-        "colorScheme": "dark",
-        "flags": [
-          "touch",
-          "dark"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-dark-phone.jpg",
-            "label": "home 390×844@3 dark touch,dark"
           }
         ]
       },
@@ -2173,7 +1903,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-dark-desktop.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-dark-desktop.jpg",
             "label": "home 1280×800@1 dark desktop,dark"
           }
         ]
@@ -2192,7 +1922,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-forced-colors.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-forced-colors.jpg",
             "label": "home 1280×800@1 dark forced-colors"
           }
         ]
@@ -2212,27 +1942,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-reduced-motion-phone.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-reduced-motion-phone.jpg",
             "label": "home 390×844@3 light touch,reduced-motion"
-          }
-        ]
-      },
-      {
-        "id": "reduced-motion-desktop",
-        "label": "Reduced motion desktop 1280",
-        "width": 1280,
-        "height": 800,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "reduced-motion"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-reduced-motion-desktop.jpg",
-            "label": "home 1280×800@1 light reduced-motion"
           }
         ]
       },
@@ -2251,47 +1962,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-font-200-phone.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-font-200-phone.jpg",
             "label": "home 360×780@3 light touch,font-200"
-          }
-        ]
-      },
-      {
-        "id": "font-200-desktop",
-        "label": "200% font scaling desktop 1280",
-        "width": 1280,
-        "height": 800,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "font-200"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-font-200-desktop.jpg",
-            "label": "home 1280×800@1 light font-200"
-          }
-        ]
-      },
-      {
-        "id": "low-end-phone",
-        "label": "Low-end phone 360 (2 cores, 2GB, save-data)",
-        "width": 360,
-        "height": 780,
-        "dpr": 2,
-        "colorScheme": "light",
-        "flags": [
-          "touch",
-          "low-end"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-low-end-phone.jpg",
-            "label": "home 360×780@2 light touch,low-end"
           }
         ]
       },
@@ -2309,27 +1981,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-240.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-240.jpg",
             "label": "home 240×800@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-280",
-        "label": "Sweep 280px",
-        "width": 280,
-        "height": 800,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-280.jpg",
-            "label": "home 280×800@1 light sweep"
           }
         ]
       },
@@ -2347,46 +2000,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-320.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-320.jpg",
             "label": "home 320×800@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-375",
-        "label": "Sweep 375px",
-        "width": 375,
-        "height": 800,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-375.jpg",
-            "label": "home 375×800@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-428",
-        "label": "Sweep 428px",
-        "width": 428,
-        "height": 800,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-428.jpg",
-            "label": "home 428×800@1 light sweep"
           }
         ]
       },
@@ -2404,46 +2019,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-480.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-480.jpg",
             "label": "home 480×800@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-540",
-        "label": "Sweep 540px",
-        "width": 540,
-        "height": 800,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-540.jpg",
-            "label": "home 540×800@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-600",
-        "label": "Sweep 600px",
-        "width": 600,
-        "height": 800,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-600.jpg",
-            "label": "home 600×800@1 light sweep"
           }
         ]
       },
@@ -2461,15 +2038,15 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-653.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-653.jpg",
             "label": "home 653×800@1 light sweep"
           }
         ]
       },
       {
-        "id": "sweep-717",
-        "label": "Sweep 717px",
-        "width": 717,
+        "id": "sweep-1024",
+        "label": "Sweep 1024px",
+        "width": 1024,
         "height": 900,
         "dpr": 1,
         "colorScheme": "light",
@@ -2480,15 +2057,15 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-717.jpg",
-            "label": "home 717×900@1 light sweep"
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-1024.jpg",
+            "label": "home 1024×900@1 light sweep"
           }
         ]
       },
       {
-        "id": "sweep-820",
-        "label": "Sweep 820px",
-        "width": 820,
+        "id": "sweep-1920",
+        "label": "Sweep 1920px",
+        "width": 1920,
         "height": 900,
         "dpr": 1,
         "colorScheme": "light",
@@ -2499,122 +2076,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-820.jpg",
-            "label": "home 820×900@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-912",
-        "label": "Sweep 912px",
-        "width": 912,
-        "height": 900,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-912.jpg",
-            "label": "home 912×900@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-1180",
-        "label": "Sweep 1180px",
-        "width": 1180,
-        "height": 900,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-1180.jpg",
-            "label": "home 1180×900@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-1366",
-        "label": "Sweep 1366px",
-        "width": 1366,
-        "height": 900,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-1366.jpg",
-            "label": "home 1366×900@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-1440",
-        "label": "Sweep 1440px",
-        "width": 1440,
-        "height": 900,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-1440.jpg",
-            "label": "home 1440×900@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-1536",
-        "label": "Sweep 1536px",
-        "width": 1536,
-        "height": 900,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-1536.jpg",
-            "label": "home 1536×900@1 light sweep"
-          }
-        ]
-      },
-      {
-        "id": "sweep-1680",
-        "label": "Sweep 1680px",
-        "width": 1680,
-        "height": 900,
-        "dpr": 1,
-        "colorScheme": "light",
-        "flags": [
-          "sweep"
-        ],
-        "status": "pass",
-        "note": "",
-        "screenshots": [
-          {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-1680.jpg",
-            "label": "home 1680×900@1 light sweep"
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-1920.jpg",
+            "label": "home 1920×900@1 light sweep"
           }
         ]
       },
@@ -2632,15 +2095,15 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-2560.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-2560.jpg",
             "label": "home 2560×900@1 light sweep"
           }
         ]
       },
       {
-        "id": "sweep-3440",
-        "label": "Sweep 3440px",
-        "width": 3440,
+        "id": "sweep-3840",
+        "label": "Sweep 3840px",
+        "width": 3840,
         "height": 900,
         "dpr": 1,
         "colorScheme": "light",
@@ -2651,8 +2114,8 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-132213-b14d3c/verify/candidate-home-sweep-3440.jpg",
-            "label": "home 3440×900@1 light sweep"
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-3840.jpg",
+            "label": "home 3840×900@1 light sweep"
           }
         ]
       }
@@ -2672,8 +2135,8 @@
         "name": "Responsive layout sweep 240px → 3840px (no horizontal overflow)",
         "status": "pass",
         "count": 0,
-        "baselineCount": 2,
-        "summary": "fixed (baseline had 2)",
+        "baselineCount": 3,
+        "summary": "fixed (baseline had 3)",
         "findings": []
       },
       {
@@ -2717,8 +2180,8 @@
         "name": "200% font scaling (no overflow / clipping)",
         "status": "pass",
         "count": 0,
-        "baselineCount": 0,
-        "summary": "no findings",
+        "baselineCount": 1,
+        "summary": "fixed (baseline had 1)",
         "findings": []
       },
       {
@@ -2735,8 +2198,8 @@
         "name": "Focus visibility",
         "status": "pass",
         "count": 0,
-        "baselineCount": 14,
-        "summary": "fixed (baseline had 14)",
+        "baselineCount": 6,
+        "summary": "fixed (baseline had 6)",
         "findings": []
       },
       {
@@ -2771,8 +2234,8 @@
         "name": "Overflow culprits on deep devices",
         "status": "pass",
         "count": 0,
-        "baselineCount": 2,
-        "summary": "fixed (baseline had 2)",
+        "baselineCount": 4,
+        "summary": "fixed (baseline had 4)",
         "findings": []
       },
       {
@@ -2798,8 +2261,8 @@
         "name": "Touch target size (≥ 24px, ideally 44px)",
         "status": "pass",
         "count": 0,
-        "baselineCount": 0,
-        "summary": "no findings",
+        "baselineCount": 4,
+        "summary": "fixed (baseline had 4)",
         "findings": []
       },
       {
@@ -2844,27 +2307,48 @@
         "status": "warn",
         "count": 0,
         "baselineCount": 0,
-        "summary": "2 advisory finding(s)",
+        "summary": "5 advisory finding(s)",
         "findings": [
           {
             "check": "A11Y-BASICS",
-            "device": "laptop-1280",
+            "device": "tablet-768",
             "page": "/",
             "severity": "warn",
-            "message": "no <main> landmark"
+            "message": "4 text node(s) below 12px"
           },
           {
             "check": "A11Y-BASICS",
             "device": "laptop-1280",
             "page": "/",
             "severity": "warn",
-            "message": "form control without label: input"
+            "message": "4 text node(s) below 12px"
+          },
+          {
+            "check": "A11Y-BASICS",
+            "device": "laptop-1280",
+            "page": "/",
+            "severity": "warn",
+            "message": "form control without label: input.border.rounded"
+          },
+          {
+            "check": "A11Y-BASICS",
+            "device": "4k-3840",
+            "page": "/",
+            "severity": "warn",
+            "message": "4 text node(s) below 12px"
+          },
+          {
+            "check": "A11Y-BASICS",
+            "device": "dark-desktop",
+            "page": "/",
+            "severity": "warn",
+            "message": "4 text node(s) below 12px"
           }
         ]
       }
     ],
-    "durationMs": 64355,
-    "loads": 41,
+    "durationMs": 20890,
+    "loads": 17,
     "errors": 0,
     "counts": {
       "LOAD": 0,
@@ -2890,7 +2374,7 @@
       "A11Y-BASICS": 0
     }
   },
-  "finishedAt": "2026-09-07T13:24:34.520Z",
+  "finishedAt": "2026-09-07T13:26:11.082Z",
   "decision": "keep",
   "decisionReason": "verification passed on every gate",
   "verdict": "PASS",
@@ -2898,13 +2382,13 @@
   "journal": [
     {
       "seq": 1,
-      "ts": "2026-09-07T13:22:13.520Z",
+      "ts": "2026-09-07T13:25:20.593Z",
       "op": "begin",
-      "projectRoot": "/home/user/agent-tobo-web"
+      "projectRoot": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard"
     },
     {
       "seq": 2,
-      "ts": "2026-09-07T13:22:13.522Z",
+      "ts": "2026-09-07T13:25:20.599Z",
       "op": "stage",
       "stage": "inspect",
       "status": "running",
@@ -2912,24 +2396,24 @@
     },
     {
       "seq": 3,
-      "ts": "2026-09-07T13:22:13.548Z",
+      "ts": "2026-09-07T13:25:20.629Z",
       "op": "stage",
       "stage": "inspect",
       "status": "done",
       "summary": {
-        "framework": "nextjs",
+        "framework": "react",
         "cssStack": [
           "tailwind"
         ],
         "pages": 1,
-        "uxProblems": 5,
-        "genericPatterns": 2,
-        "brand": "#00f5c3"
+        "uxProblems": 7,
+        "genericPatterns": 4,
+        "brand": "#2f6f4e"
       }
     },
     {
       "seq": 4,
-      "ts": "2026-09-07T13:22:13.549Z",
+      "ts": "2026-09-07T13:25:20.630Z",
       "op": "stage",
       "stage": "select",
       "status": "running",
@@ -2937,19 +2421,19 @@
     },
     {
       "seq": 5,
-      "ts": "2026-09-07T13:22:13.564Z",
+      "ts": "2026-09-07T13:25:20.646Z",
       "op": "stage",
       "stage": "select",
       "status": "done",
       "summary": {
         "preset": "auto",
         "auto": true,
-        "style": "modern",
-        "pageType": "landing",
+        "style": "enterprise",
+        "pageType": "dashboard",
         "platform": "neutral-web",
-        "theme": "dark",
-        "density": "comfortable",
-        "motion": "standard",
+        "theme": "light",
+        "density": "compact",
+        "motion": "subtle",
         "devices": [
           "mobile",
           "foldable",
@@ -2967,22 +2451,23 @@
           "screen-reader"
         ],
         "components": [
+          "sidebar",
           "navigation",
-          "buttons",
           "cards",
+          "tables",
+          "charts",
+          "buttons",
           "inputs"
         ],
         "effects": [
-          "micro-interactions",
-          "animations",
-          "scroll-effects"
+          "micro-interactions"
         ],
         "brandMode": "preserve",
         "threeD": false,
         "radius": null,
-        "fontDisplay": "Sora",
-        "fontBody": "Manrope",
-        "fontMono": "JetBrains Mono",
+        "fontDisplay": "IBM Plex Sans",
+        "fontBody": "IBM Plex Sans",
+        "fontMono": "IBM Plex Mono",
         "sources": {
           "style": "auto",
           "pageType": "auto",
@@ -2993,14 +2478,14 @@
           "a11y": "auto"
         },
         "adjustments": [
-          "brand primary #00f5c3 preserved (brandMode=preserve)"
+          "brand primary #2f6f4e preserved (brandMode=preserve)"
         ],
-        "vaultAssets": 12
+        "vaultAssets": 11
       }
     },
     {
       "seq": 6,
-      "ts": "2026-09-07T13:22:13.566Z",
+      "ts": "2026-09-07T13:25:20.647Z",
       "op": "stage",
       "stage": "adapt",
       "status": "running",
@@ -3008,24 +2493,24 @@
     },
     {
       "seq": 7,
-      "ts": "2026-09-07T13:22:13.582Z",
+      "ts": "2026-09-07T13:25:20.728Z",
       "op": "stage",
       "stage": "adapt",
       "status": "done",
       "summary": {
-        "adapter": "nextjs",
+        "adapter": "react",
         "files": 17,
         "creates": 16,
         "modifies": 1,
         "notes": [
-          "theme imported from src/app/layout.tsx"
+          "theme imported from src/index.css (Tailwind v4)"
         ],
-        "remediations": 9
+        "remediations": 3
       }
     },
     {
       "seq": 8,
-      "ts": "2026-09-07T13:22:13.583Z",
+      "ts": "2026-09-07T13:25:20.730Z",
       "op": "stage",
       "stage": "probe",
       "status": "running",
@@ -3033,7 +2518,7 @@
     },
     {
       "seq": 9,
-      "ts": "2026-09-07T13:22:13.962Z",
+      "ts": "2026-09-07T13:25:21.118Z",
       "op": "stage",
       "stage": "probe",
       "status": "done",
@@ -3045,7 +2530,7 @@
     },
     {
       "seq": 10,
-      "ts": "2026-09-07T13:22:13.968Z",
+      "ts": "2026-09-07T13:25:21.121Z",
       "op": "stage",
       "stage": "preview",
       "status": "running",
@@ -3053,7 +2538,7 @@
     },
     {
       "seq": 11,
-      "ts": "2026-09-07T13:23:26.029Z",
+      "ts": "2026-09-07T13:25:48.224Z",
       "op": "stage",
       "stage": "preview",
       "status": "done",
@@ -3063,21 +2548,21 @@
         "candidate": true,
         "baseline": {
           "LOAD": 0,
-          "RESP-SWEEP": 2,
+          "RESP-SWEEP": 3,
           "MOBILE-ORIENT": 1,
           "FOLDABLE": 1,
           "DPR": 0,
           "THEME": 0,
-          "FONT-200": 0,
+          "FONT-200": 1,
           "KEYBOARD-NAV": 0,
-          "FOCUS-VISIBLE": 14,
+          "FOCUS-VISIBLE": 6,
           "CONTRAST": 0,
           "FORCED-COLORS": 1,
           "REDUCED-MOTION": 0,
-          "OVERFLOW": 2,
+          "OVERFLOW": 4,
           "LAYOUT-SHIFT": 0,
           "STICKY-FIXED": 0,
-          "TOUCH-TARGET": 0,
+          "TOUCH-TARGET": 4,
           "PERF": 0,
           "ANIM-3D-FALLBACK": 0,
           "CONSOLE-ERRORS": 0,
@@ -3088,13 +2573,13 @@
     },
     {
       "seq": 12,
-      "ts": "2026-09-07T13:23:26.033Z",
+      "ts": "2026-09-07T13:25:48.234Z",
       "op": "state",
       "state": "staged"
     },
     {
       "seq": 13,
-      "ts": "2026-09-07T13:23:26.035Z",
+      "ts": "2026-09-07T13:25:48.235Z",
       "op": "stage",
       "stage": "write",
       "status": "running",
@@ -3102,344 +2587,344 @@
     },
     {
       "seq": 14,
-      "ts": "2026-09-07T13:23:26.036Z",
+      "ts": "2026-09-07T13:25:48.236Z",
       "op": "state",
       "state": "writing"
     },
     {
       "seq": 15,
-      "ts": "2026-09-07T13:23:26.037Z",
+      "ts": "2026-09-07T13:25:48.237Z",
       "op": "mkdir",
-      "path": "src/app/kk-design"
+      "path": "src/kk-design"
     },
     {
       "seq": 16,
-      "ts": "2026-09-07T13:23:26.038Z",
+      "ts": "2026-09-07T13:25:48.238Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/tokens.css",
+      "path": "src/kk-design/tokens.css",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 17,
-      "ts": "2026-09-07T13:23:26.039Z",
+      "ts": "2026-09-07T13:25:48.239Z",
       "op": "write",
-      "path": "src/app/kk-design/tokens.css",
+      "path": "src/kk-design/tokens.css",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "ee3276b1dfc97ce0a1fb4ac53db27001aead31fde71a6da6217c96cb1e0fcfb8",
-      "bytes": 28785
+      "hashAfter": "88a6936256acd60d7fe193ec992ed0f15016c13c712d7c6a432cf9b84c18f456",
+      "bytes": 25520
     },
     {
       "seq": 18,
-      "ts": "2026-09-07T13:23:26.041Z",
+      "ts": "2026-09-07T13:25:48.240Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/theme.css",
+      "path": "src/kk-design/theme.css",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 19,
-      "ts": "2026-09-07T13:23:26.042Z",
+      "ts": "2026-09-07T13:25:48.241Z",
       "op": "write",
-      "path": "src/app/kk-design/theme.css",
+      "path": "src/kk-design/theme.css",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "4dc0f65151441fb37b8810aef9a35e1cfa92bb6d4c1d89f7e7fbc521f6253917",
-      "bytes": 20859
+      "hashAfter": "6571e8844175a7898c3f607574f3d75138049abac37b9177aeb200cf8fdc14b8",
+      "bytes": 19817
     },
     {
       "seq": 20,
-      "ts": "2026-09-07T13:23:26.044Z",
+      "ts": "2026-09-07T13:25:48.242Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/motion.js",
+      "path": "src/kk-design/motion.js",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 21,
-      "ts": "2026-09-07T13:23:26.045Z",
+      "ts": "2026-09-07T13:25:48.243Z",
       "op": "write",
-      "path": "src/app/kk-design/motion.js",
+      "path": "src/kk-design/motion.js",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "3b44a72b6b35ab5ea18f3409aa7fe52798380d16c21aa7b8491c06e1ea6c80ee",
-      "bytes": 7447
+      "hashAfter": "47f53b710f0ebd08c51b8c6e8a9d06d733854a545f5a55ab457716f60d8f0a49",
+      "bytes": 7446
     },
     {
       "seq": 22,
-      "ts": "2026-09-07T13:23:26.046Z",
+      "ts": "2026-09-07T13:25:48.244Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/ATTRIBUTION.md",
+      "path": "src/kk-design/ATTRIBUTION.md",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 23,
-      "ts": "2026-09-07T13:23:26.047Z",
+      "ts": "2026-09-07T13:25:48.245Z",
       "op": "write",
-      "path": "src/app/kk-design/ATTRIBUTION.md",
+      "path": "src/kk-design/ATTRIBUTION.md",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "ce874cdf6789b0ba87add1d7f2a9cbca897bc62999c08345e4f67fe0c5b550ee",
-      "bytes": 2101
+      "hashAfter": "17576706a8fc69b12409966b9194ba42d13d535d804e7a972ac62f6c433a3bb9",
+      "bytes": 1967
     },
     {
       "seq": 24,
-      "ts": "2026-09-07T13:23:26.048Z",
+      "ts": "2026-09-07T13:25:48.246Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/tokens.json",
+      "path": "src/kk-design/tokens.json",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 25,
-      "ts": "2026-09-07T13:23:26.049Z",
+      "ts": "2026-09-07T13:25:48.247Z",
       "op": "write",
-      "path": "src/app/kk-design/tokens.json",
+      "path": "src/kk-design/tokens.json",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "786e5216f396e3bc7bb3f4282886b281f6f796431ffc9a25932f21cacd453df2",
-      "bytes": 4352
+      "hashAfter": "bc5bba737fe78f5ce596aa65c892466486f5930fc59dfe64c253176d903524ff",
+      "bytes": 4331
     },
     {
       "seq": 26,
-      "ts": "2026-09-07T13:23:26.050Z",
+      "ts": "2026-09-07T13:25:48.248Z",
       "op": "mkdir",
-      "path": "src/app/kk-design/components"
+      "path": "src/kk-design/components"
     },
     {
       "seq": 27,
-      "ts": "2026-09-07T13:23:26.051Z",
+      "ts": "2026-09-07T13:25:48.249Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/components/KkButton.tsx",
+      "path": "src/kk-design/components/KkButton.jsx",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 28,
-      "ts": "2026-09-07T13:23:26.052Z",
+      "ts": "2026-09-07T13:25:48.250Z",
       "op": "write",
-      "path": "src/app/kk-design/components/KkButton.tsx",
+      "path": "src/kk-design/components/KkButton.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "b96b082976aa20ea7942eca6f53e057995238f79dc49d3cce9cbebdb0d39e56d",
-      "bytes": 761
+      "hashAfter": "10ac11c9227df4bb077b9cbd0dec7dc74b258cfc7b255ea5bbb094db707924e5",
+      "bytes": 574
     },
     {
       "seq": 29,
-      "ts": "2026-09-07T13:23:26.053Z",
+      "ts": "2026-09-07T13:25:48.251Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/components/KkCard.tsx",
+      "path": "src/kk-design/components/KkCard.jsx",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 30,
-      "ts": "2026-09-07T13:23:26.054Z",
+      "ts": "2026-09-07T13:25:48.252Z",
       "op": "write",
-      "path": "src/app/kk-design/components/KkCard.tsx",
+      "path": "src/kk-design/components/KkCard.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "ea688f4f86a6db30e85920ea698b41e2444be8000392d533d51cc10168d3cede",
-      "bytes": 818
+      "hashAfter": "da8699fb7db5fd14fb728ef30e809442209eacf0569e76e8877576887b81870b",
+      "bytes": 634
     },
     {
       "seq": 31,
-      "ts": "2026-09-07T13:23:26.055Z",
+      "ts": "2026-09-07T13:25:48.255Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/components/KkInput.tsx",
+      "path": "src/kk-design/components/KkInput.jsx",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 32,
-      "ts": "2026-09-07T13:23:26.057Z",
+      "ts": "2026-09-07T13:25:48.256Z",
       "op": "write",
-      "path": "src/app/kk-design/components/KkInput.tsx",
+      "path": "src/kk-design/components/KkInput.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "ef0b7e12e768315085da98e4a6f23869ec343400bb0469bcbeafcf7240a43922",
-      "bytes": 1232
+      "hashAfter": "7db256906c5ed1318c411714c518e72dd555e5d9d550ec6cd6bf620827989c60",
+      "bytes": 1034
     },
     {
       "seq": 33,
-      "ts": "2026-09-07T13:23:26.058Z",
+      "ts": "2026-09-07T13:25:48.257Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/components/KkModal.tsx",
+      "path": "src/kk-design/components/KkModal.jsx",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 34,
-      "ts": "2026-09-07T13:23:26.059Z",
+      "ts": "2026-09-07T13:25:48.258Z",
       "op": "write",
-      "path": "src/app/kk-design/components/KkModal.tsx",
+      "path": "src/kk-design/components/KkModal.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "690b719a46465fbfc8f7d2fc8b82ce2d406661f3fb063aa2a7bba4c5da2b10f8",
-      "bytes": 1204
+      "hashAfter": "dd06eefa9554dd8bf87c703d329701929fa65f737a9314d3e7d5c76b315a8750",
+      "bytes": 1018
     },
     {
       "seq": 35,
-      "ts": "2026-09-07T13:23:26.060Z",
+      "ts": "2026-09-07T13:25:48.259Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/components/KkTable.tsx",
+      "path": "src/kk-design/components/KkTable.jsx",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 36,
-      "ts": "2026-09-07T13:23:26.061Z",
+      "ts": "2026-09-07T13:25:48.259Z",
       "op": "write",
-      "path": "src/app/kk-design/components/KkTable.tsx",
+      "path": "src/kk-design/components/KkTable.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "fd73795d8197471b63e5cf05fdb5ed4a84969e92d720955e22f5145be2e0c2c1",
-      "bytes": 1440
+      "hashAfter": "60eb977e5510f6a1a411b76d20f0cf00f91721dc41b869947affdf6521ba3f83",
+      "bytes": 1091
     },
     {
       "seq": 37,
-      "ts": "2026-09-07T13:23:26.062Z",
+      "ts": "2026-09-07T13:25:48.261Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/components/KkNav.tsx",
+      "path": "src/kk-design/components/KkNav.jsx",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 38,
-      "ts": "2026-09-07T13:23:26.063Z",
+      "ts": "2026-09-07T13:25:48.262Z",
       "op": "write",
-      "path": "src/app/kk-design/components/KkNav.tsx",
+      "path": "src/kk-design/components/KkNav.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "2cd7013be78dc57f73b368c2439e75220e670636da14e7a442ddef338641ebcb",
-      "bytes": 1040
+      "hashAfter": "b60b19136b210b9ef3dd7b018121c034557e9a1064b3cd8e9ca7bec16feac265",
+      "bytes": 762
     },
     {
       "seq": 39,
-      "ts": "2026-09-07T13:23:26.064Z",
+      "ts": "2026-09-07T13:25:48.263Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/components/KkSidebar.tsx",
+      "path": "src/kk-design/components/KkSidebar.jsx",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 40,
-      "ts": "2026-09-07T13:23:26.065Z",
+      "ts": "2026-09-07T13:25:48.264Z",
       "op": "write",
-      "path": "src/app/kk-design/components/KkSidebar.tsx",
+      "path": "src/kk-design/components/KkSidebar.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "481ac981606521c19101203cd97d0855084b3ea6482c21f12438fa227e72068f",
-      "bytes": 1207
+      "hashAfter": "77c250f5bd15048eee4d968f42313cf31356f8b127ce772130f2345005d7a80a",
+      "bytes": 926
     },
     {
       "seq": 41,
-      "ts": "2026-09-07T13:23:26.066Z",
+      "ts": "2026-09-07T13:25:48.265Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/components/KkChart.tsx",
+      "path": "src/kk-design/components/KkChart.jsx",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 42,
-      "ts": "2026-09-07T13:23:26.067Z",
+      "ts": "2026-09-07T13:25:48.265Z",
       "op": "write",
-      "path": "src/app/kk-design/components/KkChart.tsx",
+      "path": "src/kk-design/components/KkChart.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "4715dcd9ca3bf23a8108459fd64ee84c8e845bb12d4d86b3545d66276f480eaf",
-      "bytes": 2191
+      "hashAfter": "37aaeea75c20a8bd57f9168da3fdc34e223fb67757b45fdf1e799853cd183a94",
+      "bytes": 1988
     },
     {
       "seq": 43,
-      "ts": "2026-09-07T13:23:26.068Z",
+      "ts": "2026-09-07T13:25:48.266Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/components/KkCarousel.tsx",
+      "path": "src/kk-design/components/KkCarousel.jsx",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 44,
-      "ts": "2026-09-07T13:23:26.069Z",
+      "ts": "2026-09-07T13:25:48.267Z",
       "op": "write",
-      "path": "src/app/kk-design/components/KkCarousel.tsx",
+      "path": "src/kk-design/components/KkCarousel.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "375c38f5c7c66ed5ac5f94a951b72f9dcd4265d3e0c7dd369a1a21d2c34af662",
-      "bytes": 1522
+      "hashAfter": "e3419b4f9d4cb1b1431f8e875acda0c76ee46c22e153a9d390d8aaa39250026e",
+      "bytes": 1370
     },
     {
       "seq": 45,
-      "ts": "2026-09-07T13:23:26.070Z",
+      "ts": "2026-09-07T13:25:48.268Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/KkThemeProvider.tsx",
+      "path": "src/kk-design/KkThemeProvider.jsx",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 46,
-      "ts": "2026-09-07T13:23:26.072Z",
+      "ts": "2026-09-07T13:25:48.269Z",
       "op": "write",
-      "path": "src/app/kk-design/KkThemeProvider.tsx",
+      "path": "src/kk-design/KkThemeProvider.jsx",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "706b683db493f47a818f464e7eb216e317326d7ee1c04198bb2d3134977f89de",
-      "bytes": 2051
+      "hashAfter": "b1f713b503c23caffc8b4f80f2f6f862011ff4a93b1fa9ec2c471f64f2b8fd2e",
+      "bytes": 1782
     },
     {
       "seq": 47,
-      "ts": "2026-09-07T13:23:26.073Z",
+      "ts": "2026-09-07T13:25:48.270Z",
       "op": "write_intent",
-      "path": "src/app/kk-design/index.ts",
+      "path": "src/kk-design/index.js",
       "kind": "create",
       "hashBefore": null
     },
     {
       "seq": 48,
-      "ts": "2026-09-07T13:23:26.074Z",
+      "ts": "2026-09-07T13:25:48.271Z",
       "op": "write",
-      "path": "src/app/kk-design/index.ts",
+      "path": "src/kk-design/index.js",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "bc173c486249c22b8bcedfc22faa6df18d995633be56b3cf2fc845ecafb7b84e",
-      "bytes": 851
+      "hashAfter": "b888ff45a6b56b5f5fa7f67b38fa7118f7ea063eda05c024d9b5f81d77442214",
+      "bytes": 897
     },
     {
       "seq": 49,
-      "ts": "2026-09-07T13:23:26.076Z",
+      "ts": "2026-09-07T13:25:48.273Z",
       "op": "backup",
-      "path": "src/app/layout.tsx",
-      "hash": "1da19079751652920ae9cdb1aca421f07df1b95f56ff499c661bbfcafac356f5"
+      "path": "src/index.css",
+      "hash": "9668fc21445a2f60d8b269825e16674db8c8af6b42335b9f3aa9eddda3d6d3fd"
     },
     {
       "seq": 50,
-      "ts": "2026-09-07T13:23:26.077Z",
+      "ts": "2026-09-07T13:25:48.273Z",
       "op": "write_intent",
-      "path": "src/app/layout.tsx",
+      "path": "src/index.css",
       "kind": "modify",
-      "hashBefore": "1da19079751652920ae9cdb1aca421f07df1b95f56ff499c661bbfcafac356f5"
+      "hashBefore": "9668fc21445a2f60d8b269825e16674db8c8af6b42335b9f3aa9eddda3d6d3fd"
     },
     {
       "seq": 51,
-      "ts": "2026-09-07T13:23:26.078Z",
+      "ts": "2026-09-07T13:25:48.274Z",
       "op": "write",
-      "path": "src/app/layout.tsx",
+      "path": "src/index.css",
       "kind": "modify",
-      "hashBefore": "1da19079751652920ae9cdb1aca421f07df1b95f56ff499c661bbfcafac356f5",
-      "hashAfter": "83e200a329b3bbba445530c7615223a217ec50c984dc85a924c7527276a5824b",
-      "bytes": 402
+      "hashBefore": "9668fc21445a2f60d8b269825e16674db8c8af6b42335b9f3aa9eddda3d6d3fd",
+      "hashAfter": "cb7717b726395459086246523ca1ea8591809753339c6454fb0827a073edc206",
+      "bytes": 389
     },
     {
       "seq": 52,
-      "ts": "2026-09-07T13:23:26.079Z",
+      "ts": "2026-09-07T13:25:48.275Z",
       "op": "state",
       "state": "written"
     },
     {
       "seq": 53,
-      "ts": "2026-09-07T13:23:26.086Z",
+      "ts": "2026-09-07T13:25:48.282Z",
       "op": "stage",
       "stage": "write",
       "status": "done",
@@ -3450,7 +2935,7 @@
     },
     {
       "seq": 54,
-      "ts": "2026-09-07T13:23:26.087Z",
+      "ts": "2026-09-07T13:25:48.283Z",
       "op": "stage",
       "stage": "verify",
       "status": "running",
@@ -3458,29 +2943,29 @@
     },
     {
       "seq": 55,
-      "ts": "2026-09-07T13:24:34.512Z",
+      "ts": "2026-09-07T13:26:11.074Z",
       "op": "state",
       "state": "verified"
     },
     {
       "seq": 56,
-      "ts": "2026-09-07T13:24:34.514Z",
+      "ts": "2026-09-07T13:26:11.077Z",
       "op": "stage",
       "stage": "verify",
       "status": "done",
       "summary": {
         "ok": true,
-        "mode": "standard",
+        "mode": "quick",
         "failed": [],
         "warned": [
           "A11Y-BASICS"
         ],
-        "loads": 41
+        "loads": 17
       }
     },
     {
       "seq": 57,
-      "ts": "2026-09-07T13:24:34.516Z",
+      "ts": "2026-09-07T13:26:11.078Z",
       "op": "stage",
       "stage": "decide",
       "status": "running",
@@ -3488,19 +2973,19 @@
     },
     {
       "seq": 58,
-      "ts": "2026-09-07T13:24:34.517Z",
+      "ts": "2026-09-07T13:26:11.079Z",
       "op": "keep",
       "note": "verification passed"
     },
     {
       "seq": 59,
-      "ts": "2026-09-07T13:24:34.517Z",
+      "ts": "2026-09-07T13:26:11.080Z",
       "op": "state",
       "state": "kept"
     },
     {
       "seq": 60,
-      "ts": "2026-09-07T13:24:34.518Z",
+      "ts": "2026-09-07T13:26:11.081Z",
       "op": "stage",
       "stage": "decide",
       "status": "done",
@@ -3512,241 +2997,241 @@
   ],
   "log": [
     {
-      "ts": "2026-09-07T13:22:13.522Z",
+      "ts": "2026-09-07T13:25:20.598Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "transaction 20260907-132213-b14d3c opened for /home/user/agent-tobo-web"
+      "msg": "transaction 20260907-132520-a53d4a opened for /home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard"
     },
     {
-      "ts": "2026-09-07T13:22:13.523Z",
+      "ts": "2026-09-07T13:25:20.600Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage inspect: running"
     },
     {
-      "ts": "2026-09-07T13:22:13.547Z",
+      "ts": "2026-09-07T13:25:20.628Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "scan: nextjs@14.2.35, css=[tailwind], 1 page(s), 5 UX problem(s), 2 generic pattern(s)"
+      "msg": "scan: react@18.3.1, css=[tailwind], 1 page(s), 7 UX problem(s), 4 generic pattern(s)"
     },
     {
-      "ts": "2026-09-07T13:22:13.549Z",
+      "ts": "2026-09-07T13:25:20.630Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage inspect: done"
     },
     {
-      "ts": "2026-09-07T13:22:13.550Z",
+      "ts": "2026-09-07T13:25:20.631Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage select: running"
     },
     {
-      "ts": "2026-09-07T13:22:13.566Z",
+      "ts": "2026-09-07T13:25:20.647Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage select: done"
     },
     {
-      "ts": "2026-09-07T13:22:13.567Z",
+      "ts": "2026-09-07T13:25:20.648Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage adapt: running"
     },
     {
-      "ts": "2026-09-07T13:22:13.583Z",
+      "ts": "2026-09-07T13:25:20.729Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage adapt: done"
     },
     {
-      "ts": "2026-09-07T13:22:13.584Z",
+      "ts": "2026-09-07T13:25:20.731Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage probe: running"
     },
     {
-      "ts": "2026-09-07T13:22:13.960Z",
+      "ts": "2026-09-07T13:25:21.116Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "probe: ok"
     },
     {
-      "ts": "2026-09-07T13:22:13.968Z",
+      "ts": "2026-09-07T13:25:21.120Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage probe: done"
     },
     {
-      "ts": "2026-09-07T13:22:13.969Z",
+      "ts": "2026-09-07T13:25:21.122Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage preview: running"
     },
     {
-      "ts": "2026-09-07T13:22:14.341Z",
+      "ts": "2026-09-07T13:25:21.535Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "starting dev server: npx next dev -p 41813 -H 127.0.0.1 (port 41813)"
+      "msg": "starting dev server: npx vite --port 37247 --strictPort --host 127.0.0.1 (port 37247)"
     },
     {
-      "ts": "2026-09-07T13:22:20.835Z",
+      "ts": "2026-09-07T13:25:25.792Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "starting dev server: npx next dev -p 40425 -H 127.0.0.1 (port 40425)"
+      "msg": "starting dev server: npx vite --port 41131 --strictPort --host 127.0.0.1 (port 41131)"
     },
     {
-      "ts": "2026-09-07T13:23:25.226Z",
+      "ts": "2026-09-07T13:25:47.423Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "baseline: RESP-SWEEP=2 MOBILE-ORIENT=1 FOLDABLE=1 FOCUS-VISIBLE=14 FORCED-COLORS=1 OVERFLOW=2"
+      "msg": "baseline: RESP-SWEEP=3 MOBILE-ORIENT=1 FOLDABLE=1 FONT-200=1 FOCUS-VISIBLE=6 FORCED-COLORS=1 OVERFLOW=4 TOUCH-TARGET=4"
     },
     {
-      "ts": "2026-09-07T13:23:26.033Z",
+      "ts": "2026-09-07T13:25:48.234Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage preview: done"
     },
     {
-      "ts": "2026-09-07T13:23:26.036Z",
+      "ts": "2026-09-07T13:25:48.236Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage write: running"
     },
     {
-      "ts": "2026-09-07T13:23:26.040Z",
+      "ts": "2026-09-07T13:25:48.240Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/tokens.css"
+      "msg": "create src/kk-design/tokens.css"
     },
     {
-      "ts": "2026-09-07T13:23:26.043Z",
+      "ts": "2026-09-07T13:25:48.242Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/theme.css"
+      "msg": "create src/kk-design/theme.css"
     },
     {
-      "ts": "2026-09-07T13:23:26.046Z",
+      "ts": "2026-09-07T13:25:48.244Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/motion.js"
+      "msg": "create src/kk-design/motion.js"
     },
     {
-      "ts": "2026-09-07T13:23:26.048Z",
+      "ts": "2026-09-07T13:25:48.246Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/ATTRIBUTION.md"
+      "msg": "create src/kk-design/ATTRIBUTION.md"
     },
     {
-      "ts": "2026-09-07T13:23:26.050Z",
+      "ts": "2026-09-07T13:25:48.248Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/tokens.json"
+      "msg": "create src/kk-design/tokens.json"
     },
     {
-      "ts": "2026-09-07T13:23:26.053Z",
+      "ts": "2026-09-07T13:25:48.251Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/components/KkButton.tsx"
+      "msg": "create src/kk-design/components/KkButton.jsx"
     },
     {
-      "ts": "2026-09-07T13:23:26.055Z",
+      "ts": "2026-09-07T13:25:48.255Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/components/KkCard.tsx"
+      "msg": "create src/kk-design/components/KkCard.jsx"
     },
     {
-      "ts": "2026-09-07T13:23:26.058Z",
+      "ts": "2026-09-07T13:25:48.257Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/components/KkInput.tsx"
+      "msg": "create src/kk-design/components/KkInput.jsx"
     },
     {
-      "ts": "2026-09-07T13:23:26.060Z",
+      "ts": "2026-09-07T13:25:48.258Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/components/KkModal.tsx"
+      "msg": "create src/kk-design/components/KkModal.jsx"
     },
     {
-      "ts": "2026-09-07T13:23:26.062Z",
+      "ts": "2026-09-07T13:25:48.260Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/components/KkTable.tsx"
+      "msg": "create src/kk-design/components/KkTable.jsx"
     },
     {
-      "ts": "2026-09-07T13:23:26.064Z",
+      "ts": "2026-09-07T13:25:48.263Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/components/KkNav.tsx"
+      "msg": "create src/kk-design/components/KkNav.jsx"
     },
     {
-      "ts": "2026-09-07T13:23:26.066Z",
+      "ts": "2026-09-07T13:25:48.264Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/components/KkSidebar.tsx"
+      "msg": "create src/kk-design/components/KkSidebar.jsx"
     },
     {
-      "ts": "2026-09-07T13:23:26.068Z",
+      "ts": "2026-09-07T13:25:48.266Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/components/KkChart.tsx"
+      "msg": "create src/kk-design/components/KkChart.jsx"
     },
     {
-      "ts": "2026-09-07T13:23:26.070Z",
+      "ts": "2026-09-07T13:25:48.268Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/components/KkCarousel.tsx"
+      "msg": "create src/kk-design/components/KkCarousel.jsx"
     },
     {
-      "ts": "2026-09-07T13:23:26.073Z",
+      "ts": "2026-09-07T13:25:48.270Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/KkThemeProvider.tsx"
+      "msg": "create src/kk-design/KkThemeProvider.jsx"
     },
     {
-      "ts": "2026-09-07T13:23:26.075Z",
+      "ts": "2026-09-07T13:25:48.272Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "create src/app/kk-design/index.ts"
+      "msg": "create src/kk-design/index.js"
     },
     {
-      "ts": "2026-09-07T13:23:26.079Z",
+      "ts": "2026-09-07T13:25:48.275Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "modify src/app/layout.tsx"
+      "msg": "modify src/index.css"
     },
     {
-      "ts": "2026-09-07T13:23:26.087Z",
+      "ts": "2026-09-07T13:25:48.283Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage write: done"
     },
     {
-      "ts": "2026-09-07T13:23:26.088Z",
+      "ts": "2026-09-07T13:25:48.284Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage verify: running"
     },
     {
-      "ts": "2026-09-07T13:23:26.089Z",
+      "ts": "2026-09-07T13:25:48.284Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "starting dev server: npx next dev -p 37267 -H 127.0.0.1 (port 37267)"
+      "msg": "starting dev server: npx vite --port 36315 --strictPort --host 127.0.0.1 (port 36315)"
     },
     {
-      "ts": "2026-09-07T13:24:34.516Z",
+      "ts": "2026-09-07T13:26:11.078Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage verify: done"
     },
     {
-      "ts": "2026-09-07T13:24:34.517Z",
+      "ts": "2026-09-07T13:26:11.079Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage decide: running"
     },
     {
-      "ts": "2026-09-07T13:24:34.520Z",
+      "ts": "2026-09-07T13:26:11.082Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage decide: done"

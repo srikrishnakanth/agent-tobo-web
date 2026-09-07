@@ -18,6 +18,9 @@ export async function fetchGoogleFontFaces(url, { cacheDir, timeoutMs = 8000, lo
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     let css = await res.text();
     if (!/@font-face/.test(css)) throw new Error('no @font-face rules in response');
+    // `optional` never causes a layout shift: the font is used only when it is available within the block period
+    // (it always is after the first visit thanks to the HTTP cache), otherwise the fallback stack stays.
+    css = css.replace(/font-display:\s*swap/g, 'font-display: optional');
     css = `/* @font-face rules fetched from ${url} — families licensed under the SIL Open Font License 1.1; files served by fonts.gstatic.com */\n${css.trim()}\n`;
     if (cacheFile) await atomicWrite(cacheFile, css);
     return css;

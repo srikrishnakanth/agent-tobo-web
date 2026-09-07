@@ -255,7 +255,11 @@ export function deriveRemediations(scan) {
       if (!sel || sel.startsWith('@') || sel.length > 120 || /[@%]/.test(sel)) continue;
       const key = (id) => `${id}|${sel}`;
       if (/\b100vh\b/.test(decl) && !seen.has(key('vh'))) { seen.add(key('vh')); out.push({ problem: 'vh-mobile-bug', note: `${f.rel}: 100vh → dynamic viewport height`, css: `@supports (height: 100dvh) { ${sel} { ${/min-height\s*:\s*100vh/.test(decl) ? 'min-height: 100dvh;' : 'height: 100dvh;'} } }` }); }
-      if (/position\s*:\s*fixed/.test(decl) && /bottom\s*:\s*0/.test(decl) && !seen.has(key('safe'))) { seen.add(key('safe')); out.push({ problem: 'fixed-bottom-no-safe-area', note: `${f.rel}: honour safe-area inset`, css: `${sel} { padding-bottom: max(var(--kk-space-5), var(--kk-safe-bottom)); }` }); }
+      if (/position\s*:\s*fixed/.test(decl) && /bottom\s*:\s*0/.test(decl) && !seen.has(key('safe'))) {
+        seen.add(key('safe'));
+        const pb = paddingBottomOf(decl);
+        out.push({ problem: 'fixed-bottom-no-safe-area', note: `${f.rel}: honour safe-area inset and cap height on small viewports`, css: `${sel} { ${pb !== null ? `padding-bottom: calc(${pb} + var(--kk-safe-bottom));` : ''} max-height: 38vh; overflow-y: auto; }` });
+      }
       if (/outline\s*:\s*(none|0)/.test(decl) && !seen.has(key('focus'))) { seen.add(key('focus')); out.push({ problem: 'focus-removed', note: `${f.rel}: restore visible focus`, css: `${sel}:focus-visible { outline: 3px solid var(--kk-color-focus) !important; outline-offset: 2px; }` }); }
       if (/animation\s*:[^;]*\binfinite\b/.test(decl) && !seen.has(key('inf'))) { seen.add(key('inf')); out.push({ problem: 'infinite-animation', note: `${f.rel}: pause under reduced motion`, css: `@media (prefers-reduced-motion: reduce) { ${sel} { animation: none !important; } }` }); }
       if (/backdrop-filter/.test(decl) && !seen.has(key('blur'))) { seen.add(key('blur')); out.push({ problem: 'blur-overuse', note: `${f.rel}: drop blur on low-power/reduced-data devices`, css: `@media (update: slow), (prefers-reduced-data: reduce) { ${sel} { backdrop-filter: none; -webkit-backdrop-filter: none; } }` }); }
@@ -279,5 +283,14 @@ export function deriveRemediations(scan) {
     }
   }
   return out.slice(0, 80);
+}
+function paddingBottomOf(decl) {
+  const pb = /padding-bottom\s*:\s*([^;}]+)/.exec(decl);
+  if (pb) return pb[1].trim();
+  const p = /(?<![-\w])padding\s*:\s*([^;}]+)/.exec(decl);
+  if (!p) return '0px';
+  const parts = p[1].trim().split(/\s+/);
+  if (parts.some((x) => /^(inherit|initial|unset|revert)$/.test(x))) return null;
+  return parts.length === 1 ? parts[0] : parts.length === 2 ? parts[0] : parts.length === 3 ? parts[2] : parts[2];
 }
 function sameHex(a, b) { const x = parseColor(a), y = parseColor(b); if (!x || !y) return false; return Math.abs(x.r - y.r) + Math.abs(x.g - y.g) + Math.abs(x.b - y.b) < 24; }
