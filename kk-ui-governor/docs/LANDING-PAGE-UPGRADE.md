@@ -15,7 +15,17 @@ A scoped run (`--landing-only`) makes three separate promises, each enforced by 
 
 If any of those fail, the transaction rolls back automatically and the verdict is `FAIL`.
 
-## Run it
+## Run it (Windows, one command)
+
+```powershell
+# dry run: scan, recommend, apply, verify on every device, roll back. Nothing is kept.
+powershell -ExecutionPolicy Bypass -File bootstrap\Upgrade-LandingPage.ps1 -ProjectPath "C:\path\to\your-project"
+
+# then, when the report looks right: apply for real and leave it PENDING your decision
+powershell -ExecutionPolicy Bypass -File bootstrap\Upgrade-LandingPage.ps1 -ProjectPath "C:\path\to\your-project" -Style premium -Verify full -Apply
+```
+
+## Run it (step by step, any platform)
 
 ```bash
 # 0. one time: build the design vault
