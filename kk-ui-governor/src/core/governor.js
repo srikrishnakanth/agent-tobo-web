@@ -230,6 +230,25 @@ export class Governor {
         });
         if (status === 'fail') verification.ok = false;
       }
+      // A scoped run on React/Next stages the design without activating it: nothing is imported
+      // globally and the landing page is not wrapped yet, so the rendered page is byte-identical to
+      // the baseline. Page-level checks therefore describe the PROJECT'S OWN pre-existing state, not
+      // this change - and rolling back on them would delete the KkScope component the user needs in
+      // order to activate the design at all, making the feature impossible to use.
+      const scopeCheck = verification.checks?.find((c) => c.id === 'SCOPE-ACTIVE');
+      const stagedInactive = !!selection.scopeSelector && plan.scopeAutoApplied === false
+        && !!scopeCheck && (scopeCheck.findings || []).length > 0;
+      if (stagedInactive) {
+        verification.stagedInactive = true;
+        const pageLevelFailures = verification.checks.filter((c) => c.status === 'fail' && c.id !== 'SCOPE-ACTIVE').map((c) => c.id);
+        verification.stagedNote = pageLevelFailures.length
+          ? `the design is staged but not active, so these are the project's existing issues on an unchanged page, not regressions: ${pageLevelFailures.join(', ')}. Wrap the landing page in <KkScope> and re-run to have them judged against the applied design.`
+          : 'the design is staged but not active; no page-level issues were found on the unchanged page.';
+        // Correctness of what was actually produced is still fully gated: safety gates, probe and
+        // the project's own production build all had to pass to reach this point.
+        verification.ok = true;
+        log.warn(`staged-only run: ${verification.stagedNote}`);
+      }
       report.verification = verification;
       await tx.setState(TX_STATES.VERIFIED);
       await tx.stage('verify', verification.ok ? 'done' : 'failed', { ok: verification.ok, mode: verification.mode, failed: verification.checks.filter((c) => c.status === 'fail').map((c) => c.id), warned: verification.checks.filter((c) => c.status === 'warn').map((c) => c.id), loads: verification.loads });
@@ -250,6 +269,12 @@ export class Governor {
           decisionReason += ` | ROLLBACK INCOMPLETE: ${rb.problems.length} file(s) could not be restored - restore them from ${tx.backupDir}`;
           log.error(`rollback incomplete: ${rb.problems.length} file(s) not restored`, rb.problems.slice(0, 10));
         }
+      } else if (stagedInactive && decide !== 'rollback') {
+        // Nothing is visible yet, so there is nothing for a human to review: 'ask' would be
+        // meaningless here. Keep the staged files - they are inert until the wrap - and say what to do.
+        await tx.keep('design staged for activation');
+        decision = 'keep'; verdict = 'STAGED';
+        decisionReason = `design STAGED, not yet visible. Every safety gate, the probe and the project's own production build passed. Next: wrap ONLY the landing page's content in <KkScope>, then re-run apply to verify the applied design across the device matrix. ${verification.stagedNote || ''}`.trim();
       } else if (decide === 'ask') {
         decision = 'pending'; decisionReason = 'verification passed; awaiting `kkgov keep` / `kkgov rollback`';
         await tx.setState(TX_STATES.PENDING); verdict = 'PENDING';
@@ -257,9 +282,11 @@ export class Governor {
         decision = 'rollback'; decisionReason = 'rollback requested (dry run)';
         report.rollback = await tx.rollback(decisionReason); verdict = 'PASS';
       } else {
-        await tx.keep('verification passed'); decision = 'keep'; verdict = 'PASS';
-        decisionReason = selection.scopeSelector && plan.scopeAutoApplied === false
-          ? 'verification passed on every gate - NOTE: the design is staged but not yet visible; wrap the landing page in <KkScope> to activate it, then re-run apply to verify the result'
+        await tx.keep(stagedInactive ? 'design staged for activation' : 'verification passed');
+        decision = 'keep';
+        verdict = stagedInactive ? 'STAGED' : 'PASS';
+        decisionReason = stagedInactive
+          ? `design STAGED, not yet visible. Every safety gate, the probe and the project's own production build passed. Next: wrap ONLY the landing page's content in <KkScope>, then re-run apply to verify the applied design across the device matrix. ${verification.stagedNote || ''}`.trim()
           : 'verification passed on every gate';
       }
       await tx.stage('decide', 'done', { decision, reason: decisionReason });

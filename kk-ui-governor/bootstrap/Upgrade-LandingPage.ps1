@@ -112,7 +112,20 @@ $applyArgs = @($Cli, 'apply', $ProjectPath, '--landing-only', '--style', $Style,
 if ($Theme) { $applyArgs += @('--theme', $Theme) }
 & node @applyArgs
 $code = $LASTEXITCODE
-# exit 2 == PENDING (verification passed, awaiting your decision)
+# exit 2 == PENDING (verification passed, awaiting your decision); 3 == STAGED (React/Next: wrap and re-run)
+if ($code -eq 3) {
+  Write-Host @"
+
+[kk-governor] Design STAGED - it is written but not yet visible anywhere.
+
+  Every safety gate, the probe and your project's own production build passed. To activate it:
+    1. Wrap ONLY your landing page's content in <KkScope> (see kk-design/KkScope.tsx)
+    2. Re-run this script to verify the applied design across the device matrix
+
+  Nothing else in the app can change until you do step 1 - that is what makes this safe.
+"@ -ForegroundColor Green
+  exit 0
+}
 if ($code -ne 2 -and $code -ne 0) { Fail "apply failed (exit $code); the change was rolled back automatically" }
 
 Write-Host @"

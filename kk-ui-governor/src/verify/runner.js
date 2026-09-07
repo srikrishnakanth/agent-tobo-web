@@ -133,7 +133,7 @@ export async function runVerification({ baseUrl, pages, guardPages = [], mode = 
       }
     }
     if (guardPages.length) {
-      log_guards = await measureGuards(browser, guardPages, baseUrl, { logger });
+      log_guards = await measureGuards(browser, guardPages, baseUrl, { logger, originHost, storageState });
       logger?.info(`captured style signatures for ${guardPages.length} guard route(s)`);
     }
   } finally { await browser.close(); }
@@ -147,7 +147,18 @@ export async function runVerification({ baseUrl, pages, guardPages = [], mode = 
     return { id: d.id, label: d.label, width: d.width, height: d.height, dpr: d.dpr, colorScheme: d.colorScheme, flags: d.flags, status: failed ? 'fail' : problems.length ? 'fail' : 'pass', note: failed ? rs.find((r) => r.error)?.error : problems.length ? `${problems.length} failing finding(s)` : '', screenshots: rs.filter((r) => r.screenshot).map((r) => ({ file: r.screenshot, label: `${p(r.page)} ${d.width}×${d.height}@${d.dpr} ${d.colorScheme}${d.flags.length ? ' ' + d.flags.join(',') : ''}` })) };
   });
   const failed = checks.filter((c) => c.status === 'fail');
-  return { ok: failed.length === 0, mode, engine: `chromium ${version} (playwright)`, pages, guardPages, guards: log_guards, devices: perDevice, checks, durationMs: Date.now() - started, loads: raw.length, errors: raw.filter((r) => r.error).length, counts: Object.fromEntries(checks.map((c) => [c.id, c.count])) };
+  return {
+    ok: failed.length === 0, mode, engine: `chromium ${version} (playwright)`,
+    originRelayed: process.env.KKGOV_RELAY_ORIGIN === '1' || undefined,
+    pages, guardPages, guards: log_guards, devices: perDevice, checks,
+    // How much document each measurement actually saw, so a later run can tell a clean baseline
+    // apart from one that measured a page the dev server had not finished compiling.
+    weights: Object.fromEntries(raw.filter((r) => r.documentWeight).map((r) => [`${r.deviceId}|${r.page}`, r.documentWeight])),
+    baselineUnreliable: baselineComparability.ok ? undefined : baselineComparability.reason,
+    durationMs: Date.now() - started, loads: raw.length,
+    errors: raw.filter((r) => r.error).length,
+    counts: Object.fromEntries(checks.map((c) => [c.id, c.count])),
+  };
 }
 function p(page) { return page === '/' ? 'home' : page.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, ''); }
 

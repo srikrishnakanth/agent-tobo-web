@@ -67,7 +67,7 @@ Usage: kkgov <command> [options]
   status <dir> | recover <dir> | report <dir> <txId>
   vault setup [--offline] | vault verify | vault list | vault search <query> [--style --page --framework --category]
 
-Exit codes: 0 PASS/kept, 2 PENDING, 1 FAIL/rolled back/error.`;
+Exit codes: 0 PASS/kept, 2 PENDING, 3 STAGED (scoped React/Next: wrap the landing page in <KkScope>, then re-run), 1 FAIL/rolled back/error.`;
 
 try {
   switch (cmd) {
@@ -113,7 +113,7 @@ try {
       const g = new Governor({ projectRoot: path.resolve(positional[0] || '.'), vaultDir: flags.vault || DEFAULT_VAULT_DIR, logger });
       const r = await g.apply({ selection: selectionFromFlags(), verifyMode: flags.verify || 'standard', decide: flags.decide || 'auto', preview: !flags['no-preview'], baseline: !flags['no-baseline'], build: !flags['no-build'], allowUnsupported: !!flags['allow-unsupported'], maxPages: flags['max-pages'] ? +flags['max-pages'] : undefined });
       json(r);
-      process.exit(r.verdict === 'PASS' ? 0 : r.verdict === 'PENDING' ? 2 : 1);
+      process.exit(r.verdict === 'PASS' ? 0 : r.verdict === 'PENDING' ? 2 : r.verdict === 'STAGED' ? 3 : 1);
     }
     // eslint-disable-next-line no-fallthrough
     case 'verify': {
