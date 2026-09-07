@@ -84,7 +84,17 @@ export default function LandingPage() {
 
 That one edit is deliberately left to a human: wrapping the right component is a judgement call, and
 placing it anywhere other than the landing page would break the guarantee the tool just proved.
-Re-run `apply` afterwards to verify the result on the full device matrix.
+
+So a React/Next scoped run happens in two passes:
+
+| Pass | Verdict | Exit | What happened |
+|---|---|---|---|
+| 1. before the wrap | **STAGED** | 3 | Files written and kept. Every safety gate, the probe and your production build passed. Nothing is visible yet, so page-level findings describe your page's *existing* state, not this change. |
+| 2. after the wrap | PASS / PENDING | 0 / 2 | The design is active. Now it is judged normally across the whole device matrix. |
+
+STAGED is not a soft pass. The run still had to satisfy every gate to reach it, and the files it
+keeps are inert until you wrap — which is precisely why nothing else in the app can be affected in
+between.
 
 ## What this does and does not do
 

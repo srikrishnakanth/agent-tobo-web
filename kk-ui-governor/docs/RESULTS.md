@@ -121,3 +121,35 @@ Two real bugs in that new code were caught by auditing it immediately after writ
 was not being scoped (so `color-scheme` — a rendering property — still applied application-wide), and
 root-qualified selectors like `:root[data-theme="dark"]` were rewritten as descendants even when the
 scope root *was* `<html>`. Both are fixed and covered by tests.
+
+## Scoped React/Next path, proven end to end
+
+The staged half of the scoped flow was proven first; the applied half was completed on this Next.js
+app exactly as a user would, and both halves are now covered:
+
+| Pass | Verdict | Evidence |
+|---|---|---|
+| `apply --landing-only` before the wrap | **STAGED** (exit 3) | `KkScope.tsx` written and kept; safety gates, probe and `next build` all passed; nothing visible, so no page-level claim was made |
+| landing page wrapped in `<KkScope>` (2 lines) | — | `tsc --noEmit` clean, `next build` compiles |
+| `apply --landing-only` after the wrap | PENDING → kept | SCOPE-ACTIVE **pass** (the scope root is present), G10 **pass** (177 rules scoped, 0 escapes), every device check passing |
+
+FOCUS-VISIBLE, FORCED-COLORS, RESP-SWEEP, FOLDABLE and OVERFLOW were all failing on that page before
+the design was applied and pass afterwards. The brand accent is preserved rather than replaced, and
+the primary button reaches AA contrast, which it did not before.
+
+### Two defects this run exposed that no amount of reading would have
+
+1. **A scoped React/Next run deleted its own output.** The design is staged and inactive by design, so
+   the rendered page is identical to the baseline — and the page's own pre-existing accessibility
+   problems failed the run, rolling back the `KkScope` component the user needs in order to activate
+   anything. The feature could never complete. Fixed with the STAGED verdict.
+2. **An all-zero baseline is not a clean baseline.** A dev server answers the first request before the
+   route has compiled, so the baseline measured an empty document; every genuine pre-existing problem
+   then read as a regression caused by the candidate. Measurement now waits for a rendered document,
+   records how much document it saw, and discards baseline counts when the baseline saw far less than
+   the candidate.
+
+A third class of problem was self-inflicted and worth recording: three edits to the verification
+runner had **silently failed to apply** — string replacements whose anchors no longer matched — so
+instrumentation and the guard routes' auth/origin wiring were reported as fixed while being absent.
+Caught by inspecting the emitted report rather than trusting the edit.
