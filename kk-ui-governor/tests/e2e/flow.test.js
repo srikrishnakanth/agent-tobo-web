@@ -35,7 +35,12 @@ test('full flow on the HTML sample ends in PASS with REPORT.html and every gate 
   assert.equal(r.decision, 'keep');
   const report = await readJson(r.reportJson);
   for (const st of ['inspect', 'select', 'adapt', 'probe', 'preview', 'write', 'verify', 'decide']) assert.equal(report.stages[st].status, 'done', st);
-  assert.ok(report.safetyGates.gates.length === 9 && report.safetyGates.ok);
+  // Assert the gates by identity, not by a count that silently rots when a gate is added.
+  const gateIds = report.safetyGates.gates.map((g) => g.id).sort();
+  assert.deepEqual(gateIds, ['G1', 'G10', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'G9'], JSON.stringify(gateIds));
+  assert.ok(report.safetyGates.ok, JSON.stringify(report.safetyGates.gates.filter((g) => g.status === 'fail')));
+  // A global run must skip scope containment; it is only meaningful for a scoped run.
+  assert.equal(report.safetyGates.gates.find((g) => g.id === 'G10').status, 'skip');
   const ids = report.verification.checks.map((c) => c.id);
   for (const id of ['RESP-SWEEP', 'MOBILE-ORIENT', 'FOLDABLE', 'DPR', 'THEME', 'FONT-200', 'KEYBOARD-NAV', 'FOCUS-VISIBLE', 'CONTRAST', 'FORCED-COLORS', 'REDUCED-MOTION', 'OVERFLOW', 'LAYOUT-SHIFT', 'STICKY-FIXED', 'TOUCH-TARGET', 'PERF', 'ANIM-3D-FALLBACK', 'CONSOLE-ERRORS']) assert.ok(ids.includes(id), id);
   assert.ok(report.verification.devices.some((d) => d.width === 240) && report.verification.devices.some((d) => d.width === 3840));

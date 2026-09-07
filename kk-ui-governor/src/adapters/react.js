@@ -70,14 +70,14 @@ export default KkScope;
     if (!injected) manualSteps.push(`Add \`import './${dir}/theme.css'\` to your application entry (no safe injection point was found).`);
     if (selection.scopeSelector) manualSteps.push(`Optional: render <KkThemeProvider> INSIDE <KkScope> so the motion runtime stays on the landing page only.`);
     else manualSteps.push(`Optional: wrap your app in <KkThemeProvider> from ${dir} to enable the motion runtime and theme toggle (CSS-only behaviour works without it).`);
-    return { ops, dependencies: [], assets: tokens.assets, tokens, notes, manualSteps, pages: selectPages(scan, selection), remediations: remediations.length, fontsInlined, scopeAudit };
+    return { ops, dependencies: [], assets: tokens.assets, tokens, notes, manualSteps, scopeAutoApplied: !selection.scopeSelector, pages: selectPages(scan, selection), remediations: remediations.length, fontsInlined, scopeAudit };
   }
 
   serve(ctx) {
     const { scan, logger } = ctx;
     const b = scan.framework.bundler;
-    if (b === 'vite') return { start: async () => { const s = new ProcessServer({ cwd: scan.root, command: 'npx', args: ['vite', '--port', '{port}', '--strictPort', '--host', '127.0.0.1'], logger }); const baseUrl = await s.start(); return { baseUrl, stop: () => s.stop() }; } };
-    if (b === 'cra') return { start: async () => { const s = new ProcessServer({ cwd: scan.root, command: 'npx', args: ['react-scripts', 'start'], logger }); const baseUrl = await s.start(); return { baseUrl, stop: () => s.stop() }; } };
+    if (b === 'vite') return { start: async () => { const s = new ProcessServer({ cwd: scan.root, pkg: 'vite', args: ['--port', '{port}', '--strictPort', '--host', '127.0.0.1'], logger }); const baseUrl = await s.start(); return { baseUrl, stop: () => s.stop() }; } };
+    if (b === 'cra') return { start: async () => { const s = new ProcessServer({ cwd: scan.root, pkg: 'react-scripts', args: ['start'], logger }); const baseUrl = await s.start(); return { baseUrl, stop: () => s.stop() }; } };
     return null; // unknown bundler: static verification only
   }
 }

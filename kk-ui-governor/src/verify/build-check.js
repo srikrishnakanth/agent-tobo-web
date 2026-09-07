@@ -4,6 +4,7 @@
 // blamed on the candidate).
 import path from 'node:path';
 import { spawn } from 'node:child_process';
+import { killTree } from '../server/spawn-util.js';
 
 const SKIP = new Set(['html', 'unsupported']);
 
@@ -35,13 +36,18 @@ export async function runBuildCheck(scan, { timeoutMs = 600000, logger, label = 
       env: { ...process.env, CI: '1', NEXT_TELEMETRY_DISABLED: '1', FORCE_COLOR: '0', NODE_ENV: undefined },
       stdio: ['ignore', 'pipe', 'pipe'],
       detached: process.platform !== 'win32',
+      // npm/pnpm/yarn are .cmd shims on Windows and cannot be spawned without a shell. The argument
+      // list is fixed ('run', '<script>') and the project path travels in `cwd`, never in the command
+      // string, so enabling the shell here cannot re-parse a path containing spaces.
+      shell: process.platform === 'win32',
+      windowsHide: true,
     });
     const onData = (d) => { output += d.toString(); if (output.length > 400000) output = output.slice(-200000); };
     proc.stdout.on('data', onData);
     proc.stderr.on('data', onData);
     const timer = setTimeout(() => {
       timedOut = true;
-      try { if (process.platform !== 'win32') process.kill(-proc.pid, 'SIGKILL'); else proc.kill(); } catch { /* gone */ }
+      killTree(proc).catch(() => {});
     }, timeoutMs);
     proc.on('error', (err) => {
       clearTimeout(timer);

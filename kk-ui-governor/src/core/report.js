@@ -22,11 +22,15 @@ export async function writeReport(tx, report, { embedScreenshots = true, maxEmbe
   return { html: htmlPath, json: jsonPath, md: mdPath };
 }
 
-async function imgSrc(file, budget) {
+async function imgSrc(file, budget, reportDir) {
   if (!file) return null;
   if (!(await exists(file))) return null;
   const buf = await fsp.readFile(file);
-  if (budget.used + buf.length > budget.max) return path.basename(file);
+  if (budget.used + buf.length > budget.max) {
+    // Too large to inline: link it relatively to the report file (POSIX separators so the href works
+    // on Windows too). A bare basename would only resolve if the image sat beside the report.
+    return reportDir ? path.relative(reportDir, file).split(path.sep).join('/') : path.basename(file);
+  }
   budget.used += buf.length;
   const mime = file.endsWith('.png') ? 'image/png' : 'image/jpeg';
   return `data:${mime};base64,${buf.toString('base64')}`;
@@ -43,12 +47,12 @@ async function renderHtml(tx, r, { embedScreenshots, maxEmbedBytes }) {
   const shots = [];
   for (const d of devices) {
     for (const s of d.screenshots || []) {
-      const src = await imgSrc(s.file, budget);
+      const src = await imgSrc(s.file, budget, tx.dir);
       if (src) shots.push({ ...s, device: d.label, src });
     }
   }
-  const previewCur = await imgSrc(r.preview?.current?.file, budget);
-  const previewCand = await imgSrc(r.preview?.candidate?.file, budget);
+  const previewCur = await imgSrc(r.preview?.current?.file, budget, tx.dir);
+  const previewCand = await imgSrc(r.preview?.candidate?.file, budget, tx.dir);
 
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">

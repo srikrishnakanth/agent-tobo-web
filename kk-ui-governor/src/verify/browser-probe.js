@@ -41,6 +41,7 @@ export function pageProbe(opts) {
   out.iframes = document.querySelectorAll('iframe').length;
   out.images = [...document.images].slice(0, 200).map((i) => ({ alt: i.hasAttribute('alt'), w: i.width, h: i.height, sized: !!(i.getAttribute('width') && i.getAttribute('height')) || !!(getComputedStyle(i).aspectRatio && getComputedStyle(i).aspectRatio !== 'auto'), loading: i.loading }));
   out.bodyBg = (function () { const b = getComputedStyle(document.body).backgroundColor; const h = getComputedStyle(document.documentElement).backgroundColor; const t = (c) => /rgba?\(\s*\d+,\s*\d+,\s*\d+,\s*0\)|transparent/.test(c); return !t(b) ? b : !t(h) ? h : effectiveBg(document.body).color; })();
+  out.scopeRoots = document.querySelectorAll('[data-kk-scope]').length;
   out.landmarks = { main: !!document.querySelector('main, [role="main"]'), nav: !!document.querySelector('nav, [role="navigation"]'), h1: document.querySelectorAll('h1').length, lang: !!de.getAttribute('lang'), title: !!document.title };
   out.forms = [...document.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="button"]), select, textarea')].slice(0, 100).map((i) => ({ d: descr(i), labelled: !!(i.labels && i.labels.length) || !!i.getAttribute('aria-label') || !!i.getAttribute('aria-labelledby') || !!i.closest('label') || !!i.getAttribute('title') }));
   // performance

@@ -50,7 +50,9 @@ Usage: kkgov <command> [options]
       --no-preview --no-baseline --no-build --allow-unsupported --max-pages N --vault <dir>
                                               The project build script runs after Write for framework projects.
                                               A build that was already broken is a warning, never charged to the candidate.
-  verify <dir> [--url <url>] [--verify mode]  Verify the project as it is now (no transaction)
+  verify <dir> [--url <url>] [--routes /,/pricing] [--verify mode]
+                                              Verify a project - or a live deployment via --url - with no transaction.
+                                              With --url the default route is "/"; pass --routes to check more.
   keep <dir> <txId> | rollback <dir> <txId>   Decide a pending transaction (rollback works on kept ones too)
   status <dir> | recover <dir> | report <dir> <txId>
   vault setup [--offline] | vault verify | vault list | vault search <query> [--style --page --framework --category]
@@ -110,14 +112,19 @@ try {
       const root = path.resolve(positional[0] || '.');
       const s = await scanProject(root, { logger });
       const adapter = pickAdapter(s);
-      const pages = s.pages.filter((p) => !p.dynamic).map((p) => p.route).slice(0, +(flags['max-pages'] || 6));
+      // Against a live origin the local file routes are usually wrong (/index.html vs /), so default
+      // to '/' unless the caller names the routes explicitly.
+      const explicit = flags.routes ? String(flags.routes).split(',').map((r) => r.trim()).filter(Boolean) : null;
+      const pages = explicit || (flags.url
+        ? ['/']
+        : s.pages.filter((p) => !p.dynamic).map((p) => p.route).slice(0, +(flags['max-pages'] || 6)));
       let running = null;
       try {
         let baseUrl = flags.url;
         if (!baseUrl) { const srv = adapter.serve({ scan: s, logger }); if (!srv) throw new Error('adapter cannot serve this project; pass --url'); running = await srv.start(); baseUrl = running.baseUrl; }
         const outDir = path.join(root, '.kk-governor', 'verify-' + Date.now());
-        const v = await runVerification({ baseUrl, pages: pages.length ? pages : ['/'], mode: flags.verify || 'standard', outDir, logger, label: 'current' });
-        json({ ok: v.ok, mode: v.mode, engine: v.engine, pages: v.pages, checks: v.checks.map((c) => ({ id: c.id, status: c.status, count: c.count, summary: c.summary })), outDir });
+        const v = await runVerification({ baseUrl, pages: pages.length ? pages : ['/'], mode: flags.verify || 'standard', outDir, logger, label: 'current', projectRoot: root });
+        json({ ok: v.ok, mode: v.mode, engine: v.engine, originRelayed: v.originRelayed || false, pages: v.pages, checks: v.checks.map((c) => ({ id: c.id, status: c.status, count: c.count, summary: c.summary })), outDir });
         process.exit(v.ok ? 0 : 1);
       } finally { await running?.stop(); }
     }
@@ -126,7 +133,12 @@ try {
       const { Governor } = await import('../src/core/governor.js');
       const g = new Governor({ projectRoot: path.resolve(positional[0] || '.'), logger });
       if (cmd === 'keep') json(await g.keep(positional[1]));
-      else if (cmd === 'rollback') json(await g.rollback(positional[1]));
+      else if (cmd === 'rollback') {
+        const r = await g.rollback(positional[1]);
+        json(r);
+        // A rollback that could not restore every file is a safety failure, not a success.
+        if (r.ok === false) { logger.error(`rollback incomplete: ${(r.problems || []).length} file(s) could not be restored`); process.exit(1); }
+      }
       else if (cmd === 'status') json((await g.status()).map((m) => ({ id: m.id, state: m.state, decision: m.decision, createdAt: m.createdAt, files: (m.files || []).length })));
       else if (cmd === 'recover') json(await g.recover());
       else json({ report: path.join(g.projectRoot, '.kk-governor', 'tx', positional[1], 'REPORT.html') });

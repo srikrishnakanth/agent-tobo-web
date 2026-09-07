@@ -14,7 +14,7 @@ import { buildTokens } from '../pipeline/tokens.js';
 import { pickAdapter } from '../adapters/registry.js';
 import { probeCandidate } from '../pipeline/probe.js';
 import { buildPreview } from '../pipeline/preview.js';
-import { runVerification, staticVerification, browserAvailable, compareGuards } from '../verify/runner.js';
+import { runVerification, staticVerification, browserAvailable, compareGuards, browserDiagnostics } from '../verify/runner.js';
 import { runBuildCheck, shouldBuildCheck } from '../verify/build-check.js';
 import { Catalog } from '../vault/catalog.js';
 import { DEFAULT_VAULT_DIR } from '../vault/index.js';
@@ -109,11 +109,18 @@ export class Governor {
       // Scoped run: every OTHER route is a guard route. Its computed styling is captured before and
       // after the write and must come back identical - that is the proof that an authenticated
       // dashboard (or any other page) was not redesigned.
-      const guardPages = selection.scopeSelector
-        ? scan.pages.filter((p) => !p.dynamic).map((p) => p.route).filter((r) => !pages.includes(r)).slice(0, options.maxGuardPages || 4)
+      const guardCap = options.maxGuardPages || 4;
+      const guardCandidates = selection.scopeSelector
+        ? scan.pages.filter((p) => !p.dynamic).map((p) => p.route).filter((r) => !pages.includes(r))
         : [];
+      const guardPages = guardCandidates.slice(0, guardCap);
+      // Never let a cap pass silently as full coverage.
+      const guardSkipped = guardCandidates.slice(guardCap);
+      const dynamicRoutes = selection.scopeSelector ? scan.pages.filter((p) => p.dynamic).map((p) => p.route) : [];
       if (guardPages.length) log.info(`scoped run: guarding ${guardPages.length} route(s) against any visual change: ${guardPages.join(', ')}`);
-      const haveBrowser = verifyMode !== 'static' && (await browserAvailable());
+      if (guardSkipped.length) log.warn(`guard cap ${guardCap} reached: ${guardSkipped.length} route(s) NOT checked for changes (${guardSkipped.join(', ')}) - raise --max-guard-pages to cover them`);
+      if (dynamicRoutes.length) log.warn(`${dynamicRoutes.length} dynamic route(s) cannot be guarded automatically: ${dynamicRoutes.join(', ')}`);
+      const haveBrowser = verifyMode !== 'static' && (await browserAvailable(this.projectRoot));
       const server = adapter.serve({ scan, logger: log });
       if (options.preview !== false) {
         try { preview = await buildPreview({ tx, scan, plan, adapter, pages, logger: log, browserAvailable: haveBrowser }); }
@@ -123,7 +130,7 @@ export class Governor {
         let running = null;
         try {
           running = await server.start();
-          baselineResult = await runVerification({ baseUrl: running.baseUrl, pages, guardPages, mode: verifyMode, outDir: path.join(tx.previewDir, 'baseline'), logger: log, label: 'baseline', screenshots: false });
+          baselineResult = await runVerification({ baseUrl: running.baseUrl, pages, guardPages, mode: verifyMode, outDir: path.join(tx.previewDir, 'baseline'), logger: log, label: 'baseline', screenshots: false, projectRoot: this.projectRoot });
           log.info(`baseline: ${baselineResult.ok ? 'clean' : baselineResult.checks.filter((c) => c.status === 'fail').map((c) => c.id + '=' + c.count).join(' ')}`);
         } catch (e) { log.warn(`baseline verification skipped: ${e.message}`); }
         finally { await running?.stop(); }
@@ -152,31 +159,45 @@ export class Governor {
         let running = null;
         try {
           running = await server.start();
-          verification = await runVerification({ baseUrl: running.baseUrl, pages, guardPages, mode: verifyMode, outDir: tx.verifyDir, baseline: baselineResult, logger: log, label: 'candidate', themeMode: selection.theme });
+          verification = await runVerification({ baseUrl: running.baseUrl, pages, guardPages, mode: verifyMode, outDir: tx.verifyDir, baseline: baselineResult, logger: log, label: 'candidate', themeMode: selection.theme, scopeSelector: selection.scopeSelector, scopeAutoApplied: plan.scopeAutoApplied !== false, projectRoot: this.projectRoot });
           // UNCHANGED-ROUTES: compare guard-route style signatures captured before and after the write.
           if (guardPages.length) {
             const cmp = compareGuards(baselineResult?.guards, verification.guards);
             const fails = cmp.findings.filter((f) => f.severity === 'fail');
+            const uncaptured = cmp.findings.filter((f) => f.severity !== 'fail');
+            // Fail closed: this check exists to PROVE other routes did not change. If a signature
+            // could not be captured, the proof is missing and the run must not be kept on trust.
+            const proven = cmp.compared > 0 && uncaptured.length === 0;
+            const notes = [];
+            if (guardSkipped.length) notes.push(`${guardSkipped.length} route(s) beyond --max-guard-pages ${guardCap} were NOT checked: ${guardSkipped.join(', ')}`);
+            if (dynamicRoutes.length) notes.push(`${dynamicRoutes.length} dynamic route(s) cannot be guarded: ${dynamicRoutes.join(', ')}`);
             const check = {
               id: 'UNCHANGED-ROUTES', name: 'Routes outside the upgraded scope are byte-identical in computed style',
-              status: fails.length ? 'fail' : cmp.compared ? 'pass' : 'warn',
-              count: fails.length, baselineCount: null,
-              summary: fails.length
-                ? `${fails.length} guard route/device pair(s) changed - the scope leaked`
-                : cmp.compared ? `${cmp.compared} guard route/device pair(s) identical before and after` : 'no guard signatures could be captured',
-              findings: cmp.findings.map((f) => ({ check: 'UNCHANGED-ROUTES', device: f.device, page: f.page, severity: f.severity, message: f.message, ...(f.examples ? { data: f.examples } : {}) })),
+              status: fails.length || !proven ? 'fail' : 'pass',
+              count: fails.length || (proven ? 0 : 1), baselineCount: null,
+              summary: [
+                fails.length ? `${fails.length} guard route/device pair(s) changed - the scope leaked`
+                  : proven ? `${cmp.compared} guard route/device pair(s) identical before and after`
+                  : `could not prove routes unchanged (${cmp.compared} compared, ${uncaptured.length} signature(s) unavailable)`,
+                ...notes,
+              ].join(' | '),
+              findings: cmp.findings.map((f) => ({ check: 'UNCHANGED-ROUTES', device: f.device, page: f.page, severity: f.severity === 'fail' ? 'fail' : 'fail', message: f.message, ...(f.examples ? { data: f.examples } : {}) })),
+              coverage: { guarded: guardPages, skipped: guardSkipped, dynamicUnguarded: dynamicRoutes, comparedPairs: cmp.compared },
             };
             const existing = verification.checks.findIndex((c) => c.id === 'UNCHANGED-ROUTES');
             if (existing >= 0) verification.checks[existing] = check; else verification.checks.push(check);
             verification.ok = verification.checks.every((c) => c.status !== 'fail');
-            verification.counts['UNCHANGED-ROUTES'] = fails.length;
+            verification.counts['UNCHANGED-ROUTES'] = check.count;
           }
           if (preview && !preview.candidate?.url) { const shot = verification.devices.find((d) => d.id === 'laptop-1280')?.screenshots?.[0]; if (shot) preview.candidate = { file: shot.file, note: 'captured after write, before keep/rollback decision' }; }
         } catch (e) { log.error(`verification could not run: ${e.message}`); verification = { ok: false, mode: verifyMode, engine: 'none', pages, devices: [], checks: [{ id: 'RUN', name: 'verification run', status: 'fail', count: 1, summary: e.message, findings: [] }] }; }
         finally { await running?.stop(); }
       } else {
         verification = staticVerification(plan, tokens);
-        verification.note = haveBrowser ? 'adapter cannot serve this project; static verification only' : 'no browser available; static verification only';
+        verification.note = haveBrowser
+          ? 'adapter cannot serve this project; static verification only'
+          : `no browser available; static verification only. ${browserDiagnostics.lastError || ''}`.trim();
+        verification.browserDiagnostics = { resolvedFrom: browserDiagnostics.resolvedFrom, lastError: browserDiagnostics.lastError, attempts: browserDiagnostics.attempts.slice(0, 8) };
         if (verifyMode !== 'static') verification.ok = false; // partial success is not completion
         log.warn(`static verification only: ${verification.note}`);
       }
@@ -207,7 +228,13 @@ export class Governor {
       if (!verification.ok) {
         decision = 'rollback'; decisionReason = `verification failed: ${verification.checks.filter((c) => c.status === 'fail').map((c) => c.id).join(', ')}`;
         const rb = await tx.rollback(decisionReason);
-        verdict = 'FAIL'; report.rollback = rb;
+        report.rollback = rb;
+        verdict = 'FAIL';
+        if (!rb.ok) {
+          // The project is now in a mixed state: say so loudly rather than reporting a clean failure.
+          decisionReason += ` | ROLLBACK INCOMPLETE: ${rb.problems.length} file(s) could not be restored - restore them from ${tx.backupDir}`;
+          log.error(`rollback incomplete: ${rb.problems.length} file(s) not restored`, rb.problems.slice(0, 10));
+        }
       } else if (decide === 'ask') {
         decision = 'pending'; decisionReason = 'verification passed; awaiting `kkgov keep` / `kkgov rollback`';
         await tx.setState(TX_STATES.PENDING); verdict = 'PENDING';
@@ -215,7 +242,10 @@ export class Governor {
         decision = 'rollback'; decisionReason = 'rollback requested (dry run)';
         report.rollback = await tx.rollback(decisionReason); verdict = 'PASS';
       } else {
-        await tx.keep('verification passed'); decision = 'keep'; decisionReason = 'verification passed on every gate'; verdict = 'PASS';
+        await tx.keep('verification passed'); decision = 'keep'; verdict = 'PASS';
+        decisionReason = selection.scopeSelector && plan.scopeAutoApplied === false
+          ? 'verification passed on every gate - NOTE: the design is staged but not yet visible; wrap the landing page in <KkScope> to activate it, then re-run apply to verify the result'
+          : 'verification passed on every gate';
       }
       await tx.stage('decide', 'done', { decision, reason: decisionReason });
     } catch (err) {
@@ -249,7 +279,8 @@ export class Governor {
     const tx = await Transaction.load(this.projectRoot, txId, { logger: this.logger });
     if (tx.state === TX_STATES.ROLLED_BACK) return { txId, state: tx.state, note: 'already rolled back' };
     const r = await tx.rollback('rollback by user');
-    await this._refreshReport(tx, 'rollback', 'rolled back by user', 'ROLLED_BACK');
+    await this._refreshReport(tx, 'rollback', r.ok ? 'rolled back by user' : `rollback INCOMPLETE: ${r.problems.length} file(s) not restored`, r.ok ? 'ROLLED_BACK' : 'ROLLBACK_FAILED');
+    if (!r.ok) this.logger.error(`rollback incomplete for ${txId}`, r.problems.slice(0, 10));
     return { txId, state: tx.state, ...r };
   }
 

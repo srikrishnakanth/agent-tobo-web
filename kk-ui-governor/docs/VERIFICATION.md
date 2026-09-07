@@ -1,6 +1,10 @@
 # Verification suite
 
-Engine: Playwright + Chromium (global or local install). Modes: `quick` (~17 contexts/page), `standard` (~41), `full` (~51), `static` (no browser; never counts as completion).
+Engine: Playwright + Chromium, resolved from the project's `node_modules` first, then platform-appropriate
+global locations (including `%APPDATA%\npm\node_modules` on Windows). A launch failure reports the real
+Chromium error and where it looked, and never degrades silently to a green run.
+
+Engine notes: Playwright + Chromium (global or local install). Modes: `quick` (~17 contexts/page), `standard` (~41), `full` (~51), `static` (no browser; never counts as completion).
 
 ## Device matrix (`src/verify/devices.js`)
 * Widths 240 → 3840 px sweep (27 widths in `full`), phones 360/390/412 portrait + 844×390 landscape, feature phone 240, foldables 280×653 (closed) / 717×512 (open) / 1114×705 (dual), tablets 768/1024, laptop 1280, 1440@2×, desktop 1920, ultrawide 3440, 4K 3840 (@1× and @2×).
@@ -29,6 +33,8 @@ Engine: Playwright + Chromium (global or local install). Modes: `quick` (~17 con
 | CONSOLE-ERRORS | runtime errors | any console error / pageerror / failed local request not in baseline |
 | EXTERNAL-RESOURCES | fonts / CDN | advisory: external resource failed |
 | A11Y-BASICS | landmarks, lang, alt, labels | advisory |
+| UNCHANGED-ROUTES* | scoped runs: other routes must not change | any computed-style difference on a guard route, or a signature that could not be captured |
+| SCOPE-ACTIVE | scoped runs: the design is actually applied | no scope root present where the adapter applies it automatically (advisory where a manual wrap is required) |
 | BUILD | the project's own production build | `npm run build` fails after the design is written (framework projects only) |
 
 ### Production build (BUILD)

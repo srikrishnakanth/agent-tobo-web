@@ -43,7 +43,7 @@ export class HtmlAdapter extends BaseAdapter {
       else notes.push(`could not inject into ${rel}`);
     }
     if (!targets.length) notes.push('no HTML entry files found: CSS emitted but not linked');
-    return { ops, dependencies: [], assets: tokens.assets, tokens, notes, manualSteps: [], pages, remediations: remediations.length, fontsInlined, scopeAudit };
+    return { ops, dependencies: [], assets: tokens.assets, tokens, notes, manualSteps: [], scopeAutoApplied: true, pages, remediations: remediations.length, fontsInlined, scopeAudit };
   }
 
   serve(ctx) {

@@ -43,14 +43,28 @@ export class BaseAdapter {
     const remediations = deriveRemediations(scan);
     const fontFaceCss = await fetchGoogleFontFaces(tokens.typography.googleFontsUrl, { cacheDir: path.join(ctx.vaultDir || DEFAULT_VAULT_DIR, 'cache'), logger: ctx.logger });
     const ops = [];
-    ops.push(await this.fileOp(scan.root, `${dir}/tokens.css`, emitTokensCss(tokens, { theme: selection.theme, tailwindV4, fontFaceCss })));
+    // tokens.css is mostly inert custom properties, but it also carries `color-scheme`, which IS a
+    // rendering property: left on :root it would change form controls and scrollbars app-wide. In a
+    // scoped run it goes through the same transform, which keeps the tokens global and confines the
+    // rendering declarations to the scope root.
+    const tokensCss = emitTokensCss(tokens, { theme: selection.theme, tailwindV4, fontFaceCss });
+    ops.push(await this.fileOp(scan.root, `${dir}/tokens.css`,
+      selection.scopeSelector ? scopeCss(tokensCss, selection.scopeSelector, { rootKind: this.scopeRootKind }) : tokensCss));
     const themeCss = emitThemeCss(tokens, selection, { remediations, importTokens, layer });
     if (selection.scopeSelector) {
       // Scoped mode: every rule is confined to the scope root, so no other route can change.
       const scoped = scopeCss(themeCss, selection.scopeSelector, { rootKind: this.scopeRootKind });
-      const audit = auditScope(scoped, selection.scopeSelector);
       ops.push(await this.fileOp(scan.root, `${dir}/theme.css`, scoped));
-      this._scopeAudit = { scope: selection.scopeSelector, rootKind: this.scopeRootKind, rules: audit.total, escapes: audit.unscoped };
+      // Audit every stylesheet the run emits, so the containment gate cannot be satisfied by one of
+      // them while another leaks.
+      const sheets = ops.filter((o) => o.path.endsWith('.css'));
+      let rules = 0; const escapes = [];
+      for (const sheet of sheets) {
+        const a = auditScope(sheet.content, selection.scopeSelector);
+        rules += a.total;
+        for (const e of a.unscoped) escapes.push(e);
+      }
+      this._scopeAudit = { scope: selection.scopeSelector, rootKind: this.scopeRootKind, sheets: sheets.map((o) => o.path), rules, escapes };
     } else {
       ops.push(await this.fileOp(scan.root, `${dir}/theme.css`, themeCss));
       this._scopeAudit = null;

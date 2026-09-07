@@ -1,6 +1,8 @@
 // Spawns a framework dev server (next dev, vite, react-scripts) on a free port and waits for it.
 import { spawn } from 'node:child_process';
+import { localCliCommand, killTree } from './spawn-util.js';
 import net from 'node:net';
+import path from 'node:path';
 import http from 'node:http';
 
 export async function freePort() {
@@ -19,30 +21,45 @@ export async function waitForHttp(url, { timeoutMs = 120000, intervalMs = 500 } 
 }
 
 export class ProcessServer {
-  constructor({ cwd, command, args, env = {}, readyPath = '/', logger, readyTimeoutMs = 180000 }) {
-    Object.assign(this, { cwd, command, args, env, readyPath, logger, readyTimeoutMs });
+  /**
+   * @param {object} o
+   * @param {string} [o.pkg] project-local package providing the CLI (preferred: avoids npx and, on
+   *   Windows, the cmd.exe wrapper whose orphaned child would hold file locks and break rollback).
+   * @param {string} [o.command] explicit command, used only when `pkg` is not given.
+   */
+  constructor({ cwd, command, args, pkg = null, binName = null, env = {}, readyPath = '/', logger, readyTimeoutMs = 180000 }) {
+    Object.assign(this, { cwd, command, args, pkg, binName, env, readyPath, logger, readyTimeoutMs });
     this.proc = null; this.output = '';
   }
   async start() {
     this.port = await freePort();
-    const args = this.args.map((a) => String(a).replace('{port}', String(this.port)));
+    const rawArgs = this.args.map((a) => String(a).replace('{port}', String(this.port)));
+    const recipe = this.pkg
+      ? await localCliCommand(this.cwd, this.pkg, rawArgs, this.binName || this.pkg)
+      : { command: this.command, args: rawArgs, shell: process.platform === 'win32', viaNode: false };
     const env = { ...process.env, PORT: String(this.port), BROWSER: 'none', CI: '1', NEXT_TELEMETRY_DISABLED: '1', FORCE_COLOR: '0', ...this.env };
-    this.logger?.info(`starting dev server: ${this.command} ${args.join(' ')} (port ${this.port})`);
-    this.proc = spawn(this.command, args, { cwd: this.cwd, env, stdio: ['ignore', 'pipe', 'pipe'], detached: process.platform !== 'win32', shell: process.platform === 'win32' });
+    this.logger?.info(`starting dev server: ${recipe.viaNode ? 'node ' + path.basename(recipe.args[0]) : recipe.command} ${rawArgs.join(' ')} (port ${this.port})`);
+    this.proc = spawn(recipe.command, recipe.args, { cwd: this.cwd, env, stdio: ['ignore', 'pipe', 'pipe'], detached: process.platform !== 'win32', shell: recipe.shell, windowsHide: true });
     const onData = (d) => { this.output += d.toString(); if (this.output.length > 200000) this.output = this.output.slice(-100000); };
     this.proc.stdout.on('data', onData); this.proc.stderr.on('data', onData);
     const exited = new Promise((resolve) => this.proc.on('exit', (code) => resolve(code)));
     const baseUrl = `http://127.0.0.1:${this.port}`;
     const ready = waitForHttp(baseUrl + this.readyPath, { timeoutMs: this.readyTimeoutMs });
-    const result = await Promise.race([ready.then(() => 'ready'), exited.then((code) => `exit:${code}`)]);
-    if (result !== 'ready') throw new Error(`dev server exited early (${result}). Output tail:\n${this.output.slice(-3000)}`);
+    let result;
+    try {
+      result = await Promise.race([ready.then(() => 'ready'), exited.then((code) => `exit:${code}`)]);
+    } catch (err) {
+      // Readiness timed out: the process is still running and would otherwise be orphaned, keeping a
+      // port bound and (on Windows) file handles open inside the project.
+      await this.stop();
+      throw new Error(`dev server never became ready: ${err.message}. Output tail:\n${this.output.slice(-3000)}`);
+    }
+    if (result !== 'ready') { await this.stop(); throw new Error(`dev server exited early (${result}). Output tail:\n${this.output.slice(-3000)}`); }
     return baseUrl;
   }
   async stop() {
     if (!this.proc) return;
     const p = this.proc; this.proc = null;
-    try { if (process.platform !== 'win32') process.kill(-p.pid, 'SIGTERM'); else p.kill(); } catch { try { p.kill('SIGTERM'); } catch { /* ignore */ } }
-    await new Promise((r) => setTimeout(r, 800));
-    try { if (process.platform !== 'win32') process.kill(-p.pid, 'SIGKILL'); } catch { /* already gone */ }
+    await killTree(p);
   }
 }

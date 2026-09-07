@@ -84,3 +84,22 @@ test('paths outside the project root are refused', async () => {
   await tx.setState(TX_STATES.STAGED);
   await assert.rejects(tx.applyOps([{ path: '../evil.txt', kind: 'create', content: 'x' }]), /outside project root/);
 });
+
+test('an incomplete rollback is reported as a failure, never as a clean rollback', async () => {
+  const root = await tmpProject();
+  const tx = await Transaction.open(root);
+  await tx.setState(TX_STATES.STAGED);
+  const before = await hashFile(path.join(root, 'index.html'));
+  await tx.applyOps([{ path: 'index.html', kind: 'modify', content: '<html><head><!-- z --></head><body>hi</body></html>', expectHash: before }]);
+  // Corrupt the backup so the restore cannot be verified - the failure mode that matters.
+  await fsp.writeFile(path.join(tx.backupDir, 'index.html'), 'TAMPERED');
+  const r = await tx.rollback('test');
+  assert.equal(r.ok, false);
+  assert.equal(r.problems.length, 1);
+  assert.match(r.problems[0].note, /backup hash mismatch/);
+  assert.equal(tx.state, TX_STATES.ROLLBACK_FAILED, 'state must not read as a clean rollback');
+  // and the governor-visible manifest agrees
+  const reloaded = await Transaction.load(root, tx.id);
+  assert.equal(reloaded.state, TX_STATES.ROLLBACK_FAILED);
+  assert.equal(reloaded.manifest.rollback.ok, false);
+});

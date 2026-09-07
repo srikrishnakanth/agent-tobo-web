@@ -94,7 +94,13 @@ if ($code -ne 0) { Fail "vault setup failed (exit $code). See $(Join-Path $Vault
 if ($InstallPlaywright) {
   Write-Step "Installing Playwright Chromium for the verification suite"
   Push-Location $Root
-  try { & npm install --no-audit --no-fund; & npx playwright install chromium } finally { Pop-Location }
+  try {
+    & npm install --no-audit --no-fund
+    if ($LASTEXITCODE -ne 0) { Fail "npm install failed (exit $LASTEXITCODE); the verification suite will not be able to run" }
+    & npx playwright install chromium
+    if ($LASTEXITCODE -ne 0) { Fail "playwright install failed (exit $LASTEXITCODE); run 'npx playwright install chromium' manually" }
+    Write-Step "Playwright Chromium ready"
+  } finally { Pop-Location }
 }
 
 Write-Step "Done. Catalog: $(Join-Path $VaultDir 'catalog.json')  Notices: $(Join-Path $VaultDir 'NOTICES.md')  Report: $(Join-Path $VaultDir 'SETUP-REPORT.json')"

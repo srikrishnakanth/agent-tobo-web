@@ -75,14 +75,14 @@ export default KkScope;
     if (selection.scopeSelector) manualSteps.push(`Optional: render <KkThemeProvider> INSIDE <KkScope> (not in the root layout) so the motion runtime stays on the landing page only.`);
     else manualSteps.push(`Optional: wrap {children} in <KkThemeProvider> (client component in ${dir}) to enable the motion runtime and theme toggle.`);
     if (fw.router === 'unknown') notes.push('could not determine app/pages router; default route "/" will be verified');
-    return { ops, dependencies: [], assets: tokens.assets, tokens, notes, manualSteps, pages: selectPages(scan, selection), remediations: remediations.length, fontsInlined, scopeAudit };
+    return { ops, dependencies: [], assets: tokens.assets, tokens, notes, manualSteps, scopeAutoApplied: !selection.scopeSelector, pages: selectPages(scan, selection), remediations: remediations.length, fontsInlined, scopeAudit };
   }
 
   serve(ctx) {
     const { scan, logger, production = false } = ctx;
     return {
       start: async () => {
-        const s = new ProcessServer({ cwd: scan.root, command: 'npx', args: production ? ['next', 'start', '-p', '{port}'] : ['next', 'dev', '-p', '{port}', '-H', '127.0.0.1'], logger, readyTimeoutMs: 240000 });
+        const s = new ProcessServer({ cwd: scan.root, pkg: 'next', args: production ? ['start', '-p', '{port}'] : ['dev', '-p', '{port}', '-H', '127.0.0.1'], logger, readyTimeoutMs: 240000 });
         const baseUrl = await s.start();
         return { baseUrl, stop: () => s.stop() };
       },

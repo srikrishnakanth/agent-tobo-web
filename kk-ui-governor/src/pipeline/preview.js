@@ -24,7 +24,7 @@ export async function buildPreview({ tx, scan, plan, adapter, pages, logger, bro
   out.gallery = { file: galleryPath };
 
   if (!browserAvailable) { out.notes.push('browser not available: preview limited to gallery.html'); out.html = await writePreviewHtml(previewDir, out); return out; }
-  const browser = await launchBrowser();
+  const browser = await launchBrowser(scan.root);
   try {
     // 2. current
     const server = adapter.serve({ scan, logger });

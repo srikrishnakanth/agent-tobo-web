@@ -18,6 +18,9 @@ Everything is selectable; anything left unset is auto-recommended from the scan.
 --components buttons,inputs,cards,tables,navigation,sidebar,modals,charts,carousel
 --effects    animations,micro-interactions,scroll-effects,carousel,parallax,3d
 --brand-mode preserve | replace
+--landing-only             upgrade ONLY the landing page; every other route is provably untouched
+--scope <name>             same, with a custom scope name (default scope is "global" = whole project)
+--max-guard-pages <n>      how many other routes to prove unchanged (default 4; the rest are reported, never hidden)
 --radius <px>
 ```
 
@@ -31,6 +34,8 @@ Everything is selectable; anything left unset is auto-recommended from the scan.
                                         --no-baseline makes verification strict: with nothing to compare against,
                                         the project's own pre-existing findings are charged to the candidate.
                                         --no-build skips the project's production build check (framework projects).
+kkgov verify <project> --url <origin> [--routes /,/pricing]
+                                        run the same device/accessibility matrix against a LIVE deployment
 kkgov status <project>                  list transactions
 kkgov keep|rollback <project> <txId>    decide / undo (rollback also undoes kept transactions)
 kkgov recover <project>                 roll back anything interrupted by a crash

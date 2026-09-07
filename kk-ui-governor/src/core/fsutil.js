@@ -39,7 +39,22 @@ export async function atomicWrite(file, content) {
   await fsp.mkdir(path.dirname(file), { recursive: true });
   const tmp = `${file}.${process.pid}.${Date.now()}.tmp`;
   await fsp.writeFile(tmp, content);
-  await fsp.rename(tmp, file);
+  try {
+    // On Windows, rename onto an existing file fails with EPERM/EBUSY/EACCES while any process still
+    // holds a handle to the target (an editor, antivirus scan, or a dev server that has not exited
+    // yet). Retry briefly, then surface a clear error - and never leave a .tmp file in the project.
+    let lastErr = null;
+    for (let attempt = 0; attempt < 6; attempt++) {
+      try { await fsp.rename(tmp, file); return; } catch (err) {
+        lastErr = err;
+        if (!['EPERM', 'EBUSY', 'EACCES'].includes(err.code)) throw err;
+        await new Promise((r) => setTimeout(r, 40 * 2 ** attempt));
+      }
+    }
+    throw Object.assign(new Error(`could not replace ${file} after 6 attempts: ${lastErr && lastErr.code}. Close any process holding the file (editor, dev server, antivirus) and retry.`), { code: lastErr && lastErr.code, cause: lastErr });
+  } finally {
+    await fsp.rm(tmp, { force: true }).catch(() => {});
+  }
 }
 
 /** Recursively walk a directory, skipping ignored dirs; returns absolute file paths. */

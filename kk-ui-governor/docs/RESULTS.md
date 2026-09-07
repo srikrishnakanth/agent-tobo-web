@@ -5,12 +5,13 @@ All figures below come from the archived `REPORT.json` files in `../reports/`.
 
 ## Unit tests
 
-`npm test` — **32 passing, 0 failing**. Coverage: transaction journal (backup, atomic write, byte-exact
+`npm test` — **47 passing, 0 failing**. Coverage: transaction journal (backup, atomic write, byte-exact
 rollback, crash recovery, plan/reality mismatch, path traversal), all 9 safety gates, SPDX policy and
 license-text detection, colour math, scanner detections, recommendation coherence, token contrast across
 every style × platform × preset, vault manifest/catalog/integrity, adapters (HTML additive injection,
 Next.js client directives, unsupported handling), device-matrix coverage, and the production build check
-(skip rules, success, failure, timeout, log extraction).
+(skip rules, success, failure, timeout, log extraction), CSS scope
+transformation, and project-local binary resolution.
 
 `npm run test:e2e` — **4 passing, 0 failing**: the full flow on the HTML sample, the forced-failure
 rollback proof, the `decide=ask` pending/keep path, and strict no-baseline mode.
@@ -79,3 +80,44 @@ Genuine candidate defects found by the suite and fixed in the *generator* includ
 bar covering 42 % of a 240px viewport, `on-primary` label contrast below AA on mid-luminance brand colours,
 dark tokens applied over hard-coded light surfaces in projects without dark-mode support, and Tailwind v4
 bundling order dropping the font `@import`.
+
+## Windows readiness (second session)
+
+The tool was audited specifically for running on Windows against a path containing spaces
+(`C:\projects\JBRH PRODUCTS\...`). Findings were verified adversarially before being fixed; the
+audit's own false positives were discarded. Confirmed and fixed:
+
+| Severity | Defect | Effect on Windows | Fix |
+|---|---|---|---|
+| blocker | `[switch]$Verbose` duplicated the `CmdletBinding` common parameter, and `$args` is an automatic variable | the PowerShell bootstrap **could not run at all** (`A parameter with the name 'Verbose' was defined multiple times`) | removed the switch, read `$VerbosePreference`, renamed to `$nodeArgs`; verified with PowerShell 7.4.6 |
+| blocker | `PKG_ROOT` came from `url.pathname` | yields `/C:/projects/JBRH%20PRODUCTS/...` — leading slash and `%20`; the vault was unfindable | `fileURLToPath()` |
+| blocker | dev servers spawned via `npx` with `shell:true` | the real server runs under a `cmd.exe` wrapper; killing the child orphans it, and it keeps file handles open inside the project so **rollback fails** | resolve the package's own JS entry from `node_modules` and run it with the current Node binary — no shell, no wrapper |
+| blocker | `process.kill(-pid)` is POSIX-only | process trees survived on Windows | `taskkill /T /F` on win32 |
+| blocker | an incomplete rollback still reported success | a partially restored project looked clean | distinct `rollback_failed` state, non-zero exit, explicit report text |
+| blocker | `npm` spawned without a shell in the build gate | `npm` is `npm.cmd`; ENOENT | shell on win32 only (arguments are fixed; the project path travels in `cwd`) |
+| major | `fs.rename` had no retry | EPERM/EBUSY while any process holds the target, leaving a `.tmp` file in the project | bounded retry plus guaranteed cleanup |
+| major | Playwright resolved only from POSIX paths; launch errors were swallowed | silent degradation to static-only verification | project-local resolution first, Windows global paths, real error surfaced |
+| major | report screenshots fell back to a bare basename | broken images in `REPORT.html` | path relative to the report, POSIX separators |
+
+Verified end to end: a full `apply` against `/tmp/kk space test/JBRH PRODUCTS/MAYA-DEVICE-SALES-SERVICE/connect-by-jbrh`
+(the same directory shape, spaces included) passes.
+
+## Landing-page-only scoping
+
+A scoped run confines every generated rule to a scope root. Verified on a purpose-built sample with a
+landing page, a dashboard and a settings page:
+
+- **G10 scope-containment**: 167 rules scoped across both emitted stylesheets, 0 renderable escapes.
+  The only globally-scoped blocks declare custom properties, which render nothing.
+- **UNCHANGED-ROUTES**: computed-style signatures of `/dashboard.html` and `/settings.html` captured
+  before and after the write on desktop and phone — 4 pairs, all identical. The check fails closed if
+  a signature cannot be captured, and reports any route beyond the guard cap rather than hiding it.
+- **SCOPE-ACTIVE**: reports when a design is staged but not yet visible, so a green run can never be
+  mistaken for an applied one.
+- Files: only `index.html` was modified, by a single marker block; `dashboard.html`, `settings.html`
+  and the shared stylesheet were untouched.
+
+Two real bugs in that new code were caught by auditing it immediately after writing it: `tokens.css`
+was not being scoped (so `color-scheme` — a rendering property — still applied application-wide), and
+root-qualified selectors like `:root[data-theme="dark"]` were rewritten as descendants even when the
+scope root *was* `<html>`. Both are fixed and covered by tests.

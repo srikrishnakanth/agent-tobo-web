@@ -11,23 +11,47 @@ import { contrastRatio, parseColor } from '../intelligence/color.js';
 
 const require = createRequire(import.meta.url);
 
-export async function loadPlaywright() {
-  const candidates = ['playwright', 'playwright-core', '/opt/node22/lib/node_modules/playwright', path.join(process.execPath, '..', '..', 'lib', 'node_modules', 'playwright')];
-  for (const c of candidates) { try { const m = require(c); if (m.chromium) return m; } catch { /* next */ } }
+export const browserDiagnostics = { attempts: [], resolvedFrom: null, lastError: null };
+
+export async function loadPlaywright(projectRoot = null) {
+  const candidates = ['playwright', 'playwright-core'];
+  // Project-local install (most common for a real project).
+  if (projectRoot) candidates.push(path.join(projectRoot, 'node_modules', 'playwright'), path.join(projectRoot, 'node_modules', 'playwright-core'));
+  // Global installs, per platform. npm on Windows puts globals under %APPDATA%\npm\node_modules.
+  if (process.platform === 'win32') {
+    if (process.env.APPDATA) candidates.push(path.join(process.env.APPDATA, 'npm', 'node_modules', 'playwright'));
+    candidates.push(path.join(path.dirname(process.execPath), 'node_modules', 'playwright'));
+  } else {
+    candidates.push('/opt/node22/lib/node_modules/playwright', '/usr/lib/node_modules/playwright', '/usr/local/lib/node_modules/playwright');
+  }
+  candidates.push(path.join(process.execPath, '..', '..', 'lib', 'node_modules', 'playwright'));
+  browserDiagnostics.attempts = [];
+  for (const c of candidates) {
+    try { const m = require(c); if (m.chromium) { browserDiagnostics.resolvedFrom = c; return m; } }
+    catch (e) { browserDiagnostics.attempts.push(`${c}: ${String(e.code || e.message).slice(0, 80)}`); }
+  }
   return null;
 }
 
-export async function launchBrowser() {
-  const pw = await loadPlaywright();
-  if (!pw) throw new Error('playwright not available');
+export async function launchBrowser(projectRoot = null) {
+  const pw = await loadPlaywright(projectRoot);
+  if (!pw) throw new Error(`Playwright is not installed. Run "npm install -D playwright && npx playwright install chromium" in the project, or install it globally. Looked in:\n  ${browserDiagnostics.attempts.join('\n  ')}`);
   const opts = { headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'] };
   // The browser talks to local dev servers directly. External resources (fonts/CDNs) are relayed
   // through Node's fetch (see installRelay), which honours the host's proxy/CA configuration.
   if (process.env.KKGOV_BROWSER_PROXY && process.env.KKGOV_BROWSER_PROXY !== 'off') opts.proxy = { server: process.env.KKGOV_BROWSER_PROXY, bypass: 'localhost,127.0.0.1' };
   try { return await pw.chromium.launch(opts); }
   catch (e) {
-    const exe = process.env.KKGOV_CHROMIUM || '/opt/pw-browsers/chromium';
-    try { return await pw.chromium.launch({ ...opts, executablePath: exe }); } catch { throw e; }
+    browserDiagnostics.lastError = String(e.message || e).split('\n')[0];
+    const exe = process.env.KKGOV_CHROMIUM;
+    if (exe) {
+      try { return await pw.chromium.launch({ ...opts, executablePath: exe }); }
+      catch (e2) { throw new Error(`Chromium failed to launch (${browserDiagnostics.lastError}); KKGOV_CHROMIUM=${exe} also failed: ${String(e2.message).split('\n')[0]}`); }
+    }
+    if (process.platform !== 'win32') {
+      try { return await pw.chromium.launch({ ...opts, executablePath: '/opt/pw-browsers/chromium' }); } catch { /* fall through to the real error */ }
+    }
+    throw new Error(`Chromium failed to launch: ${browserDiagnostics.lastError}. Run "npx playwright install chromium", or set KKGOV_CHROMIUM to a Chrome/Chromium executable.`);
   }
 }
 
@@ -35,9 +59,19 @@ export async function launchBrowser() {
 // Sandboxed cloud hosts often let Node reach the internet (via a proxy) while the browser cannot.
 // The relay serves external requests from Node's fetch so fonts/CDNs load realistically.
 const relayCache = new Map();
-export async function installRelay(context, { timeoutMs = 8000 } = {}) {
+export async function installRelay(context, { timeoutMs = 8000, originHost = null } = {}) {
   if (process.env.KKGOV_EXTERNAL_RELAY === 'off') return;
-  await context.route((url) => !/^(127\.0\.0\.1|localhost)$/.test(url.hostname) && /^https?:$/.test(url.protocol), async (route, request) => {
+  // Relay only genuinely third-party hosts (fonts, CDNs). The origin under test must be fetched by
+  // the browser itself: replaying it through Node would bypass its real delivery path - redirects,
+  // caching headers, cookies, CDN behaviour - and would not be a test of that deployment at all.
+  // KKGOV_RELAY_ORIGIN=1 also relays the origin under test. Needed only in sandboxes/CI where the
+  // browser itself has no outbound network. It means the deployment's real delivery path (redirects,
+  // caching, CDN, cookies) is NOT exercised, so the run is reported as relayed rather than live.
+  const relayOrigin = process.env.KKGOV_RELAY_ORIGIN === '1';
+  const isThirdParty = (url) => /^https?:$/.test(url.protocol)
+    && !/^(127\.0\.0\.1|localhost)$/.test(url.hostname)
+    && (relayOrigin || !originHost || url.host !== originHost);
+  await context.route(isThirdParty, async (route, request) => {
     const url = request.url();
     if (request.method() !== 'GET') return route.continue();
     try {
@@ -59,13 +93,16 @@ export async function installRelay(context, { timeoutMs = 8000 } = {}) {
   });
 }
 
-export async function newVerifiedContext(browser, options) {
+export async function newVerifiedContext(browser, options, { originHost = null } = {}) {
   const ctx = await browser.newContext(options);
-  await installRelay(ctx);
+  await installRelay(ctx, { originHost });
   return ctx;
 }
 
-export async function browserAvailable() { try { const b = await launchBrowser(); await b.close(); return true; } catch { return false; } }
+export async function browserAvailable(projectRoot = null) {
+  try { const b = await launchBrowser(projectRoot); await b.close(); return true; }
+  catch (e) { browserDiagnostics.lastError = String(e.message || e); return false; }
+}
 
 // Checks the Governor guarantees regardless of the project's prior state.
 const ABSOLUTE = new Set(['FOCUS-VISIBLE', 'REDUCED-MOTION', 'ANIM-3D-FALLBACK', 'FORCED-COLORS']);
@@ -74,20 +111,24 @@ const ABSOLUTE = new Set(['FOCUS-VISIBLE', 'REDUCED-MOTION', 'ANIM-3D-FALLBACK',
  * @param {object} o { baseUrl, pages, mode, outDir, baseline?, logger, label }
  * @returns verification result
  */
-export async function runVerification({ baseUrl, pages, guardPages = [], mode = 'standard', outDir, baseline = null, logger, label = 'candidate', screenshots = true, themeMode = 'auto' }) {
+export async function runVerification({ baseUrl, pages, guardPages = [], mode = 'standard', outDir, baseline = null, logger, label = 'candidate', screenshots = true, themeMode = 'auto', scopeSelector = null, scopeAutoApplied = true, projectRoot = null }) {
+  // A trailing slash would produce '//route' once a route is appended.
+  baseUrl = String(baseUrl).replace(/\/+$/, '');
+  let originHost = null;
+  try { originHost = new URL(baseUrl).host; } catch { /* leave null: everything counts as external */ }
   const devices = planDevices(mode);
   await fsp.mkdir(outDir, { recursive: true });
-  const browser = await launchBrowser();
+  const browser = await launchBrowser(projectRoot);
   const version = browser.version();
   const raw = []; // { device, page, probe, console, keyboard, screenshot }
   let log_guards = null;
   const started = Date.now();
   try {
     // Warm-up (dev servers compile on first request)
-    for (const p of pages) { const ctx = await newVerifiedContext(browser, {}); const pg = await ctx.newPage(); try { await pg.goto(baseUrl + p, { waitUntil: 'load', timeout: 180000 }); } catch (e) { logger?.warn(`warm-up ${p}: ${e.message}`); } await ctx.close(); }
+    for (const p of pages) { const ctx = await newVerifiedContext(browser, {}, { originHost }); const pg = await ctx.newPage(); try { await pg.goto(baseUrl + p, { waitUntil: 'load', timeout: 180000 }); } catch (e) { logger?.warn(`warm-up ${p}: ${e.message}`); } await ctx.close(); }
     for (const d of devices) {
       for (const p of pages) {
-        const r = await measure(browser, d, baseUrl + p, { outDir, label, screenshots, logger });
+        const r = await measure(browser, d, baseUrl + p, { outDir, label, screenshots, logger, originHost });
         raw.push({ deviceId: d.id, device: d, page: p, ...r });
       }
     }
@@ -96,7 +137,7 @@ export async function runVerification({ baseUrl, pages, guardPages = [], mode = 
       logger?.info(`captured style signatures for ${guardPages.length} guard route(s)`);
     }
   } finally { await browser.close(); }
-  const checks = evaluate(raw, baseline, { themeMode });
+  const checks = evaluate(raw, baseline, { themeMode, scopeSelector, scopeAutoApplied });
   const perDevice = devices.map((d) => {
     const rs = raw.filter((r) => r.deviceId === d.id);
     const failed = rs.some((r) => r.error);
@@ -108,12 +149,14 @@ export async function runVerification({ baseUrl, pages, guardPages = [], mode = 
 }
 function p(page) { return page === '/' ? 'home' : page.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, ''); }
 
-async function measure(browser, d, url, { outDir, label, screenshots, logger }) {
-  const ctx = await newVerifiedContext(browser, { viewport: { width: d.width, height: d.height }, deviceScaleFactor: d.dpr, isMobile: d.isMobile, hasTouch: d.hasTouch, colorScheme: d.colorScheme, reducedMotion: d.reducedMotion, forcedColors: d.forcedColors, ignoreHTTPSErrors: true });
+async function measure(browser, d, url, { outDir, label, screenshots, logger, originHost }) {
+  const ctx = await newVerifiedContext(browser, { viewport: { width: d.width, height: d.height }, deviceScaleFactor: d.dpr, isMobile: d.isMobile, hasTouch: d.hasTouch, colorScheme: d.colorScheme, reducedMotion: d.reducedMotion, forcedColors: d.forcedColors, ignoreHTTPSErrors: true }, { originHost });
   const page = await ctx.newPage();
   const consoleErrors = [];
   const external = [];
-  const isExternal = (u) => { try { const h = new URL(u).host; return !!h && !/^(127\.0\.0\.1|localhost)(:\d+)?$/.test(h); } catch { return false; } };
+  // "External" means a different origin than the one being verified. Against a live deployment the
+  // site's own host is first-party, so its failures must surface as real errors.
+  const isExternal = (u) => { try { const h = new URL(u).host; return !!h && h !== originHost; } catch { return false; } };
   page.on('console', (m) => { if (m.type() !== 'error') return; const u = m.location()?.url || ''; const text = m.text().slice(0, 300); if (/Failed to load resource/.test(text) && isExternal(u)) external.push(`${text} (${u.slice(0, 120)})`); else consoleErrors.push(text + (u && isExternal(u) ? ` (${u.slice(0, 100)})` : '')); });
   page.on('pageerror', (e) => consoleErrors.push('pageerror: ' + String(e.message || e).slice(0, 300)));
   page.on('requestfailed', (r) => { const f = r.failure()?.errorText || ''; if (/net::ERR_ABORTED|BLOCKED_BY_CLIENT/.test(f)) return; if (isExternal(r.url())) external.push(`requestfailed: ${r.url().slice(0, 120)} ${f}`); else consoleErrors.push(`requestfailed: ${r.url().slice(0, 120)} ${f}`); });
@@ -185,12 +228,12 @@ export function styleSignatureProbe() {
 }
 
 /** Collect style signatures for guard routes (routes that must NOT change). */
-export async function measureGuards(browser, pages, baseUrl, { devices = [{ id: 'guard-desktop', width: 1280, height: 800, dpr: 1, isMobile: false }, { id: 'guard-phone', width: 390, height: 844, dpr: 2, isMobile: true }], logger } = {}) {
+export async function measureGuards(browser, pages, baseUrl, { devices = [{ id: 'guard-desktop', width: 1280, height: 800, dpr: 1, isMobile: false }, { id: 'guard-phone', width: 390, height: 844, dpr: 2, isMobile: true }], logger, originHost = null } = {}) {
   const guards = {};
   for (const p of pages) {
     guards[p] = {};
     for (const d of devices) {
-      const ctx = await newVerifiedContext(browser, { viewport: { width: d.width, height: d.height }, deviceScaleFactor: d.dpr, isMobile: d.isMobile, hasTouch: d.isMobile, ignoreHTTPSErrors: true });
+      const ctx = await newVerifiedContext(browser, { viewport: { width: d.width, height: d.height }, deviceScaleFactor: d.dpr, isMobile: d.isMobile, hasTouch: d.isMobile, ignoreHTTPSErrors: true }, { originHost });
       const page = await ctx.newPage();
       try {
         await page.goto(baseUrl + p, { waitUntil: 'load', timeout: 120000 });
@@ -224,7 +267,7 @@ export function compareGuards(before, after) {
 }
 
 // ------------------------------------------------------------------------------- evaluation
-export function evaluate(raw, baseline, { themeMode = 'auto' } = {}) {
+export function evaluate(raw, baseline, { themeMode = 'auto', scopeSelector = null, scopeAutoApplied = true } = {}) {
   const F = []; // findings
   const add = (check, device, page, severity, message, data) => F.push({ check, device, page, severity, message, ...(data ? { data } : {}) });
   const ok = raw.filter((r) => r.probe);
@@ -321,11 +364,25 @@ export function evaluate(raw, baseline, { themeMode = 'auto' } = {}) {
       for (const m of k.invisibleFocus.slice(0, 10)) add('KEYBOARD-NAV', r.deviceId, r.page, 'fail', `focus landed on an invisible element ${m}`);
     }
   }
+  // In a scoped run the styling only takes effect where a scope root exists. Say so plainly rather
+  // than letting a green report imply the page was restyled when it was not.
+  if (scopeSelector) {
+    for (const r of ok) {
+      if (!r.device.deep) continue;
+      const present = (r.probe.scopeRoots || 0) > 0;
+      if (present) continue;
+      add('SCOPE-ACTIVE', r.deviceId, r.page, scopeAutoApplied ? 'fail' : 'warn',
+        scopeAutoApplied
+          ? `no element carries the scope attribute, so the generated design is not applied on ${r.page}`
+          : `the design is staged but NOT yet visible: wrap this page's content in <KkScope> to activate it`);
+    }
+  }
+
   const DEFS = [
     ['LOAD', 'Pages load and can be measured on every device'], ['RESP-SWEEP', 'Responsive layout sweep 240px → 3840px (no horizontal overflow)'], ['MOBILE-ORIENT', 'Mobile portrait / landscape'], ['FOLDABLE', 'Foldable widths (closed / open / dual)'], ['DPR', 'Device pixel ratio 1× / 2× / 3×'],
     ['THEME', 'Light / dark scheme'], ['FONT-200', '200% font scaling (no overflow / clipping)'], ['KEYBOARD-NAV', 'Keyboard navigation'], ['FOCUS-VISIBLE', 'Focus visibility'], ['CONTRAST', 'WCAG AA text contrast'], ['FORCED-COLORS', 'forced-colors (Windows High Contrast)'],
     ['REDUCED-MOTION', 'prefers-reduced-motion honoured'], ['OVERFLOW', 'Overflow culprits on deep devices'], ['LAYOUT-SHIFT', 'Layout shift (CLS ≤ 0.1) and reserved media space'], ['STICKY-FIXED', 'Fixed / sticky elements sane'], ['TOUCH-TARGET', 'Touch target size (≥ 24px, ideally 44px)'],
-    ['PERF', 'Performance budget (load, fps, long tasks, DOM, transfer)'], ['ANIM-3D-FALLBACK', 'Animation / 3D degrade on reduced-motion & low-end'], ['CONSOLE-ERRORS', 'No console / runtime errors'], ['EXTERNAL-RESOURCES', 'External resources (fonts/CDN) reachable'], ['UNCHANGED-ROUTES', 'Routes outside the upgraded scope are byte-identical in computed style'], ['A11Y-BASICS', 'Landmarks, lang, alt text, form labels'],
+    ['PERF', 'Performance budget (load, fps, long tasks, DOM, transfer)'], ['ANIM-3D-FALLBACK', 'Animation / 3D degrade on reduced-motion & low-end'], ['CONSOLE-ERRORS', 'No console / runtime errors'], ['EXTERNAL-RESOURCES', 'External resources (fonts/CDN) reachable'], ['UNCHANGED-ROUTES', 'Routes outside the upgraded scope are byte-identical in computed style'], ['SCOPE-ACTIVE', 'The scoped design is actually applied on the upgraded page'], ['A11Y-BASICS', 'Landmarks, lang, alt text, form labels'],
   ];
   const checks = DEFS.map(([id, name]) => {
     const findings = F.filter((f) => f.check === id);

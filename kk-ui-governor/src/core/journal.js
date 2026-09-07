@@ -26,6 +26,7 @@ export const TX_STATES = Object.freeze({
   PENDING: 'pending',      // verified OK, user decision requested (decide=ask)
   KEPT: 'kept',            // committed; backups retained for manual rollback
   ROLLED_BACK: 'rolled_back',
+  ROLLBACK_FAILED: 'rollback_failed', // restore did not fully succeed; the project needs manual attention
   FAILED: 'failed',        // aborted before any project mutation
 });
 
@@ -257,7 +258,7 @@ export class Transaction {
     const ok = problems.length === 0;
     await this.append({ op: 'rollback_done', ok, restored: restored.length, problems });
     this.manifest.rollback = { reason, ok, restored, problems, at: new Date().toISOString() };
-    await this.setState(TX_STATES.ROLLED_BACK, { decision: 'rollback' });
+    await this.setState(ok ? TX_STATES.ROLLED_BACK : TX_STATES.ROLLBACK_FAILED, { decision: 'rollback' });
     this.logger?.[ok ? 'info' : 'error'](`rollback ${ok ? 'complete' : 'completed with problems'}: ${restored.length} file(s) restored`, ok ? undefined : problems);
     return { ok, restored, problems };
   }

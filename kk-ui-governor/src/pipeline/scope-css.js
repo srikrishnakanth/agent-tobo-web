@@ -106,7 +106,15 @@ export function scopeSelectorList(selectorList, scope, keepRootVars = true, body
     if (rootQualified) {
       const qualifier = rootQualified[1];
       const rest = rootQualified[2].trim();
-      mapped.push(`html${qualifier} ${rest ? rest + ' ' : ''}${rest ? '' : ''}${scope}${rest ? '' : ''}`.replace(/\s+/g, ' ').trim());
+      if (rootKind === 'html') {
+        // The scope attribute is ON <html>, so the qualifier applies to the scope root itself:
+        //   :root[data-theme="dark"] .x  ->  [data-kk-scope="landing"][data-theme="dark"] .x
+        mapped.push(`${scope}${qualifier}${rest ? ' ' + rest : ''}`);
+      } else {
+        // The scope root is a wrapper inside body, so the root qualifier stays an ancestor condition:
+        //   :root[data-theme="dark"] .x  ->  html[data-theme="dark"] [data-kk-scope="landing"] .x
+        mapped.push(`html${qualifier} ${scope}${rest ? ' ' + rest : ''}`);
+      }
       continue;
     }
     mapped.push(`${scope} ${sel}`);
