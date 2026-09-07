@@ -74,12 +74,13 @@ const ABSOLUTE = new Set(['FOCUS-VISIBLE', 'REDUCED-MOTION', 'ANIM-3D-FALLBACK',
  * @param {object} o { baseUrl, pages, mode, outDir, baseline?, logger, label }
  * @returns verification result
  */
-export async function runVerification({ baseUrl, pages, mode = 'standard', outDir, baseline = null, logger, label = 'candidate', screenshots = true, themeMode = 'auto' }) {
+export async function runVerification({ baseUrl, pages, guardPages = [], mode = 'standard', outDir, baseline = null, logger, label = 'candidate', screenshots = true, themeMode = 'auto' }) {
   const devices = planDevices(mode);
   await fsp.mkdir(outDir, { recursive: true });
   const browser = await launchBrowser();
   const version = browser.version();
   const raw = []; // { device, page, probe, console, keyboard, screenshot }
+  let log_guards = null;
   const started = Date.now();
   try {
     // Warm-up (dev servers compile on first request)
@@ -90,6 +91,10 @@ export async function runVerification({ baseUrl, pages, mode = 'standard', outDi
         raw.push({ deviceId: d.id, device: d, page: p, ...r });
       }
     }
+    if (guardPages.length) {
+      log_guards = await measureGuards(browser, guardPages, baseUrl, { logger });
+      logger?.info(`captured style signatures for ${guardPages.length} guard route(s)`);
+    }
   } finally { await browser.close(); }
   const checks = evaluate(raw, baseline, { themeMode });
   const perDevice = devices.map((d) => {
@@ -99,7 +104,7 @@ export async function runVerification({ baseUrl, pages, mode = 'standard', outDi
     return { id: d.id, label: d.label, width: d.width, height: d.height, dpr: d.dpr, colorScheme: d.colorScheme, flags: d.flags, status: failed ? 'fail' : problems.length ? 'fail' : 'pass', note: failed ? rs.find((r) => r.error)?.error : problems.length ? `${problems.length} failing finding(s)` : '', screenshots: rs.filter((r) => r.screenshot).map((r) => ({ file: r.screenshot, label: `${p(r.page)} ${d.width}×${d.height}@${d.dpr} ${d.colorScheme}${d.flags.length ? ' ' + d.flags.join(',') : ''}` })) };
   });
   const failed = checks.filter((c) => c.status === 'fail');
-  return { ok: failed.length === 0, mode, engine: `chromium ${version} (playwright)`, pages, devices: perDevice, checks, durationMs: Date.now() - started, loads: raw.length, errors: raw.filter((r) => r.error).length, counts: Object.fromEntries(checks.map((c) => [c.id, c.count])) };
+  return { ok: failed.length === 0, mode, engine: `chromium ${version} (playwright)`, pages, guardPages, guards: log_guards, devices: perDevice, checks, durationMs: Date.now() - started, loads: raw.length, errors: raw.filter((r) => r.error).length, counts: Object.fromEntries(checks.map((c) => [c.id, c.count])) };
 }
 function p(page) { return page === '/' ? 'home' : page.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, ''); }
 
@@ -156,6 +161,66 @@ async function keyboardTest(page) {
     steps.push(info);
   }
   return { steps, focusable: steps.length, missingIndicator: steps.filter((s) => s.visible && !s.indicator).map((s) => s.d), invisibleFocus: steps.filter((s) => !s.visible).map((s) => s.d) };
+}
+
+/**
+ * Style signature of a page: an ordered digest of the computed styling of every rendered element.
+ * Used to PROVE that routes outside the upgraded scope did not change. Deliberately excludes
+ * geometry (which can vary with scrollbars/fonts loading) and includes only declared visual styling.
+ */
+export function styleSignatureProbe() {
+  const props = ['font-family', 'font-size', 'font-weight', 'line-height', 'letter-spacing', 'color',
+    'background-color', 'border-top-width', 'border-top-color', 'border-radius', 'padding-top',
+    'padding-left', 'margin-top', 'box-shadow', 'text-transform', 'opacity', 'display'];
+  const out = [];
+  const els = document.querySelectorAll('body, body *');
+  for (let i = 0; i < els.length && out.length < 1200; i++) {
+    const el = els[i];
+    if (['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'LINK', 'META'].includes(el.tagName)) continue;
+    const cs = getComputedStyle(el);
+    const cls = typeof el.className === 'string' ? el.className.trim().split(/\s+/).slice(0, 3).join('.') : '';
+    out.push(`${el.tagName.toLowerCase()}${cls ? '.' + cls : ''}|` + props.map((p) => cs.getPropertyValue(p)).join('|'));
+  }
+  return out;
+}
+
+/** Collect style signatures for guard routes (routes that must NOT change). */
+export async function measureGuards(browser, pages, baseUrl, { devices = [{ id: 'guard-desktop', width: 1280, height: 800, dpr: 1, isMobile: false }, { id: 'guard-phone', width: 390, height: 844, dpr: 2, isMobile: true }], logger } = {}) {
+  const guards = {};
+  for (const p of pages) {
+    guards[p] = {};
+    for (const d of devices) {
+      const ctx = await newVerifiedContext(browser, { viewport: { width: d.width, height: d.height }, deviceScaleFactor: d.dpr, isMobile: d.isMobile, hasTouch: d.isMobile, ignoreHTTPSErrors: true });
+      const page = await ctx.newPage();
+      try {
+        await page.goto(baseUrl + p, { waitUntil: 'load', timeout: 120000 });
+        await page.waitForTimeout(600);
+        guards[p][d.id] = await page.evaluate(styleSignatureProbe);
+      } catch (e) {
+        guards[p][d.id] = { error: String(e.message || e).slice(0, 200) };
+        logger?.warn(`guard ${p} ${d.id}: ${e.message}`);
+      } finally { await ctx.close(); }
+    }
+  }
+  return guards;
+}
+
+/** Compare baseline vs candidate guard signatures. Any difference means a route outside the scope changed. */
+export function compareGuards(before, after) {
+  const findings = [];
+  let compared = 0;
+  for (const page of Object.keys(before || {})) {
+    for (const device of Object.keys(before[page] || {})) {
+      const a = before[page][device], b = after?.[page]?.[device];
+      if (!Array.isArray(a) || !Array.isArray(b)) { findings.push({ page, device, severity: 'warn', message: `guard signature unavailable (${!Array.isArray(a) ? 'baseline' : 'candidate'} failed to load)` }); continue; }
+      compared++;
+      if (a.length !== b.length) { findings.push({ page, device, severity: 'fail', message: `element count changed: ${a.length} -> ${b.length}` }); continue; }
+      const diffs = [];
+      for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) diffs.push({ index: i, before: a[i].slice(0, 160), after: b[i].slice(0, 160) });
+      if (diffs.length) findings.push({ page, device, severity: 'fail', message: `${diffs.length} element(s) restyled on a route that must not change`, examples: diffs.slice(0, 4) });
+    }
+  }
+  return { compared, findings };
 }
 
 // ------------------------------------------------------------------------------- evaluation
@@ -260,7 +325,7 @@ export function evaluate(raw, baseline, { themeMode = 'auto' } = {}) {
     ['LOAD', 'Pages load and can be measured on every device'], ['RESP-SWEEP', 'Responsive layout sweep 240px → 3840px (no horizontal overflow)'], ['MOBILE-ORIENT', 'Mobile portrait / landscape'], ['FOLDABLE', 'Foldable widths (closed / open / dual)'], ['DPR', 'Device pixel ratio 1× / 2× / 3×'],
     ['THEME', 'Light / dark scheme'], ['FONT-200', '200% font scaling (no overflow / clipping)'], ['KEYBOARD-NAV', 'Keyboard navigation'], ['FOCUS-VISIBLE', 'Focus visibility'], ['CONTRAST', 'WCAG AA text contrast'], ['FORCED-COLORS', 'forced-colors (Windows High Contrast)'],
     ['REDUCED-MOTION', 'prefers-reduced-motion honoured'], ['OVERFLOW', 'Overflow culprits on deep devices'], ['LAYOUT-SHIFT', 'Layout shift (CLS ≤ 0.1) and reserved media space'], ['STICKY-FIXED', 'Fixed / sticky elements sane'], ['TOUCH-TARGET', 'Touch target size (≥ 24px, ideally 44px)'],
-    ['PERF', 'Performance budget (load, fps, long tasks, DOM, transfer)'], ['ANIM-3D-FALLBACK', 'Animation / 3D degrade on reduced-motion & low-end'], ['CONSOLE-ERRORS', 'No console / runtime errors'], ['EXTERNAL-RESOURCES', 'External resources (fonts/CDN) reachable'], ['A11Y-BASICS', 'Landmarks, lang, alt text, form labels'],
+    ['PERF', 'Performance budget (load, fps, long tasks, DOM, transfer)'], ['ANIM-3D-FALLBACK', 'Animation / 3D degrade on reduced-motion & low-end'], ['CONSOLE-ERRORS', 'No console / runtime errors'], ['EXTERNAL-RESOURCES', 'External resources (fonts/CDN) reachable'], ['UNCHANGED-ROUTES', 'Routes outside the upgraded scope are byte-identical in computed style'], ['A11Y-BASICS', 'Landmarks, lang, alt text, form labels'],
   ];
   const checks = DEFS.map(([id, name]) => {
     const findings = F.filter((f) => f.check === id);

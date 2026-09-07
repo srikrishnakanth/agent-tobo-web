@@ -1,4 +1,5 @@
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import fsp from 'node:fs/promises';
 import { readJson, writeJson, exists } from '../core/fsutil.js';
 import { validateManifest } from './manifest-schema.js';
@@ -7,7 +8,10 @@ import { normalizeVault } from './normalize.js';
 import { Catalog } from './catalog.js';
 import { defaultLogger } from '../core/logger.js';
 
-export const PKG_ROOT = path.resolve(new URL('../..', import.meta.url).pathname);
+// fileURLToPath - NOT url.pathname. On Windows `.pathname` yields "/C:/projects/JBRH%20PRODUCTS/..."
+// (leading slash, percent-encoded spaces) which path.resolve does not repair, so the vault would be
+// looked for at a path that does not exist.
+export const PKG_ROOT = path.resolve(fileURLToPath(new URL('../..', import.meta.url)));
 export const DEFAULT_MANIFEST = path.join(PKG_ROOT, 'vault-manifest.json');
 export const DEFAULT_VAULT_DIR = path.join(PKG_ROOT, 'DESIGN-VAULT');
 

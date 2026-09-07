@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-07T12:30:27.019Z",
-  "durationMs": 2115,
+  "generatedAt": "2026-09-07T14:20:27.247Z",
+  "durationMs": 139,
   "manifest": "/home/user/agent-tobo-web/kk-ui-governor/vault-manifest.json",
   "vaultDir": "/home/user/agent-tobo-web/kk-ui-governor/DESIGN-VAULT",
   "sources": [
@@ -146,10 +146,10 @@
   "filesWritten": 163,
   "errors": [],
   "stats": {
-    "fetched": 17,
-    "cached": 184,
+    "fetched": 0,
+    "cached": 201,
     "failed": 0,
-    "bytes": 5953
+    "bytes": 0
   },
   "excluded": [
     {

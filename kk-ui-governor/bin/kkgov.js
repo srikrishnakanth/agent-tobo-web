@@ -21,11 +21,13 @@ const json = (o) => console.log(JSON.stringify(o, null, 2));
 
 function selectionFromFlags() {
   const s = {};
-  for (const k of ['preset', 'style', 'pageType', 'platform', 'theme', 'density', 'motion', 'devices', 'a11y', 'components', 'effects', 'brandMode', 'threeD', 'radius']) if (flags[k] !== undefined) s[k] = flags[k];
+  for (const k of ['preset', 'style', 'pageType', 'platform', 'theme', 'density', 'motion', 'devices', 'a11y', 'components', 'effects', 'brandMode', 'threeD', 'radius', 'scope']) if (flags[k] !== undefined) s[k] = flags[k];
   if (flags.page) s.pageType = flags.page;
   if (flags['brand-mode']) s.brandMode = flags['brand-mode'];
   if (flags['page-type']) s.pageType = flags['page-type'];
   if (flags.auto) s.preset = 'auto';
+  // --landing-only is the ergonomic alias for --scope landing.
+  if (flags['landing-only']) { s.scope = 'landing'; if (!s.pageType) s.pageType = 'landing'; }
   if (s.radius) s.radius = +s.radius;
   return s;
 }
@@ -41,6 +43,8 @@ Usage: kkgov <command> [options]
   apply <dir> [selection flags]               Run the full transaction: Inspect → Select → Adapt → Probe → Preview → Write → Verify → Keep/Rollback
       --auto | --preset <name>                Auto-recommend (default) or a named preset
       --style --page --platform --theme --density --motion --devices --a11y --components --effects --brand-mode preserve|replace
+      --landing-only | --scope <name>       Confine EVERY generated rule to [data-kk-scope="<name>"] so no other
+                                            route can change. Upgrades one page; the rest of the app is untouched.
       --verify quick|standard|full|static     Verification depth (default standard)
       --decide auto|ask|rollback              auto = keep on pass (default); ask = leave pending; rollback = dry run
       --no-preview --no-baseline --no-build --allow-unsupported --max-pages N --vault <dir>

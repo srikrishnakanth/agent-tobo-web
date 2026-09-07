@@ -11,13 +11,14 @@ import { emitTokensCss, emitThemeCss, deriveRemediations } from '../pipeline/emi
 import { emitMotionJs, emitAttribution } from '../pipeline/emit-js.js';
 import { wrap, MARKER } from '../pipeline/markers.js';
 import { fetchGoogleFontFaces } from '../pipeline/fonts.js';
+import { scopeCss, auditScope } from '../pipeline/scope-css.js';
 import { DEFAULT_VAULT_DIR } from '../vault/index.js';
 
 export const OWNED_SIGNATURE = /KK-UI-GOVERNOR/;
 export function isGovernorOwned(content) { return OWNED_SIGNATURE.test(String(content).slice(0, 400)); }
 
 export class BaseAdapter {
-  constructor(id) { this.id = id; this.status = 'supported'; }
+  constructor(id) { this.id = id; this.status = 'supported'; this.scopeRootKind = 'container'; }
   detect() { return false; }
 
   /** Load the style files the scan referenced so remediations can target real selectors. */
@@ -43,11 +44,21 @@ export class BaseAdapter {
     const fontFaceCss = await fetchGoogleFontFaces(tokens.typography.googleFontsUrl, { cacheDir: path.join(ctx.vaultDir || DEFAULT_VAULT_DIR, 'cache'), logger: ctx.logger });
     const ops = [];
     ops.push(await this.fileOp(scan.root, `${dir}/tokens.css`, emitTokensCss(tokens, { theme: selection.theme, tailwindV4, fontFaceCss })));
-    ops.push(await this.fileOp(scan.root, `${dir}/theme.css`, emitThemeCss(tokens, selection, { remediations, importTokens, layer })));
+    const themeCss = emitThemeCss(tokens, selection, { remediations, importTokens, layer });
+    if (selection.scopeSelector) {
+      // Scoped mode: every rule is confined to the scope root, so no other route can change.
+      const scoped = scopeCss(themeCss, selection.scopeSelector, { rootKind: this.scopeRootKind });
+      const audit = auditScope(scoped, selection.scopeSelector);
+      ops.push(await this.fileOp(scan.root, `${dir}/theme.css`, scoped));
+      this._scopeAudit = { scope: selection.scopeSelector, rootKind: this.scopeRootKind, rules: audit.total, escapes: audit.unscoped };
+    } else {
+      ops.push(await this.fileOp(scan.root, `${dir}/theme.css`, themeCss));
+      this._scopeAudit = null;
+    }
     ops.push(await this.fileOp(scan.root, `${dir}/motion.js`, emitMotionJs(tokens, selection, { module })));
     ops.push(await this.fileOp(scan.root, `${dir}/ATTRIBUTION.md`, emitAttribution(tokens, catalog)));
     ops.push(await this.fileOp(scan.root, `${dir}/tokens.json`, JSON.stringify({ generator: 'KK-UI-GOVERNOR', meta: tokens.meta, color: { primary: tokens.color.primary, light: tokens.color.light, dark: tokens.color.dark, highContrast: tokens.color.highContrast }, typography: tokens.typography, spacing: tokens.spacing, radius: tokens.radius, motion: tokens.motion, density: tokens.density, breakpoints: tokens.breakpoints }, null, 2) + '\n'));
-    return { ops, remediations, fontsInlined: !!fontFaceCss };
+    return { ops, remediations, fontsInlined: !!fontFaceCss, scopeAudit: this._scopeAudit };
   }
 
   /** Create-or-replace op for a governor-generated file. An existing file is only replaced when it carries the

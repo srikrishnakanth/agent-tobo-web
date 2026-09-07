@@ -112,6 +112,27 @@ export function runSafetyGates(ctx) {
     gates.push(g('G9', 'heavy-motion-fallback', wantsHeavy && !hasFallback ? 'fail' : 'pass', { heavy: wantsHeavy, fallback: hasFallback }));
   }
 
+  // G10 - scope containment. In scoped mode every emitted rule must be confined to the scope root,
+  // so routes outside it (an authenticated dashboard, settings, auth screens) cannot change at all.
+  {
+    const scoped = !!selection?.scopeSelector;
+    if (!scoped) gates.push(g('G10', 'scope-containment', 'skip', { note: 'global run: styling applies project-wide by design' }));
+    else {
+      const audit = plan?.scopeAudit;
+      if (!audit) gates.push(g('G10', 'scope-containment', 'fail', { note: 'scoped run requested but the adapter produced no scope audit' }));
+      else {
+        const escapes = audit.escapes || [];
+        // :root blocks are retained deliberately and hold only inert custom properties.
+        const renderable = escapes.filter((sel) => !/^(:root|html)$/i.test(String(sel).trim()));
+        gates.push(g('G10', 'scope-containment', renderable.length ? 'fail' : 'pass', {
+          scope: audit.scope, rootKind: audit.rootKind, rulesScoped: audit.rules,
+          inertGlobalTokenBlocks: escapes.length - renderable.length,
+          escapingSelectors: renderable.slice(0, 20),
+        }));
+      }
+    }
+  }
+
   const failed = gates.filter((x) => x.status === 'fail');
   return { ok: failed.length === 0, gates, failed: failed.map((x) => x.id) };
 }

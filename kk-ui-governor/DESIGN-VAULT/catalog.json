@@ -1,7 +1,7 @@
 {
   "name": "KK-UI-DESIGN-VAULT",
   "version": "1.0.0",
-  "generatedAt": "2026-09-07T12:30:26.926Z",
+  "generatedAt": "2026-09-07T14:20:27.163Z",
   "count": 65,
   "assets": [
     {
@@ -55,7 +55,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-card",
@@ -109,7 +109,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-input",
@@ -162,7 +162,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-table",
@@ -214,7 +214,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-dialog",
@@ -267,7 +267,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-sheet",
@@ -321,7 +321,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-sidebar",
@@ -379,7 +379,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-navigation-menu",
@@ -433,7 +433,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-tabs",
@@ -486,7 +486,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-chart",
@@ -541,7 +541,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-badge",
@@ -593,7 +593,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-carousel",
@@ -647,19 +647,16 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
-      "id": "shadcn-switch",
-      "category": "components/switch",
+      "id": "shadcn-skeleton",
+      "category": "components/feedback",
       "designStyle": [
-        "modern",
-        "native-app",
-        "minimal"
+        "*"
       ],
       "pageType": [
-        "settings",
-        "onboarding"
+        "*"
       ],
       "platform": [
         "*"
@@ -671,16 +668,14 @@
       "cssStack": [
         "tailwind"
       ],
-      "dependencies": [
-        "@radix-ui/react-switch"
-      ],
+      "dependencies": [],
       "deviceSuitability": [
         "mobile",
         "tablet",
         "desktop"
       ],
       "performanceCost": "low",
-      "accessibility": "role=switch (Radix)",
+      "accessibility": "decorative; pair with aria-busy",
       "darkMode": true,
       "license": "MIT",
       "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
@@ -688,18 +683,18 @@
         "repo": "shadcn-ui/ui",
         "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
         "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
-        "path": "apps/v4/registry/new-york-v4/ui/switch.tsx"
+        "path": "apps/v4/registry/new-york-v4/ui/skeleton.tsx"
       },
       "files": [
         {
-          "path": "apps/v4/registry/new-york-v4/ui/switch.tsx",
-          "sha256": "743676f33f823ffa8008bbd5eb94cb68e227599447d60e132a202291a395f8e4",
-          "bytes": 1398,
-          "vaultPath": "assets/components/switch/shadcn-switch/files/apps/v4/registry/new-york-v4/ui/switch.tsx"
+          "path": "apps/v4/registry/new-york-v4/ui/skeleton.tsx",
+          "sha256": "f51ce0fcd31e5c31437382e80ea0af94b4fc3d64221d27091d36824546780a43",
+          "bytes": 267,
+          "vaultPath": "assets/components/feedback/shadcn-skeleton/files/apps/v4/registry/new-york-v4/ui/skeleton.tsx"
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-select",
@@ -754,7 +749,59 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "shadcn-switch",
+      "category": "components/switch",
+      "designStyle": [
+        "modern",
+        "native-app",
+        "minimal"
+      ],
+      "pageType": [
+        "settings",
+        "onboarding"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "react",
+        "nextjs"
+      ],
+      "cssStack": [
+        "tailwind"
+      ],
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "deviceSuitability": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "performanceCost": "low",
+      "accessibility": "role=switch (Radix)",
+      "darkMode": true,
+      "license": "MIT",
+      "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+      "upstream": {
+        "repo": "shadcn-ui/ui",
+        "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+        "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+        "path": "apps/v4/registry/new-york-v4/ui/switch.tsx"
+      },
+      "files": [
+        {
+          "path": "apps/v4/registry/new-york-v4/ui/switch.tsx",
+          "sha256": "743676f33f823ffa8008bbd5eb94cb68e227599447d60e132a202291a395f8e4",
+          "bytes": 1398,
+          "vaultPath": "assets/components/switch/shadcn-switch/files/apps/v4/registry/new-york-v4/ui/switch.tsx"
+        }
+      ],
+      "licenseNotice": "sources/shadcn-ui/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "shadcn-tooltip",
@@ -802,98 +849,7 @@
         }
       ],
       "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "shadcn-skeleton",
-      "category": "components/feedback",
-      "designStyle": [
-        "*"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "react",
-        "nextjs"
-      ],
-      "cssStack": [
-        "tailwind"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "mobile",
-        "tablet",
-        "desktop"
-      ],
-      "performanceCost": "low",
-      "accessibility": "decorative; pair with aria-busy",
-      "darkMode": true,
-      "license": "MIT",
-      "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
-      "upstream": {
-        "repo": "shadcn-ui/ui",
-        "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
-        "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
-        "path": "apps/v4/registry/new-york-v4/ui/skeleton.tsx"
-      },
-      "files": [
-        {
-          "path": "apps/v4/registry/new-york-v4/ui/skeleton.tsx",
-          "sha256": "f51ce0fcd31e5c31437382e80ea0af94b4fc3d64221d27091d36824546780a43",
-          "bytes": 267,
-          "vaultPath": "assets/components/feedback/shadcn-skeleton/files/apps/v4/registry/new-york-v4/ui/skeleton.tsx"
-        }
-      ],
-      "licenseNotice": "sources/shadcn-ui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "radix-colors-dark",
-      "category": "tokens/color",
-      "designStyle": [
-        "*"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "none",
-      "accessibility": "dark 12-step scales",
-      "darkMode": true,
-      "license": "MIT",
-      "sourceCommit": "dbdb85470547c7d34b9001f48fddb08ded335979",
-      "upstream": {
-        "repo": "radix-ui/colors",
-        "commit": "dbdb85470547c7d34b9001f48fddb08ded335979",
-        "url": "https://github.com/radix-ui/colors/tree/dbdb85470547c7d34b9001f48fddb08ded335979",
-        "path": "src/dark.ts"
-      },
-      "files": [
-        {
-          "path": "src/dark.ts",
-          "sha256": "d8599fe69a4454340b2bc82e003a210caa6b79082be9a1b7f13429ff03826c68",
-          "bytes": 58393,
-          "vaultPath": "assets/tokens/color/radix-colors-dark/files/src/dark.ts"
-        }
-      ],
-      "licenseNotice": "sources/radix-colors/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "radix-colors-light",
@@ -937,7 +893,95 @@
         }
       ],
       "licenseNotice": "sources/radix-colors/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "radix-colors-dark",
+      "category": "tokens/color",
+      "designStyle": [
+        "*"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "none",
+      "accessibility": "dark 12-step scales",
+      "darkMode": true,
+      "license": "MIT",
+      "sourceCommit": "dbdb85470547c7d34b9001f48fddb08ded335979",
+      "upstream": {
+        "repo": "radix-ui/colors",
+        "commit": "dbdb85470547c7d34b9001f48fddb08ded335979",
+        "url": "https://github.com/radix-ui/colors/tree/dbdb85470547c7d34b9001f48fddb08ded335979",
+        "path": "src/dark.ts"
+      },
+      "files": [
+        {
+          "path": "src/dark.ts",
+          "sha256": "d8599fe69a4454340b2bc82e003a210caa6b79082be9a1b7f13429ff03826c68",
+          "bytes": 58393,
+          "vaultPath": "assets/tokens/color/radix-colors-dark/files/src/dark.ts"
+        }
+      ],
+      "licenseNotice": "sources/radix-colors/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "open-props-shadows",
+      "category": "tokens/shadow",
+      "designStyle": [
+        "*"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "n/a",
+      "darkMode": true,
+      "license": "MIT",
+      "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+      "upstream": {
+        "repo": "argyleink/open-props",
+        "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "path": "src/props.shadows.css"
+      },
+      "files": [
+        {
+          "path": "src/props.shadows.css",
+          "sha256": "188e84bdc985e4b779b7566dfcf9458f81ddd1217fe21b8c02a5a2a8a12b57cb",
+          "bytes": 4346,
+          "vaultPath": "assets/tokens/shadow/open-props-shadows/files/src/props.shadows.css"
+        }
+      ],
+      "licenseNotice": "sources/open-props/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "open-props-easing",
@@ -981,7 +1025,7 @@
         }
       ],
       "licenseNotice": "sources/open-props/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "open-props-animations",
@@ -1029,51 +1073,7 @@
         }
       ],
       "licenseNotice": "sources/open-props/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "open-props-shadows",
-      "category": "tokens/shadow",
-      "designStyle": [
-        "*"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "n/a",
-      "darkMode": true,
-      "license": "MIT",
-      "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
-      "upstream": {
-        "repo": "argyleink/open-props",
-        "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
-        "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
-        "path": "src/props.shadows.css"
-      },
-      "files": [
-        {
-          "path": "src/props.shadows.css",
-          "sha256": "188e84bdc985e4b779b7566dfcf9458f81ddd1217fe21b8c02a5a2a8a12b57cb",
-          "bytes": 4346,
-          "vaultPath": "assets/tokens/shadow/open-props-shadows/files/src/props.shadows.css"
-        }
-      ],
-      "licenseNotice": "sources/open-props/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "open-props-sizes",
@@ -1117,7 +1117,7 @@
         }
       ],
       "licenseNotice": "sources/open-props/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "open-props-borders",
@@ -1161,7 +1161,7 @@
         }
       ],
       "licenseNotice": "sources/open-props/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "open-props-fonts",
@@ -1205,7 +1205,7 @@
         }
       ],
       "licenseNotice": "sources/open-props/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "open-props-media",
@@ -1249,7 +1249,7 @@
         }
       ],
       "licenseNotice": "sources/open-props/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "open-props-gradients",
@@ -1295,7 +1295,7 @@
         }
       ],
       "licenseNotice": "sources/open-props/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "open-props-zindex",
@@ -1339,7 +1339,53 @@
         }
       ],
       "licenseNotice": "sources/open-props/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "pico-settings",
+      "category": "tokens/theme",
+      "designStyle": [
+        "minimal",
+        "modern"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "html"
+      ],
+      "cssStack": [
+        "plain",
+        "sass"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "none",
+      "accessibility": "n/a",
+      "darkMode": true,
+      "license": "MIT",
+      "sourceCommit": "1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+      "upstream": {
+        "repo": "picocss/pico",
+        "commit": "1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+        "url": "https://github.com/picocss/pico/tree/1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+        "path": "scss/_settings.scss"
+      },
+      "files": [
+        {
+          "path": "scss/_settings.scss",
+          "sha256": "8ded54795a73e6f690cfd12ca6f02c13fd0faf94aa287aa970b045da68bd5a1d",
+          "bytes": 3542,
+          "vaultPath": "assets/tokens/theme/pico-settings/files/scss/_settings.scss"
+        }
+      ],
+      "licenseNotice": "sources/pico/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "pico-classless",
@@ -1389,53 +1435,7 @@
         }
       ],
       "licenseNotice": "sources/pico/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "pico-settings",
-      "category": "tokens/theme",
-      "designStyle": [
-        "minimal",
-        "modern"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "html"
-      ],
-      "cssStack": [
-        "plain",
-        "sass"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "none",
-      "accessibility": "n/a",
-      "darkMode": true,
-      "license": "MIT",
-      "sourceCommit": "1039a4788d6abc368d5485ae6bac84a8f0e3096f",
-      "upstream": {
-        "repo": "picocss/pico",
-        "commit": "1039a4788d6abc368d5485ae6bac84a8f0e3096f",
-        "url": "https://github.com/picocss/pico/tree/1039a4788d6abc368d5485ae6bac84a8f0e3096f",
-        "path": "scss/_settings.scss"
-      },
-      "files": [
-        {
-          "path": "scss/_settings.scss",
-          "sha256": "8ded54795a73e6f690cfd12ca6f02c13fd0faf94aa287aa970b045da68bd5a1d",
-          "bytes": 3542,
-          "vaultPath": "assets/tokens/theme/pico-settings/files/scss/_settings.scss"
-        }
-      ],
-      "licenseNotice": "sources/pico/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "daisyui-themes",
@@ -1495,7 +1495,7 @@
         }
       ],
       "licenseNotice": "sources/daisyui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "tabler-outline-core",
@@ -1597,7 +1597,7 @@
         }
       ],
       "licenseNotice": "sources/tabler-icons/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "material-filled-button",
@@ -1649,7 +1649,7 @@
         }
       ],
       "licenseNotice": "sources/material-web/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "daisyui-components",
@@ -1738,7 +1738,7 @@
         }
       ],
       "licenseNotice": "sources/daisyui/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "fluent-tokens",
@@ -1834,7 +1834,7 @@
         }
       ],
       "licenseNotice": "sources/fluentui-tokens/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "material-tokens",
@@ -1923,7 +1923,7 @@
         }
       ],
       "licenseNotice": "sources/material-web/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "ionic-md-tokens",
@@ -1981,117 +1981,7 @@
         }
       ],
       "licenseNotice": "sources/ionic/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "motion-library",
-      "category": "motion/library",
-      "designStyle": [
-        "creative",
-        "visual-rich",
-        "modern",
-        "premium"
-      ],
-      "pageType": [
-        "landing",
-        "onboarding",
-        "ai-ui"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "react",
-        "nextjs",
-        "html"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [
-        "motion"
-      ],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "medium",
-      "accessibility": "respects useReducedMotion; governor falls back to CSS transitions when absent",
-      "darkMode": true,
-      "license": "MIT",
-      "sourceCommit": "e871ba7f175d0609cef84f416f984e8e84be8333",
-      "upstream": {
-        "repo": "motiondivision/motion",
-        "commit": "e871ba7f175d0609cef84f416f984e8e84be8333",
-        "url": "https://github.com/motiondivision/motion/tree/e871ba7f175d0609cef84f416f984e8e84be8333",
-        "path": "packages/motion/package.json"
-      },
-      "files": [
-        {
-          "path": "packages/motion/package.json",
-          "sha256": "a90fad182297a3f6cad8d5b0373f4c05022ae5cd9a7d935d316ea12a3897ef10",
-          "bytes": 3479,
-          "vaultPath": "assets/motion/library/motion-library/files/packages/motion/package.json"
-        }
-      ],
-      "licenseNotice": "sources/motion/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "threejs-cube-example",
-      "category": "3d/example",
-      "designStyle": [
-        "3d",
-        "creative",
-        "visual-rich"
-      ],
-      "pageType": [
-        "landing"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [
-        "three"
-      ],
-      "deviceSuitability": [
-        "laptop",
-        "desktop",
-        "ultrawide",
-        "4k"
-      ],
-      "performanceCost": "high",
-      "accessibility": "must be decorative (aria-hidden) with static fallback; disabled under reduced-motion and on low-end devices",
-      "darkMode": true,
-      "license": "MIT",
-      "sourceCommit": "2016416a4dc443c4511fa9c0e762301eb0ca759b",
-      "upstream": {
-        "repo": "mrdoob/three.js",
-        "commit": "2016416a4dc443c4511fa9c0e762301eb0ca759b",
-        "url": "https://github.com/mrdoob/three.js/tree/2016416a4dc443c4511fa9c0e762301eb0ca759b",
-        "path": "examples/webgl_geometry_cube.html"
-      },
-      "files": [
-        {
-          "path": "examples/webgl_geometry_cube.html",
-          "sha256": "022a3727ba58f70020ab9a48ac27d510e4881426f75db6d5838f044e1ed18430",
-          "bytes": 2085,
-          "vaultPath": "assets/3d/example/threejs-cube-example/files/examples/webgl_geometry_cube.html"
-        },
-        {
-          "path": "package.json",
-          "sha256": "f3e07f2d534978888b2ca0b42c8a1220209d7cb4b42c68945fcd1dacdaa92787",
-          "bytes": 3603,
-          "vaultPath": "assets/3d/example/threejs-cube-example/files/package.json"
-        }
-      ],
-      "licenseNotice": "sources/threejs/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "heroicons-outline-core",
@@ -2228,1396 +2118,117 @@
         }
       ],
       "licenseNotice": "sources/heroicons/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
-      "id": "ionic-ios-tokens",
-      "category": "tokens/platform",
+      "id": "motion-library",
+      "category": "motion/library",
       "designStyle": [
-        "native-app",
+        "creative",
+        "visual-rich",
+        "modern",
         "premium"
       ],
       "pageType": [
-        "*"
-      ],
-      "platform": [
-        "ios"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "sass"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "mobile",
-        "foldable",
-        "tablet"
-      ],
-      "performanceCost": "none",
-      "accessibility": "iOS dynamic-type friendly sizes",
-      "darkMode": true,
-      "license": "MIT",
-      "sourceCommit": "5874331e96cbad080c41220a740a8fffd1a9699b",
-      "upstream": {
-        "repo": "ionic-team/ionic-framework",
-        "commit": "5874331e96cbad080c41220a740a8fffd1a9699b",
-        "url": "https://github.com/ionic-team/ionic-framework/tree/5874331e96cbad080c41220a740a8fffd1a9699b",
-        "path": "core/src/themes/ionic.globals.ios.scss"
-      },
-      "files": [
-        {
-          "path": "core/src/themes/ionic.globals.ios.scss",
-          "sha256": "1c049b06fbd711953b5131b68ffb3fe70a290b67ebbd03aa2964bd314568b6dc",
-          "bytes": 95,
-          "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/themes/ionic.globals.ios.scss"
-        },
-        {
-          "path": "core/src/themes/ionic.theme.default.ios.scss",
-          "sha256": "eb1e2e44319fc6dc13ba696ab368ac24d86e0b7fe0dabc9502eebfd8b195cef8",
-          "bytes": 2595,
-          "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/themes/ionic.theme.default.ios.scss"
-        },
-        {
-          "path": "core/src/themes/ionic.theme.default.scss",
-          "sha256": "0d970682af423dd70693631c90446d5f43ecbe41332198d08312277c84b72465",
-          "bytes": 9583,
-          "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/themes/ionic.theme.default.scss"
-        },
-        {
-          "path": "core/src/css/typography.scss",
-          "sha256": "cfc79ff7d5ee1ed053f3fc7822bddac4fbc2ae17d3ac3ef6bf638f4f372b513a",
-          "bytes": 1902,
-          "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/css/typography.scss"
-        },
-        {
-          "path": "core/src/components/button/button.ios.vars.scss",
-          "sha256": "f0a4d4c280349e4e83e35d7ce22a1d1e1307fc2ed8799cadba430bda8d010c45",
-          "bytes": 5668,
-          "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/components/button/button.ios.vars.scss"
-        }
-      ],
-      "licenseNotice": "sources/ionic/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "swiper-css",
-      "category": "components/carousel",
-      "designStyle": [
-        "visual-rich",
-        "creative",
-        "ecommerce"
-      ],
-      "pageType": [
         "landing",
-        "ecommerce"
+        "onboarding",
+        "ai-ui"
       ],
       "platform": [
         "*"
       ],
       "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [
-        "swiper"
-      ],
-      "deviceSuitability": [
-        "mobile",
-        "tablet",
-        "desktop"
-      ],
-      "performanceCost": "medium",
-      "accessibility": "a11y module required; the governor substitutes a scroll-snap carousel when swiper is absent",
-      "darkMode": true,
-      "license": "MIT",
-      "sourceCommit": "b3786674f458f0fd53af461a5300e552b145014f",
-      "upstream": {
-        "repo": "nolimits4web/swiper",
-        "commit": "b3786674f458f0fd53af461a5300e552b145014f",
-        "url": "https://github.com/nolimits4web/swiper/tree/b3786674f458f0fd53af461a5300e552b145014f",
-        "path": "src/swiper.css"
-      },
-      "files": [
-        {
-          "path": "src/swiper.css",
-          "sha256": "792b1094c1cd1b4de612b401ebd0bebdb8aa47cd98f354451fafbfb0150e615d",
-          "bytes": 5704,
-          "vaultPath": "assets/components/carousel/swiper-css/files/src/swiper.css"
-        },
-        {
-          "path": "src/modules/navigation/navigation.css",
-          "sha256": "7a69d23e622bede0f908892c8b0b11be090d4fc593c1f02bd138e9fc76ee2341",
-          "bytes": 3243,
-          "vaultPath": "assets/components/carousel/swiper-css/files/src/modules/navigation/navigation.css"
-        },
-        {
-          "path": "src/modules/pagination/pagination.css",
-          "sha256": "b89add4a532643d9689243c14f4f19704dd7ecde6fcc2d81b70f5cd137a039f8",
-          "bytes": 5266,
-          "vaultPath": "assets/components/carousel/swiper-css/files/src/modules/pagination/pagination.css"
-        },
-        {
-          "path": "package.json",
-          "sha256": "db841cfb6a366b3ede960b718bbf3914b855e6ebd4257bf80f5c921c3c60f9d5",
-          "bytes": 3851,
-          "vaultPath": "assets/components/carousel/swiper-css/files/package.json"
-        }
-      ],
-      "licenseNotice": "sources/swiper/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "modern-normalize",
-      "category": "frameworks/css",
-      "designStyle": [
-        "*"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
+        "react",
+        "nextjs",
         "html"
       ],
       "cssStack": [
-        "plain"
+        "*"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "motion"
+      ],
       "deviceSuitability": [
         "*"
       ],
-      "performanceCost": "none",
-      "accessibility": "n/a",
+      "performanceCost": "medium",
+      "accessibility": "respects useReducedMotion; governor falls back to CSS transitions when absent",
       "darkMode": true,
       "license": "MIT",
-      "sourceCommit": "27c3f5fe3109b4041a835a0fa569e09c77022bf8",
+      "sourceCommit": "e871ba7f175d0609cef84f416f984e8e84be8333",
       "upstream": {
-        "repo": "sindresorhus/modern-normalize",
-        "commit": "27c3f5fe3109b4041a835a0fa569e09c77022bf8",
-        "url": "https://github.com/sindresorhus/modern-normalize/tree/27c3f5fe3109b4041a835a0fa569e09c77022bf8",
-        "path": "modern-normalize.css"
+        "repo": "motiondivision/motion",
+        "commit": "e871ba7f175d0609cef84f416f984e8e84be8333",
+        "url": "https://github.com/motiondivision/motion/tree/e871ba7f175d0609cef84f416f984e8e84be8333",
+        "path": "packages/motion/package.json"
       },
       "files": [
         {
-          "path": "modern-normalize.css",
-          "sha256": "a3af19dc9751230f9babca01ad939e45aff688379c0ae64cc07321e818c871e3",
-          "bytes": 3442,
-          "vaultPath": "assets/frameworks/css/modern-normalize/files/modern-normalize.css"
+          "path": "packages/motion/package.json",
+          "sha256": "a90fad182297a3f6cad8d5b0373f4c05022ae5cd9a7d935d316ea12a3897ef10",
+          "bytes": 3479,
+          "vaultPath": "assets/motion/library/motion-library/files/packages/motion/package.json"
         }
       ],
-      "licenseNotice": "sources/modern-normalize/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "licenseNotice": "sources/motion/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
-      "id": "chartjs-samples",
-      "category": "components/chart",
+      "id": "threejs-cube-example",
+      "category": "3d/example",
       "designStyle": [
-        "data-dense",
-        "enterprise"
+        "3d",
+        "creative",
+        "visual-rich"
       ],
       "pageType": [
-        "dashboard",
-        "admin",
-        "crm"
+        "landing"
       ],
       "platform": [
         "*"
       ],
       "framework": [
-        "html",
-        "react"
+        "*"
       ],
       "cssStack": [
         "*"
       ],
       "dependencies": [
-        "chart.js"
+        "three"
       ],
       "deviceSuitability": [
-        "tablet",
+        "laptop",
         "desktop",
         "ultrawide",
         "4k"
       ],
-      "performanceCost": "medium",
-      "accessibility": "canvas; needs aria-label + data table fallback (governor emits SVG bars when chart.js is absent)",
+      "performanceCost": "high",
+      "accessibility": "must be decorative (aria-hidden) with static fallback; disabled under reduced-motion and on low-end devices",
       "darkMode": true,
       "license": "MIT",
-      "sourceCommit": "cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+      "sourceCommit": "2016416a4dc443c4511fa9c0e762301eb0ca759b",
       "upstream": {
-        "repo": "chartjs/Chart.js",
-        "commit": "cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
-        "url": "https://github.com/chartjs/Chart.js/tree/cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
-        "path": "docs/samples/bar/vertical.md"
+        "repo": "mrdoob/three.js",
+        "commit": "2016416a4dc443c4511fa9c0e762301eb0ca759b",
+        "url": "https://github.com/mrdoob/three.js/tree/2016416a4dc443c4511fa9c0e762301eb0ca759b",
+        "path": "examples/webgl_geometry_cube.html"
       },
       "files": [
         {
-          "path": "docs/samples/bar/vertical.md",
-          "sha256": "d95ae5e09b810a213390e81d003c15a8e4e23306838270eaad4abece1de8a02f",
-          "bytes": 2631,
-          "vaultPath": "assets/components/chart/chartjs-samples/files/docs/samples/bar/vertical.md"
-        },
-        {
-          "path": "docs/samples/line/line.md",
-          "sha256": "ecec80c74b412bab9afee1bc91adbdc077938a7353c60396e00ab462fd852fbd",
-          "bytes": 2603,
-          "vaultPath": "assets/components/chart/chartjs-samples/files/docs/samples/line/line.md"
+          "path": "examples/webgl_geometry_cube.html",
+          "sha256": "022a3727ba58f70020ab9a48ac27d510e4881426f75db6d5838f044e1ed18430",
+          "bytes": 2085,
+          "vaultPath": "assets/3d/example/threejs-cube-example/files/examples/webgl_geometry_cube.html"
         },
         {
           "path": "package.json",
-          "sha256": "1387d9f978eaf4f0273c8a5093e33890fccf487d268791fa42baf4964522a940",
-          "bytes": 4801,
-          "vaultPath": "assets/components/chart/chartjs-samples/files/package.json"
+          "sha256": "f3e07f2d534978888b2ca0b42c8a1220209d7cb4b42c68945fcd1dacdaa92787",
+          "bytes": 3603,
+          "vaultPath": "assets/3d/example/threejs-cube-example/files/package.json"
         }
       ],
-      "licenseNotice": "sources/chartjs/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-manrope",
-      "category": "typography/font",
-      "designStyle": [
-        "modern",
-        "premium",
-        "minimal"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "high x-height; readable at small sizes",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Manrope",
-      "role": "sans",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/manrope/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/manrope/OFL.txt",
-          "sha256": "e01b637272e0cbdfb240184dd98ea5cc671556d9894dae2668d92ab2c906787c",
-          "bytes": 4384,
-          "vaultPath": "assets/typography/font/font-manrope/files/ofl/manrope/OFL.txt"
-        },
-        {
-          "path": "ofl/manrope/METADATA.pb",
-          "sha256": "368beda3aa55b0afe90edc142d67cf37e743258c76481d520172afbc148c6cca",
-          "bytes": 727,
-          "vaultPath": "assets/typography/font/font-manrope/files/ofl/manrope/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-sora",
-      "category": "typography/font",
-      "designStyle": [
-        "modern",
-        "ai-ui",
-        "creative"
-      ],
-      "pageType": [
-        "landing",
-        "ai-ui"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "geometric display; use ≥ 20px",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Sora",
-      "role": "display",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/sora/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/sora/OFL.txt",
-          "sha256": "ba0b9729c9428ba79a0459ab8ec575791b51509dbec213e383d0316d37fec299",
-          "bytes": 4385,
-          "vaultPath": "assets/typography/font/font-sora/files/ofl/sora/OFL.txt"
-        },
-        {
-          "path": "ofl/sora/METADATA.pb",
-          "sha256": "02662b9eb0e843a22cd88d3574b76a209b152ab90ec6945f406ee36d893401ab",
-          "bytes": 605,
-          "vaultPath": "assets/typography/font/font-sora/files/ofl/sora/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-space-grotesk",
-      "category": "typography/font",
-      "designStyle": [
-        "creative",
-        "3d",
-        "visual-rich"
-      ],
-      "pageType": [
-        "landing"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "distinctive; headings only",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Space Grotesk",
-      "role": "display",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/spacegrotesk/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/spacegrotesk/OFL.txt",
-          "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72",
-          "bytes": 4495,
-          "vaultPath": "assets/typography/font/font-space-grotesk/files/ofl/spacegrotesk/OFL.txt"
-        },
-        {
-          "path": "ofl/spacegrotesk/METADATA.pb",
-          "sha256": "3713adf5c1a21affdbede103b6bb23f551d4195771fa8bc1b91ce813bd1623ee",
-          "bytes": 1509,
-          "vaultPath": "assets/typography/font/font-space-grotesk/files/ofl/spacegrotesk/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-fraunces",
-      "category": "typography/font",
-      "designStyle": [
-        "luxury",
-        "creative",
-        "premium"
-      ],
-      "pageType": [
-        "landing",
-        "ecommerce"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "variable serif; headings",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Fraunces",
-      "role": "display",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/fraunces/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/fraunces/OFL.txt",
-          "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
-          "bytes": 4391,
-          "vaultPath": "assets/typography/font/font-fraunces/files/ofl/fraunces/OFL.txt"
-        },
-        {
-          "path": "ofl/fraunces/METADATA.pb",
-          "sha256": "812aeaea90af8021a306b8fbb5490e0a861c27a5291d2253b403d9fc9f37afd5",
-          "bytes": 1197,
-          "vaultPath": "assets/typography/font/font-fraunces/files/ofl/fraunces/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-dm-sans",
-      "category": "typography/font",
-      "designStyle": [
-        "minimal",
-        "modern",
-        "enterprise"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "low-contrast geometric; body ≥ 16px",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "DM Sans",
-      "role": "sans",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/dmsans/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/dmsans/OFL.txt",
-          "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
-          "bytes": 4482,
-          "vaultPath": "assets/typography/font/font-dm-sans/files/ofl/dmsans/OFL.txt"
-        },
-        {
-          "path": "ofl/dmsans/METADATA.pb",
-          "sha256": "55b3697a416f7d08c093918a4019a75cca7186c64bc56b1bb23e197a5d559dee",
-          "bytes": 1283,
-          "vaultPath": "assets/typography/font/font-dm-sans/files/ofl/dmsans/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-plus-jakarta-sans",
-      "category": "typography/font",
-      "designStyle": [
-        "premium",
-        "modern",
-        "native-app"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "clear letterforms",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Plus Jakarta Sans",
-      "role": "sans",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/plusjakartasans/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/plusjakartasans/OFL.txt",
-          "sha256": "995c7199cab65954f545996326755daee7b63cc6b42b06c13da1f9502ab08a99",
-          "bytes": 4402,
-          "vaultPath": "assets/typography/font/font-plus-jakarta-sans/files/ofl/plusjakartasans/OFL.txt"
-        },
-        {
-          "path": "ofl/plusjakartasans/METADATA.pb",
-          "sha256": "e7953d66e52a1e09235d75fc7aef7139c2733c0b5507afcf6e9afbe0fcef1de6",
-          "bytes": 1396,
-          "vaultPath": "assets/typography/font/font-plus-jakarta-sans/files/ofl/plusjakartasans/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-ibm-plex-sans",
-      "category": "typography/font",
-      "designStyle": [
-        "enterprise",
-        "data-dense"
-      ],
-      "pageType": [
-        "dashboard",
-        "admin",
-        "crm",
-        "docs"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "designed for dense UI legibility",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "IBM Plex Sans",
-      "role": "sans",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/ibmplexsans/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/ibmplexsans/OFL.txt",
-          "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
-          "bytes": 4456,
-          "vaultPath": "assets/typography/font/font-ibm-plex-sans/files/ofl/ibmplexsans/OFL.txt"
-        },
-        {
-          "path": "ofl/ibmplexsans/METADATA.pb",
-          "sha256": "85f7e73668461cfacc4d9ecf94a7b67dd14dc24a71c0ae2cecd36215f0ca856c",
-          "bytes": 1554,
-          "vaultPath": "assets/typography/font/font-ibm-plex-sans/files/ofl/ibmplexsans/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-instrument-serif",
-      "category": "typography/font",
-      "designStyle": [
-        "luxury",
-        "premium",
-        "creative"
-      ],
-      "pageType": [
-        "landing"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "display sizes only",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Instrument Serif",
-      "role": "display",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/instrumentserif/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/instrumentserif/OFL.txt",
-          "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
-          "bytes": 4405,
-          "vaultPath": "assets/typography/font/font-instrument-serif/files/ofl/instrumentserif/OFL.txt"
-        },
-        {
-          "path": "ofl/instrumentserif/METADATA.pb",
-          "sha256": "9a650bee57af3478f9294c8765292dcea36322082b987b857e29a2ea64861f6a",
-          "bytes": 1287,
-          "vaultPath": "assets/typography/font/font-instrument-serif/files/ofl/instrumentserif/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-jetbrains-mono",
-      "category": "typography/font",
-      "designStyle": [
-        "*"
-      ],
-      "pageType": [
-        "docs",
-        "ai-ui",
-        "dashboard"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "distinguishable glyphs (0/O, 1/l)",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "JetBrains Mono",
-      "role": "mono",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/jetbrainsmono/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/jetbrainsmono/OFL.txt",
-          "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
-          "bytes": 4399,
-          "vaultPath": "assets/typography/font/font-jetbrains-mono/files/ofl/jetbrainsmono/OFL.txt"
-        },
-        {
-          "path": "ofl/jetbrainsmono/METADATA.pb",
-          "sha256": "220f22dd4d2a3d9c77183fbbcb250779267725d90d9be673b403dc6bcfada0af",
-          "bytes": 3203,
-          "vaultPath": "assets/typography/font/font-jetbrains-mono/files/ofl/jetbrainsmono/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-outfit",
-      "category": "typography/font",
-      "designStyle": [
-        "modern",
-        "creative",
-        "visual-rich"
-      ],
-      "pageType": [
-        "landing",
-        "onboarding"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "headings",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Outfit",
-      "role": "display",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/outfit/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/outfit/OFL.txt",
-          "sha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416",
-          "bytes": 4389,
-          "vaultPath": "assets/typography/font/font-outfit/files/ofl/outfit/OFL.txt"
-        },
-        {
-          "path": "ofl/outfit/METADATA.pb",
-          "sha256": "4cd9d2154f15495ca97de561060d535eaba9f7007be4a87e40f3b58ea8111cf2",
-          "bytes": 835,
-          "vaultPath": "assets/typography/font/font-outfit/files/ofl/outfit/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-bricolage-grotesque",
-      "category": "typography/font",
-      "designStyle": [
-        "creative",
-        "visual-rich"
-      ],
-      "pageType": [
-        "landing"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "headings",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Bricolage Grotesque",
-      "role": "display",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/bricolagegrotesque/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/bricolagegrotesque/OFL.txt",
-          "sha256": "4b5a7d8f37f5602621c8a8d7358a6a2e71317e6c231c661e15aef0275d3e07ba",
-          "bytes": 4403,
-          "vaultPath": "assets/typography/font/font-bricolage-grotesque/files/ofl/bricolagegrotesque/OFL.txt"
-        },
-        {
-          "path": "ofl/bricolagegrotesque/METADATA.pb",
-          "sha256": "b15e69738219507699f04337a3d6e8f2a22cfac5a81d0a6106c343355cca456c",
-          "bytes": 1211,
-          "vaultPath": "assets/typography/font/font-bricolage-grotesque/files/ofl/bricolagegrotesque/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-newsreader",
-      "category": "typography/font",
-      "designStyle": [
-        "luxury",
-        "docs"
-      ],
-      "pageType": [
-        "docs",
-        "landing"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "optical sizes for body text",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Newsreader",
-      "role": "serif",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/newsreader/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/newsreader/OFL.txt",
-          "sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8",
-          "bytes": 4394,
-          "vaultPath": "assets/typography/font/font-newsreader/files/ofl/newsreader/OFL.txt"
-        },
-        {
-          "path": "ofl/newsreader/METADATA.pb",
-          "sha256": "dc0bcb264c09d663c9a4f559e4f5392fd7d9f62139ad9cbba39253ec43aa315b",
-          "bytes": 7076,
-          "vaultPath": "assets/typography/font/font-newsreader/files/ofl/newsreader/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-geist",
-      "category": "typography/font",
-      "designStyle": [
-        "minimal",
-        "modern",
-        "ai-ui"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "clear at UI sizes",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Geist",
-      "role": "sans",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/geist/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/geist/OFL.txt",
-          "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
-          "bytes": 4387,
-          "vaultPath": "assets/typography/font/font-geist/files/ofl/geist/OFL.txt"
-        },
-        {
-          "path": "ofl/geist/METADATA.pb",
-          "sha256": "62d302155bfbf778e9c488ef00671a4ad71a8a4cdc808ec66ceb668373afe900",
-          "bytes": 1348,
-          "vaultPath": "assets/typography/font/font-geist/files/ofl/geist/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-source-serif-4",
-      "category": "typography/font",
-      "designStyle": [
-        "luxury",
-        "enterprise",
-        "docs"
-      ],
-      "pageType": [
-        "docs",
-        "landing"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "body serif",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Source Serif 4",
-      "role": "serif",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/sourceserif4/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/sourceserif4/OFL.txt",
-          "sha256": "5f94c3fd3a23131a417ab5a0c8452de57e70c3cfb9f604d88241f7065ebf9fd9",
-          "bytes": 4400,
-          "vaultPath": "assets/typography/font/font-source-serif-4/files/ofl/sourceserif4/OFL.txt"
-        },
-        {
-          "path": "ofl/sourceserif4/METADATA.pb",
-          "sha256": "f7b88902c1d2f41839a3f7bf6723d1e64044c7c183b82871ce770a95f24b84e3",
-          "bytes": 1132,
-          "vaultPath": "assets/typography/font/font-source-serif-4/files/ofl/sourceserif4/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-public-sans",
-      "category": "typography/font",
-      "designStyle": [
-        "enterprise",
-        "neutral-web",
-        "data-dense"
-      ],
-      "pageType": [
-        "admin",
-        "settings",
-        "crm",
-        "dashboard"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "US Web Design System body face",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Public Sans",
-      "role": "sans",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/publicsans/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/publicsans/OFL.txt",
-          "sha256": "157a9e77f7580246e97c769490e2e977ae94399f9d30f4556015c41fe8c28bac",
-          "bytes": 4390,
-          "vaultPath": "assets/typography/font/font-public-sans/files/ofl/publicsans/OFL.txt"
-        },
-        {
-          "path": "ofl/publicsans/METADATA.pb",
-          "sha256": "a6bf37ce312a499068a820ae995601242aaf7c6d92fbcfe1e4c609392c1defb7",
-          "bytes": 1330,
-          "vaultPath": "assets/typography/font/font-public-sans/files/ofl/publicsans/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-figtree",
-      "category": "typography/font",
-      "designStyle": [
-        "modern",
-        "native-app",
-        "minimal"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "friendly UI face",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Figtree",
-      "role": "sans",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/figtree/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/figtree/OFL.txt",
-          "sha256": "140d37233e7f3ce7313798befa9600893bcceaf41a55fa0fa5ad52f7f657a268",
-          "bytes": 4388,
-          "vaultPath": "assets/typography/font/font-figtree/files/ofl/figtree/OFL.txt"
-        },
-        {
-          "path": "ofl/figtree/METADATA.pb",
-          "sha256": "0f70233b05de662ffa31a5dc3d310cb4eb047dc3b776046f937219179d79d905",
-          "bytes": 1282,
-          "vaultPath": "assets/typography/font/font-figtree/files/ofl/figtree/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-cormorant-garamond",
-      "category": "typography/font",
-      "designStyle": [
-        "luxury"
-      ],
-      "pageType": [
-        "landing",
-        "ecommerce"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "thin hairlines; display sizes ≥ 28px only",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Cormorant Garamond",
-      "role": "display",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/cormorantgaramond/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/cormorantgaramond/OFL.txt",
-          "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
-          "bytes": 4387,
-          "vaultPath": "assets/typography/font/font-cormorant-garamond/files/ofl/cormorantgaramond/OFL.txt"
-        },
-        {
-          "path": "ofl/cormorantgaramond/METADATA.pb",
-          "sha256": "faa16a5e79613ca7cadd599ada1f4cf6891f3cb6731631fbed2a0b18a342e556",
-          "bytes": 1426,
-          "vaultPath": "assets/typography/font/font-cormorant-garamond/files/ofl/cormorantgaramond/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-syne",
-      "category": "typography/font",
-      "designStyle": [
-        "creative",
-        "3d"
-      ],
-      "pageType": [
-        "landing"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "headings only",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Syne",
-      "role": "display",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/syne/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/syne/OFL.txt",
-          "sha256": "cc43cdce6f91c57989af8459341c276655e34224e954fa69c2ad700831a742d8",
-          "bytes": 4402,
-          "vaultPath": "assets/typography/font/font-syne/files/ofl/syne/OFL.txt"
-        },
-        {
-          "path": "ofl/syne/METADATA.pb",
-          "sha256": "ed8e42eac65f684ca698aaa4f918b3985c932a7a12d57e55183184fe8dcaadb7",
-          "bytes": 924,
-          "vaultPath": "assets/typography/font/font-syne/files/ofl/syne/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-ibm-plex-mono",
-      "category": "typography/font",
-      "designStyle": [
-        "enterprise",
-        "data-dense"
-      ],
-      "pageType": [
-        "dashboard",
-        "docs"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "tabular figures",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "IBM Plex Mono",
-      "role": "mono",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/ibmplexmono/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/ibmplexmono/OFL.txt",
-          "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
-          "bytes": 4456,
-          "vaultPath": "assets/typography/font/font-ibm-plex-mono/files/ofl/ibmplexmono/OFL.txt"
-        },
-        {
-          "path": "ofl/ibmplexmono/METADATA.pb",
-          "sha256": "2eb58f75e032cc5e021887aa7b02bf11bf548710fc5b6f23eb19c440df101a0b",
-          "bytes": 6309,
-          "vaultPath": "assets/typography/font/font-ibm-plex-mono/files/ofl/ibmplexmono/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-noto-sans",
-      "category": "typography/font",
-      "designStyle": [
-        "neutral-web",
-        "enterprise"
-      ],
-      "pageType": [
-        "*"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "medium",
-      "accessibility": "broad script coverage",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Noto Sans",
-      "role": "sans",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/notosans/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/notosans/OFL.txt",
-          "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
-          "bytes": 4396,
-          "vaultPath": "assets/typography/font/font-noto-sans/files/ofl/notosans/OFL.txt"
-        },
-        {
-          "path": "ofl/notosans/METADATA.pb",
-          "sha256": "9fd9566184e9833ae3a33b8950e2782a8abb1f0a9d6fb2c51b3fb615f2d78cfe",
-          "bytes": 32340,
-          "vaultPath": "assets/typography/font/font-noto-sans/files/ofl/notosans/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
-    },
-    {
-      "id": "font-nunito-sans",
-      "category": "typography/font",
-      "designStyle": [
-        "modern",
-        "native-app"
-      ],
-      "pageType": [
-        "onboarding",
-        "settings",
-        "landing"
-      ],
-      "platform": [
-        "*"
-      ],
-      "framework": [
-        "*"
-      ],
-      "cssStack": [
-        "*"
-      ],
-      "dependencies": [],
-      "deviceSuitability": [
-        "*"
-      ],
-      "performanceCost": "low",
-      "accessibility": "rounded, friendly",
-      "darkMode": true,
-      "license": "OFL-1.1",
-      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-      "family": "Nunito Sans",
-      "role": "sans",
-      "upstream": {
-        "repo": "google/fonts",
-        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
-        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
-        "path": "ofl/nunitosans/OFL.txt"
-      },
-      "files": [
-        {
-          "path": "ofl/nunitosans/OFL.txt",
-          "sha256": "efbb0c9e864cef973982d9a17567e6be5c3d1759695574586f3f18c7ecca064b",
-          "bytes": 4393,
-          "vaultPath": "assets/typography/font/font-nunito-sans/files/ofl/nunitosans/OFL.txt"
-        },
-        {
-          "path": "ofl/nunitosans/METADATA.pb",
-          "sha256": "b60c93a2cdadb477316d22d22c8d43fa957899a4e4fe75cbb2b9e39e03c5e96e",
-          "bytes": 1758,
-          "vaultPath": "assets/typography/font/font-nunito-sans/files/ofl/nunitosans/METADATA.pb"
-        }
-      ],
-      "licenseNotice": "sources/google-fonts/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "licenseNotice": "sources/threejs/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     },
     {
       "id": "lucide-core",
@@ -3760,7 +2371,1396 @@
         }
       ],
       "licenseNotice": "sources/lucide/LICENSE",
-      "fetchedAt": "2026-09-07T12:30:26.926Z"
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "ionic-ios-tokens",
+      "category": "tokens/platform",
+      "designStyle": [
+        "native-app",
+        "premium"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "ios"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "sass"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "mobile",
+        "foldable",
+        "tablet"
+      ],
+      "performanceCost": "none",
+      "accessibility": "iOS dynamic-type friendly sizes",
+      "darkMode": true,
+      "license": "MIT",
+      "sourceCommit": "5874331e96cbad080c41220a740a8fffd1a9699b",
+      "upstream": {
+        "repo": "ionic-team/ionic-framework",
+        "commit": "5874331e96cbad080c41220a740a8fffd1a9699b",
+        "url": "https://github.com/ionic-team/ionic-framework/tree/5874331e96cbad080c41220a740a8fffd1a9699b",
+        "path": "core/src/themes/ionic.globals.ios.scss"
+      },
+      "files": [
+        {
+          "path": "core/src/themes/ionic.globals.ios.scss",
+          "sha256": "1c049b06fbd711953b5131b68ffb3fe70a290b67ebbd03aa2964bd314568b6dc",
+          "bytes": 95,
+          "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/themes/ionic.globals.ios.scss"
+        },
+        {
+          "path": "core/src/themes/ionic.theme.default.ios.scss",
+          "sha256": "eb1e2e44319fc6dc13ba696ab368ac24d86e0b7fe0dabc9502eebfd8b195cef8",
+          "bytes": 2595,
+          "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/themes/ionic.theme.default.ios.scss"
+        },
+        {
+          "path": "core/src/themes/ionic.theme.default.scss",
+          "sha256": "0d970682af423dd70693631c90446d5f43ecbe41332198d08312277c84b72465",
+          "bytes": 9583,
+          "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/themes/ionic.theme.default.scss"
+        },
+        {
+          "path": "core/src/css/typography.scss",
+          "sha256": "cfc79ff7d5ee1ed053f3fc7822bddac4fbc2ae17d3ac3ef6bf638f4f372b513a",
+          "bytes": 1902,
+          "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/css/typography.scss"
+        },
+        {
+          "path": "core/src/components/button/button.ios.vars.scss",
+          "sha256": "f0a4d4c280349e4e83e35d7ce22a1d1e1307fc2ed8799cadba430bda8d010c45",
+          "bytes": 5668,
+          "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/components/button/button.ios.vars.scss"
+        }
+      ],
+      "licenseNotice": "sources/ionic/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "modern-normalize",
+      "category": "frameworks/css",
+      "designStyle": [
+        "*"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "html"
+      ],
+      "cssStack": [
+        "plain"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "none",
+      "accessibility": "n/a",
+      "darkMode": true,
+      "license": "MIT",
+      "sourceCommit": "27c3f5fe3109b4041a835a0fa569e09c77022bf8",
+      "upstream": {
+        "repo": "sindresorhus/modern-normalize",
+        "commit": "27c3f5fe3109b4041a835a0fa569e09c77022bf8",
+        "url": "https://github.com/sindresorhus/modern-normalize/tree/27c3f5fe3109b4041a835a0fa569e09c77022bf8",
+        "path": "modern-normalize.css"
+      },
+      "files": [
+        {
+          "path": "modern-normalize.css",
+          "sha256": "a3af19dc9751230f9babca01ad939e45aff688379c0ae64cc07321e818c871e3",
+          "bytes": 3442,
+          "vaultPath": "assets/frameworks/css/modern-normalize/files/modern-normalize.css"
+        }
+      ],
+      "licenseNotice": "sources/modern-normalize/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "swiper-css",
+      "category": "components/carousel",
+      "designStyle": [
+        "visual-rich",
+        "creative",
+        "ecommerce"
+      ],
+      "pageType": [
+        "landing",
+        "ecommerce"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [
+        "swiper"
+      ],
+      "deviceSuitability": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "performanceCost": "medium",
+      "accessibility": "a11y module required; the governor substitutes a scroll-snap carousel when swiper is absent",
+      "darkMode": true,
+      "license": "MIT",
+      "sourceCommit": "b3786674f458f0fd53af461a5300e552b145014f",
+      "upstream": {
+        "repo": "nolimits4web/swiper",
+        "commit": "b3786674f458f0fd53af461a5300e552b145014f",
+        "url": "https://github.com/nolimits4web/swiper/tree/b3786674f458f0fd53af461a5300e552b145014f",
+        "path": "src/swiper.css"
+      },
+      "files": [
+        {
+          "path": "src/swiper.css",
+          "sha256": "792b1094c1cd1b4de612b401ebd0bebdb8aa47cd98f354451fafbfb0150e615d",
+          "bytes": 5704,
+          "vaultPath": "assets/components/carousel/swiper-css/files/src/swiper.css"
+        },
+        {
+          "path": "src/modules/navigation/navigation.css",
+          "sha256": "7a69d23e622bede0f908892c8b0b11be090d4fc593c1f02bd138e9fc76ee2341",
+          "bytes": 3243,
+          "vaultPath": "assets/components/carousel/swiper-css/files/src/modules/navigation/navigation.css"
+        },
+        {
+          "path": "src/modules/pagination/pagination.css",
+          "sha256": "b89add4a532643d9689243c14f4f19704dd7ecde6fcc2d81b70f5cd137a039f8",
+          "bytes": 5266,
+          "vaultPath": "assets/components/carousel/swiper-css/files/src/modules/pagination/pagination.css"
+        },
+        {
+          "path": "package.json",
+          "sha256": "db841cfb6a366b3ede960b718bbf3914b855e6ebd4257bf80f5c921c3c60f9d5",
+          "bytes": 3851,
+          "vaultPath": "assets/components/carousel/swiper-css/files/package.json"
+        }
+      ],
+      "licenseNotice": "sources/swiper/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "chartjs-samples",
+      "category": "components/chart",
+      "designStyle": [
+        "data-dense",
+        "enterprise"
+      ],
+      "pageType": [
+        "dashboard",
+        "admin",
+        "crm"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "html",
+        "react"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [
+        "chart.js"
+      ],
+      "deviceSuitability": [
+        "tablet",
+        "desktop",
+        "ultrawide",
+        "4k"
+      ],
+      "performanceCost": "medium",
+      "accessibility": "canvas; needs aria-label + data table fallback (governor emits SVG bars when chart.js is absent)",
+      "darkMode": true,
+      "license": "MIT",
+      "sourceCommit": "cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+      "upstream": {
+        "repo": "chartjs/Chart.js",
+        "commit": "cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+        "url": "https://github.com/chartjs/Chart.js/tree/cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+        "path": "docs/samples/bar/vertical.md"
+      },
+      "files": [
+        {
+          "path": "docs/samples/bar/vertical.md",
+          "sha256": "d95ae5e09b810a213390e81d003c15a8e4e23306838270eaad4abece1de8a02f",
+          "bytes": 2631,
+          "vaultPath": "assets/components/chart/chartjs-samples/files/docs/samples/bar/vertical.md"
+        },
+        {
+          "path": "docs/samples/line/line.md",
+          "sha256": "ecec80c74b412bab9afee1bc91adbdc077938a7353c60396e00ab462fd852fbd",
+          "bytes": 2603,
+          "vaultPath": "assets/components/chart/chartjs-samples/files/docs/samples/line/line.md"
+        },
+        {
+          "path": "package.json",
+          "sha256": "1387d9f978eaf4f0273c8a5093e33890fccf487d268791fa42baf4964522a940",
+          "bytes": 4801,
+          "vaultPath": "assets/components/chart/chartjs-samples/files/package.json"
+        }
+      ],
+      "licenseNotice": "sources/chartjs/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-manrope",
+      "category": "typography/font",
+      "designStyle": [
+        "modern",
+        "premium",
+        "minimal"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "high x-height; readable at small sizes",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Manrope",
+      "role": "sans",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/manrope/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/manrope/OFL.txt",
+          "sha256": "e01b637272e0cbdfb240184dd98ea5cc671556d9894dae2668d92ab2c906787c",
+          "bytes": 4384,
+          "vaultPath": "assets/typography/font/font-manrope/files/ofl/manrope/OFL.txt"
+        },
+        {
+          "path": "ofl/manrope/METADATA.pb",
+          "sha256": "368beda3aa55b0afe90edc142d67cf37e743258c76481d520172afbc148c6cca",
+          "bytes": 727,
+          "vaultPath": "assets/typography/font/font-manrope/files/ofl/manrope/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-sora",
+      "category": "typography/font",
+      "designStyle": [
+        "modern",
+        "ai-ui",
+        "creative"
+      ],
+      "pageType": [
+        "landing",
+        "ai-ui"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "geometric display; use ≥ 20px",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Sora",
+      "role": "display",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/sora/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/sora/OFL.txt",
+          "sha256": "ba0b9729c9428ba79a0459ab8ec575791b51509dbec213e383d0316d37fec299",
+          "bytes": 4385,
+          "vaultPath": "assets/typography/font/font-sora/files/ofl/sora/OFL.txt"
+        },
+        {
+          "path": "ofl/sora/METADATA.pb",
+          "sha256": "02662b9eb0e843a22cd88d3574b76a209b152ab90ec6945f406ee36d893401ab",
+          "bytes": 605,
+          "vaultPath": "assets/typography/font/font-sora/files/ofl/sora/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-space-grotesk",
+      "category": "typography/font",
+      "designStyle": [
+        "creative",
+        "3d",
+        "visual-rich"
+      ],
+      "pageType": [
+        "landing"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "distinctive; headings only",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Space Grotesk",
+      "role": "display",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/spacegrotesk/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/spacegrotesk/OFL.txt",
+          "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72",
+          "bytes": 4495,
+          "vaultPath": "assets/typography/font/font-space-grotesk/files/ofl/spacegrotesk/OFL.txt"
+        },
+        {
+          "path": "ofl/spacegrotesk/METADATA.pb",
+          "sha256": "3713adf5c1a21affdbede103b6bb23f551d4195771fa8bc1b91ce813bd1623ee",
+          "bytes": 1509,
+          "vaultPath": "assets/typography/font/font-space-grotesk/files/ofl/spacegrotesk/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-fraunces",
+      "category": "typography/font",
+      "designStyle": [
+        "luxury",
+        "creative",
+        "premium"
+      ],
+      "pageType": [
+        "landing",
+        "ecommerce"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "variable serif; headings",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Fraunces",
+      "role": "display",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/fraunces/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/fraunces/OFL.txt",
+          "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+          "bytes": 4391,
+          "vaultPath": "assets/typography/font/font-fraunces/files/ofl/fraunces/OFL.txt"
+        },
+        {
+          "path": "ofl/fraunces/METADATA.pb",
+          "sha256": "812aeaea90af8021a306b8fbb5490e0a861c27a5291d2253b403d9fc9f37afd5",
+          "bytes": 1197,
+          "vaultPath": "assets/typography/font/font-fraunces/files/ofl/fraunces/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-dm-sans",
+      "category": "typography/font",
+      "designStyle": [
+        "minimal",
+        "modern",
+        "enterprise"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "low-contrast geometric; body ≥ 16px",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "DM Sans",
+      "role": "sans",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/dmsans/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/dmsans/OFL.txt",
+          "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+          "bytes": 4482,
+          "vaultPath": "assets/typography/font/font-dm-sans/files/ofl/dmsans/OFL.txt"
+        },
+        {
+          "path": "ofl/dmsans/METADATA.pb",
+          "sha256": "55b3697a416f7d08c093918a4019a75cca7186c64bc56b1bb23e197a5d559dee",
+          "bytes": 1283,
+          "vaultPath": "assets/typography/font/font-dm-sans/files/ofl/dmsans/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-plus-jakarta-sans",
+      "category": "typography/font",
+      "designStyle": [
+        "premium",
+        "modern",
+        "native-app"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "clear letterforms",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Plus Jakarta Sans",
+      "role": "sans",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/plusjakartasans/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/plusjakartasans/OFL.txt",
+          "sha256": "995c7199cab65954f545996326755daee7b63cc6b42b06c13da1f9502ab08a99",
+          "bytes": 4402,
+          "vaultPath": "assets/typography/font/font-plus-jakarta-sans/files/ofl/plusjakartasans/OFL.txt"
+        },
+        {
+          "path": "ofl/plusjakartasans/METADATA.pb",
+          "sha256": "e7953d66e52a1e09235d75fc7aef7139c2733c0b5507afcf6e9afbe0fcef1de6",
+          "bytes": 1396,
+          "vaultPath": "assets/typography/font/font-plus-jakarta-sans/files/ofl/plusjakartasans/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-ibm-plex-sans",
+      "category": "typography/font",
+      "designStyle": [
+        "enterprise",
+        "data-dense"
+      ],
+      "pageType": [
+        "dashboard",
+        "admin",
+        "crm",
+        "docs"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "designed for dense UI legibility",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "IBM Plex Sans",
+      "role": "sans",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/ibmplexsans/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/ibmplexsans/OFL.txt",
+          "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+          "bytes": 4456,
+          "vaultPath": "assets/typography/font/font-ibm-plex-sans/files/ofl/ibmplexsans/OFL.txt"
+        },
+        {
+          "path": "ofl/ibmplexsans/METADATA.pb",
+          "sha256": "85f7e73668461cfacc4d9ecf94a7b67dd14dc24a71c0ae2cecd36215f0ca856c",
+          "bytes": 1554,
+          "vaultPath": "assets/typography/font/font-ibm-plex-sans/files/ofl/ibmplexsans/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-instrument-serif",
+      "category": "typography/font",
+      "designStyle": [
+        "luxury",
+        "premium",
+        "creative"
+      ],
+      "pageType": [
+        "landing"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "display sizes only",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Instrument Serif",
+      "role": "display",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/instrumentserif/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/instrumentserif/OFL.txt",
+          "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
+          "bytes": 4405,
+          "vaultPath": "assets/typography/font/font-instrument-serif/files/ofl/instrumentserif/OFL.txt"
+        },
+        {
+          "path": "ofl/instrumentserif/METADATA.pb",
+          "sha256": "9a650bee57af3478f9294c8765292dcea36322082b987b857e29a2ea64861f6a",
+          "bytes": 1287,
+          "vaultPath": "assets/typography/font/font-instrument-serif/files/ofl/instrumentserif/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-jetbrains-mono",
+      "category": "typography/font",
+      "designStyle": [
+        "*"
+      ],
+      "pageType": [
+        "docs",
+        "ai-ui",
+        "dashboard"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "distinguishable glyphs (0/O, 1/l)",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "JetBrains Mono",
+      "role": "mono",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/jetbrainsmono/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/jetbrainsmono/OFL.txt",
+          "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+          "bytes": 4399,
+          "vaultPath": "assets/typography/font/font-jetbrains-mono/files/ofl/jetbrainsmono/OFL.txt"
+        },
+        {
+          "path": "ofl/jetbrainsmono/METADATA.pb",
+          "sha256": "220f22dd4d2a3d9c77183fbbcb250779267725d90d9be673b403dc6bcfada0af",
+          "bytes": 3203,
+          "vaultPath": "assets/typography/font/font-jetbrains-mono/files/ofl/jetbrainsmono/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-outfit",
+      "category": "typography/font",
+      "designStyle": [
+        "modern",
+        "creative",
+        "visual-rich"
+      ],
+      "pageType": [
+        "landing",
+        "onboarding"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "headings",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Outfit",
+      "role": "display",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/outfit/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/outfit/OFL.txt",
+          "sha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416",
+          "bytes": 4389,
+          "vaultPath": "assets/typography/font/font-outfit/files/ofl/outfit/OFL.txt"
+        },
+        {
+          "path": "ofl/outfit/METADATA.pb",
+          "sha256": "4cd9d2154f15495ca97de561060d535eaba9f7007be4a87e40f3b58ea8111cf2",
+          "bytes": 835,
+          "vaultPath": "assets/typography/font/font-outfit/files/ofl/outfit/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-bricolage-grotesque",
+      "category": "typography/font",
+      "designStyle": [
+        "creative",
+        "visual-rich"
+      ],
+      "pageType": [
+        "landing"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "headings",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Bricolage Grotesque",
+      "role": "display",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/bricolagegrotesque/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/bricolagegrotesque/OFL.txt",
+          "sha256": "4b5a7d8f37f5602621c8a8d7358a6a2e71317e6c231c661e15aef0275d3e07ba",
+          "bytes": 4403,
+          "vaultPath": "assets/typography/font/font-bricolage-grotesque/files/ofl/bricolagegrotesque/OFL.txt"
+        },
+        {
+          "path": "ofl/bricolagegrotesque/METADATA.pb",
+          "sha256": "b15e69738219507699f04337a3d6e8f2a22cfac5a81d0a6106c343355cca456c",
+          "bytes": 1211,
+          "vaultPath": "assets/typography/font/font-bricolage-grotesque/files/ofl/bricolagegrotesque/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-newsreader",
+      "category": "typography/font",
+      "designStyle": [
+        "luxury",
+        "docs"
+      ],
+      "pageType": [
+        "docs",
+        "landing"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "optical sizes for body text",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Newsreader",
+      "role": "serif",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/newsreader/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/newsreader/OFL.txt",
+          "sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8",
+          "bytes": 4394,
+          "vaultPath": "assets/typography/font/font-newsreader/files/ofl/newsreader/OFL.txt"
+        },
+        {
+          "path": "ofl/newsreader/METADATA.pb",
+          "sha256": "dc0bcb264c09d663c9a4f559e4f5392fd7d9f62139ad9cbba39253ec43aa315b",
+          "bytes": 7076,
+          "vaultPath": "assets/typography/font/font-newsreader/files/ofl/newsreader/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-geist",
+      "category": "typography/font",
+      "designStyle": [
+        "minimal",
+        "modern",
+        "ai-ui"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "clear at UI sizes",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Geist",
+      "role": "sans",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/geist/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/geist/OFL.txt",
+          "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+          "bytes": 4387,
+          "vaultPath": "assets/typography/font/font-geist/files/ofl/geist/OFL.txt"
+        },
+        {
+          "path": "ofl/geist/METADATA.pb",
+          "sha256": "62d302155bfbf778e9c488ef00671a4ad71a8a4cdc808ec66ceb668373afe900",
+          "bytes": 1348,
+          "vaultPath": "assets/typography/font/font-geist/files/ofl/geist/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-source-serif-4",
+      "category": "typography/font",
+      "designStyle": [
+        "luxury",
+        "enterprise",
+        "docs"
+      ],
+      "pageType": [
+        "docs",
+        "landing"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "body serif",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Source Serif 4",
+      "role": "serif",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/sourceserif4/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/sourceserif4/OFL.txt",
+          "sha256": "5f94c3fd3a23131a417ab5a0c8452de57e70c3cfb9f604d88241f7065ebf9fd9",
+          "bytes": 4400,
+          "vaultPath": "assets/typography/font/font-source-serif-4/files/ofl/sourceserif4/OFL.txt"
+        },
+        {
+          "path": "ofl/sourceserif4/METADATA.pb",
+          "sha256": "f7b88902c1d2f41839a3f7bf6723d1e64044c7c183b82871ce770a95f24b84e3",
+          "bytes": 1132,
+          "vaultPath": "assets/typography/font/font-source-serif-4/files/ofl/sourceserif4/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-figtree",
+      "category": "typography/font",
+      "designStyle": [
+        "modern",
+        "native-app",
+        "minimal"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "friendly UI face",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Figtree",
+      "role": "sans",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/figtree/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/figtree/OFL.txt",
+          "sha256": "140d37233e7f3ce7313798befa9600893bcceaf41a55fa0fa5ad52f7f657a268",
+          "bytes": 4388,
+          "vaultPath": "assets/typography/font/font-figtree/files/ofl/figtree/OFL.txt"
+        },
+        {
+          "path": "ofl/figtree/METADATA.pb",
+          "sha256": "0f70233b05de662ffa31a5dc3d310cb4eb047dc3b776046f937219179d79d905",
+          "bytes": 1282,
+          "vaultPath": "assets/typography/font/font-figtree/files/ofl/figtree/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-public-sans",
+      "category": "typography/font",
+      "designStyle": [
+        "enterprise",
+        "neutral-web",
+        "data-dense"
+      ],
+      "pageType": [
+        "admin",
+        "settings",
+        "crm",
+        "dashboard"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "US Web Design System body face",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Public Sans",
+      "role": "sans",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/publicsans/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/publicsans/OFL.txt",
+          "sha256": "157a9e77f7580246e97c769490e2e977ae94399f9d30f4556015c41fe8c28bac",
+          "bytes": 4390,
+          "vaultPath": "assets/typography/font/font-public-sans/files/ofl/publicsans/OFL.txt"
+        },
+        {
+          "path": "ofl/publicsans/METADATA.pb",
+          "sha256": "a6bf37ce312a499068a820ae995601242aaf7c6d92fbcfe1e4c609392c1defb7",
+          "bytes": 1330,
+          "vaultPath": "assets/typography/font/font-public-sans/files/ofl/publicsans/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-cormorant-garamond",
+      "category": "typography/font",
+      "designStyle": [
+        "luxury"
+      ],
+      "pageType": [
+        "landing",
+        "ecommerce"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "thin hairlines; display sizes ≥ 28px only",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Cormorant Garamond",
+      "role": "display",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/cormorantgaramond/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/cormorantgaramond/OFL.txt",
+          "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+          "bytes": 4387,
+          "vaultPath": "assets/typography/font/font-cormorant-garamond/files/ofl/cormorantgaramond/OFL.txt"
+        },
+        {
+          "path": "ofl/cormorantgaramond/METADATA.pb",
+          "sha256": "faa16a5e79613ca7cadd599ada1f4cf6891f3cb6731631fbed2a0b18a342e556",
+          "bytes": 1426,
+          "vaultPath": "assets/typography/font/font-cormorant-garamond/files/ofl/cormorantgaramond/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-syne",
+      "category": "typography/font",
+      "designStyle": [
+        "creative",
+        "3d"
+      ],
+      "pageType": [
+        "landing"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "headings only",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Syne",
+      "role": "display",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/syne/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/syne/OFL.txt",
+          "sha256": "cc43cdce6f91c57989af8459341c276655e34224e954fa69c2ad700831a742d8",
+          "bytes": 4402,
+          "vaultPath": "assets/typography/font/font-syne/files/ofl/syne/OFL.txt"
+        },
+        {
+          "path": "ofl/syne/METADATA.pb",
+          "sha256": "ed8e42eac65f684ca698aaa4f918b3985c932a7a12d57e55183184fe8dcaadb7",
+          "bytes": 924,
+          "vaultPath": "assets/typography/font/font-syne/files/ofl/syne/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-ibm-plex-mono",
+      "category": "typography/font",
+      "designStyle": [
+        "enterprise",
+        "data-dense"
+      ],
+      "pageType": [
+        "dashboard",
+        "docs"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "tabular figures",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "IBM Plex Mono",
+      "role": "mono",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/ibmplexmono/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/ibmplexmono/OFL.txt",
+          "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+          "bytes": 4456,
+          "vaultPath": "assets/typography/font/font-ibm-plex-mono/files/ofl/ibmplexmono/OFL.txt"
+        },
+        {
+          "path": "ofl/ibmplexmono/METADATA.pb",
+          "sha256": "2eb58f75e032cc5e021887aa7b02bf11bf548710fc5b6f23eb19c440df101a0b",
+          "bytes": 6309,
+          "vaultPath": "assets/typography/font/font-ibm-plex-mono/files/ofl/ibmplexmono/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-nunito-sans",
+      "category": "typography/font",
+      "designStyle": [
+        "modern",
+        "native-app"
+      ],
+      "pageType": [
+        "onboarding",
+        "settings",
+        "landing"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "low",
+      "accessibility": "rounded, friendly",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Nunito Sans",
+      "role": "sans",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/nunitosans/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/nunitosans/OFL.txt",
+          "sha256": "efbb0c9e864cef973982d9a17567e6be5c3d1759695574586f3f18c7ecca064b",
+          "bytes": 4393,
+          "vaultPath": "assets/typography/font/font-nunito-sans/files/ofl/nunitosans/OFL.txt"
+        },
+        {
+          "path": "ofl/nunitosans/METADATA.pb",
+          "sha256": "b60c93a2cdadb477316d22d22c8d43fa957899a4e4fe75cbb2b9e39e03c5e96e",
+          "bytes": 1758,
+          "vaultPath": "assets/typography/font/font-nunito-sans/files/ofl/nunitosans/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
+    },
+    {
+      "id": "font-noto-sans",
+      "category": "typography/font",
+      "designStyle": [
+        "neutral-web",
+        "enterprise"
+      ],
+      "pageType": [
+        "*"
+      ],
+      "platform": [
+        "*"
+      ],
+      "framework": [
+        "*"
+      ],
+      "cssStack": [
+        "*"
+      ],
+      "dependencies": [],
+      "deviceSuitability": [
+        "*"
+      ],
+      "performanceCost": "medium",
+      "accessibility": "broad script coverage",
+      "darkMode": true,
+      "license": "OFL-1.1",
+      "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "family": "Noto Sans",
+      "role": "sans",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/notosans/OFL.txt"
+      },
+      "files": [
+        {
+          "path": "ofl/notosans/OFL.txt",
+          "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+          "bytes": 4396,
+          "vaultPath": "assets/typography/font/font-noto-sans/files/ofl/notosans/OFL.txt"
+        },
+        {
+          "path": "ofl/notosans/METADATA.pb",
+          "sha256": "9fd9566184e9833ae3a33b8950e2782a8abb1f0a9d6fb2c51b3fb615f2d78cfe",
+          "bytes": 32340,
+          "vaultPath": "assets/typography/font/font-noto-sans/files/ofl/notosans/METADATA.pb"
+        }
+      ],
+      "licenseNotice": "sources/google-fonts/LICENSE",
+      "fetchedAt": "2026-09-07T14:20:27.163Z"
     }
   ],
   "excluded": [

@@ -23,6 +23,9 @@
 .PARAMETER InstallPlaywright
   Also install the Playwright browser used by the verification suite (npx playwright install chromium).
 
+.NOTES
+  -Verbose is the standard CmdletBinding common parameter; passing it forwards --verbose to the Node core.
+
 .EXAMPLE
   powershell -ExecutionPolicy Bypass -File bootstrap\SETUP-KK-UI-DESIGN-VAULT.ps1
   powershell -ExecutionPolicy Bypass -File bootstrap\SETUP-KK-UI-DESIGN-VAULT.ps1 -VerifyOnly
@@ -33,9 +36,12 @@ param(
   [string]$Manifest = "",
   [switch]$Offline,
   [switch]$VerifyOnly,
-  [switch]$InstallPlaywright,
-  [switch]$Verbose
+  [switch]$InstallPlaywright
 )
+# NOTE: do NOT declare a -Verbose switch here. [CmdletBinding()] already supplies -Verbose (and -Debug,
+# -ErrorAction, ...) as common parameters; redeclaring one makes PowerShell refuse to bind the command
+# with "A parameter with the name 'Verbose' was defined multiple times". Read the common parameter via
+# $VerbosePreference instead, which -Verbose sets to 'Continue'.
 
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent $PSScriptRoot
@@ -74,14 +80,15 @@ if (-not $Offline -and -not $VerifyOnly) {
 }
 
 # 3-5. Delegate to the cross-platform Node core
-$args = @((Join-Path $PSScriptRoot "setup-vault.mjs"), "--manifest", $Manifest, "--vault-dir", $VaultDir)
-if ($Offline) { $args += "--offline" }
-if ($VerifyOnly) { $args += "--verify-only" }
-if ($Verbose) { $args += "--verbose" }
-Write-Step "Running: node $($args -join ' ')"
-& node @args
+# $args is an automatic variable in PowerShell - never assign to it. Use an explicit name and splat that.
+$nodeArgs = @((Join-Path $PSScriptRoot "setup-vault.mjs"), "--manifest", $Manifest, "--vault-dir", $VaultDir)
+if ($Offline) { $nodeArgs += "--offline" }
+if ($VerifyOnly) { $nodeArgs += "--verify-only" }
+if ($VerbosePreference -ne 'SilentlyContinue') { $nodeArgs += "--verbose" }
+Write-Step "Running: node $($nodeArgs -join ' ')"
+& node @nodeArgs
 $code = $LASTEXITCODE
-if ($code -ne 0) { Fail "vault setup failed (exit $code). See $VaultDir\SETUP-REPORT.json" }
+if ($code -ne 0) { Fail "vault setup failed (exit $code). See $(Join-Path $VaultDir 'SETUP-REPORT.json')" }
 
 # 6. Optional: Playwright browser for the verification suite
 if ($InstallPlaywright) {
@@ -90,6 +97,6 @@ if ($InstallPlaywright) {
   try { & npm install --no-audit --no-fund; & npx playwright install chromium } finally { Pop-Location }
 }
 
-Write-Step "Done. Catalog: $VaultDir\catalog.json  Notices: $VaultDir\NOTICES.md  Report: $VaultDir\SETUP-REPORT.json"
-Write-Step "Next: node bin\kkgov.js scan <project>   |   node bin\kkgov.js apply <project> --auto"
+Write-Step "Done. Catalog: $(Join-Path $VaultDir 'catalog.json')  Notices: $(Join-Path $VaultDir 'NOTICES.md')  Report: $(Join-Path $VaultDir 'SETUP-REPORT.json')"
+Write-Step "Next: node $(Join-Path 'bin' 'kkgov.js') scan <project>   |   node $(Join-Path 'bin' 'kkgov.js') apply <project> --auto"
 exit 0

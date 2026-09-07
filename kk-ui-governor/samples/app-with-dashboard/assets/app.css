@@ -1,0 +1,21 @@
+:root { --brand: #1f6feb; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #222; background: #fff; }
+.bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; border-bottom: 1px solid #ddd; }
+.brand { font-weight: bold; color: var(--brand); text-decoration: none; }
+nav a { margin-left: 14px; color: #444; text-decoration: none; font-size: 14px; }
+.hero { padding: 40px 20px; }
+.hero h1 { font-size: 34px; margin: 0 0 12px; }
+.lead { color: #555; font-size: 17px; }
+.lead-form { display: flex; gap: 8px; margin-top: 14px; }
+.lead-form input { padding: 9px; border: 1px solid #bbb; outline: none; }
+button, .btn { background: var(--brand); color: #fff; border: none; padding: 9px 16px; cursor: pointer; }
+.note { font-size: 11px; color: #888; }
+.cards { display: flex; gap: 16px; padding: 20px; }
+.card { flex: 1; border: 1px solid #e2e2e2; padding: 16px; }
+.app { display: flex; gap: 20px; padding: 20px; }
+.side { width: 170px; display: flex; flex-direction: column; gap: 6px; }
+.side a { color: #444; text-decoration: none; font-size: 13px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 7px; border-bottom: 1px solid #e2e2e2; font-size: 14px; }
+footer { padding: 20px; color: #777; font-size: 13px; }

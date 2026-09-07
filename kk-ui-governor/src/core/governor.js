@@ -14,7 +14,7 @@ import { buildTokens } from '../pipeline/tokens.js';
 import { pickAdapter } from '../adapters/registry.js';
 import { probeCandidate } from '../pipeline/probe.js';
 import { buildPreview } from '../pipeline/preview.js';
-import { runVerification, staticVerification, browserAvailable } from '../verify/runner.js';
+import { runVerification, staticVerification, browserAvailable, compareGuards } from '../verify/runner.js';
 import { runBuildCheck, shouldBuildCheck } from '../verify/build-check.js';
 import { Catalog } from '../vault/catalog.js';
 import { DEFAULT_VAULT_DIR } from '../vault/index.js';
@@ -106,6 +106,13 @@ export class Governor {
       // ---- 5. PREVIEW (current vs candidate, before any write) + baseline verification
       await tx.stage('preview', 'running');
       const pages = (plan.pages && plan.pages.length ? plan.pages : ['/']).slice(0, options.maxPages || 6);
+      // Scoped run: every OTHER route is a guard route. Its computed styling is captured before and
+      // after the write and must come back identical - that is the proof that an authenticated
+      // dashboard (or any other page) was not redesigned.
+      const guardPages = selection.scopeSelector
+        ? scan.pages.filter((p) => !p.dynamic).map((p) => p.route).filter((r) => !pages.includes(r)).slice(0, options.maxGuardPages || 4)
+        : [];
+      if (guardPages.length) log.info(`scoped run: guarding ${guardPages.length} route(s) against any visual change: ${guardPages.join(', ')}`);
       const haveBrowser = verifyMode !== 'static' && (await browserAvailable());
       const server = adapter.serve({ scan, logger: log });
       if (options.preview !== false) {
@@ -116,7 +123,7 @@ export class Governor {
         let running = null;
         try {
           running = await server.start();
-          baselineResult = await runVerification({ baseUrl: running.baseUrl, pages, mode: verifyMode, outDir: path.join(tx.previewDir, 'baseline'), logger: log, label: 'baseline', screenshots: false });
+          baselineResult = await runVerification({ baseUrl: running.baseUrl, pages, guardPages, mode: verifyMode, outDir: path.join(tx.previewDir, 'baseline'), logger: log, label: 'baseline', screenshots: false });
           log.info(`baseline: ${baselineResult.ok ? 'clean' : baselineResult.checks.filter((c) => c.status === 'fail').map((c) => c.id + '=' + c.count).join(' ')}`);
         } catch (e) { log.warn(`baseline verification skipped: ${e.message}`); }
         finally { await running?.stop(); }
@@ -145,7 +152,25 @@ export class Governor {
         let running = null;
         try {
           running = await server.start();
-          verification = await runVerification({ baseUrl: running.baseUrl, pages, mode: verifyMode, outDir: tx.verifyDir, baseline: baselineResult, logger: log, label: 'candidate', themeMode: selection.theme });
+          verification = await runVerification({ baseUrl: running.baseUrl, pages, guardPages, mode: verifyMode, outDir: tx.verifyDir, baseline: baselineResult, logger: log, label: 'candidate', themeMode: selection.theme });
+          // UNCHANGED-ROUTES: compare guard-route style signatures captured before and after the write.
+          if (guardPages.length) {
+            const cmp = compareGuards(baselineResult?.guards, verification.guards);
+            const fails = cmp.findings.filter((f) => f.severity === 'fail');
+            const check = {
+              id: 'UNCHANGED-ROUTES', name: 'Routes outside the upgraded scope are byte-identical in computed style',
+              status: fails.length ? 'fail' : cmp.compared ? 'pass' : 'warn',
+              count: fails.length, baselineCount: null,
+              summary: fails.length
+                ? `${fails.length} guard route/device pair(s) changed - the scope leaked`
+                : cmp.compared ? `${cmp.compared} guard route/device pair(s) identical before and after` : 'no guard signatures could be captured',
+              findings: cmp.findings.map((f) => ({ check: 'UNCHANGED-ROUTES', device: f.device, page: f.page, severity: f.severity, message: f.message, ...(f.examples ? { data: f.examples } : {}) })),
+            };
+            const existing = verification.checks.findIndex((c) => c.id === 'UNCHANGED-ROUTES');
+            if (existing >= 0) verification.checks[existing] = check; else verification.checks.push(check);
+            verification.ok = verification.checks.every((c) => c.status !== 'fail');
+            verification.counts['UNCHANGED-ROUTES'] = fails.length;
+          }
           if (preview && !preview.candidate?.url) { const shot = verification.devices.find((d) => d.id === 'laptop-1280')?.screenshots?.[0]; if (shot) preview.candidate = { file: shot.file, note: 'captured after write, before keep/rollback decision' }; }
         } catch (e) { log.error(`verification could not run: ${e.message}`); verification = { ok: false, mode: verifyMode, engine: 'none', pages, devices: [], checks: [{ id: 'RUN', name: 'verification run', status: 'fail', count: 1, summary: e.message, findings: [] }] }; }
         finally { await running?.stop(); }

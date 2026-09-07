@@ -43,11 +43,16 @@ export function resolveSelection(input = {}, scan, catalog) {
   const effects = listPick('effects', merged.effects, rec.effects, errors);
   const brandMode = merged.brandMode || (platform.value === 'brand-custom' ? 'replace' : 'preserve');
   if (!['preserve', 'replace'].includes(brandMode)) errors.push(`brandMode must be preserve|replace`);
+  // scope: 'global' restyles the whole project (default). Any other value confines every generated
+  // rule to a scope root so the rest of the application - notably an authenticated dashboard - keeps
+  // rendering exactly as before. See src/pipeline/scope-css.js.
+  const scope = merged.scope || 'global';
+  if (!/^[a-z][\w-]*$/i.test(scope)) errors.push('scope must be a simple name such as "global" or "landing"');
   const selection = {
     preset: input.preset || 'auto', auto,
     style: style.value, pageType: pageType.value, platform: platform.value, theme: theme.value, density: density.value, motion: motion.value,
     devices: devices.value, a11y: a11y.value, components: components.value, effects: effects.value,
-    brandMode, threeD: merged.threeD ?? rec.threeD, radius: merged.radius ?? null, fontDisplay: merged.fontDisplay ?? rec.fonts.display, fontBody: merged.fontBody ?? rec.fonts.body, fontMono: rec.fonts.mono,
+    brandMode, scope, scopeSelector: scope === 'global' ? null : `[data-kk-scope="${scope}"]`, threeD: merged.threeD ?? rec.threeD, radius: merged.radius ?? null, fontDisplay: merged.fontDisplay ?? rec.fonts.display, fontBody: merged.fontBody ?? rec.fonts.body, fontMono: rec.fonts.mono,
     sources: { style: style.source, pageType: pageType.source, platform: platform.source, theme: theme.source, density: density.source, motion: motion.source, a11y: a11y.source },
     recommendation: rec,
   };
