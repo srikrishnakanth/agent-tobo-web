@@ -189,5 +189,5 @@ html[data-kk-3d="css"] .kk-3d__webgl { display: none; }
 input:focus-visible { outline: 3px solid var(--kk-color-focus) !important; outline-offset: 2px; }
 /* brand-background-contrast: src/app/globals.css: brand-filled surface uses the AA-validated primary/on-primary pair */
 button { background-color: var(--kk-color-primary); color: var(--kk-color-on-primary); }
-/* fixed-bottom-no-safe-area: src/app/globals.css: honour safe-area inset */
-.panel { padding-bottom: max(var(--kk-space-5), var(--kk-safe-bottom)); }
+/* fixed-bottom-no-safe-area: src/app/globals.css: honour safe-area inset and cap height on small viewports */
+.panel { padding-bottom: calc(24px + var(--kk-safe-bottom)); max-height: 38vh; overflow-y: auto; }

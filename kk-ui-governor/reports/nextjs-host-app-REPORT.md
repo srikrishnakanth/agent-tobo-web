@@ -1,6 +1,6 @@
 # KK-UI-GOVERNOR Report — PASS
 
-- Transaction: 20260907-132213-b14d3c
+- Transaction: 20260907-133717-2cf993
 - Project: /home/user/agent-tobo-web
 - Framework: nextjs · Adapter: nextjs
 - Direction: modern / landing / neutral-web / dark
@@ -29,18 +29,18 @@
 
 ## Verification checks
 - LOAD Pages load and can be measured on every device: pass — no findings
-- RESP-SWEEP Responsive layout sweep 240px → 3840px (no horizontal overflow): pass — fixed (baseline had 2)
-- MOBILE-ORIENT Mobile portrait / landscape: pass — fixed (baseline had 1)
-- FOLDABLE Foldable widths (closed / open / dual): pass — fixed (baseline had 1)
+- RESP-SWEEP Responsive layout sweep 240px → 3840px (no horizontal overflow): pass — no findings
+- MOBILE-ORIENT Mobile portrait / landscape: pass — no findings
+- FOLDABLE Foldable widths (closed / open / dual): pass — no findings
 - DPR Device pixel ratio 1× / 2× / 3×: pass — no findings
 - THEME Light / dark scheme: pass — no findings
 - FONT-200 200% font scaling (no overflow / clipping): pass — no findings
 - KEYBOARD-NAV Keyboard navigation: pass — no findings
-- FOCUS-VISIBLE Focus visibility: pass — fixed (baseline had 14)
+- FOCUS-VISIBLE Focus visibility: pass — no findings
 - CONTRAST WCAG AA text contrast: pass — no findings
-- FORCED-COLORS forced-colors (Windows High Contrast): pass — fixed (baseline had 1)
+- FORCED-COLORS forced-colors (Windows High Contrast): pass — no findings
 - REDUCED-MOTION prefers-reduced-motion honoured: pass — no findings
-- OVERFLOW Overflow culprits on deep devices: pass — fixed (baseline had 2)
+- OVERFLOW Overflow culprits on deep devices: pass — no findings
 - LAYOUT-SHIFT Layout shift (CLS ≤ 0.1) and reserved media space: pass — no findings
 - STICKY-FIXED Fixed / sticky elements sane: pass — no findings
 - TOUCH-TARGET Touch target size (≥ 24px, ideally 44px): pass — no findings
@@ -49,22 +49,23 @@
 - CONSOLE-ERRORS No console / runtime errors: pass — no findings
 - EXTERNAL-RESOURCES External resources (fonts/CDN) reachable: pass — no findings
 - A11Y-BASICS Landmarks, lang, alt text, form labels: warn — 2 advisory finding(s)
+- BUILD Project's own production build: pass — npm run build --silent succeeded in 13s
 
 ## Files
-- create src/app/kk-design/tokens.css
-- create src/app/kk-design/theme.css
-- create src/app/kk-design/motion.js
-- create src/app/kk-design/ATTRIBUTION.md
-- create src/app/kk-design/tokens.json
-- create src/app/kk-design/components/KkButton.tsx
-- create src/app/kk-design/components/KkCard.tsx
-- create src/app/kk-design/components/KkInput.tsx
-- create src/app/kk-design/components/KkModal.tsx
-- create src/app/kk-design/components/KkTable.tsx
-- create src/app/kk-design/components/KkNav.tsx
-- create src/app/kk-design/components/KkSidebar.tsx
-- create src/app/kk-design/components/KkChart.tsx
-- create src/app/kk-design/components/KkCarousel.tsx
-- create src/app/kk-design/KkThemeProvider.tsx
-- create src/app/kk-design/index.ts
+- modify src/app/kk-design/tokens.css
+- modify src/app/kk-design/theme.css
+- modify src/app/kk-design/motion.js
+- modify src/app/kk-design/ATTRIBUTION.md
+- modify src/app/kk-design/tokens.json
+- modify src/app/kk-design/components/KkButton.tsx
+- modify src/app/kk-design/components/KkCard.tsx
+- modify src/app/kk-design/components/KkInput.tsx
+- modify src/app/kk-design/components/KkModal.tsx
+- modify src/app/kk-design/components/KkTable.tsx
+- modify src/app/kk-design/components/KkNav.tsx
+- modify src/app/kk-design/components/KkSidebar.tsx
+- modify src/app/kk-design/components/KkChart.tsx
+- modify src/app/kk-design/components/KkCarousel.tsx
+- modify src/app/kk-design/KkThemeProvider.tsx
+- modify src/app/kk-design/index.ts
 - modify src/app/layout.tsx
