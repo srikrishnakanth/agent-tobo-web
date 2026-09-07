@@ -1,4 +1,4 @@
-// KK-UI-GOVERNOR generated (modern / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
+// KK-UI-GOVERNOR generated (premium / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
 // KK-UI-GOVERNOR design system entry. Import './theme.css' once (done by the governor) and use these components anywhere.
 export { KkButton } from './components/KkButton';
 export { KkCard } from './components/KkCard';

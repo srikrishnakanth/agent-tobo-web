@@ -1,5 +1,5 @@
 'use client';
-// KK-UI-GOVERNOR generated (modern / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
+// KK-UI-GOVERNOR generated (premium / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { initKkMotion, kkTheme } from './motion.js';
 export type KkTheme = 'auto' | 'light' | 'dark' | 'high-contrast';

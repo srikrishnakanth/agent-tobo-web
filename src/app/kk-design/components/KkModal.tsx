@@ -1,5 +1,5 @@
 'use client';
-// KK-UI-GOVERNOR generated (modern / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
+// KK-UI-GOVERNOR generated (premium / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
 import React, { useEffect, useRef } from 'react';
 export type KkModalProps = { open: boolean; onClose: () => void; title: React.ReactNode; children?: React.ReactNode; actions?: React.ReactNode };
 /** Native <dialog>: focus trap, Escape, aria-modal and backdrop for free; no dependency. */

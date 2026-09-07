@@ -1,4 +1,4 @@
-// KK-UI-GOVERNOR generated (modern / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
+// KK-UI-GOVERNOR generated (premium / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
 import React from 'react';
 export type KkNavItem = { href: string; label: React.ReactNode; current?: boolean; icon?: React.ReactNode };
 export type KkNavProps = { items: KkNavItem[]; brand?: React.ReactNode; sticky?: boolean; end?: React.ReactNode; LinkComponent?: React.ComponentType<any> };

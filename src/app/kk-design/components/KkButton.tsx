@@ -1,4 +1,4 @@
-// KK-UI-GOVERNOR generated (modern / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
+// KK-UI-GOVERNOR generated (premium / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
 import React from 'react';
 export type KkButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'primary' | 'secondary' | 'ghost' | 'danger'; size?: 'sm' | 'md' | 'lg'; icon?: boolean };
 export function KkButton({ variant = 'primary', size = 'md', icon = false, className = '', type = 'button', ...rest }: KkButtonProps) {

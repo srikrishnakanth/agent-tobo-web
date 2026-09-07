@@ -2,6 +2,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { KkScope } from "./kk-design/KkScope"
 
 type Message = { sender: "system" | "user"; text: string }
 type Scope = { businessName?: string; platforms?: string[]; features?: string[] }
@@ -67,6 +68,7 @@ export default function Home() {
   }
 
   return (
+    <KkScope>
     <div className="fullscreen">
       <div className="centered" style={{ padding: "20px" }}>
         <div className="logo">AGENT TOBO</div>
@@ -100,5 +102,6 @@ export default function Home() {
         </div>
       )}
     </div>
+    </KkScope>
   )
 }

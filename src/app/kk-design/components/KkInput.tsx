@@ -1,5 +1,5 @@
 'use client';
-// KK-UI-GOVERNOR generated (modern / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
+// KK-UI-GOVERNOR generated (premium / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
 import React, { useId } from 'react';
 export type KkInputProps = React.InputHTMLAttributes<HTMLInputElement> & { label: React.ReactNode; help?: React.ReactNode; error?: React.ReactNode; textarea?: boolean };
 export function KkInput({ label, help, error, textarea = false, id, className = '', ...rest }: KkInputProps) {

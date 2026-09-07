@@ -1,6 +1,6 @@
 // KK-UI-GOVERNOR motion runtime (ES module). Import and call initKkMotion() once on the client.
 
-const KK_CONFIG = {"level":"standard","scroll":true,"parallax":false,"threeD":false,"carousel":false,"fallback":{"reducedMotion":"disable"},"lowEndCores":4,"lowEndMemoryGB":4,"perfBudgetLongFrameRatio":0.3};
+const KK_CONFIG = {"level":"subtle","scroll":false,"parallax":false,"threeD":false,"carousel":false,"fallback":{"reducedMotion":"disable"},"lowEndCores":4,"lowEndMemoryGB":4,"perfBudgetLongFrameRatio":0.3};
 function kkCapabilities() {
   const mq = (q) => { try { return window.matchMedia(q).matches; } catch { return false; } };
   const nav = navigator || {};

@@ -1,4 +1,4 @@
-// KK-UI-GOVERNOR generated (modern / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
+// KK-UI-GOVERNOR generated (premium / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
 import React from 'react';
 export type KkColumn<Row> = { key: keyof Row & string; header: React.ReactNode; numeric?: boolean; wrap?: boolean; render?: (row: Row) => React.ReactNode };
 export type KkTableProps<Row> = { columns: KkColumn<Row>[]; rows: Row[]; caption?: React.ReactNode; rowKey?: (row: Row, i: number) => React.Key };

@@ -1,4 +1,4 @@
-// KK-UI-GOVERNOR generated (modern / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
+// KK-UI-GOVERNOR generated (premium / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
 import React, { useRef } from 'react';
 export type KkCarouselProps = { label: string; children: React.ReactNode; controls?: boolean };
 /** Scroll-snap carousel: native scrolling, keyboard arrows, optional buttons. No dependency. */

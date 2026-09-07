@@ -1,4 +1,4 @@
-// KK-UI-GOVERNOR generated (modern / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
+// KK-UI-GOVERNOR generated (premium / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
 import React from 'react';
 export type KkPoint = { label: string; value: number };
 export type KkChartProps = { data: KkPoint[]; title: string; kind?: 'bar' | 'line'; height?: number; formatValue?: (v: number) => string };

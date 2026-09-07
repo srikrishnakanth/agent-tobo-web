@@ -1,4 +1,4 @@
-// KK-UI-GOVERNOR generated (modern / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
+// KK-UI-GOVERNOR generated (premium / landing) — dependency-free design system component. Safe to edit; re-runs replace files that keep this header.
 import React from 'react';
 export type KkCardProps = React.HTMLAttributes<HTMLElement> & { title?: React.ReactNode; meta?: React.ReactNode; elevated?: boolean; as?: 'article' | 'section' | 'div' };
 export function KkCard({ title, meta, elevated = false, as = 'article', className = '', children, ...rest }: KkCardProps) {
