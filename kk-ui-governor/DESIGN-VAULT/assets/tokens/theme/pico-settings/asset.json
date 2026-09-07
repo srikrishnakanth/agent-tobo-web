@@ -1,0 +1,46 @@
+{
+  "id": "pico-settings",
+  "category": "tokens/theme",
+  "designStyle": [
+    "minimal",
+    "modern"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "html"
+  ],
+  "cssStack": [
+    "plain",
+    "sass"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "n/a",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+  "upstream": {
+    "repo": "picocss/pico",
+    "commit": "1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+    "url": "https://github.com/picocss/pico/tree/1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+    "path": "scss/_settings.scss"
+  },
+  "files": [
+    {
+      "path": "scss/_settings.scss",
+      "sha256": "8ded54795a73e6f690cfd12ca6f02c13fd0faf94aa287aa970b045da68bd5a1d",
+      "bytes": 3542,
+      "vaultPath": "assets/tokens/theme/pico-settings/files/scss/_settings.scss"
+    }
+  ],
+  "licenseNotice": "sources/pico/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

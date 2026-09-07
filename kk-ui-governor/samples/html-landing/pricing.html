@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing — Northwind Analytics</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="index.html">Northwind Analytics</a>
+    <nav class="menu"><a href="index.html">Product</a><a href="pricing.html">Pricing</a></nav>
+  </header>
+  <main class="pricing">
+    <h1>Simple per-vehicle pricing</h1>
+    <div class="plans">
+      <article class="plan"><h3>Regional</h3><p class="price">$18<span>/vehicle/mo</span></p><ul><li>Live ETAs</li><li>Exception inbox</li></ul><button class="btn">Choose Regional</button></article>
+      <article class="plan featured"><h3>National</h3><p class="price">$29<span>/vehicle/mo</span></p><ul><li>Everything in Regional</li><li>Customer portal</li><li>API access</li></ul><button class="btn">Choose National</button></article>
+    </div>
+    <form class="calc">
+      <label for="veh">Vehicles</label>
+      <input id="veh" type="number" value="120" min="1">
+      <button type="button" id="calc">Estimate</button>
+      <output id="out" for="veh"></output>
+    </form>
+  </main>
+  <footer><p>© Northwind Analytics</p></footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

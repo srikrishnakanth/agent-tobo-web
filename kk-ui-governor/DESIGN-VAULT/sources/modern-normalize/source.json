@@ -1,0 +1,11 @@
+{
+  "id": "modern-normalize",
+  "repo": "sindresorhus/modern-normalize",
+  "url": "https://github.com/sindresorhus/modern-normalize/tree/27c3f5fe3109b4041a835a0fa569e09c77022bf8",
+  "commit": "27c3f5fe3109b4041a835a0fa569e09c77022bf8",
+  "license": "MIT",
+  "licenseFile": "license",
+  "licenseSha256": "52390989c3437957416a692ac5fd2fbe08d8c7dcb725ef5f43d1c817640c04ae",
+  "homepage": "https://github.com/sindresorhus/modern-normalize",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

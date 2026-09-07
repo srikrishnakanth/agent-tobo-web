@@ -1,0 +1,102 @@
+{
+  "id": "tabler-outline-core",
+  "category": "icons",
+  "designStyle": [
+    "enterprise",
+    "data-dense",
+    "modern"
+  ],
+  "pageType": [
+    "dashboard",
+    "admin",
+    "crm"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "inline SVG",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "55f87a73f45cf1d9eaf16d7da705065483a9e4f9",
+  "upstream": {
+    "repo": "tabler/tabler-icons",
+    "commit": "55f87a73f45cf1d9eaf16d7da705065483a9e4f9",
+    "url": "https://github.com/tabler/tabler-icons/tree/55f87a73f45cf1d9eaf16d7da705065483a9e4f9",
+    "path": "icons/outline/menu-2.svg"
+  },
+  "files": [
+    {
+      "path": "icons/outline/menu-2.svg",
+      "sha256": "a0080a4db00a4168cfea54a74724e4147cbd9d003f65e70fa367ae797b9cfed8",
+      "bytes": 446,
+      "vaultPath": "assets/icons/tabler-outline-core/files/icons/outline/menu-2.svg"
+    },
+    {
+      "path": "icons/outline/x.svg",
+      "sha256": "6b97b0d51512b84eee04c0644fd07059a9c21d537886cdb40ef48485d874abc3",
+      "bytes": 367,
+      "vaultPath": "assets/icons/tabler-outline-core/files/icons/outline/x.svg"
+    },
+    {
+      "path": "icons/outline/search.svg",
+      "sha256": "e579b69a4b978f702908a48b1bef74d9ac73df4679cb1a6074c567bec2748c41",
+      "bytes": 422,
+      "vaultPath": "assets/icons/tabler-outline-core/files/icons/outline/search.svg"
+    },
+    {
+      "path": "icons/outline/sun.svg",
+      "sha256": "6d4dc625a54dea6c696e8320c35fcf7e235dc039f512ef2c30af9b0663a7ab3f",
+      "bytes": 525,
+      "vaultPath": "assets/icons/tabler-outline-core/files/icons/outline/sun.svg"
+    },
+    {
+      "path": "icons/outline/moon.svg",
+      "sha256": "921d27bb214f2ec714ff4deeffa8a5efc4bb989e367df47f9f58351d2effee00",
+      "bytes": 454,
+      "vaultPath": "assets/icons/tabler-outline-core/files/icons/outline/moon.svg"
+    },
+    {
+      "path": "icons/outline/layout-dashboard.svg",
+      "sha256": "fa525ddc80d1df3411fe44685eeb3bd03d1b285581049931efe648450486eaf7",
+      "bytes": 720,
+      "vaultPath": "assets/icons/tabler-outline-core/files/icons/outline/layout-dashboard.svg"
+    },
+    {
+      "path": "icons/outline/chart-bar.svg",
+      "sha256": "5fbe60a66fbebaf0a06d4b5bede3af05301d9f580c4f8f7bd65a39077389e4ae",
+      "bytes": 668,
+      "vaultPath": "assets/icons/tabler-outline-core/files/icons/outline/chart-bar.svg"
+    },
+    {
+      "path": "icons/outline/settings.svg",
+      "sha256": "d71136dfd83ad19efe1777d01768a5d23d7b295de5dde3b1fccc50806809a423",
+      "bytes": 944,
+      "vaultPath": "assets/icons/tabler-outline-core/files/icons/outline/settings.svg"
+    },
+    {
+      "path": "icons/outline/bell.svg",
+      "sha256": "470d39082cfbf44f0b4b0588d8f9f1fd2c211b09dc60d0304e91a24a3aeef32e",
+      "bytes": 501,
+      "vaultPath": "assets/icons/tabler-outline-core/files/icons/outline/bell.svg"
+    },
+    {
+      "path": "icons/outline/user.svg",
+      "sha256": "4aeefe49af9decdd7b348ada73d9ef410b39f3599a2f2d38abb9e9eb3967e272",
+      "bytes": 471,
+      "vaultPath": "assets/icons/tabler-outline-core/files/icons/outline/user.svg"
+    }
+  ],
+  "licenseNotice": "sources/tabler-icons/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

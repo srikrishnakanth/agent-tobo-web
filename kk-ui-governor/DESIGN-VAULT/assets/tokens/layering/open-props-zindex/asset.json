@@ -1,0 +1,44 @@
+{
+  "id": "open-props-zindex",
+  "category": "tokens/layering",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "n/a",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+  "upstream": {
+    "repo": "argyleink/open-props",
+    "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "path": "src/props.zindex.css"
+  },
+  "files": [
+    {
+      "path": "src/props.zindex.css",
+      "sha256": "400f20403f34f8f9790cba958942f728588a22315f68163e67e3686cefbca6b9",
+      "bytes": 130,
+      "vaultPath": "assets/tokens/layering/open-props-zindex/files/src/props.zindex.css"
+    }
+  ],
+  "licenseNotice": "sources/open-props/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

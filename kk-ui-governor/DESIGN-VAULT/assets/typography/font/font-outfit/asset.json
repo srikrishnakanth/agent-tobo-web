@@ -1,0 +1,55 @@
+{
+  "id": "font-outfit",
+  "category": "typography/font",
+  "designStyle": [
+    "modern",
+    "creative",
+    "visual-rich"
+  ],
+  "pageType": [
+    "landing",
+    "onboarding"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "headings",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Outfit",
+  "role": "display",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/outfit/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/outfit/OFL.txt",
+      "sha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416",
+      "bytes": 4389,
+      "vaultPath": "assets/typography/font/font-outfit/files/ofl/outfit/OFL.txt"
+    },
+    {
+      "path": "ofl/outfit/METADATA.pb",
+      "sha256": "4cd9d2154f15495ca97de561060d535eaba9f7007be4a87e40f3b58ea8111cf2",
+      "bytes": 835,
+      "vaultPath": "assets/typography/font/font-outfit/files/ofl/outfit/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

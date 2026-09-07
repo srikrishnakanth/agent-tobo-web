@@ -1,0 +1,53 @@
+{
+  "id": "motion-library",
+  "category": "motion/library",
+  "designStyle": [
+    "creative",
+    "visual-rich",
+    "modern",
+    "premium"
+  ],
+  "pageType": [
+    "landing",
+    "onboarding",
+    "ai-ui"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs",
+    "html"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "medium",
+  "accessibility": "respects useReducedMotion; governor falls back to CSS transitions when absent",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "e871ba7f175d0609cef84f416f984e8e84be8333",
+  "upstream": {
+    "repo": "motiondivision/motion",
+    "commit": "e871ba7f175d0609cef84f416f984e8e84be8333",
+    "url": "https://github.com/motiondivision/motion/tree/e871ba7f175d0609cef84f416f984e8e84be8333",
+    "path": "packages/motion/package.json"
+  },
+  "files": [
+    {
+      "path": "packages/motion/package.json",
+      "sha256": "a90fad182297a3f6cad8d5b0373f4c05022ae5cd9a7d935d316ea12a3897ef10",
+      "bytes": 3479,
+      "vaultPath": "assets/motion/library/motion-library/files/packages/motion/package.json"
+    }
+  ],
+  "licenseNotice": "sources/motion/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

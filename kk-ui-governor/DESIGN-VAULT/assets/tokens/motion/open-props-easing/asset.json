@@ -1,0 +1,44 @@
+{
+  "id": "open-props-easing",
+  "category": "tokens/motion",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "n/a",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+  "upstream": {
+    "repo": "argyleink/open-props",
+    "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "path": "src/props.easing.css"
+  },
+  "files": [
+    {
+      "path": "src/props.easing.css",
+      "sha256": "0767db9d3c7a630d21cd399cf9797357713a4b675e48c8281af62cddd8f01ee0",
+      "bytes": 6415,
+      "vaultPath": "assets/tokens/motion/open-props-easing/files/src/props.easing.css"
+    }
+  ],
+  "licenseNotice": "sources/open-props/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

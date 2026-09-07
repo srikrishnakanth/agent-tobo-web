@@ -1,0 +1,11 @@
+{
+  "id": "motion",
+  "repo": "motiondivision/motion",
+  "url": "https://github.com/motiondivision/motion/tree/e871ba7f175d0609cef84f416f984e8e84be8333",
+  "commit": "e871ba7f175d0609cef84f416f984e8e84be8333",
+  "license": "MIT",
+  "licenseFile": "LICENSE.md",
+  "licenseSha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+  "homepage": "https://motion.dev",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "heroicons",
+  "repo": "tailwindlabs/heroicons",
+  "url": "https://github.com/tailwindlabs/heroicons/tree/616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+  "commit": "616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "licenseSha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985",
+  "homepage": "https://heroicons.com",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

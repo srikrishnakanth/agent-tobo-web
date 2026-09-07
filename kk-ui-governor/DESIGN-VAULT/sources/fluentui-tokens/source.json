@@ -1,0 +1,11 @@
+{
+  "id": "fluentui-tokens",
+  "repo": "microsoft/fluentui",
+  "url": "https://github.com/microsoft/fluentui/tree/6d627faf68c5b5a3f3cd9c97ea96b520c5b87f06",
+  "commit": "6d627faf68c5b5a3f3cd9c97ea96b520c5b87f06",
+  "license": "MIT",
+  "licenseFile": "packages/tokens/LICENSE",
+  "licenseSha256": "8189edb8b17032b0fa631dc776cc363080a51e8650821c8faad43ec22a303685",
+  "homepage": "https://react.fluentui.dev",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

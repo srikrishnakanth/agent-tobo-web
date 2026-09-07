@@ -1,0 +1,54 @@
+{
+  "id": "font-jetbrains-mono",
+  "category": "typography/font",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "docs",
+    "ai-ui",
+    "dashboard"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "distinguishable glyphs (0/O, 1/l)",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "JetBrains Mono",
+  "role": "mono",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/jetbrainsmono/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/jetbrainsmono/OFL.txt",
+      "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+      "bytes": 4399,
+      "vaultPath": "assets/typography/font/font-jetbrains-mono/files/ofl/jetbrainsmono/OFL.txt"
+    },
+    {
+      "path": "ofl/jetbrainsmono/METADATA.pb",
+      "sha256": "220f22dd4d2a3d9c77183fbbcb250779267725d90d9be673b403dc6bcfada0af",
+      "bytes": 3203,
+      "vaultPath": "assets/typography/font/font-jetbrains-mono/files/ofl/jetbrainsmono/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

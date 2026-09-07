@@ -1,0 +1,54 @@
+{
+  "id": "font-manrope",
+  "category": "typography/font",
+  "designStyle": [
+    "modern",
+    "premium",
+    "minimal"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "high x-height; readable at small sizes",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Manrope",
+  "role": "sans",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/manrope/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/manrope/OFL.txt",
+      "sha256": "e01b637272e0cbdfb240184dd98ea5cc671556d9894dae2668d92ab2c906787c",
+      "bytes": 4384,
+      "vaultPath": "assets/typography/font/font-manrope/files/ofl/manrope/OFL.txt"
+    },
+    {
+      "path": "ofl/manrope/METADATA.pb",
+      "sha256": "368beda3aa55b0afe90edc142d67cf37e743258c76481d520172afbc148c6cca",
+      "bytes": 727,
+      "vaultPath": "assets/typography/font/font-manrope/files/ofl/manrope/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

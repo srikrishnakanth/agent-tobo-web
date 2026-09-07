@@ -1,0 +1,11 @@
+{
+  "id": "pico",
+  "repo": "picocss/pico",
+  "url": "https://github.com/picocss/pico/tree/1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+  "commit": "1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+  "license": "MIT",
+  "licenseFile": "LICENSE.md",
+  "licenseSha256": "afaff063e044233f917b7807dccab022f09dca474f92b642846bee4850655bbf",
+  "homepage": "https://picocss.com",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

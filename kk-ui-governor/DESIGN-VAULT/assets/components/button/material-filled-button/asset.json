@@ -1,0 +1,52 @@
+{
+  "id": "material-filled-button",
+  "category": "components/button",
+  "designStyle": [
+    "native-app"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "android-material"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "sass"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "mobile",
+    "foldable",
+    "tablet"
+  ],
+  "performanceCost": "low",
+  "accessibility": "state layers, 48dp touch target",
+  "darkMode": true,
+  "license": "Apache-2.0",
+  "sourceCommit": "c05b4b23485c803f68ff31cde52506cea5cc555a",
+  "upstream": {
+    "repo": "material-components/material-web",
+    "commit": "c05b4b23485c803f68ff31cde52506cea5cc555a",
+    "url": "https://github.com/material-components/material-web/tree/c05b4b23485c803f68ff31cde52506cea5cc555a",
+    "path": "button/internal/_filled-button.scss"
+  },
+  "files": [
+    {
+      "path": "button/internal/_filled-button.scss",
+      "sha256": "2f16ba5b677f2adb6634c87f39b0631c505e0ef14186bfb6a236641bd7ff4ad1",
+      "bytes": 806,
+      "vaultPath": "assets/components/button/material-filled-button/files/button/internal/_filled-button.scss"
+    },
+    {
+      "path": "button/internal/_shared.scss",
+      "sha256": "92f28fdefbf07e5b74182ac4cec4d3f60963cb8e09464de69d62d9a2c16fb740",
+      "bytes": 5551,
+      "vaultPath": "assets/components/button/material-filled-button/files/button/internal/_shared.scss"
+    }
+  ],
+  "licenseNotice": "sources/material-web/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

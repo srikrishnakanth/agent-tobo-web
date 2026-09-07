@@ -1,0 +1,44 @@
+{
+  "id": "radix-colors-light",
+  "category": "tokens/color",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "12-step scales designed for accessible text/background pairs (steps 11/12 on 1/2)",
+  "darkMode": false,
+  "license": "MIT",
+  "sourceCommit": "dbdb85470547c7d34b9001f48fddb08ded335979",
+  "upstream": {
+    "repo": "radix-ui/colors",
+    "commit": "dbdb85470547c7d34b9001f48fddb08ded335979",
+    "url": "https://github.com/radix-ui/colors/tree/dbdb85470547c7d34b9001f48fddb08ded335979",
+    "path": "src/light.ts"
+  },
+  "files": [
+    {
+      "path": "src/light.ts",
+      "sha256": "1a9725486609d36b469caa3b84b8de4348b7f2f05d45905127637b988329acbd",
+      "bytes": 58664,
+      "vaultPath": "assets/tokens/color/radix-colors-light/files/src/light.ts"
+    }
+  ],
+  "licenseNotice": "sources/radix-colors/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

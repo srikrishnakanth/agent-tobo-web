@@ -1,0 +1,56 @@
+{
+  "id": "font-ibm-plex-sans",
+  "category": "typography/font",
+  "designStyle": [
+    "enterprise",
+    "data-dense"
+  ],
+  "pageType": [
+    "dashboard",
+    "admin",
+    "crm",
+    "docs"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "designed for dense UI legibility",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "IBM Plex Sans",
+  "role": "sans",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/ibmplexsans/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/ibmplexsans/OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "bytes": 4456,
+      "vaultPath": "assets/typography/font/font-ibm-plex-sans/files/ofl/ibmplexsans/OFL.txt"
+    },
+    {
+      "path": "ofl/ibmplexsans/METADATA.pb",
+      "sha256": "85f7e73668461cfacc4d9ecf94a7b67dd14dc24a71c0ae2cecd36215f0ca856c",
+      "bytes": 1554,
+      "vaultPath": "assets/typography/font/font-ibm-plex-sans/files/ofl/ibmplexsans/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

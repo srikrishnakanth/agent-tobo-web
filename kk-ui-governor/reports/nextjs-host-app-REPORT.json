@@ -1,0 +1,3758 @@
+{
+  "version": "1.0.0",
+  "txId": "20260907-131553-92c348",
+  "startedAt": "2026-09-07T13:15:53.619Z",
+  "project": {
+    "root": "/home/user/agent-tobo-web",
+    "name": "web"
+  },
+  "audit": {
+    "preflight": {
+      "ok": true,
+      "checks": [
+        {
+          "id": "root-exists",
+          "status": "pass",
+          "note": "/home/user/agent-tobo-web"
+        },
+        {
+          "id": "root-writable",
+          "status": "pass",
+          "note": "project root is writable"
+        },
+        {
+          "id": "git-status",
+          "status": "warn",
+          "note": "1 uncommitted change(s) present (governor keeps its own backups regardless)",
+          "data": {
+            "dirty": [
+              "?? kk-ui-governor/"
+            ]
+          }
+        },
+        {
+          "id": "package-json",
+          "status": "pass",
+          "note": "package \"web\""
+        },
+        {
+          "id": "node-modules",
+          "status": "pass",
+          "note": "dependencies installed"
+        },
+        {
+          "id": "disk-space",
+          "status": "pass",
+          "note": "29983 MB free"
+        }
+      ]
+    },
+    "postWrite": {
+      "ok": true,
+      "integrity": [
+        {
+          "path": "src/app/kk-design/tokens.css",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/theme.css",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/motion.js",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/ATTRIBUTION.md",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/tokens.json",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/components/KkButton.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/components/KkCard.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/components/KkInput.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/components/KkModal.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/components/KkTable.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/components/KkNav.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/components/KkSidebar.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/components/KkChart.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/components/KkCarousel.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/KkThemeProvider.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/kk-design/index.ts",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/app/layout.tsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        }
+      ],
+      "journalEvents": 52,
+      "journalSequential": true
+    }
+  },
+  "stages": {
+    "inspect": {
+      "startedAt": "2026-09-07T13:15:53.631Z",
+      "status": "done",
+      "summary": {
+        "framework": "nextjs",
+        "cssStack": [
+          "tailwind"
+        ],
+        "pages": 1,
+        "uxProblems": 5,
+        "genericPatterns": 2,
+        "brand": "#00f5c3"
+      },
+      "finishedAt": "2026-09-07T13:15:53.657Z"
+    },
+    "select": {
+      "startedAt": "2026-09-07T13:15:53.658Z",
+      "status": "done",
+      "summary": {
+        "preset": "auto",
+        "auto": true,
+        "style": "modern",
+        "pageType": "landing",
+        "platform": "neutral-web",
+        "theme": "dark",
+        "density": "comfortable",
+        "motion": "standard",
+        "devices": [
+          "mobile",
+          "foldable",
+          "tablet",
+          "laptop",
+          "desktop",
+          "ultrawide",
+          "4k"
+        ],
+        "a11y": [
+          "reduced-motion",
+          "keyboard",
+          "forced-colors",
+          "large-text",
+          "screen-reader"
+        ],
+        "components": [
+          "navigation",
+          "buttons",
+          "cards",
+          "inputs"
+        ],
+        "effects": [
+          "micro-interactions",
+          "animations",
+          "scroll-effects"
+        ],
+        "brandMode": "preserve",
+        "threeD": false,
+        "radius": null,
+        "fontDisplay": "Sora",
+        "fontBody": "Manrope",
+        "fontMono": "JetBrains Mono",
+        "sources": {
+          "style": "auto",
+          "pageType": "auto",
+          "platform": "auto",
+          "theme": "auto",
+          "density": "auto",
+          "motion": "auto",
+          "a11y": "auto"
+        },
+        "adjustments": [
+          "brand primary #00f5c3 preserved (brandMode=preserve)"
+        ],
+        "vaultAssets": 12
+      },
+      "finishedAt": "2026-09-07T13:15:53.674Z"
+    },
+    "adapt": {
+      "startedAt": "2026-09-07T13:15:53.676Z",
+      "status": "done",
+      "summary": {
+        "adapter": "nextjs",
+        "files": 17,
+        "creates": 16,
+        "modifies": 1,
+        "notes": [
+          "theme imported from src/app/layout.tsx"
+        ],
+        "remediations": 9
+      },
+      "finishedAt": "2026-09-07T13:15:53.692Z"
+    },
+    "probe": {
+      "startedAt": "2026-09-07T13:15:53.693Z",
+      "status": "done",
+      "summary": {
+        "probeOk": true,
+        "probeErrors": 0,
+        "gatesFailed": []
+      },
+      "finishedAt": "2026-09-07T13:15:54.109Z"
+    },
+    "preview": {
+      "startedAt": "2026-09-07T13:15:54.115Z",
+      "status": "done",
+      "summary": {
+        "browser": true,
+        "current": true,
+        "candidate": true,
+        "baseline": {
+          "LOAD": 0,
+          "RESP-SWEEP": 2,
+          "MOBILE-ORIENT": 1,
+          "FOLDABLE": 1,
+          "DPR": 0,
+          "THEME": 0,
+          "FONT-200": 0,
+          "KEYBOARD-NAV": 0,
+          "FOCUS-VISIBLE": 14,
+          "CONTRAST": 0,
+          "FORCED-COLORS": 1,
+          "REDUCED-MOTION": 0,
+          "OVERFLOW": 2,
+          "LAYOUT-SHIFT": 0,
+          "STICKY-FIXED": 0,
+          "TOUCH-TARGET": 0,
+          "PERF": 0,
+          "ANIM-3D-FALLBACK": 0,
+          "CONSOLE-ERRORS": 0,
+          "EXTERNAL-RESOURCES": 0,
+          "A11Y-BASICS": 0
+        }
+      },
+      "finishedAt": "2026-09-07T13:17:14.647Z"
+    },
+    "write": {
+      "startedAt": "2026-09-07T13:17:14.653Z",
+      "status": "done",
+      "summary": {
+        "files": 17,
+        "integrity": true
+      },
+      "finishedAt": "2026-09-07T13:17:14.708Z"
+    },
+    "verify": {
+      "startedAt": "2026-09-07T13:17:14.710Z",
+      "status": "done",
+      "summary": {
+        "ok": true,
+        "mode": "standard",
+        "failed": [],
+        "warned": [
+          "THEME",
+          "A11Y-BASICS"
+        ],
+        "loads": 41
+      },
+      "finishedAt": "2026-09-07T13:18:23.185Z"
+    },
+    "decide": {
+      "startedAt": "2026-09-07T13:18:23.187Z",
+      "status": "done",
+      "summary": {
+        "decision": "keep",
+        "reason": "verification passed on every gate"
+      },
+      "finishedAt": "2026-09-07T13:18:23.189Z"
+    }
+  },
+  "recovered": [],
+  "scan": {
+    "root": "/home/user/agent-tobo-web",
+    "name": "web",
+    "scannedAt": "2026-09-07T13:15:53.656Z",
+    "durationMs": 23,
+    "packageJson": {
+      "name": "web",
+      "version": "0.1.0",
+      "dependencies": {
+        "next": "^14.2.35",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+      },
+      "devDependencies": {
+        "@tailwindcss/postcss": "^4",
+        "@types/node": "^20",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "^9",
+        "eslint-config-next": "16.1.6",
+        "tailwindcss": "^4",
+        "typescript": "^5"
+      },
+      "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint"
+      }
+    },
+    "fileCount": 16,
+    "framework": {
+      "name": "nextjs",
+      "version": "14.2.35",
+      "router": "app",
+      "appDir": "src/app",
+      "pagesDir": null,
+      "language": "ts",
+      "supported": true,
+      "family": "react"
+    },
+    "cssStack": [
+      {
+        "name": "tailwind",
+        "version": "4",
+        "configFile": null,
+        "globalsFile": null
+      }
+    ],
+    "components": {
+      "summary": {
+        "other": 2
+      },
+      "existing": [
+        "other"
+      ],
+      "hasDesignSystem": false,
+      "list": [
+        {
+          "name": "RootLayout",
+          "kind": "other",
+          "file": "src/app/layout.tsx"
+        },
+        {
+          "name": "Home",
+          "kind": "other",
+          "file": "src/app/page.tsx"
+        }
+      ]
+    },
+    "brand": {
+      "name": "Agent Tobo",
+      "logos": [
+        "src/app/favicon.ico"
+      ],
+      "primaryColor": "#00f5c3",
+      "primarySource": "css variable --accent",
+      "secondaryColor": "#141c2d",
+      "strength": "explicit",
+      "darkDefault": true,
+      "background": "#05070f"
+    },
+    "colors": {
+      "total": 8,
+      "top": [
+        {
+          "hex": "#05070f",
+          "count": 2,
+          "saturation": 0.5,
+          "lightness": 0.0392156862745098
+        },
+        {
+          "hex": "#0e1628",
+          "count": 2,
+          "saturation": 0.48148148148148145,
+          "lightness": 0.10588235294117647
+        },
+        {
+          "hex": "#ffffff",
+          "count": 2,
+          "saturation": 0,
+          "lightness": 1
+        },
+        {
+          "hex": "#141c2d",
+          "count": 1,
+          "saturation": 0.3846153846153847,
+          "lightness": 0.12745098039215685
+        },
+        {
+          "hex": "#00f5c3",
+          "count": 1,
+          "saturation": 1,
+          "lightness": 0.4803921568627451
+        },
+        {
+          "hex": "#e8f0ff",
+          "count": 1,
+          "saturation": 1,
+          "lightness": 0.9549019607843137
+        },
+        {
+          "hex": "#7c8ba3",
+          "count": 1,
+          "saturation": 0.17488789237668156,
+          "lightness": 0.5627450980392157
+        },
+        {
+          "hex": "#0a0f19",
+          "count": 1,
+          "saturation": 0.42857142857142855,
+          "lightness": 0.06862745098039216
+        }
+      ],
+      "accents": [
+        {
+          "hex": "#141c2d",
+          "count": 1,
+          "saturation": 0.3846153846153847,
+          "lightness": 0.12745098039215685
+        },
+        {
+          "hex": "#00f5c3",
+          "count": 1,
+          "saturation": 1,
+          "lightness": 0.4803921568627451
+        },
+        {
+          "hex": "#7c8ba3",
+          "count": 1,
+          "saturation": 0.17488789237668156,
+          "lightness": 0.5627450980392157
+        }
+      ],
+      "neutrals": [
+        {
+          "hex": "#ffffff",
+          "count": 2,
+          "saturation": 0,
+          "lightness": 1
+        }
+      ],
+      "variables": {
+        "--bg-main": "#05070f",
+        "--bg-surface": "#141c2d",
+        "--accent": "#00f5c3",
+        "--text-main": "#e8f0ff",
+        "--text-muted": "#7c8ba3"
+      },
+      "background": "#05070f",
+      "darkDefault": true
+    },
+    "typography": {
+      "families": [
+        {
+          "name": "system-ui",
+          "count": 1
+        }
+      ],
+      "primary": "system-ui",
+      "usesSystemStack": true,
+      "googleFonts": [],
+      "nextFonts": [],
+      "hasGeistPackage": false,
+      "baseFontSize": null,
+      "minFontSizePx": 28,
+      "distinctSizes": 1,
+      "interDefault": false
+    },
+    "layout": {
+      "system": "tailwind-utilities",
+      "counts": {
+        "grid": 0,
+        "flex": 5,
+        "floats": 0,
+        "fixed": 1,
+        "sticky": 0,
+        "vh100": 1,
+        "dvh": 0,
+        "containerQueries": 0,
+        "cssVars": 5
+      },
+      "containerMaxWidths": [],
+      "breakpoints": [],
+      "usesCssVariables": true
+    },
+    "pages": [
+      {
+        "route": "/",
+        "file": "src/app/page.tsx",
+        "dynamic": false,
+        "title": null
+      }
+    ],
+    "pageTypes": {
+      "primary": "landing",
+      "ranked": [
+        {
+          "type": "landing",
+          "score": 3,
+          "evidence": [
+            "root route",
+            "5 content keyword hit(s)"
+          ]
+        },
+        {
+          "type": "ai-ui",
+          "score": 2.4,
+          "evidence": [
+            "6 content keyword hit(s)"
+          ]
+        },
+        {
+          "type": "inbox",
+          "score": 1.6,
+          "evidence": [
+            "4 content keyword hit(s)"
+          ]
+        },
+        {
+          "type": "onboarding",
+          "score": 0.4,
+          "evidence": [
+            "1 content keyword hit(s)"
+          ]
+        },
+        {
+          "type": "docs",
+          "score": 0.4,
+          "evidence": [
+            "1 content keyword hit(s)"
+          ]
+        }
+      ],
+      "perPage": [
+        {
+          "route": "/",
+          "type": "landing"
+        }
+      ]
+    },
+    "responsive": {
+      "viewportMeta": "framework-default",
+      "userScalableNo": false,
+      "mediaQueries": 0,
+      "breakpoints": [],
+      "level": "mobile-first",
+      "fixedWidths": [],
+      "colorSchemeMeta": false,
+      "prefersDark": false,
+      "reducedMotion": false,
+      "forcedColors": false,
+      "safeArea": false,
+      "usesDvh": false,
+      "uses100vh": true
+    },
+    "uxProblems": [
+      {
+        "id": "focus-removed",
+        "severity": "critical",
+        "message": "outline:none removes the keyboard focus indicator without a :focus-visible replacement",
+        "file": "src/app/globals.css"
+      },
+      {
+        "id": "no-reduced-motion",
+        "severity": "medium",
+        "message": "animations present but no prefers-reduced-motion handling anywhere in the project",
+        "file": "src/app/globals.css"
+      },
+      {
+        "id": "fixed-bottom-no-safe-area",
+        "severity": "medium",
+        "message": "bottom-fixed element ignores safe-area insets (notch/home indicator overlap)",
+        "file": "src/app/globals.css"
+      },
+      {
+        "id": "vh-mobile-bug",
+        "severity": "medium",
+        "message": "100vh layout without dvh/svh fallback (mobile browser chrome overlap)",
+        "file": "src/app/globals.css"
+      },
+      {
+        "id": "no-focus-visible-styles",
+        "severity": "medium",
+        "message": "no :focus-visible styling anywhere in the project",
+        "file": null
+      }
+    ],
+    "genericPatterns": [
+      {
+        "id": "welcome-hero",
+        "message": "\"Welcome to …\" hero copy",
+        "file": null,
+        "count": 1
+      },
+      {
+        "id": "neon-on-navy",
+        "message": "near-black background with a neon cyan/acid accent (generic \"AI dashboard\" cliché)",
+        "file": null,
+        "count": 1
+      }
+    ],
+    "entryPoints": {
+      "styles": [
+        "src/app/globals.css"
+      ],
+      "layouts": [
+        "src/app/layout.tsx"
+      ],
+      "html": []
+    },
+    "entryHashes": {
+      "src/app/globals.css": "41891861e2a1a1b9a61475a776e70e3d7c9df1f52f6733df526267030a1e37f7",
+      "src/app/layout.tsx": "1da19079751652920ae9cdb1aca421f07df1b95f56ff499c661bbfcafac356f5"
+    }
+  },
+  "selection": {
+    "preset": "auto",
+    "auto": true,
+    "style": "modern",
+    "pageType": "landing",
+    "platform": "neutral-web",
+    "theme": "dark",
+    "density": "comfortable",
+    "motion": "standard",
+    "devices": [
+      "mobile",
+      "foldable",
+      "tablet",
+      "laptop",
+      "desktop",
+      "ultrawide",
+      "4k"
+    ],
+    "a11y": [
+      "reduced-motion",
+      "keyboard",
+      "forced-colors",
+      "large-text",
+      "screen-reader"
+    ],
+    "components": [
+      "navigation",
+      "buttons",
+      "cards",
+      "inputs"
+    ],
+    "effects": [
+      "micro-interactions",
+      "animations",
+      "scroll-effects"
+    ],
+    "brandMode": "preserve",
+    "threeD": false,
+    "radius": null,
+    "fontDisplay": "Sora",
+    "fontBody": "Manrope",
+    "fontMono": "JetBrains Mono",
+    "sources": {
+      "style": "auto",
+      "pageType": "auto",
+      "platform": "auto",
+      "theme": "auto",
+      "density": "auto",
+      "motion": "auto",
+      "a11y": "auto"
+    }
+  },
+  "recommendation": {
+    "style": "modern",
+    "pageType": "landing",
+    "platform": "neutral-web",
+    "theme": "dark",
+    "density": "comfortable",
+    "motion": "standard",
+    "threeD": false,
+    "effects": [
+      "micro-interactions",
+      "animations",
+      "scroll-effects"
+    ],
+    "components": [
+      "navigation",
+      "buttons",
+      "cards",
+      "inputs"
+    ],
+    "devices": [
+      "mobile",
+      "foldable",
+      "tablet",
+      "laptop",
+      "desktop",
+      "ultrawide",
+      "4k"
+    ],
+    "a11y": [
+      "reduced-motion",
+      "keyboard",
+      "forced-colors",
+      "large-text",
+      "screen-reader"
+    ],
+    "fonts": {
+      "display": {
+        "id": "font-sora",
+        "family": "Sora",
+        "stack": "'Sora', system-ui, sans-serif",
+        "source": "vault",
+        "license": "OFL-1.1",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d"
+      },
+      "body": {
+        "id": "font-manrope",
+        "family": "Manrope",
+        "stack": "'Manrope', system-ui, sans-serif",
+        "source": "vault",
+        "license": "OFL-1.1",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d"
+      },
+      "mono": {
+        "id": "font-jetbrains-mono",
+        "family": "JetBrains Mono",
+        "stack": "'JetBrains Mono', ui-monospace, monospace",
+        "source": "vault",
+        "license": "OFL-1.1",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d"
+      }
+    },
+    "cssStack": "tailwind",
+    "framework": "nextjs",
+    "vaultPicks": [
+      {
+        "id": "shadcn-card",
+        "category": "components/card",
+        "score": 7,
+        "missingDeps": []
+      },
+      {
+        "id": "font-nunito-sans",
+        "category": "typography/font",
+        "score": 5,
+        "missingDeps": []
+      },
+      {
+        "id": "font-outfit",
+        "category": "typography/font",
+        "score": 5,
+        "missingDeps": []
+      },
+      {
+        "id": "font-sora",
+        "category": "typography/font",
+        "score": 5,
+        "missingDeps": []
+      },
+      {
+        "id": "open-props-animations",
+        "category": "motion/keyframes",
+        "score": 5,
+        "missingDeps": []
+      },
+      {
+        "id": "shadcn-input",
+        "category": "components/input",
+        "score": 4,
+        "missingDeps": []
+      },
+      {
+        "id": "heroicons-outline-core",
+        "category": "icons",
+        "score": 3,
+        "missingDeps": []
+      },
+      {
+        "id": "lucide-core",
+        "category": "icons",
+        "score": 3,
+        "missingDeps": []
+      },
+      {
+        "id": "material-tokens",
+        "category": "tokens/platform",
+        "score": 3,
+        "missingDeps": []
+      },
+      {
+        "id": "font-dm-sans",
+        "category": "typography/font",
+        "score": 2,
+        "missingDeps": []
+      },
+      {
+        "id": "font-figtree",
+        "category": "typography/font",
+        "score": 2,
+        "missingDeps": []
+      },
+      {
+        "id": "font-geist",
+        "category": "typography/font",
+        "score": 2,
+        "missingDeps": []
+      },
+      {
+        "id": "font-manrope",
+        "category": "typography/font",
+        "score": 2,
+        "missingDeps": []
+      },
+      {
+        "id": "font-plus-jakarta-sans",
+        "category": "typography/font",
+        "score": 2,
+        "missingDeps": []
+      },
+      {
+        "id": "motion-library",
+        "category": "motion/library",
+        "score": 1,
+        "missingDeps": [
+          "motion"
+        ]
+      }
+    ],
+    "styleRanking": [
+      {
+        "id": "modern",
+        "score": 11,
+        "reasons": [
+          "page type \"landing\" affinity 0.90",
+          "highly saturated brand colour suits expressive style",
+          "project already ships a dark default",
+          "Tailwind stack"
+        ]
+      },
+      {
+        "id": "premium",
+        "score": 10.5,
+        "reasons": [
+          "page type \"landing\" affinity 0.90",
+          "project already ships a dark default",
+          "Tailwind stack",
+          "remediates neon-on-navy cliché"
+        ]
+      },
+      {
+        "id": "creative",
+        "score": 10.5,
+        "reasons": [
+          "page type \"landing\" affinity 0.95",
+          "highly saturated brand colour suits expressive style"
+        ]
+      },
+      {
+        "id": "visual-rich",
+        "score": 10.5,
+        "reasons": [
+          "page type \"landing\" affinity 0.95",
+          "highly saturated brand colour suits expressive style"
+        ]
+      },
+      {
+        "id": "luxury",
+        "score": 9.5,
+        "reasons": [
+          "page type \"landing\" affinity 0.95"
+        ]
+      }
+    ],
+    "rationale": [
+      "Style \"Modern\" chosen: page type \"landing\" affinity 0.90; highly saturated brand colour suits expressive style; project already ships a dark default; Tailwind stack.",
+      "Page type \"Landing Page\" (root route; 5 content keyword hit(s)).",
+      "Brand primary #00f5c3 (css variable --accent) is preserved as the accent.",
+      "Theme \"dark\": project already defaults to dark.",
+      "Density \"comfortable\", motion \"standard\", 3D off.",
+      "Remediates 5 detected UX problem(s): focus-removed, no-reduced-motion, fixed-bottom-no-safe-area, vh-mobile-bug, no-focus-visible-styles.",
+      "Avoids 2 generic pattern(s): welcome-hero, neon-on-navy."
+    ],
+    "signature": "Bold display headline with a tightly-set body scale and one signature accent.",
+    "antiPatterns": [
+      "indigo-purple-gradient",
+      "three-card-hero",
+      "inter-default"
+    ]
+  },
+  "adjustments": [
+    "brand primary #00f5c3 preserved (brandMode=preserve)"
+  ],
+  "tokens": {
+    "color": {
+      "primary": "#00f5c3",
+      "primarySource": "brand (css variable --accent)",
+      "light": {
+        "bg": "#fcfdfd",
+        "surface": "#ffffff",
+        "surface2": "#f2f3f3",
+        "border": "#d1d6d5",
+        "borderStrong": "#a4adab",
+        "text": "#2b302f",
+        "textMuted": "#626d6a",
+        "primary": "#00a986",
+        "primaryText": "#008268",
+        "onPrimary": "#0b0b0b",
+        "primaryHover": "#009576",
+        "primarySoft": "#e0f5f0",
+        "accent": "#0088a9",
+        "focus": "#009c7c",
+        "success": "#15803d",
+        "warning": "#b45309",
+        "danger": "#b91c1c",
+        "info": "#1d4ed8",
+        "overlay": "rgba(15,23,42,0.45)"
+      },
+      "dark": {
+        "bg": "#111312",
+        "surface": "#161818",
+        "surface2": "#1d201f",
+        "border": "#353b3a",
+        "borderStrong": "#57615e",
+        "text": "#eceeee",
+        "textMuted": "#8e9a97",
+        "primary": "#00f5c3",
+        "primaryText": "#00f5c3",
+        "onPrimary": "#0b0b0b",
+        "primaryHover": "#1ff6ca",
+        "primarySoft": "#0e3c32",
+        "accent": "#00c5f5",
+        "focus": "#59f9d8",
+        "success": "#4ade80",
+        "warning": "#fbbf24",
+        "danger": "#f87171",
+        "info": "#93c5fd",
+        "overlay": "rgba(0,0,0,0.6)"
+      },
+      "contrastReport": [
+        {
+          "theme": "light",
+          "pairs": [
+            {
+              "pair": "text/surface",
+              "ratio": 13.41,
+              "passAA": true
+            },
+            {
+              "pair": "textMuted/surface",
+              "ratio": 5.36,
+              "passAA": true
+            },
+            {
+              "pair": "textMuted/surface2",
+              "ratio": 4.83,
+              "passAA": true
+            },
+            {
+              "pair": "text/bg",
+              "ratio": 13.15,
+              "passAA": true
+            },
+            {
+              "pair": "primaryText/surface",
+              "ratio": 4.78,
+              "passAA": true
+            },
+            {
+              "pair": "onPrimary/primary",
+              "ratio": 6.58,
+              "passAA": true
+            },
+            {
+              "pair": "success/surface",
+              "ratio": 5.02,
+              "passAA": true
+            },
+            {
+              "pair": "danger/surface",
+              "ratio": 6.47,
+              "passAA": true
+            }
+          ]
+        },
+        {
+          "theme": "dark",
+          "pairs": [
+            {
+              "pair": "text/surface",
+              "ratio": 15.31,
+              "passAA": true
+            },
+            {
+              "pair": "textMuted/surface",
+              "ratio": 6.13,
+              "passAA": true
+            },
+            {
+              "pair": "textMuted/surface2",
+              "ratio": 5.65,
+              "passAA": true
+            },
+            {
+              "pair": "text/bg",
+              "ratio": 16.02,
+              "passAA": true
+            },
+            {
+              "pair": "primaryText/surface",
+              "ratio": 12.61,
+              "passAA": true
+            },
+            {
+              "pair": "onPrimary/primary",
+              "ratio": 13.92,
+              "passAA": true
+            },
+            {
+              "pair": "success/surface",
+              "ratio": 10.23,
+              "passAA": true
+            },
+            {
+              "pair": "danger/surface",
+              "ratio": 6.44,
+              "passAA": true
+            }
+          ]
+        },
+        {
+          "theme": "high-contrast",
+          "pairs": [
+            {
+              "pair": "text/surface",
+              "ratio": 21,
+              "passAA": true
+            },
+            {
+              "pair": "textMuted/surface",
+              "ratio": 21,
+              "passAA": true
+            },
+            {
+              "pair": "textMuted/surface2",
+              "ratio": 18.88,
+              "passAA": true
+            },
+            {
+              "pair": "text/bg",
+              "ratio": 21,
+              "passAA": true
+            },
+            {
+              "pair": "primaryText/surface",
+              "ratio": 14.85,
+              "passAA": true
+            },
+            {
+              "pair": "onPrimary/primary",
+              "ratio": 13.92,
+              "passAA": true
+            },
+            {
+              "pair": "success/surface",
+              "ratio": 12.05,
+              "passAA": true
+            },
+            {
+              "pair": "danger/surface",
+              "ratio": 7.59,
+              "passAA": true
+            }
+          ]
+        }
+      ]
+    },
+    "typography": {
+      "display": "'Sora', system-ui, sans-serif",
+      "body": "'Manrope', system-ui, sans-serif",
+      "families": [
+        "Sora",
+        "Manrope",
+        "JetBrains Mono"
+      ]
+    },
+    "motion": {
+      "level": "standard",
+      "fast": "150ms",
+      "base": "220ms",
+      "slow": "320ms",
+      "easeOut": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "easeInOut": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "spring": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "scroll": true,
+      "parallax": false,
+      "carousel": false,
+      "threeD": false,
+      "fallback": {
+        "reducedMotion": "disable"
+      }
+    },
+    "density": {
+      "controlHeight": "48px",
+      "rowHeight": "44px",
+      "touchTarget": "48px",
+      "gutter": "1.25rem",
+      "contentMax": "90rem",
+      "readingMax": "68ch"
+    }
+  },
+  "adapter": {
+    "id": "nextjs",
+    "status": "supported"
+  },
+  "plan": {
+    "files": [
+      {
+        "path": "src/app/kk-design/tokens.css",
+        "kind": "create",
+        "bytes": 6604
+      },
+      {
+        "path": "src/app/kk-design/theme.css",
+        "kind": "create",
+        "bytes": 20818
+      },
+      {
+        "path": "src/app/kk-design/motion.js",
+        "kind": "create",
+        "bytes": 7447
+      },
+      {
+        "path": "src/app/kk-design/ATTRIBUTION.md",
+        "kind": "create",
+        "bytes": 2101
+      },
+      {
+        "path": "src/app/kk-design/tokens.json",
+        "kind": "create",
+        "bytes": 4319
+      },
+      {
+        "path": "src/app/kk-design/components/KkButton.tsx",
+        "kind": "create",
+        "bytes": 610
+      },
+      {
+        "path": "src/app/kk-design/components/KkCard.tsx",
+        "kind": "create",
+        "bytes": 667
+      },
+      {
+        "path": "src/app/kk-design/components/KkInput.tsx",
+        "kind": "create",
+        "bytes": 1081
+      },
+      {
+        "path": "src/app/kk-design/components/KkModal.tsx",
+        "kind": "create",
+        "bytes": 1053
+      },
+      {
+        "path": "src/app/kk-design/components/KkTable.tsx",
+        "kind": "create",
+        "bytes": 1289
+      },
+      {
+        "path": "src/app/kk-design/components/KkNav.tsx",
+        "kind": "create",
+        "bytes": 889
+      },
+      {
+        "path": "src/app/kk-design/components/KkSidebar.tsx",
+        "kind": "create",
+        "bytes": 1056
+      },
+      {
+        "path": "src/app/kk-design/components/KkChart.tsx",
+        "kind": "create",
+        "bytes": 2040
+      },
+      {
+        "path": "src/app/kk-design/components/KkCarousel.tsx",
+        "kind": "create",
+        "bytes": 1371
+      },
+      {
+        "path": "src/app/kk-design/KkThemeProvider.tsx",
+        "kind": "create",
+        "bytes": 1900
+      },
+      {
+        "path": "src/app/kk-design/index.ts",
+        "kind": "create",
+        "bytes": 700
+      },
+      {
+        "path": "src/app/layout.tsx",
+        "kind": "modify",
+        "bytes": 402
+      }
+    ],
+    "notes": [
+      "theme imported from src/app/layout.tsx"
+    ],
+    "manualSteps": [
+      "Optional: wrap {children} in <KkThemeProvider> (client component in src/app/kk-design) to enable the motion runtime and theme toggle."
+    ],
+    "remediations": 9,
+    "pages": [
+      "/"
+    ]
+  },
+  "assets": [
+    {
+      "id": "radix-colors-light",
+      "category": "tokens/color",
+      "license": "MIT",
+      "upstream": {
+        "repo": "radix-ui/colors",
+        "commit": "dbdb85470547c7d34b9001f48fddb08ded335979",
+        "url": "https://github.com/radix-ui/colors/tree/dbdb85470547c7d34b9001f48fddb08ded335979",
+        "path": "src/light.ts"
+      },
+      "note": "12-step scale intent for light neutrals",
+      "noticePreserved": true
+    },
+    {
+      "id": "radix-colors-dark",
+      "category": "tokens/color",
+      "license": "MIT",
+      "upstream": {
+        "repo": "radix-ui/colors",
+        "commit": "dbdb85470547c7d34b9001f48fddb08ded335979",
+        "url": "https://github.com/radix-ui/colors/tree/dbdb85470547c7d34b9001f48fddb08ded335979",
+        "path": "src/dark.ts"
+      },
+      "note": "12-step scale intent for dark neutrals",
+      "noticePreserved": true
+    },
+    {
+      "id": "font-sora",
+      "category": "typography/font",
+      "license": "OFL-1.1",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/sora/OFL.txt"
+      },
+      "note": "font family (OFL, loaded from Google Fonts; not vendored)",
+      "noticePreserved": true
+    },
+    {
+      "id": "font-manrope",
+      "category": "typography/font",
+      "license": "OFL-1.1",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/manrope/OFL.txt"
+      },
+      "note": "font family (OFL, loaded from Google Fonts; not vendored)",
+      "noticePreserved": true
+    },
+    {
+      "id": "font-jetbrains-mono",
+      "category": "typography/font",
+      "license": "OFL-1.1",
+      "upstream": {
+        "repo": "google/fonts",
+        "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+        "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+        "path": "ofl/jetbrainsmono/OFL.txt"
+      },
+      "note": "font family (OFL, loaded from Google Fonts; not vendored)",
+      "noticePreserved": true
+    },
+    {
+      "id": "open-props-shadows",
+      "category": "tokens/shadow",
+      "license": "MIT",
+      "upstream": {
+        "repo": "argyleink/open-props",
+        "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "path": "src/props.shadows.css"
+      },
+      "note": "shadow ramp intent",
+      "noticePreserved": true
+    },
+    {
+      "id": "open-props-easing",
+      "category": "tokens/motion",
+      "license": "MIT",
+      "upstream": {
+        "repo": "argyleink/open-props",
+        "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "path": "src/props.easing.css"
+      },
+      "note": "easing curves",
+      "noticePreserved": true
+    },
+    {
+      "id": "open-props-sizes",
+      "category": "tokens/spacing",
+      "license": "MIT",
+      "upstream": {
+        "repo": "argyleink/open-props",
+        "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "path": "src/props.sizes.css"
+      },
+      "note": "spacing scale intent",
+      "noticePreserved": true
+    },
+    {
+      "id": "open-props-borders",
+      "category": "tokens/radius",
+      "license": "MIT",
+      "upstream": {
+        "repo": "argyleink/open-props",
+        "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "path": "src/props.borders.css"
+      },
+      "note": "radius scale intent",
+      "noticePreserved": true
+    },
+    {
+      "id": "open-props-media",
+      "category": "tokens/breakpoints",
+      "license": "MIT",
+      "upstream": {
+        "repo": "argyleink/open-props",
+        "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "path": "src/props.media.css"
+      },
+      "note": "media query breakpoints & preference queries",
+      "noticePreserved": true
+    },
+    {
+      "id": "open-props-animations",
+      "category": "motion/keyframes",
+      "license": "MIT",
+      "upstream": {
+        "repo": "argyleink/open-props",
+        "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+        "path": "src/props.animations.css"
+      },
+      "note": "keyframe intent (reduced-motion guarded)",
+      "noticePreserved": true
+    },
+    {
+      "id": "heroicons-outline-core",
+      "category": "icons",
+      "license": "MIT",
+      "upstream": {
+        "repo": "tailwindlabs/heroicons",
+        "commit": "616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+        "url": "https://github.com/tailwindlabs/heroicons/tree/616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+        "path": "optimized/24/outline/bars-3.svg"
+      },
+      "note": "icon set (inline SVG)",
+      "noticePreserved": true
+    }
+  ],
+  "probe": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      {
+        "path": "src/app/kk-design/components/KkInput.tsx",
+        "note": "contains \"undefined;\" (possible template leak)"
+      }
+    ],
+    "typescript": true,
+    "filesProbed": 17
+  },
+  "safetyGates": {
+    "ok": true,
+    "gates": [
+      {
+        "id": "G1",
+        "name": "no-new-dependency",
+        "status": "pass",
+        "details": {
+          "required": [],
+          "missing": []
+        }
+      },
+      {
+        "id": "G2",
+        "name": "additive-only-edits",
+        "status": "pass",
+        "details": {
+          "violations": [],
+          "modified": [
+            "src/app/layout.tsx"
+          ]
+        }
+      },
+      {
+        "id": "G3",
+        "name": "brand-identity-preserved",
+        "status": "pass",
+        "details": {
+          "brandPrimary": "#00f5c3",
+          "candidatePrimary": "#00f5c3",
+          "brandMode": "preserve",
+          "note": "brand primary #00f5c3 preserved"
+        }
+      },
+      {
+        "id": "G4",
+        "name": "license-compatibility",
+        "status": "pass",
+        "details": {
+          "assetsUsed": [
+            "radix-colors-light (MIT)",
+            "radix-colors-dark (MIT)",
+            "font-sora (OFL-1.1)",
+            "font-manrope (OFL-1.1)",
+            "font-jetbrains-mono (OFL-1.1)",
+            "open-props-shadows (MIT)",
+            "open-props-easing (MIT)",
+            "open-props-sizes (MIT)",
+            "open-props-borders (MIT)",
+            "open-props-media (MIT)",
+            "open-props-animations (MIT)",
+            "heroicons-outline-core (MIT)"
+          ],
+          "problems": []
+        }
+      },
+      {
+        "id": "G5",
+        "name": "path-safety",
+        "status": "pass",
+        "details": {
+          "violations": []
+        }
+      },
+      {
+        "id": "G6",
+        "name": "backup-guarantee",
+        "status": "pass",
+        "details": {
+          "modificationsWithoutHash": []
+        }
+      },
+      {
+        "id": "G7",
+        "name": "candidate-size",
+        "status": "pass",
+        "details": {
+          "bytes": 54347,
+          "limit": 6291456
+        }
+      },
+      {
+        "id": "G8",
+        "name": "probe-passed",
+        "status": "pass",
+        "details": {
+          "probe": {
+            "ok": true,
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "G9",
+        "name": "heavy-motion-fallback",
+        "status": "pass",
+        "details": {
+          "heavy": false,
+          "fallback": true
+        }
+      }
+    ],
+    "failed": []
+  },
+  "preview": {
+    "current": {
+      "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/preview/current-1280.jpg",
+      "url": "http://127.0.0.1:37313/",
+      "width": 1280,
+      "height": 800
+    },
+    "candidate": {
+      "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/preview/gallery-1280.jpg",
+      "url": "http://127.0.0.1:32951/gallery.html",
+      "width": 1280,
+      "height": 900,
+      "note": "candidate component gallery (pre-write)"
+    },
+    "gallery": {
+      "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/preview/gallery.html"
+    },
+    "html": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/preview/preview.html",
+    "notes": [
+      "framework project: candidate preview uses the component gallery pre-write; real page screenshots are captured by Verify before the keep/rollback decision"
+    ],
+    "currentMobile": {
+      "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/preview/current-390.jpg",
+      "url": "http://127.0.0.1:37313/",
+      "width": 390,
+      "height": 844
+    },
+    "galleryShot": {
+      "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/preview/gallery-1280.jpg",
+      "url": "http://127.0.0.1:32951/gallery.html",
+      "width": 1280,
+      "height": 900
+    }
+  },
+  "baseline": {
+    "ok": false,
+    "counts": {
+      "LOAD": 0,
+      "RESP-SWEEP": 2,
+      "MOBILE-ORIENT": 1,
+      "FOLDABLE": 1,
+      "DPR": 0,
+      "THEME": 0,
+      "FONT-200": 0,
+      "KEYBOARD-NAV": 0,
+      "FOCUS-VISIBLE": 14,
+      "CONTRAST": 0,
+      "FORCED-COLORS": 1,
+      "REDUCED-MOTION": 0,
+      "OVERFLOW": 2,
+      "LAYOUT-SHIFT": 0,
+      "STICKY-FIXED": 0,
+      "TOUCH-TARGET": 0,
+      "PERF": 0,
+      "ANIM-3D-FALLBACK": 0,
+      "CONSOLE-ERRORS": 0,
+      "EXTERNAL-RESOURCES": 0,
+      "A11Y-BASICS": 0
+    },
+    "checks": [
+      {
+        "id": "LOAD",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "RESP-SWEEP",
+        "status": "fail",
+        "count": 2
+      },
+      {
+        "id": "MOBILE-ORIENT",
+        "status": "fail",
+        "count": 1
+      },
+      {
+        "id": "FOLDABLE",
+        "status": "fail",
+        "count": 1
+      },
+      {
+        "id": "DPR",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "THEME",
+        "status": "warn",
+        "count": 0
+      },
+      {
+        "id": "FONT-200",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "KEYBOARD-NAV",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "FOCUS-VISIBLE",
+        "status": "fail",
+        "count": 14
+      },
+      {
+        "id": "CONTRAST",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "FORCED-COLORS",
+        "status": "fail",
+        "count": 1
+      },
+      {
+        "id": "REDUCED-MOTION",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "OVERFLOW",
+        "status": "fail",
+        "count": 2
+      },
+      {
+        "id": "LAYOUT-SHIFT",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "STICKY-FIXED",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "TOUCH-TARGET",
+        "status": "warn",
+        "count": 0
+      },
+      {
+        "id": "PERF",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "ANIM-3D-FALLBACK",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "CONSOLE-ERRORS",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "EXTERNAL-RESOURCES",
+        "status": "pass",
+        "count": 0
+      },
+      {
+        "id": "A11Y-BASICS",
+        "status": "warn",
+        "count": 0
+      }
+    ]
+  },
+  "files": [
+    {
+      "op": "write",
+      "path": "src/app/kk-design/tokens.css",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "9be78e668fe1e146821a51608b40f15bfb954dff855ecd69a7bcb0cb16e542aa",
+      "bytes": 6604
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/theme.css",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "08e4886da2db5ee22f5d9eb7edb3861b9ec35c0f3b5430f1598b0d00bbc9d06a",
+      "bytes": 20818
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/motion.js",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "3b44a72b6b35ab5ea18f3409aa7fe52798380d16c21aa7b8491c06e1ea6c80ee",
+      "bytes": 7447
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/ATTRIBUTION.md",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "ce874cdf6789b0ba87add1d7f2a9cbca897bc62999c08345e4f67fe0c5b550ee",
+      "bytes": 2101
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/tokens.json",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "7699b76af41a1ed543e3674e6cdc975e205057d5ba9b7a431992d38d6fd9a61e",
+      "bytes": 4319
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/components/KkButton.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "0f840c1bb195c359bde63ceb950d84b90178ac3ecc3c5acbeac466e76ea03fa8",
+      "bytes": 610
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/components/KkCard.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "27fdbfa7835a1c61453a1c7ea5f1e1bc686632dd3e0216cdc2eb3d32f9c3ae19",
+      "bytes": 667
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/components/KkInput.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "2c889797bbdf1f3133a0869fc3798ff92054d92c1914318eb2de32fbec7beaf6",
+      "bytes": 1081
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/components/KkModal.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "50acd8140a66bae78ab8a2c949deee12500d76e4895bc8668f28e7b246295230",
+      "bytes": 1053
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/components/KkTable.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "ab3f57792ec72847bd9280b8c3efd240945d51e1bb2146af7dab257ac7dd835e",
+      "bytes": 1289
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/components/KkNav.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "679750f6e54b9e87435a4311478bd109a58987b7c5133392a20772c7933549cf",
+      "bytes": 889
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/components/KkSidebar.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "58d1ef8be25fd4c54253390e75cb94c93ef03359727059e45e987cfd779cf264",
+      "bytes": 1056
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/components/KkChart.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "8e4f01447650a0a26554d51501cd218b54dcfe6a10c21f4ca522e5f6c0ae2c2a",
+      "bytes": 2040
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/components/KkCarousel.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "495d69da7092d33ffe2b9ba04dcafb93411d70c00331c90965cc1310096cc73d",
+      "bytes": 1371
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/KkThemeProvider.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "57c6bb03054cae4da6c95033f9c16d93473d57b4ce9aaf9dc39fe826b8fa1495",
+      "bytes": 1900
+    },
+    {
+      "op": "write",
+      "path": "src/app/kk-design/index.ts",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "ca4399a28f7cfc1ef587620ce49b34da59f03d8093ae2efd9cd7ff3b318859b8",
+      "bytes": 700
+    },
+    {
+      "op": "write",
+      "path": "src/app/layout.tsx",
+      "kind": "modify",
+      "hashBefore": "1da19079751652920ae9cdb1aca421f07df1b95f56ff499c661bbfcafac356f5",
+      "hashAfter": "83e200a329b3bbba445530c7615223a217ec50c984dc85a924c7527276a5824b",
+      "bytes": 402
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "mode": "standard",
+    "engine": "chromium 141.0.7390.37 (playwright)",
+    "pages": [
+      "/"
+    ],
+    "devices": [
+      {
+        "id": "phone-360",
+        "label": "Phone 360 portrait",
+        "width": 360,
+        "height": 780,
+        "dpr": 3,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "portrait"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-phone-360.jpg",
+            "label": "home 360×780@3 light touch,portrait"
+          }
+        ]
+      },
+      {
+        "id": "phone-390",
+        "label": "Phone 390 portrait (iPhone class)",
+        "width": 390,
+        "height": 844,
+        "dpr": 3,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "portrait"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-phone-390.jpg",
+            "label": "home 390×844@3 light touch,portrait"
+          }
+        ]
+      },
+      {
+        "id": "phone-412",
+        "label": "Phone 412 portrait (Pixel class)",
+        "width": 412,
+        "height": 915,
+        "dpr": 2.625,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "portrait"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-phone-412.jpg",
+            "label": "home 412×915@2.625 light touch,portrait"
+          }
+        ]
+      },
+      {
+        "id": "phone-landscape",
+        "label": "Phone landscape 844×390",
+        "width": 844,
+        "height": 390,
+        "dpr": 3,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "landscape"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-phone-landscape.jpg",
+            "label": "home 844×390@3 light touch,landscape"
+          }
+        ]
+      },
+      {
+        "id": "phone-240",
+        "label": "Feature phone 240",
+        "width": 240,
+        "height": 320,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "portrait",
+          "min-width"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-phone-240.jpg",
+            "label": "home 240×320@1 light touch,portrait,min-width"
+          }
+        ]
+      },
+      {
+        "id": "fold-closed",
+        "label": "Foldable closed 280×653",
+        "width": 280,
+        "height": 653,
+        "dpr": 3,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "foldable",
+          "closed"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-fold-closed.jpg",
+            "label": "home 280×653@3 light touch,foldable,closed"
+          }
+        ]
+      },
+      {
+        "id": "fold-open",
+        "label": "Foldable open 717×512",
+        "width": 717,
+        "height": 512,
+        "dpr": 2,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "foldable",
+          "open"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-fold-open.jpg",
+            "label": "home 717×512@2 light touch,foldable,open"
+          }
+        ]
+      },
+      {
+        "id": "tablet-768",
+        "label": "Tablet 768 portrait",
+        "width": 768,
+        "height": 1024,
+        "dpr": 2,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "portrait"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-tablet-768.jpg",
+            "label": "home 768×1024@2 light touch,portrait"
+          }
+        ]
+      },
+      {
+        "id": "tablet-1024",
+        "label": "Tablet 1024 landscape",
+        "width": 1024,
+        "height": 768,
+        "dpr": 2,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "landscape"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-tablet-1024.jpg",
+            "label": "home 1024×768@2 light touch,landscape"
+          }
+        ]
+      },
+      {
+        "id": "laptop-1280",
+        "label": "Laptop 1280",
+        "width": 1280,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "desktop"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-laptop-1280.jpg",
+            "label": "home 1280×800@1 light desktop"
+          }
+        ]
+      },
+      {
+        "id": "laptop-1440-hidpi",
+        "label": "Laptop 1440 @2x",
+        "width": 1440,
+        "height": 900,
+        "dpr": 2,
+        "colorScheme": "light",
+        "flags": [
+          "desktop",
+          "hidpi"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-laptop-1440-hidpi.jpg",
+            "label": "home 1440×900@2 light desktop,hidpi"
+          }
+        ]
+      },
+      {
+        "id": "desktop-1920",
+        "label": "Desktop 1920",
+        "width": 1920,
+        "height": 1080,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "desktop"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-desktop-1920.jpg",
+            "label": "home 1920×1080@1 light desktop"
+          }
+        ]
+      },
+      {
+        "id": "ultrawide-3440",
+        "label": "Ultrawide 3440",
+        "width": 3440,
+        "height": 1440,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "desktop",
+          "ultrawide"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-ultrawide-3440.jpg",
+            "label": "home 3440×1440@1 light desktop,ultrawide"
+          }
+        ]
+      },
+      {
+        "id": "4k-3840",
+        "label": "4K 3840",
+        "width": 3840,
+        "height": 2160,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "desktop",
+          "4k"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-4k-3840.jpg",
+            "label": "home 3840×2160@1 light desktop,4k"
+          }
+        ]
+      },
+      {
+        "id": "dark-phone",
+        "label": "Dark scheme phone 390",
+        "width": 390,
+        "height": 844,
+        "dpr": 3,
+        "colorScheme": "dark",
+        "flags": [
+          "touch",
+          "dark"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-dark-phone.jpg",
+            "label": "home 390×844@3 dark touch,dark"
+          }
+        ]
+      },
+      {
+        "id": "dark-desktop",
+        "label": "Dark scheme desktop 1280",
+        "width": 1280,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "dark",
+        "flags": [
+          "desktop",
+          "dark"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-dark-desktop.jpg",
+            "label": "home 1280×800@1 dark desktop,dark"
+          }
+        ]
+      },
+      {
+        "id": "forced-colors",
+        "label": "Forced colors (Windows HC) 1280",
+        "width": 1280,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "dark",
+        "flags": [
+          "forced-colors"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-forced-colors.jpg",
+            "label": "home 1280×800@1 dark forced-colors"
+          }
+        ]
+      },
+      {
+        "id": "reduced-motion-phone",
+        "label": "Reduced motion phone 390",
+        "width": 390,
+        "height": 844,
+        "dpr": 3,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "reduced-motion"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-reduced-motion-phone.jpg",
+            "label": "home 390×844@3 light touch,reduced-motion"
+          }
+        ]
+      },
+      {
+        "id": "reduced-motion-desktop",
+        "label": "Reduced motion desktop 1280",
+        "width": 1280,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "reduced-motion"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-reduced-motion-desktop.jpg",
+            "label": "home 1280×800@1 light reduced-motion"
+          }
+        ]
+      },
+      {
+        "id": "font-200-phone",
+        "label": "200% font scaling phone 360",
+        "width": 360,
+        "height": 780,
+        "dpr": 3,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "font-200"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-font-200-phone.jpg",
+            "label": "home 360×780@3 light touch,font-200"
+          }
+        ]
+      },
+      {
+        "id": "font-200-desktop",
+        "label": "200% font scaling desktop 1280",
+        "width": 1280,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "font-200"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-font-200-desktop.jpg",
+            "label": "home 1280×800@1 light font-200"
+          }
+        ]
+      },
+      {
+        "id": "low-end-phone",
+        "label": "Low-end phone 360 (2 cores, 2GB, save-data)",
+        "width": 360,
+        "height": 780,
+        "dpr": 2,
+        "colorScheme": "light",
+        "flags": [
+          "touch",
+          "low-end"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-low-end-phone.jpg",
+            "label": "home 360×780@2 light touch,low-end"
+          }
+        ]
+      },
+      {
+        "id": "sweep-240",
+        "label": "Sweep 240px",
+        "width": 240,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-240.jpg",
+            "label": "home 240×800@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-280",
+        "label": "Sweep 280px",
+        "width": 280,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-280.jpg",
+            "label": "home 280×800@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-320",
+        "label": "Sweep 320px",
+        "width": 320,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-320.jpg",
+            "label": "home 320×800@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-375",
+        "label": "Sweep 375px",
+        "width": 375,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-375.jpg",
+            "label": "home 375×800@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-428",
+        "label": "Sweep 428px",
+        "width": 428,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-428.jpg",
+            "label": "home 428×800@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-480",
+        "label": "Sweep 480px",
+        "width": 480,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-480.jpg",
+            "label": "home 480×800@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-540",
+        "label": "Sweep 540px",
+        "width": 540,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-540.jpg",
+            "label": "home 540×800@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-600",
+        "label": "Sweep 600px",
+        "width": 600,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-600.jpg",
+            "label": "home 600×800@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-653",
+        "label": "Sweep 653px",
+        "width": 653,
+        "height": 800,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-653.jpg",
+            "label": "home 653×800@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-717",
+        "label": "Sweep 717px",
+        "width": 717,
+        "height": 900,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-717.jpg",
+            "label": "home 717×900@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-820",
+        "label": "Sweep 820px",
+        "width": 820,
+        "height": 900,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-820.jpg",
+            "label": "home 820×900@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-912",
+        "label": "Sweep 912px",
+        "width": 912,
+        "height": 900,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-912.jpg",
+            "label": "home 912×900@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-1180",
+        "label": "Sweep 1180px",
+        "width": 1180,
+        "height": 900,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-1180.jpg",
+            "label": "home 1180×900@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-1366",
+        "label": "Sweep 1366px",
+        "width": 1366,
+        "height": 900,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-1366.jpg",
+            "label": "home 1366×900@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-1440",
+        "label": "Sweep 1440px",
+        "width": 1440,
+        "height": 900,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-1440.jpg",
+            "label": "home 1440×900@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-1536",
+        "label": "Sweep 1536px",
+        "width": 1536,
+        "height": 900,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-1536.jpg",
+            "label": "home 1536×900@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-1680",
+        "label": "Sweep 1680px",
+        "width": 1680,
+        "height": 900,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-1680.jpg",
+            "label": "home 1680×900@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-2560",
+        "label": "Sweep 2560px",
+        "width": 2560,
+        "height": 900,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-2560.jpg",
+            "label": "home 2560×900@1 light sweep"
+          }
+        ]
+      },
+      {
+        "id": "sweep-3440",
+        "label": "Sweep 3440px",
+        "width": 3440,
+        "height": 900,
+        "dpr": 1,
+        "colorScheme": "light",
+        "flags": [
+          "sweep"
+        ],
+        "status": "pass",
+        "note": "",
+        "screenshots": [
+          {
+            "file": "/home/user/agent-tobo-web/.kk-governor/tx/20260907-131553-92c348/verify/candidate-home-sweep-3440.jpg",
+            "label": "home 3440×900@1 light sweep"
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "id": "LOAD",
+        "name": "Pages load and can be measured on every device",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "RESP-SWEEP",
+        "name": "Responsive layout sweep 240px → 3840px (no horizontal overflow)",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 2,
+        "summary": "fixed (baseline had 2)",
+        "findings": []
+      },
+      {
+        "id": "MOBILE-ORIENT",
+        "name": "Mobile portrait / landscape",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 1,
+        "summary": "fixed (baseline had 1)",
+        "findings": []
+      },
+      {
+        "id": "FOLDABLE",
+        "name": "Foldable widths (closed / open / dual)",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 1,
+        "summary": "fixed (baseline had 1)",
+        "findings": []
+      },
+      {
+        "id": "DPR",
+        "name": "Device pixel ratio 1× / 2× / 3×",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "THEME",
+        "name": "Light / dark scheme",
+        "status": "warn",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "2 advisory finding(s)",
+        "findings": [
+          {
+            "check": "THEME",
+            "device": "dark-phone",
+            "page": "/",
+            "severity": "warn",
+            "message": "dark scheme requested but dominant surface is light (rgb(0, 245, 195))"
+          },
+          {
+            "check": "THEME",
+            "device": "dark-desktop",
+            "page": "/",
+            "severity": "warn",
+            "message": "dark scheme requested but dominant surface is light (rgb(0, 245, 195))"
+          }
+        ]
+      },
+      {
+        "id": "FONT-200",
+        "name": "200% font scaling (no overflow / clipping)",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "KEYBOARD-NAV",
+        "name": "Keyboard navigation",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "FOCUS-VISIBLE",
+        "name": "Focus visibility",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 14,
+        "summary": "fixed (baseline had 14)",
+        "findings": []
+      },
+      {
+        "id": "CONTRAST",
+        "name": "WCAG AA text contrast",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "FORCED-COLORS",
+        "name": "forced-colors (Windows High Contrast)",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 1,
+        "summary": "fixed (baseline had 1)",
+        "findings": []
+      },
+      {
+        "id": "REDUCED-MOTION",
+        "name": "prefers-reduced-motion honoured",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "OVERFLOW",
+        "name": "Overflow culprits on deep devices",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 2,
+        "summary": "fixed (baseline had 2)",
+        "findings": []
+      },
+      {
+        "id": "LAYOUT-SHIFT",
+        "name": "Layout shift (CLS ≤ 0.1) and reserved media space",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "STICKY-FIXED",
+        "name": "Fixed / sticky elements sane",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "TOUCH-TARGET",
+        "name": "Touch target size (≥ 24px, ideally 44px)",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "PERF",
+        "name": "Performance budget (load, fps, long tasks, DOM, transfer)",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "ANIM-3D-FALLBACK",
+        "name": "Animation / 3D degrade on reduced-motion & low-end",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "CONSOLE-ERRORS",
+        "name": "No console / runtime errors",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "EXTERNAL-RESOURCES",
+        "name": "External resources (fonts/CDN) reachable",
+        "status": "pass",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "no findings",
+        "findings": []
+      },
+      {
+        "id": "A11Y-BASICS",
+        "name": "Landmarks, lang, alt text, form labels",
+        "status": "warn",
+        "count": 0,
+        "baselineCount": 0,
+        "summary": "2 advisory finding(s)",
+        "findings": [
+          {
+            "check": "A11Y-BASICS",
+            "device": "laptop-1280",
+            "page": "/",
+            "severity": "warn",
+            "message": "no <main> landmark"
+          },
+          {
+            "check": "A11Y-BASICS",
+            "device": "laptop-1280",
+            "page": "/",
+            "severity": "warn",
+            "message": "form control without label: input"
+          }
+        ]
+      }
+    ],
+    "durationMs": 62950,
+    "loads": 41,
+    "errors": 0,
+    "counts": {
+      "LOAD": 0,
+      "RESP-SWEEP": 0,
+      "MOBILE-ORIENT": 0,
+      "FOLDABLE": 0,
+      "DPR": 0,
+      "THEME": 0,
+      "FONT-200": 0,
+      "KEYBOARD-NAV": 0,
+      "FOCUS-VISIBLE": 0,
+      "CONTRAST": 0,
+      "FORCED-COLORS": 0,
+      "REDUCED-MOTION": 0,
+      "OVERFLOW": 0,
+      "LAYOUT-SHIFT": 0,
+      "STICKY-FIXED": 0,
+      "TOUCH-TARGET": 0,
+      "PERF": 0,
+      "ANIM-3D-FALLBACK": 0,
+      "CONSOLE-ERRORS": 0,
+      "EXTERNAL-RESOURCES": 0,
+      "A11Y-BASICS": 0
+    }
+  },
+  "finishedAt": "2026-09-07T13:18:23.190Z",
+  "decision": "keep",
+  "decisionReason": "verification passed on every gate",
+  "verdict": "PASS",
+  "state": "kept",
+  "journal": [
+    {
+      "seq": 1,
+      "ts": "2026-09-07T13:15:53.629Z",
+      "op": "begin",
+      "projectRoot": "/home/user/agent-tobo-web"
+    },
+    {
+      "seq": 2,
+      "ts": "2026-09-07T13:15:53.631Z",
+      "op": "stage",
+      "stage": "inspect",
+      "status": "running",
+      "summary": {}
+    },
+    {
+      "seq": 3,
+      "ts": "2026-09-07T13:15:53.657Z",
+      "op": "stage",
+      "stage": "inspect",
+      "status": "done",
+      "summary": {
+        "framework": "nextjs",
+        "cssStack": [
+          "tailwind"
+        ],
+        "pages": 1,
+        "uxProblems": 5,
+        "genericPatterns": 2,
+        "brand": "#00f5c3"
+      }
+    },
+    {
+      "seq": 4,
+      "ts": "2026-09-07T13:15:53.658Z",
+      "op": "stage",
+      "stage": "select",
+      "status": "running",
+      "summary": {}
+    },
+    {
+      "seq": 5,
+      "ts": "2026-09-07T13:15:53.674Z",
+      "op": "stage",
+      "stage": "select",
+      "status": "done",
+      "summary": {
+        "preset": "auto",
+        "auto": true,
+        "style": "modern",
+        "pageType": "landing",
+        "platform": "neutral-web",
+        "theme": "dark",
+        "density": "comfortable",
+        "motion": "standard",
+        "devices": [
+          "mobile",
+          "foldable",
+          "tablet",
+          "laptop",
+          "desktop",
+          "ultrawide",
+          "4k"
+        ],
+        "a11y": [
+          "reduced-motion",
+          "keyboard",
+          "forced-colors",
+          "large-text",
+          "screen-reader"
+        ],
+        "components": [
+          "navigation",
+          "buttons",
+          "cards",
+          "inputs"
+        ],
+        "effects": [
+          "micro-interactions",
+          "animations",
+          "scroll-effects"
+        ],
+        "brandMode": "preserve",
+        "threeD": false,
+        "radius": null,
+        "fontDisplay": "Sora",
+        "fontBody": "Manrope",
+        "fontMono": "JetBrains Mono",
+        "sources": {
+          "style": "auto",
+          "pageType": "auto",
+          "platform": "auto",
+          "theme": "auto",
+          "density": "auto",
+          "motion": "auto",
+          "a11y": "auto"
+        },
+        "adjustments": [
+          "brand primary #00f5c3 preserved (brandMode=preserve)"
+        ],
+        "vaultAssets": 12
+      }
+    },
+    {
+      "seq": 6,
+      "ts": "2026-09-07T13:15:53.676Z",
+      "op": "stage",
+      "stage": "adapt",
+      "status": "running",
+      "summary": {}
+    },
+    {
+      "seq": 7,
+      "ts": "2026-09-07T13:15:53.692Z",
+      "op": "stage",
+      "stage": "adapt",
+      "status": "done",
+      "summary": {
+        "adapter": "nextjs",
+        "files": 17,
+        "creates": 16,
+        "modifies": 1,
+        "notes": [
+          "theme imported from src/app/layout.tsx"
+        ],
+        "remediations": 9
+      }
+    },
+    {
+      "seq": 8,
+      "ts": "2026-09-07T13:15:53.693Z",
+      "op": "stage",
+      "stage": "probe",
+      "status": "running",
+      "summary": {}
+    },
+    {
+      "seq": 9,
+      "ts": "2026-09-07T13:15:54.109Z",
+      "op": "stage",
+      "stage": "probe",
+      "status": "done",
+      "summary": {
+        "probeOk": true,
+        "probeErrors": 0,
+        "gatesFailed": []
+      }
+    },
+    {
+      "seq": 10,
+      "ts": "2026-09-07T13:15:54.115Z",
+      "op": "stage",
+      "stage": "preview",
+      "status": "running",
+      "summary": {}
+    },
+    {
+      "seq": 11,
+      "ts": "2026-09-07T13:17:14.647Z",
+      "op": "stage",
+      "stage": "preview",
+      "status": "done",
+      "summary": {
+        "browser": true,
+        "current": true,
+        "candidate": true,
+        "baseline": {
+          "LOAD": 0,
+          "RESP-SWEEP": 2,
+          "MOBILE-ORIENT": 1,
+          "FOLDABLE": 1,
+          "DPR": 0,
+          "THEME": 0,
+          "FONT-200": 0,
+          "KEYBOARD-NAV": 0,
+          "FOCUS-VISIBLE": 14,
+          "CONTRAST": 0,
+          "FORCED-COLORS": 1,
+          "REDUCED-MOTION": 0,
+          "OVERFLOW": 2,
+          "LAYOUT-SHIFT": 0,
+          "STICKY-FIXED": 0,
+          "TOUCH-TARGET": 0,
+          "PERF": 0,
+          "ANIM-3D-FALLBACK": 0,
+          "CONSOLE-ERRORS": 0,
+          "EXTERNAL-RESOURCES": 0,
+          "A11Y-BASICS": 0
+        }
+      }
+    },
+    {
+      "seq": 12,
+      "ts": "2026-09-07T13:17:14.652Z",
+      "op": "state",
+      "state": "staged"
+    },
+    {
+      "seq": 13,
+      "ts": "2026-09-07T13:17:14.653Z",
+      "op": "stage",
+      "stage": "write",
+      "status": "running",
+      "summary": {}
+    },
+    {
+      "seq": 14,
+      "ts": "2026-09-07T13:17:14.654Z",
+      "op": "state",
+      "state": "writing"
+    },
+    {
+      "seq": 15,
+      "ts": "2026-09-07T13:17:14.655Z",
+      "op": "mkdir",
+      "path": "src/app/kk-design"
+    },
+    {
+      "seq": 16,
+      "ts": "2026-09-07T13:17:14.656Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/tokens.css",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 17,
+      "ts": "2026-09-07T13:17:14.657Z",
+      "op": "write",
+      "path": "src/app/kk-design/tokens.css",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "9be78e668fe1e146821a51608b40f15bfb954dff855ecd69a7bcb0cb16e542aa",
+      "bytes": 6604
+    },
+    {
+      "seq": 18,
+      "ts": "2026-09-07T13:17:14.658Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/theme.css",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 19,
+      "ts": "2026-09-07T13:17:14.659Z",
+      "op": "write",
+      "path": "src/app/kk-design/theme.css",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "08e4886da2db5ee22f5d9eb7edb3861b9ec35c0f3b5430f1598b0d00bbc9d06a",
+      "bytes": 20818
+    },
+    {
+      "seq": 20,
+      "ts": "2026-09-07T13:17:14.661Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/motion.js",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 21,
+      "ts": "2026-09-07T13:17:14.662Z",
+      "op": "write",
+      "path": "src/app/kk-design/motion.js",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "3b44a72b6b35ab5ea18f3409aa7fe52798380d16c21aa7b8491c06e1ea6c80ee",
+      "bytes": 7447
+    },
+    {
+      "seq": 22,
+      "ts": "2026-09-07T13:17:14.663Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/ATTRIBUTION.md",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 23,
+      "ts": "2026-09-07T13:17:14.664Z",
+      "op": "write",
+      "path": "src/app/kk-design/ATTRIBUTION.md",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "ce874cdf6789b0ba87add1d7f2a9cbca897bc62999c08345e4f67fe0c5b550ee",
+      "bytes": 2101
+    },
+    {
+      "seq": 24,
+      "ts": "2026-09-07T13:17:14.665Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/tokens.json",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 25,
+      "ts": "2026-09-07T13:17:14.666Z",
+      "op": "write",
+      "path": "src/app/kk-design/tokens.json",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "7699b76af41a1ed543e3674e6cdc975e205057d5ba9b7a431992d38d6fd9a61e",
+      "bytes": 4319
+    },
+    {
+      "seq": 26,
+      "ts": "2026-09-07T13:17:14.667Z",
+      "op": "mkdir",
+      "path": "src/app/kk-design/components"
+    },
+    {
+      "seq": 27,
+      "ts": "2026-09-07T13:17:14.668Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/components/KkButton.tsx",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 28,
+      "ts": "2026-09-07T13:17:14.669Z",
+      "op": "write",
+      "path": "src/app/kk-design/components/KkButton.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "0f840c1bb195c359bde63ceb950d84b90178ac3ecc3c5acbeac466e76ea03fa8",
+      "bytes": 610
+    },
+    {
+      "seq": 29,
+      "ts": "2026-09-07T13:17:14.670Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/components/KkCard.tsx",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 30,
+      "ts": "2026-09-07T13:17:14.671Z",
+      "op": "write",
+      "path": "src/app/kk-design/components/KkCard.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "27fdbfa7835a1c61453a1c7ea5f1e1bc686632dd3e0216cdc2eb3d32f9c3ae19",
+      "bytes": 667
+    },
+    {
+      "seq": 31,
+      "ts": "2026-09-07T13:17:14.672Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/components/KkInput.tsx",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 32,
+      "ts": "2026-09-07T13:17:14.673Z",
+      "op": "write",
+      "path": "src/app/kk-design/components/KkInput.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "2c889797bbdf1f3133a0869fc3798ff92054d92c1914318eb2de32fbec7beaf6",
+      "bytes": 1081
+    },
+    {
+      "seq": 33,
+      "ts": "2026-09-07T13:17:14.675Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/components/KkModal.tsx",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 34,
+      "ts": "2026-09-07T13:17:14.676Z",
+      "op": "write",
+      "path": "src/app/kk-design/components/KkModal.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "50acd8140a66bae78ab8a2c949deee12500d76e4895bc8668f28e7b246295230",
+      "bytes": 1053
+    },
+    {
+      "seq": 35,
+      "ts": "2026-09-07T13:17:14.677Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/components/KkTable.tsx",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 36,
+      "ts": "2026-09-07T13:17:14.678Z",
+      "op": "write",
+      "path": "src/app/kk-design/components/KkTable.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "ab3f57792ec72847bd9280b8c3efd240945d51e1bb2146af7dab257ac7dd835e",
+      "bytes": 1289
+    },
+    {
+      "seq": 37,
+      "ts": "2026-09-07T13:17:14.679Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/components/KkNav.tsx",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 38,
+      "ts": "2026-09-07T13:17:14.681Z",
+      "op": "write",
+      "path": "src/app/kk-design/components/KkNav.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "679750f6e54b9e87435a4311478bd109a58987b7c5133392a20772c7933549cf",
+      "bytes": 889
+    },
+    {
+      "seq": 39,
+      "ts": "2026-09-07T13:17:14.682Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/components/KkSidebar.tsx",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 40,
+      "ts": "2026-09-07T13:17:14.683Z",
+      "op": "write",
+      "path": "src/app/kk-design/components/KkSidebar.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "58d1ef8be25fd4c54253390e75cb94c93ef03359727059e45e987cfd779cf264",
+      "bytes": 1056
+    },
+    {
+      "seq": 41,
+      "ts": "2026-09-07T13:17:14.684Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/components/KkChart.tsx",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 42,
+      "ts": "2026-09-07T13:17:14.685Z",
+      "op": "write",
+      "path": "src/app/kk-design/components/KkChart.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "8e4f01447650a0a26554d51501cd218b54dcfe6a10c21f4ca522e5f6c0ae2c2a",
+      "bytes": 2040
+    },
+    {
+      "seq": 43,
+      "ts": "2026-09-07T13:17:14.686Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/components/KkCarousel.tsx",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 44,
+      "ts": "2026-09-07T13:17:14.688Z",
+      "op": "write",
+      "path": "src/app/kk-design/components/KkCarousel.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "495d69da7092d33ffe2b9ba04dcafb93411d70c00331c90965cc1310096cc73d",
+      "bytes": 1371
+    },
+    {
+      "seq": 45,
+      "ts": "2026-09-07T13:17:14.689Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/KkThemeProvider.tsx",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 46,
+      "ts": "2026-09-07T13:17:14.690Z",
+      "op": "write",
+      "path": "src/app/kk-design/KkThemeProvider.tsx",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "57c6bb03054cae4da6c95033f9c16d93473d57b4ce9aaf9dc39fe826b8fa1495",
+      "bytes": 1900
+    },
+    {
+      "seq": 47,
+      "ts": "2026-09-07T13:17:14.692Z",
+      "op": "write_intent",
+      "path": "src/app/kk-design/index.ts",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 48,
+      "ts": "2026-09-07T13:17:14.693Z",
+      "op": "write",
+      "path": "src/app/kk-design/index.ts",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "ca4399a28f7cfc1ef587620ce49b34da59f03d8093ae2efd9cd7ff3b318859b8",
+      "bytes": 700
+    },
+    {
+      "seq": 49,
+      "ts": "2026-09-07T13:17:14.695Z",
+      "op": "backup",
+      "path": "src/app/layout.tsx",
+      "hash": "1da19079751652920ae9cdb1aca421f07df1b95f56ff499c661bbfcafac356f5"
+    },
+    {
+      "seq": 50,
+      "ts": "2026-09-07T13:17:14.696Z",
+      "op": "write_intent",
+      "path": "src/app/layout.tsx",
+      "kind": "modify",
+      "hashBefore": "1da19079751652920ae9cdb1aca421f07df1b95f56ff499c661bbfcafac356f5"
+    },
+    {
+      "seq": 51,
+      "ts": "2026-09-07T13:17:14.697Z",
+      "op": "write",
+      "path": "src/app/layout.tsx",
+      "kind": "modify",
+      "hashBefore": "1da19079751652920ae9cdb1aca421f07df1b95f56ff499c661bbfcafac356f5",
+      "hashAfter": "83e200a329b3bbba445530c7615223a217ec50c984dc85a924c7527276a5824b",
+      "bytes": 402
+    },
+    {
+      "seq": 52,
+      "ts": "2026-09-07T13:17:14.698Z",
+      "op": "state",
+      "state": "written"
+    },
+    {
+      "seq": 53,
+      "ts": "2026-09-07T13:17:14.708Z",
+      "op": "stage",
+      "stage": "write",
+      "status": "done",
+      "summary": {
+        "files": 17,
+        "integrity": true
+      }
+    },
+    {
+      "seq": 54,
+      "ts": "2026-09-07T13:17:14.710Z",
+      "op": "stage",
+      "stage": "verify",
+      "status": "running",
+      "summary": {}
+    },
+    {
+      "seq": 55,
+      "ts": "2026-09-07T13:18:23.182Z",
+      "op": "state",
+      "state": "verified"
+    },
+    {
+      "seq": 56,
+      "ts": "2026-09-07T13:18:23.185Z",
+      "op": "stage",
+      "stage": "verify",
+      "status": "done",
+      "summary": {
+        "ok": true,
+        "mode": "standard",
+        "failed": [],
+        "warned": [
+          "THEME",
+          "A11Y-BASICS"
+        ],
+        "loads": 41
+      }
+    },
+    {
+      "seq": 57,
+      "ts": "2026-09-07T13:18:23.187Z",
+      "op": "stage",
+      "stage": "decide",
+      "status": "running",
+      "summary": {}
+    },
+    {
+      "seq": 58,
+      "ts": "2026-09-07T13:18:23.188Z",
+      "op": "keep",
+      "note": "verification passed"
+    },
+    {
+      "seq": 59,
+      "ts": "2026-09-07T13:18:23.188Z",
+      "op": "state",
+      "state": "kept"
+    },
+    {
+      "seq": 60,
+      "ts": "2026-09-07T13:18:23.189Z",
+      "op": "stage",
+      "stage": "decide",
+      "status": "done",
+      "summary": {
+        "decision": "keep",
+        "reason": "verification passed on every gate"
+      }
+    }
+  ],
+  "log": [
+    {
+      "ts": "2026-09-07T13:15:53.631Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "transaction 20260907-131553-92c348 opened for /home/user/agent-tobo-web"
+    },
+    {
+      "ts": "2026-09-07T13:15:53.632Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage inspect: running"
+    },
+    {
+      "ts": "2026-09-07T13:15:53.656Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "scan: nextjs@14.2.35, css=[tailwind], 1 page(s), 5 UX problem(s), 2 generic pattern(s)"
+    },
+    {
+      "ts": "2026-09-07T13:15:53.658Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage inspect: done"
+    },
+    {
+      "ts": "2026-09-07T13:15:53.659Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage select: running"
+    },
+    {
+      "ts": "2026-09-07T13:15:53.676Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage select: done"
+    },
+    {
+      "ts": "2026-09-07T13:15:53.677Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage adapt: running"
+    },
+    {
+      "ts": "2026-09-07T13:15:53.693Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage adapt: done"
+    },
+    {
+      "ts": "2026-09-07T13:15:53.694Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage probe: running"
+    },
+    {
+      "ts": "2026-09-07T13:15:54.107Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "probe: ok, 1 warning(s)"
+    },
+    {
+      "ts": "2026-09-07T13:15:54.115Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage probe: done"
+    },
+    {
+      "ts": "2026-09-07T13:15:54.116Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage preview: running"
+    },
+    {
+      "ts": "2026-09-07T13:15:54.520Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "starting dev server: npx next dev -p 37313 -H 127.0.0.1 (port 37313)"
+    },
+    {
+      "ts": "2026-09-07T13:16:06.504Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "starting dev server: npx next dev -p 42729 -H 127.0.0.1 (port 42729)"
+    },
+    {
+      "ts": "2026-09-07T13:17:13.845Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "baseline: RESP-SWEEP=2 MOBILE-ORIENT=1 FOLDABLE=1 FOCUS-VISIBLE=14 FORCED-COLORS=1 OVERFLOW=2"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.652Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage preview: done"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.654Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage write: running"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.658Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/tokens.css"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.660Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/theme.css"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.663Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/motion.js"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.665Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/ATTRIBUTION.md"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.667Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/tokens.json"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.670Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/components/KkButton.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.672Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/components/KkCard.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.674Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/components/KkInput.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.677Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/components/KkModal.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.679Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/components/KkTable.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.682Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/components/KkNav.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.684Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/components/KkSidebar.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.686Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/components/KkChart.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.689Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/components/KkCarousel.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.691Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/KkThemeProvider.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.694Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/app/kk-design/index.ts"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.698Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "modify src/app/layout.tsx"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.710Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage write: done"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.711Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage verify: running"
+    },
+    {
+      "ts": "2026-09-07T13:17:14.713Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "starting dev server: npx next dev -p 44433 -H 127.0.0.1 (port 44433)"
+    },
+    {
+      "ts": "2026-09-07T13:18:23.187Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage verify: done"
+    },
+    {
+      "ts": "2026-09-07T13:18:23.188Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage decide: running"
+    },
+    {
+      "ts": "2026-09-07T13:18:23.190Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "stage decide: done"
+    }
+  ]
+}

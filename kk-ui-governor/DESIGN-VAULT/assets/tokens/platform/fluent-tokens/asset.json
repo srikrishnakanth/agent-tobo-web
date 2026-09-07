@@ -1,0 +1,96 @@
+{
+  "id": "fluent-tokens",
+  "category": "tokens/platform",
+  "designStyle": [
+    "enterprise",
+    "native-app"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "windows-fluent"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "laptop",
+    "desktop",
+    "ultrawide",
+    "4k"
+  ],
+  "performanceCost": "none",
+  "accessibility": "Fluent 2 alias colours meet WCAG AA pairs",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "6d627faf68c5b5a3f3cd9c97ea96b520c5b87f06",
+  "upstream": {
+    "repo": "microsoft/fluentui",
+    "commit": "6d627faf68c5b5a3f3cd9c97ea96b520c5b87f06",
+    "url": "https://github.com/microsoft/fluentui/tree/6d627faf68c5b5a3f3cd9c97ea96b520c5b87f06",
+    "path": "packages/tokens/src/global/colors.ts"
+  },
+  "files": [
+    {
+      "path": "packages/tokens/src/global/colors.ts",
+      "sha256": "9f25bd8412c3506c1e324c3f3bc9a069c0696e7b08cf74c322038777f8d0ea6b",
+      "bytes": 18257,
+      "vaultPath": "assets/tokens/platform/fluent-tokens/files/packages/tokens/src/global/colors.ts"
+    },
+    {
+      "path": "packages/tokens/src/alias/lightColor.ts",
+      "sha256": "0882854a85d8433e530bb5e40adff342e321361c64cd295255127c06fea55a48",
+      "bytes": 14511,
+      "vaultPath": "assets/tokens/platform/fluent-tokens/files/packages/tokens/src/alias/lightColor.ts"
+    },
+    {
+      "path": "packages/tokens/src/alias/darkColor.ts",
+      "sha256": "ed15b83e605999aa196ba04ac9d03557cf943a3ba7ce3a3979650992505c2bea",
+      "bytes": 14539,
+      "vaultPath": "assets/tokens/platform/fluent-tokens/files/packages/tokens/src/alias/darkColor.ts"
+    },
+    {
+      "path": "packages/tokens/src/global/borderRadius.ts",
+      "sha256": "156bf14d20515100a28356daa7c07c9766a1108a0e4efef86ae171ee8c505f34",
+      "bytes": 435,
+      "vaultPath": "assets/tokens/platform/fluent-tokens/files/packages/tokens/src/global/borderRadius.ts"
+    },
+    {
+      "path": "packages/tokens/src/global/fonts.ts",
+      "sha256": "ba5c662e2ec0e216f98ca28433ab439ecb4036d30d2311aa3f7d9c362ddcb2e9",
+      "bytes": 1336,
+      "vaultPath": "assets/tokens/platform/fluent-tokens/files/packages/tokens/src/global/fonts.ts"
+    },
+    {
+      "path": "packages/tokens/src/global/durations.ts",
+      "sha256": "34ef2eb5444fa422632f5ec1c2033f947d953f96c569e23e0ad8f78a6921f6bf",
+      "bytes": 312,
+      "vaultPath": "assets/tokens/platform/fluent-tokens/files/packages/tokens/src/global/durations.ts"
+    },
+    {
+      "path": "packages/tokens/src/global/curves.ts",
+      "sha256": "e1681eb819b86380e9ef6d52b9821b5fce2382d8d0070a33eef6429c4e0e2a6c",
+      "bytes": 527,
+      "vaultPath": "assets/tokens/platform/fluent-tokens/files/packages/tokens/src/global/curves.ts"
+    },
+    {
+      "path": "packages/tokens/src/global/spacings.ts",
+      "sha256": "63a64eba054236a88c80293f3128f89e988f22da90e7b4637a53ad92a89f9c2d",
+      "bytes": 1315,
+      "vaultPath": "assets/tokens/platform/fluent-tokens/files/packages/tokens/src/global/spacings.ts"
+    },
+    {
+      "path": "packages/tokens/src/global/strokeWidths.ts",
+      "sha256": "3bcb25fbea831bab1c06f0ce8c98ba0f671812d9711add1cbd4a441c9f63f59e",
+      "bytes": 216,
+      "vaultPath": "assets/tokens/platform/fluent-tokens/files/packages/tokens/src/global/strokeWidths.ts"
+    }
+  ],
+  "licenseNotice": "sources/fluentui-tokens/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "open-props-sizes",
+  "category": "tokens/spacing",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "n/a",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+  "upstream": {
+    "repo": "argyleink/open-props",
+    "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "path": "src/props.sizes.css"
+  },
+  "files": [
+    {
+      "path": "src/props.sizes.css",
+      "sha256": "9df4d9369105ef74288efcf9c0261d2ef9893e09669f25637e46a87f8109d583",
+      "bytes": 1935,
+      "vaultPath": "assets/tokens/spacing/open-props-sizes/files/src/props.sizes.css"
+    }
+  ],
+  "licenseNotice": "sources/open-props/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

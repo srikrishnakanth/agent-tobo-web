@@ -1,0 +1,55 @@
+{
+  "id": "shadcn-chart",
+  "category": "components/chart",
+  "designStyle": [
+    "data-dense",
+    "enterprise",
+    "modern"
+  ],
+  "pageType": [
+    "dashboard",
+    "admin",
+    "crm",
+    "ai-ui"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "recharts"
+  ],
+  "deviceSuitability": [
+    "tablet",
+    "desktop",
+    "ultrawide",
+    "4k"
+  ],
+  "performanceCost": "medium",
+  "accessibility": "needs textual summary; tooltip is pointer-driven",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/chart.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/chart.tsx",
+      "sha256": "35e2fa755465ef8eb8ff8b483d493204d452152e7a8863474b1a69f5d44484db",
+      "bytes": 10544,
+      "vaultPath": "assets/components/chart/shadcn-chart/files/apps/v4/registry/new-york-v4/ui/chart.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

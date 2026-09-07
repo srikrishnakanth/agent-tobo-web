@@ -1,0 +1,10 @@
+{
+  "name": "fleet-ops-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Fleet operations dashboard: vehicles, drivers, exceptions and analytics for a regional carrier",
+  "scripts": { "dev": "vite", "build": "vite build", "preview": "vite preview" },
+  "dependencies": { "react": "^18.3.1", "react-dom": "^18.3.1" },
+  "devDependencies": { "@vitejs/plugin-react": "^4.3.4", "vite": "^5.4.11", "tailwindcss": "^4.1.0", "@tailwindcss/vite": "^4.1.0" }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "shadcn-carousel",
+  "category": "components/carousel",
+  "designStyle": [
+    "visual-rich",
+    "creative",
+    "ecommerce",
+    "premium"
+  ],
+  "pageType": [
+    "landing",
+    "ecommerce"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "embla-carousel-react",
+    "lucide-react"
+  ],
+  "deviceSuitability": [
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
+  "performanceCost": "medium",
+  "accessibility": "role=region aria-roledescription=carousel, keyboard arrows",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/carousel.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/carousel.tsx",
+      "sha256": "70ba30941a3adb448166ddcf8557c97734b7be09f6fd69512a6e444084365557",
+      "bytes": 5557,
+      "vaultPath": "assets/components/carousel/shadcn-carousel/files/apps/v4/registry/new-york-v4/ui/carousel.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

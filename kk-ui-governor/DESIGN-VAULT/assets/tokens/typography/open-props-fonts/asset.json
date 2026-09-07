@@ -1,0 +1,44 @@
+{
+  "id": "open-props-fonts",
+  "category": "tokens/typography",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "fluid type scale",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+  "upstream": {
+    "repo": "argyleink/open-props",
+    "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "path": "src/props.fonts.css"
+  },
+  "files": [
+    {
+      "path": "src/props.fonts.css",
+      "sha256": "ba041962ded7cb37a69021fc8ebb84ca586269bb36e6a4a8b4de34630068727b",
+      "bytes": 2805,
+      "vaultPath": "assets/tokens/typography/open-props-fonts/files/src/props.fonts.css"
+    }
+  ],
+  "licenseNotice": "sources/open-props/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

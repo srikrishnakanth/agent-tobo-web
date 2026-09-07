@@ -1,0 +1,11 @@
+{
+  "id": "material-web",
+  "repo": "material-components/material-web",
+  "url": "https://github.com/material-components/material-web/tree/c05b4b23485c803f68ff31cde52506cea5cc555a",
+  "commit": "c05b4b23485c803f68ff31cde52506cea5cc555a",
+  "license": "Apache-2.0",
+  "licenseFile": "LICENSE",
+  "licenseSha256": "295cdb4364b782931c914f5ca8c47fac87c732fa7e448b788a47aa5b25728212",
+  "homepage": "https://material-web.dev",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

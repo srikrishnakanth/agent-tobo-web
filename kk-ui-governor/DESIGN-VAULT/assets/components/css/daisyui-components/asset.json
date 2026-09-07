@@ -1,0 +1,89 @@
+{
+  "id": "daisyui-components",
+  "category": "components/css",
+  "designStyle": [
+    "modern",
+    "creative"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "daisyui"
+  ],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "class-based; relies on semantic markup",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "1435c6598bf6b93bf59c5b99e6669cf2720f5e81",
+  "upstream": {
+    "repo": "saadeghi/daisyui",
+    "commit": "1435c6598bf6b93bf59c5b99e6669cf2720f5e81",
+    "url": "https://github.com/saadeghi/daisyui/tree/1435c6598bf6b93bf59c5b99e6669cf2720f5e81",
+    "path": "packages/daisyui/src/components/button.css"
+  },
+  "files": [
+    {
+      "path": "packages/daisyui/src/components/button.css",
+      "sha256": "003bfab25b2f835dadd554aee7762dc86d5702832d9eb0312fde39be7a4d556e",
+      "bytes": 9106,
+      "vaultPath": "assets/components/css/daisyui-components/files/packages/daisyui/src/components/button.css"
+    },
+    {
+      "path": "packages/daisyui/src/components/card.css",
+      "sha256": "67f65b2a975d8aa39e971f23904dc0589878ba3218c54b2e71daae2326864a96",
+      "bytes": 3892,
+      "vaultPath": "assets/components/css/daisyui-components/files/packages/daisyui/src/components/card.css"
+    },
+    {
+      "path": "packages/daisyui/src/components/table.css",
+      "sha256": "c5696160e670cabaa0597c7d15fef5e8dcdc35cd0d5dd4ad7ace638982b91870",
+      "bytes": 2294,
+      "vaultPath": "assets/components/css/daisyui-components/files/packages/daisyui/src/components/table.css"
+    },
+    {
+      "path": "packages/daisyui/src/components/modal.css",
+      "sha256": "22055cd8037f3b9574bf71ed97dfcb18d8e52dc92619c16aedd806cccbfd5250",
+      "bytes": 4629,
+      "vaultPath": "assets/components/css/daisyui-components/files/packages/daisyui/src/components/modal.css"
+    },
+    {
+      "path": "packages/daisyui/src/components/navbar.css",
+      "sha256": "b27c14877816c6b851cde3713997d0af4920e9dc7e004d30484e75437ec544a5",
+      "bytes": 575,
+      "vaultPath": "assets/components/css/daisyui-components/files/packages/daisyui/src/components/navbar.css"
+    },
+    {
+      "path": "packages/daisyui/src/components/input.css",
+      "sha256": "5056879ed4123cbb7ccfcd3f2d1bc4c80b711499418b3b932743b6192d679607",
+      "bytes": 5969,
+      "vaultPath": "assets/components/css/daisyui-components/files/packages/daisyui/src/components/input.css"
+    },
+    {
+      "path": "packages/daisyui/src/components/drawer.css",
+      "sha256": "0ba71d658b2727ac1ca6ab5567e12aa517b986afad240493fd87f0f8c919fb61",
+      "bytes": 3261,
+      "vaultPath": "assets/components/css/daisyui-components/files/packages/daisyui/src/components/drawer.css"
+    },
+    {
+      "path": "packages/daisyui/src/components/carousel.css",
+      "sha256": "c45f043d604721c1c77a50d9b642096ae919d1e21123835700ce884c10ae411b",
+      "bytes": 997,
+      "vaultPath": "assets/components/css/daisyui-components/files/packages/daisyui/src/components/carousel.css"
+    }
+  ],
+  "licenseNotice": "sources/daisyui/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "tabler-icons",
+  "repo": "tabler/tabler-icons",
+  "url": "https://github.com/tabler/tabler-icons/tree/55f87a73f45cf1d9eaf16d7da705065483a9e4f9",
+  "commit": "55f87a73f45cf1d9eaf16d7da705065483a9e4f9",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "licenseSha256": "b740a1d46122672da62833e97f7e7c8a13fa85cbc7445b584b297cc00dde93db",
+  "homepage": "https://tabler.io/icons",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

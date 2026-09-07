@@ -1,0 +1,65 @@
+{
+  "id": "chartjs-samples",
+  "category": "components/chart",
+  "designStyle": [
+    "data-dense",
+    "enterprise"
+  ],
+  "pageType": [
+    "dashboard",
+    "admin",
+    "crm"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "html",
+    "react"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [
+    "chart.js"
+  ],
+  "deviceSuitability": [
+    "tablet",
+    "desktop",
+    "ultrawide",
+    "4k"
+  ],
+  "performanceCost": "medium",
+  "accessibility": "canvas; needs aria-label + data table fallback (governor emits SVG bars when chart.js is absent)",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+  "upstream": {
+    "repo": "chartjs/Chart.js",
+    "commit": "cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+    "url": "https://github.com/chartjs/Chart.js/tree/cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+    "path": "docs/samples/bar/vertical.md"
+  },
+  "files": [
+    {
+      "path": "docs/samples/bar/vertical.md",
+      "sha256": "d95ae5e09b810a213390e81d003c15a8e4e23306838270eaad4abece1de8a02f",
+      "bytes": 2631,
+      "vaultPath": "assets/components/chart/chartjs-samples/files/docs/samples/bar/vertical.md"
+    },
+    {
+      "path": "docs/samples/line/line.md",
+      "sha256": "ecec80c74b412bab9afee1bc91adbdc077938a7353c60396e00ab462fd852fbd",
+      "bytes": 2603,
+      "vaultPath": "assets/components/chart/chartjs-samples/files/docs/samples/line/line.md"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1387d9f978eaf4f0273c8a5093e33890fccf487d268791fa42baf4964522a940",
+      "bytes": 4801,
+      "vaultPath": "assets/components/chart/chartjs-samples/files/package.json"
+    }
+  ],
+  "licenseNotice": "sources/chartjs/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

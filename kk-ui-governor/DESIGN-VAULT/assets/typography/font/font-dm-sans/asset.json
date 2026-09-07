@@ -1,0 +1,54 @@
+{
+  "id": "font-dm-sans",
+  "category": "typography/font",
+  "designStyle": [
+    "minimal",
+    "modern",
+    "enterprise"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "low-contrast geometric; body ≥ 16px",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "DM Sans",
+  "role": "sans",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/dmsans/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/dmsans/OFL.txt",
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+      "bytes": 4482,
+      "vaultPath": "assets/typography/font/font-dm-sans/files/ofl/dmsans/OFL.txt"
+    },
+    {
+      "path": "ofl/dmsans/METADATA.pb",
+      "sha256": "55b3697a416f7d08c093918a4019a75cca7186c64bc56b1bb23e197a5d559dee",
+      "bytes": 1283,
+      "vaultPath": "assets/typography/font/font-dm-sans/files/ofl/dmsans/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

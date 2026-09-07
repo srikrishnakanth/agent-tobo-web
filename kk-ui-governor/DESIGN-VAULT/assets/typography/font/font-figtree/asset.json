@@ -1,0 +1,54 @@
+{
+  "id": "font-figtree",
+  "category": "typography/font",
+  "designStyle": [
+    "modern",
+    "native-app",
+    "minimal"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "friendly UI face",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Figtree",
+  "role": "sans",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/figtree/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/figtree/OFL.txt",
+      "sha256": "140d37233e7f3ce7313798befa9600893bcceaf41a55fa0fa5ad52f7f657a268",
+      "bytes": 4388,
+      "vaultPath": "assets/typography/font/font-figtree/files/ofl/figtree/OFL.txt"
+    },
+    {
+      "path": "ofl/figtree/METADATA.pb",
+      "sha256": "0f70233b05de662ffa31a5dc3d310cb4eb047dc3b776046f937219179d79d905",
+      "bytes": 1282,
+      "vaultPath": "assets/typography/font/font-figtree/files/ofl/figtree/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

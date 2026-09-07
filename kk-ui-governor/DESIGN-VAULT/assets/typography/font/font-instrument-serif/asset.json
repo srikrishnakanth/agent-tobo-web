@@ -1,0 +1,54 @@
+{
+  "id": "font-instrument-serif",
+  "category": "typography/font",
+  "designStyle": [
+    "luxury",
+    "premium",
+    "creative"
+  ],
+  "pageType": [
+    "landing"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "display sizes only",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Instrument Serif",
+  "role": "display",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/instrumentserif/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/instrumentserif/OFL.txt",
+      "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
+      "bytes": 4405,
+      "vaultPath": "assets/typography/font/font-instrument-serif/files/ofl/instrumentserif/OFL.txt"
+    },
+    {
+      "path": "ofl/instrumentserif/METADATA.pb",
+      "sha256": "9a650bee57af3478f9294c8765292dcea36322082b987b857e29a2ea64861f6a",
+      "bytes": 1287,
+      "vaultPath": "assets/typography/font/font-instrument-serif/files/ofl/instrumentserif/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

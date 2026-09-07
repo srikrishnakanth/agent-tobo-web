@@ -1,0 +1,54 @@
+{
+  "id": "shadcn-navigation-menu",
+  "category": "components/navigation",
+  "designStyle": [
+    "modern",
+    "premium",
+    "enterprise"
+  ],
+  "pageType": [
+    "landing",
+    "docs",
+    "ecommerce"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "@radix-ui/react-navigation-menu",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "deviceSuitability": [
+    "desktop",
+    "ultrawide"
+  ],
+  "performanceCost": "low",
+  "accessibility": "roving tabindex, aria-expanded (Radix)",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/navigation-menu.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/navigation-menu.tsx",
+      "sha256": "fbe81d7c358df0d21e49b03174ef53be7d66226a3dce1a97ff3d4a260ed833a3",
+      "bytes": 6648,
+      "vaultPath": "assets/components/navigation/shadcn-navigation-menu/files/apps/v4/registry/new-york-v4/ui/navigation-menu.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

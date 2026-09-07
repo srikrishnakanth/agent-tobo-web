@@ -1,0 +1,71 @@
+{
+  "id": "ionic-ios-tokens",
+  "category": "tokens/platform",
+  "designStyle": [
+    "native-app",
+    "premium"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "ios"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "sass"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "mobile",
+    "foldable",
+    "tablet"
+  ],
+  "performanceCost": "none",
+  "accessibility": "iOS dynamic-type friendly sizes",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5874331e96cbad080c41220a740a8fffd1a9699b",
+  "upstream": {
+    "repo": "ionic-team/ionic-framework",
+    "commit": "5874331e96cbad080c41220a740a8fffd1a9699b",
+    "url": "https://github.com/ionic-team/ionic-framework/tree/5874331e96cbad080c41220a740a8fffd1a9699b",
+    "path": "core/src/themes/ionic.globals.ios.scss"
+  },
+  "files": [
+    {
+      "path": "core/src/themes/ionic.globals.ios.scss",
+      "sha256": "1c049b06fbd711953b5131b68ffb3fe70a290b67ebbd03aa2964bd314568b6dc",
+      "bytes": 95,
+      "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/themes/ionic.globals.ios.scss"
+    },
+    {
+      "path": "core/src/themes/ionic.theme.default.ios.scss",
+      "sha256": "eb1e2e44319fc6dc13ba696ab368ac24d86e0b7fe0dabc9502eebfd8b195cef8",
+      "bytes": 2595,
+      "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/themes/ionic.theme.default.ios.scss"
+    },
+    {
+      "path": "core/src/themes/ionic.theme.default.scss",
+      "sha256": "0d970682af423dd70693631c90446d5f43ecbe41332198d08312277c84b72465",
+      "bytes": 9583,
+      "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/themes/ionic.theme.default.scss"
+    },
+    {
+      "path": "core/src/css/typography.scss",
+      "sha256": "cfc79ff7d5ee1ed053f3fc7822bddac4fbc2ae17d3ac3ef6bf638f4f372b513a",
+      "bytes": 1902,
+      "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/css/typography.scss"
+    },
+    {
+      "path": "core/src/components/button/button.ios.vars.scss",
+      "sha256": "f0a4d4c280349e4e83e35d7ce22a1d1e1307fc2ed8799cadba430bda8d010c45",
+      "bytes": 5668,
+      "vaultPath": "assets/tokens/platform/ionic-ios-tokens/files/core/src/components/button/button.ios.vars.scss"
+    }
+  ],
+  "licenseNotice": "sources/ionic/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

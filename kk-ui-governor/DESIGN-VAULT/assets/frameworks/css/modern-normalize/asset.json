@@ -1,0 +1,44 @@
+{
+  "id": "modern-normalize",
+  "category": "frameworks/css",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "html"
+  ],
+  "cssStack": [
+    "plain"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "n/a",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "27c3f5fe3109b4041a835a0fa569e09c77022bf8",
+  "upstream": {
+    "repo": "sindresorhus/modern-normalize",
+    "commit": "27c3f5fe3109b4041a835a0fa569e09c77022bf8",
+    "url": "https://github.com/sindresorhus/modern-normalize/tree/27c3f5fe3109b4041a835a0fa569e09c77022bf8",
+    "path": "modern-normalize.css"
+  },
+  "files": [
+    {
+      "path": "modern-normalize.css",
+      "sha256": "a3af19dc9751230f9babca01ad939e45aff688379c0ae64cc07321e818c871e3",
+      "bytes": 3442,
+      "vaultPath": "assets/frameworks/css/modern-normalize/files/modern-normalize.css"
+    }
+  ],
+  "licenseNotice": "sources/modern-normalize/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

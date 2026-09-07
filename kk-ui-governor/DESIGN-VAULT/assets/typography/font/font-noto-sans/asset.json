@@ -1,0 +1,53 @@
+{
+  "id": "font-noto-sans",
+  "category": "typography/font",
+  "designStyle": [
+    "neutral-web",
+    "enterprise"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "medium",
+  "accessibility": "broad script coverage",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Noto Sans",
+  "role": "sans",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/notosans/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/notosans/OFL.txt",
+      "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+      "bytes": 4396,
+      "vaultPath": "assets/typography/font/font-noto-sans/files/ofl/notosans/OFL.txt"
+    },
+    {
+      "path": "ofl/notosans/METADATA.pb",
+      "sha256": "9fd9566184e9833ae3a33b8950e2782a8abb1f0a9d6fb2c51b3fb615f2d78cfe",
+      "bytes": 32340,
+      "vaultPath": "assets/typography/font/font-noto-sans/files/ofl/notosans/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

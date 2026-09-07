@@ -1,0 +1,53 @@
+{
+  "id": "font-bricolage-grotesque",
+  "category": "typography/font",
+  "designStyle": [
+    "creative",
+    "visual-rich"
+  ],
+  "pageType": [
+    "landing"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "headings",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Bricolage Grotesque",
+  "role": "display",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/bricolagegrotesque/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/bricolagegrotesque/OFL.txt",
+      "sha256": "4b5a7d8f37f5602621c8a8d7358a6a2e71317e6c231c661e15aef0275d3e07ba",
+      "bytes": 4403,
+      "vaultPath": "assets/typography/font/font-bricolage-grotesque/files/ofl/bricolagegrotesque/OFL.txt"
+    },
+    {
+      "path": "ofl/bricolagegrotesque/METADATA.pb",
+      "sha256": "b15e69738219507699f04337a3d6e8f2a22cfac5a81d0a6106c343355cca456c",
+      "bytes": 1211,
+      "vaultPath": "assets/typography/font/font-bricolage-grotesque/files/ofl/bricolagegrotesque/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}

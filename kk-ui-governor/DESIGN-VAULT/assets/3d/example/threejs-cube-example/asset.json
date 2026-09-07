@@ -1,0 +1,57 @@
+{
+  "id": "threejs-cube-example",
+  "category": "3d/example",
+  "designStyle": [
+    "3d",
+    "creative",
+    "visual-rich"
+  ],
+  "pageType": [
+    "landing"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [
+    "three"
+  ],
+  "deviceSuitability": [
+    "laptop",
+    "desktop",
+    "ultrawide",
+    "4k"
+  ],
+  "performanceCost": "high",
+  "accessibility": "must be decorative (aria-hidden) with static fallback; disabled under reduced-motion and on low-end devices",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "2016416a4dc443c4511fa9c0e762301eb0ca759b",
+  "upstream": {
+    "repo": "mrdoob/three.js",
+    "commit": "2016416a4dc443c4511fa9c0e762301eb0ca759b",
+    "url": "https://github.com/mrdoob/three.js/tree/2016416a4dc443c4511fa9c0e762301eb0ca759b",
+    "path": "examples/webgl_geometry_cube.html"
+  },
+  "files": [
+    {
+      "path": "examples/webgl_geometry_cube.html",
+      "sha256": "022a3727ba58f70020ab9a48ac27d510e4881426f75db6d5838f044e1ed18430",
+      "bytes": 2085,
+      "vaultPath": "assets/3d/example/threejs-cube-example/files/examples/webgl_geometry_cube.html"
+    },
+    {
+      "path": "package.json",
+      "sha256": "f3e07f2d534978888b2ca0b42c8a1220209d7cb4b42c68945fcd1dacdaa92787",
+      "bytes": 3603,
+      "vaultPath": "assets/3d/example/threejs-cube-example/files/package.json"
+    }
+  ],
+  "licenseNotice": "sources/threejs/LICENSE",
+  "fetchedAt": "2026-09-07T12:30:26.926Z"
+}
