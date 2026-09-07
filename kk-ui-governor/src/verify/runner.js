@@ -111,7 +111,7 @@ const ABSOLUTE = new Set(['FOCUS-VISIBLE', 'REDUCED-MOTION', 'ANIM-3D-FALLBACK',
  * @param {object} o { baseUrl, pages, mode, outDir, baseline?, logger, label }
  * @returns verification result
  */
-export async function runVerification({ baseUrl, pages, guardPages = [], mode = 'standard', outDir, baseline = null, logger, label = 'candidate', screenshots = true, themeMode = 'auto', scopeSelector = null, scopeAutoApplied = true, projectRoot = null }) {
+export async function runVerification({ baseUrl, pages, guardPages = [], mode = 'standard', outDir, baseline = null, logger, label = 'candidate', screenshots = true, themeMode = 'auto', scopeSelector = null, scopeAutoApplied = true, projectRoot = null, storageState = null }) {
   // A trailing slash would produce '//route' once a route is appended.
   baseUrl = String(baseUrl).replace(/\/+$/, '');
   let originHost = null;
@@ -128,7 +128,7 @@ export async function runVerification({ baseUrl, pages, guardPages = [], mode = 
     for (const p of pages) { const ctx = await newVerifiedContext(browser, {}, { originHost }); const pg = await ctx.newPage(); try { await pg.goto(baseUrl + p, { waitUntil: 'load', timeout: 180000 }); } catch (e) { logger?.warn(`warm-up ${p}: ${e.message}`); } await ctx.close(); }
     for (const d of devices) {
       for (const p of pages) {
-        const r = await measure(browser, d, baseUrl + p, { outDir, label, screenshots, logger, originHost });
+        const r = await measure(browser, d, baseUrl + p, { outDir, label, screenshots, logger, originHost, storageState });
         raw.push({ deviceId: d.id, device: d, page: p, ...r });
       }
     }
@@ -137,6 +137,8 @@ export async function runVerification({ baseUrl, pages, guardPages = [], mode = 
       logger?.info(`captured style signatures for ${guardPages.length} guard route(s)`);
     }
   } finally { await browser.close(); }
+  const baselineComparability = baselineIsComparable(baseline, raw);
+  if (!baselineComparability.ok) logger?.warn(`baseline not comparable: ${baselineComparability.reason}`);
   const checks = evaluate(raw, baseline, { themeMode, scopeSelector, scopeAutoApplied });
   const perDevice = devices.map((d) => {
     const rs = raw.filter((r) => r.deviceId === d.id);
@@ -149,8 +151,8 @@ export async function runVerification({ baseUrl, pages, guardPages = [], mode = 
 }
 function p(page) { return page === '/' ? 'home' : page.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, ''); }
 
-async function measure(browser, d, url, { outDir, label, screenshots, logger, originHost }) {
-  const ctx = await newVerifiedContext(browser, { viewport: { width: d.width, height: d.height }, deviceScaleFactor: d.dpr, isMobile: d.isMobile, hasTouch: d.hasTouch, colorScheme: d.colorScheme, reducedMotion: d.reducedMotion, forcedColors: d.forcedColors, ignoreHTTPSErrors: true }, { originHost });
+async function measure(browser, d, url, { outDir, label, screenshots, logger, originHost, storageState }) {
+  const ctx = await newVerifiedContext(browser, { viewport: { width: d.width, height: d.height }, deviceScaleFactor: d.dpr, isMobile: d.isMobile, hasTouch: d.hasTouch, colorScheme: d.colorScheme, reducedMotion: d.reducedMotion, forcedColors: d.forcedColors, ignoreHTTPSErrors: true, ...(storageState ? { storageState } : {}) }, { originHost });
   const page = await ctx.newPage();
   const consoleErrors = [];
   const external = [];
@@ -164,11 +166,19 @@ async function measure(browser, d, url, { outDir, label, screenshots, logger, or
   const out = { console: consoleErrors, external };
   try {
     await page.goto(url, { waitUntil: 'load', timeout: 120000 });
+    // A dev server (Next especially) answers the first request before the route has finished
+    // compiling, so the document can still be empty here. Measuring that produces a page with no
+    // elements and therefore no findings - which then reads as a pristine baseline and turns every
+    // real pre-existing problem into a false "regression" against the candidate.
+    try {
+      await page.waitForFunction(() => document.body && document.body.children.length > 0 && document.body.innerText.trim().length > 0, null, { timeout: 20000 });
+    } catch { /* genuinely empty page: recorded below as a thin document */ }
     await page.waitForTimeout(d.deep ? 900 : 300);
     // scroll to bottom & back to trigger lazy content + CLS + reveals
     await page.evaluate(async () => { const h = document.documentElement.scrollHeight; for (let y = 0; y < h; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 30)); } window.scrollTo(0, 0); });
     await page.waitForTimeout(d.deep ? 500 : 100);
     out.probe = await page.evaluate(pageProbe, {});
+    out.documentWeight = { nodes: out.probe.perf?.domNodes ?? 0, interactive: (out.probe.interactive || []).length, text: (out.probe.text || []).length };
     if (d.deep && !d.hasTouch && d.forcedColors === 'none' && !d.fontScale) out.keyboard = await keyboardTest(page);
     if (screenshots) {
       const file = path.join(outDir, `${label}-${p(new URL(url).pathname)}-${d.id}.jpg`);
@@ -228,17 +238,24 @@ export function styleSignatureProbe() {
 }
 
 /** Collect style signatures for guard routes (routes that must NOT change). */
-export async function measureGuards(browser, pages, baseUrl, { devices = [{ id: 'guard-desktop', width: 1280, height: 800, dpr: 1, isMobile: false }, { id: 'guard-phone', width: 390, height: 844, dpr: 2, isMobile: true }], logger, originHost = null } = {}) {
+export async function measureGuards(browser, pages, baseUrl, { devices = [{ id: 'guard-desktop', width: 1280, height: 800, dpr: 1, isMobile: false }, { id: 'guard-phone', width: 390, height: 844, dpr: 2, isMobile: true }], logger, originHost = null, storageState = null } = {}) {
   const guards = {};
   for (const p of pages) {
     guards[p] = {};
     for (const d of devices) {
-      const ctx = await newVerifiedContext(browser, { viewport: { width: d.width, height: d.height }, deviceScaleFactor: d.dpr, isMobile: d.isMobile, hasTouch: d.isMobile, ignoreHTTPSErrors: true }, { originHost });
+      const ctx = await newVerifiedContext(browser, { viewport: { width: d.width, height: d.height }, deviceScaleFactor: d.dpr, isMobile: d.isMobile, hasTouch: d.isMobile, ignoreHTTPSErrors: true, ...(storageState ? { storageState } : {}) }, { originHost });
       const page = await ctx.newPage();
       try {
-        await page.goto(baseUrl + p, { waitUntil: 'load', timeout: 120000 });
+        const resp = await page.goto(baseUrl + p, { waitUntil: 'load', timeout: 120000 });
         await page.waitForTimeout(600);
-        guards[p][d.id] = await page.evaluate(styleSignatureProbe);
+        // Record WHERE we actually landed. A protected route that redirects to a login page would
+        // otherwise be compared against itself and reported as proof the dashboard did not change.
+        guards[p][d.id] = {
+          signature: await page.evaluate(styleSignatureProbe),
+          requested: p,
+          finalPath: normalizeRoutePath(page.url()),
+          status: resp ? resp.status() : null,
+        };
       } catch (e) {
         guards[p][d.id] = { error: String(e.message || e).slice(0, 200) };
         logger?.warn(`guard ${p} ${d.id}: ${e.message}`);
@@ -248,26 +265,84 @@ export async function measureGuards(browser, pages, baseUrl, { devices = [{ id: 
   return guards;
 }
 
+/** Path of a URL, normalised so benign differences (trailing slash, query, hash, locale prefix) do not read as a redirect. */
+export function normalizeRoutePath(u) {
+  let path;
+  try { path = new URL(u, 'http://x').pathname; } catch { path = String(u); }
+  path = path.replace(/\/+$/, '') || '/';
+  // Drop a leading locale segment (/en, /en-GB) so i18n prefixes are not mistaken for a redirect.
+  path = path.replace(/^\/[a-z]{2}(-[A-Za-z]{2})?(?=\/|$)/, '') || '/';
+  return path;
+}
+
 /** Compare baseline vs candidate guard signatures. Any difference means a route outside the scope changed. */
 export function compareGuards(before, after) {
   const findings = [];
   let compared = 0;
+  const redirected = [];
   for (const page of Object.keys(before || {})) {
     for (const device of Object.keys(before[page] || {})) {
       const a = before[page][device], b = after?.[page]?.[device];
-      if (!Array.isArray(a) || !Array.isArray(b)) { findings.push({ page, device, severity: 'warn', message: `guard signature unavailable (${!Array.isArray(a) ? 'baseline' : 'candidate'} failed to load)` }); continue; }
+      const sigOf = (x) => (Array.isArray(x) ? x : x && Array.isArray(x.signature) ? x.signature : null);
+      const sa = sigOf(a), sb = sigOf(b);
+      if (!sa || !sb) { findings.push({ page, device, severity: 'warn', message: `guard signature unavailable (${!sa ? 'baseline' : 'candidate'} failed to load)` }); continue; }
+
+      // Did we actually reach the route? A middleware redirect to /login ends at HTTP 200, so the
+      // status alone proves nothing - the landing path is what matters.
+      const meta = (x) => (Array.isArray(x) ? {} : x || {});
+      const ma = meta(a), mb = meta(b);
+      const want = ma.requested !== undefined ? normalizeRoutePath(ma.requested) : null;
+      const offRoute = (m) => m.finalPath !== undefined && want !== null && m.finalPath !== want;
+      const badStatus = (m) => typeof m.status === 'number' && (m.status < 200 || m.status >= 300);
+      if (offRoute(ma) || offRoute(mb)) {
+        redirected.push({ route: page, baselineFinal: ma.finalPath, candidateFinal: mb.finalPath });
+        findings.push({ page, device, severity: 'warn', message: `never reached: ${want} redirected to ${ma.finalPath || mb.finalPath} (likely an auth guard). Nothing about this route was proven - supply --auth-storage-state to sign in.` });
+        continue;
+      }
+      if (badStatus(ma) || badStatus(mb)) {
+        findings.push({ page, device, severity: 'warn', message: `not a rendered page: HTTP ${ma.status ?? mb.status} for ${want}. Nothing about this route was proven.` });
+        continue;
+      }
+      if (ma.finalPath !== undefined && mb.finalPath !== undefined && ma.finalPath !== mb.finalPath) {
+        findings.push({ page, device, severity: 'fail', message: `route resolved differently before and after: ${ma.finalPath} -> ${mb.finalPath}` });
+        continue;
+      }
+
       compared++;
-      if (a.length !== b.length) { findings.push({ page, device, severity: 'fail', message: `element count changed: ${a.length} -> ${b.length}` }); continue; }
+      if (sa.length !== sb.length) { findings.push({ page, device, severity: 'fail', message: `element count changed: ${sa.length} -> ${sb.length}` }); continue; }
       const diffs = [];
-      for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) diffs.push({ index: i, before: a[i].slice(0, 160), after: b[i].slice(0, 160) });
+      for (let i = 0; i < sa.length; i++) if (sa[i] !== sb[i]) diffs.push({ index: i, before: sa[i].slice(0, 160), after: sb[i].slice(0, 160) });
       if (diffs.length) findings.push({ page, device, severity: 'fail', message: `${diffs.length} element(s) restyled on a route that must not change`, examples: diffs.slice(0, 4) });
     }
   }
-  return { compared, findings };
+  return { compared, findings, redirected };
 }
 
 // ------------------------------------------------------------------------------- evaluation
+/**
+ * Was the baseline a real measurement? A dev server that had not finished compiling returns an empty
+ * document, which yields zero findings everywhere and would make every genuine pre-existing problem
+ * look like a regression introduced by the candidate.
+ */
+export function baselineIsComparable(baseline, raw) {
+  if (!baseline || !baseline.weights) return { ok: true, reason: null };
+  const cand = {};
+  for (const r of raw) if (r.documentWeight) cand[`${r.deviceId}|${r.page}`] = r.documentWeight;
+  const thin = [];
+  for (const [key, w] of Object.entries(baseline.weights)) {
+    const c = cand[key];
+    if (!c) continue;
+    // Treat the baseline as unusable for this page/device if it saw a small fraction of the document.
+    if (c.nodes > 20 && w.nodes < Math.max(10, c.nodes * 0.5)) thin.push({ key, baselineNodes: w.nodes, candidateNodes: c.nodes });
+  }
+  return thin.length ? { ok: false, reason: `baseline measured a much smaller document on ${thin.length} page/device pair(s) (e.g. ${thin[0].key}: ${thin[0].baselineNodes} vs ${thin[0].candidateNodes} nodes) - the server had probably not finished compiling`, thin } : { ok: true, reason: null };
+}
+
 export function evaluate(raw, baseline, { themeMode = 'auto', scopeSelector = null, scopeAutoApplied = true } = {}) {
+  // If the baseline is not comparable, ignore its counts entirely rather than reporting phantom
+  // regressions. Governor guarantees still apply absolutely.
+  const comparability = baselineIsComparable(baseline, raw);
+  if (!comparability.ok) baseline = { ...baseline, counts: {}, unreliable: comparability.reason };
   const F = []; // findings
   const add = (check, device, page, severity, message, data) => F.push({ check, device, page, severity, message, ...(data ? { data } : {}) });
   const ok = raw.filter((r) => r.probe);
@@ -390,12 +465,13 @@ export function evaluate(raw, baseline, { themeMode = 'auto', scopeSelector = nu
     const warns = findings.filter((f) => f.severity === 'warn');
     const count = fails.length;
     const baseCount = baseline?.counts?.[id] ?? null;
+    const baselineUnreliable = !!baseline?.unreliable;
     let status = 'pass';
     let summary = '';
     if (count > 0) {
       if (ABSOLUTE.has(id)) { status = 'fail'; summary = `${count} failing finding(s) (governor guarantee)`; }
       else if (baseCount !== null && count <= baseCount) { status = 'warn'; summary = `${count} pre-existing finding(s) (baseline ${baseCount}); not worse`; }
-      else { status = 'fail'; summary = baseCount !== null ? `${count} failing finding(s), baseline ${baseCount}: regression` : `${count} failing finding(s)`; }
+      else { status = 'fail'; summary = baseCount !== null ? `${count} failing finding(s), baseline ${baseCount}: regression` : `${count} failing finding(s)${baselineUnreliable ? ' (baseline unusable: ' + baseline.unreliable + ')' : ''}`; }
     } else if (warns.length) { status = 'warn'; summary = `${warns.length} advisory finding(s)`; }
     else summary = baseCount ? `fixed (baseline had ${baseCount})` : 'no findings';
     return { id, name, status, count, baselineCount: baseCount, summary, findings: [...fails, ...warns].slice(0, 80) };

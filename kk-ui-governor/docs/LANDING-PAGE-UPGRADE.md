@@ -13,6 +13,16 @@ A scoped run (`--landing-only`) makes three separate promises, each enforced by 
 | Files outside the landing page are not written | The transaction plan contains one page; **gate G2** proves existing files change only inside a marker block |
 | Other routes look *identical* afterwards | **UNCHANGED-ROUTES**: a computed-style signature of every other route is captured before and after the write and compared element by element |
 
+The third promise has a catch worth understanding. A route behind auth redirects an unauthenticated
+browser to your login page, and comparing that login page with itself would "prove" nothing while
+looking green. The check therefore records *where it actually landed*: a route that redirected is
+reported as **not proven** and fails the check closed, rather than counted as evidence. To genuinely
+verify signed-in routes, capture a Playwright `storageState` once and pass it:
+
+```bash
+node bin/kkgov.js apply "C:\path\to\app" --landing-only --auth-storage-state auth.json
+```
+
 If any of those fail, the transaction rolls back automatically and the verdict is `FAIL`.
 
 ## Run it (Windows, one command)
@@ -48,7 +58,8 @@ yourself before committing to it. `rollback` works at any time, including after 
 
 Useful flags: `--style premium|modern|luxury|creative|visual-rich|minimal`, `--theme light|dark|auto`,
 `--density comfortable|spacious`, `--motion subtle|standard|complex`, `--verify quick|standard|full`,
-`--max-guard-pages N` (how many other routes to prove unchanged, default 4).
+`--max-guard-pages N` (how many other routes to prove unchanged, default 4),
+`--auth-storage-state <file>` (sign in so protected routes are really checked).
 
 ## What each stack gets
 

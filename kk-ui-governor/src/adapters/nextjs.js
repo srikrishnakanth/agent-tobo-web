@@ -39,7 +39,9 @@ export class NextAdapter extends ReactAdapter {
 import React from 'react';
 import './theme.css';
 
-export function KkScope({ children, as: Tag = 'div', className = '', ...rest }) {
+${ts ? 'type KkScopeProps = React.HTMLAttributes<HTMLElement> & { as?: React.ElementType; children?: React.ReactNode };\n' : ''}export function KkScope({ children, as = 'div', className = '', ...rest }${ts ? ': KkScopeProps' : ''}) {
+  // The tag is widened deliberately: a union of every intrinsic element breaks JSX inference.
+  const Tag = as${ts ? ' as any' : ''};
   return (
     <Tag data-kk-scope="${selection.scope}" className={className} {...rest}>
       {children}

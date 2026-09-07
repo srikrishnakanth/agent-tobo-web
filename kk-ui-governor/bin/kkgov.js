@@ -7,11 +7,17 @@ const argv = process.argv.slice(2);
 const cmd = argv[0];
 const positional = [];
 const flags = {};
+// Flags that never take a value. Without this list a valueless flag greedily consumes the next
+// argument, so `apply --landing-only "C:\projects\JBRH PRODUCTS\app"` would swallow the project
+// path and silently operate on the current directory instead.
+const BOOLEAN_FLAGS = new Set(['auto', 'json', 'verbose', 'quiet', 'offline', 'landing-only',
+  'no-preview', 'no-baseline', 'no-build', 'allow-unsupported', 'help', 'h']);
 for (let i = 1; i < argv.length; i++) {
   const a = argv[i];
   if (a.startsWith('--')) {
     const [k, inline] = a.slice(2).split('=');
     if (inline !== undefined) flags[k] = inline;
+    else if (BOOLEAN_FLAGS.has(k)) flags[k] = true;
     else if (argv[i + 1] !== undefined && !argv[i + 1].startsWith('--')) flags[k] = argv[++i];
     else flags[k] = true;
   } else positional.push(a);
@@ -45,6 +51,10 @@ Usage: kkgov <command> [options]
       --style --page --platform --theme --density --motion --devices --a11y --components --effects --brand-mode preserve|replace
       --landing-only | --scope <name>       Confine EVERY generated rule to [data-kk-scope="<name>"] so no other
                                             route can change. Upgrades one page; the rest of the app is untouched.
+      --max-guard-pages <n>                 how many other routes to prove unchanged (default 4)
+      --auth-storage-state <file>           Playwright storageState JSON so guard routes behind auth are actually
+                                            reached; without it a protected route redirects to login and is
+                                            reported as unproven rather than counted as proof.
       --verify quick|standard|full|static     Verification depth (default standard)
       --decide auto|ask|rollback              auto = keep on pass (default); ask = leave pending; rollback = dry run
       --no-preview --no-baseline --no-build --allow-unsupported --max-pages N --vault <dir>
@@ -97,6 +107,7 @@ try {
     }
     case 'adapters': { const { listAdapters } = await import('../src/adapters/registry.js'); json(listAdapters()); break; }
     case 'apply': {
+      if (!positional.length) { console.error('kkgov apply needs a project path: kkgov apply <dir> [options]'); process.exit(1); }
       const { Governor } = await import('../src/core/governor.js');
       const { DEFAULT_VAULT_DIR } = await import('../src/vault/index.js');
       const g = new Governor({ projectRoot: path.resolve(positional[0] || '.'), vaultDir: flags.vault || DEFAULT_VAULT_DIR, logger });

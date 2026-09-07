@@ -82,6 +82,16 @@ export class Governor {
       report.tokens = { color: { primary: tokens.color.primary, primarySource: tokens.color.primarySource, light: tokens.color.light, dark: tokens.color.dark, contrastReport: tokens.color.contrastReport }, typography: { display: tokens.typography.display, body: tokens.typography.body, families: tokens.typography.families }, motion: tokens.motion, density: tokens.density };
       await writeJson(path.join(tx.dir, 'selection.json'), { selection: report.selection, adjustments: sel.adjustments, recommendation: report.recommendation });
       await writeJson(path.join(tx.dir, 'tokens.json'), tokens);
+      // A global run restyles every route. If the project looks like it has an authenticated area,
+      // say so loudly rather than letting someone discover it on the dashboard afterwards.
+      if (!selection.scopeSelector) {
+        const authish = scan.pages.filter((p) => /dashboard|admin|account|settings|billing|inbox|app\/|console|portal/i.test(p.route)).map((p) => p.route);
+        const authPages = (scan.pageTypes?.ranked || []).some((r) => ['dashboard', 'admin', 'crm', 'settings', 'inbox'].includes(r.type) && r.score > 2);
+        if (authish.length || authPages) {
+          log.warn(`GLOBAL run: this styles EVERY route, including what look like signed-in pages${authish.length ? ' (' + authish.slice(0, 5).join(', ') + ')' : ''}. Use --landing-only to confine the change to the landing page and prove the rest is unchanged.`);
+          report.globalScopeWarning = { routesThatLookAuthenticated: authish.slice(0, 10) };
+        }
+      }
       await tx.stage('select', 'done', { ...report.selection, adjustments: sel.adjustments, vaultAssets: tokens.assets.length });
 
       // ---- 3. ADAPT
@@ -130,7 +140,7 @@ export class Governor {
         let running = null;
         try {
           running = await server.start();
-          baselineResult = await runVerification({ baseUrl: running.baseUrl, pages, guardPages, mode: verifyMode, outDir: path.join(tx.previewDir, 'baseline'), logger: log, label: 'baseline', screenshots: false, projectRoot: this.projectRoot });
+          baselineResult = await runVerification({ baseUrl: running.baseUrl, pages, guardPages, mode: verifyMode, outDir: path.join(tx.previewDir, 'baseline'), logger: log, label: 'baseline', screenshots: false, projectRoot: this.projectRoot, storageState: options.authStorageState || null });
           log.info(`baseline: ${baselineResult.ok ? 'clean' : baselineResult.checks.filter((c) => c.status === 'fail').map((c) => c.id + '=' + c.count).join(' ')}`);
         } catch (e) { log.warn(`baseline verification skipped: ${e.message}`); }
         finally { await running?.stop(); }
@@ -159,7 +169,7 @@ export class Governor {
         let running = null;
         try {
           running = await server.start();
-          verification = await runVerification({ baseUrl: running.baseUrl, pages, guardPages, mode: verifyMode, outDir: tx.verifyDir, baseline: baselineResult, logger: log, label: 'candidate', themeMode: selection.theme, scopeSelector: selection.scopeSelector, scopeAutoApplied: plan.scopeAutoApplied !== false, projectRoot: this.projectRoot });
+          verification = await runVerification({ baseUrl: running.baseUrl, pages, guardPages, mode: verifyMode, outDir: tx.verifyDir, baseline: baselineResult, logger: log, label: 'candidate', themeMode: selection.theme, scopeSelector: selection.scopeSelector, scopeAutoApplied: plan.scopeAutoApplied !== false, projectRoot: this.projectRoot, storageState: options.authStorageState || null });
           // UNCHANGED-ROUTES: compare guard-route style signatures captured before and after the write.
           if (guardPages.length) {
             const cmp = compareGuards(baselineResult?.guards, verification.guards);
@@ -171,6 +181,7 @@ export class Governor {
             const notes = [];
             if (guardSkipped.length) notes.push(`${guardSkipped.length} route(s) beyond --max-guard-pages ${guardCap} were NOT checked: ${guardSkipped.join(', ')}`);
             if (dynamicRoutes.length) notes.push(`${dynamicRoutes.length} dynamic route(s) cannot be guarded: ${dynamicRoutes.join(', ')}`);
+            if (cmp.redirected?.length) notes.push(`${cmp.redirected.length} route(s) redirected away (likely an auth guard) and were NOT proven: ${cmp.redirected.map((r) => r.route + ' -> ' + r.baselineFinal).join(', ')} - pass --auth-storage-state to sign in`);
             const check = {
               id: 'UNCHANGED-ROUTES', name: 'Routes outside the upgraded scope are byte-identical in computed style',
               status: fails.length || !proven ? 'fail' : 'pass',
@@ -182,7 +193,7 @@ export class Governor {
                 ...notes,
               ].join(' | '),
               findings: cmp.findings.map((f) => ({ check: 'UNCHANGED-ROUTES', device: f.device, page: f.page, severity: f.severity === 'fail' ? 'fail' : 'fail', message: f.message, ...(f.examples ? { data: f.examples } : {}) })),
-              coverage: { guarded: guardPages, skipped: guardSkipped, dynamicUnguarded: dynamicRoutes, comparedPairs: cmp.compared },
+              coverage: { guarded: guardPages, skipped: guardSkipped, dynamicUnguarded: dynamicRoutes, redirectedUnproven: cmp.redirected || [], comparedPairs: cmp.compared },
             };
             const existing = verification.checks.findIndex((c) => c.id === 'UNCHANGED-ROUTES');
             if (existing >= 0) verification.checks[existing] = check; else verification.checks.push(check);
@@ -226,7 +237,11 @@ export class Governor {
       // ---- 8. KEEP / ROLLBACK
       await tx.stage('decide', 'running');
       if (!verification.ok) {
-        decision = 'rollback'; decisionReason = `verification failed: ${verification.checks.filter((c) => c.status === 'fail').map((c) => c.id).join(', ')}`;
+        const failedIds = verification.checks.filter((c) => c.status === 'fail').map((c) => c.id);
+        decision = 'rollback';
+        decisionReason = failedIds.length
+          ? `verification failed: ${failedIds.join(', ')}`
+          : `verification could not prove the change is safe: ${verification.note || 'no browser-backed verification ran'}`;
         const rb = await tx.rollback(decisionReason);
         report.rollback = rb;
         verdict = 'FAIL';
