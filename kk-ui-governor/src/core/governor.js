@@ -15,6 +15,7 @@ import { pickAdapter } from '../adapters/registry.js';
 import { probeCandidate } from '../pipeline/probe.js';
 import { buildPreview } from '../pipeline/preview.js';
 import { runVerification, staticVerification, browserAvailable } from '../verify/runner.js';
+import { runBuildCheck, shouldBuildCheck } from '../verify/build-check.js';
 import { Catalog } from '../vault/catalog.js';
 import { DEFAULT_VAULT_DIR } from '../vault/index.js';
 
@@ -56,7 +57,7 @@ export class Governor {
     log.info(`transaction ${tx.id} opened for ${this.projectRoot}`);
     const report = { version: VERSION, txId: tx.id, startedAt, project: { root: this.projectRoot }, audit: { preflight }, stages: tx.manifest.stages, recovered };
     let verdict = 'FAIL', decision = null, decisionReason = '';
-    let scan, selection, tokens, adapter, plan, probe, gates, preview = null, verification = null, baselineResult = null, catalog;
+    let scan, selection, tokens, adapter, plan, probe, gates, preview = null, verification = null, baselineResult = null, baselineBuild = null, catalog;
 
     try {
       // ---- 1. INSPECT
@@ -120,6 +121,11 @@ export class Governor {
         } catch (e) { log.warn(`baseline verification skipped: ${e.message}`); }
         finally { await running?.stop(); }
       }
+      // Baseline production build: an already-broken build is never blamed on the candidate.
+      if (options.build !== false && shouldBuildCheck(scan, adapter.id)) {
+        baselineBuild = await runBuildCheck(scan, { logger: log, label: 'baseline' });
+        report.baselineBuild = { ok: baselineBuild.ok, skipped: baselineBuild.skipped, command: baselineBuild.command, durationMs: baselineBuild.durationMs };
+      }
       report.preview = preview; report.baseline = baselineResult ? { ok: baselineResult.ok, counts: baselineResult.counts, checks: baselineResult.checks.map((c) => ({ id: c.id, status: c.status, count: c.count })) } : null;
       await tx.stage('preview', 'done', { browser: haveBrowser, current: !!preview?.current, candidate: !!preview?.candidate, baseline: baselineResult ? baselineResult.counts : 'skipped' });
 
@@ -148,6 +154,24 @@ export class Governor {
         verification.note = haveBrowser ? 'adapter cannot serve this project; static verification only' : 'no browser available; static verification only';
         if (verifyMode !== 'static') verification.ok = false; // partial success is not completion
         log.warn(`static verification only: ${verification.note}`);
+      }
+      // Production build check: a design that compiles in dev but breaks `npm run build` is a failure
+      // the browser matrix cannot see. Compared against the baseline build so pre-existing breakage
+      // is reported as a warning, never charged to the candidate.
+      if (options.build !== false && shouldBuildCheck(scan, adapter.id)) {
+        const candidateBuild = await runBuildCheck(scan, { logger: log, label: 'candidate' });
+        report.build = { ok: candidateBuild.ok, command: candidateBuild.command, exitCode: candidateBuild.exitCode, durationMs: candidateBuild.durationMs, timedOut: candidateBuild.timedOut, baselineOk: baselineBuild ? baselineBuild.ok : null };
+        const baselineBroken = baselineBuild && !baselineBuild.ok;
+        const status = candidateBuild.ok ? 'pass' : baselineBroken ? 'warn' : 'fail';
+        verification.checks.push({
+          id: 'BUILD', name: "Project's own production build", status,
+          count: status === 'fail' ? 1 : 0, baselineCount: baselineBroken ? 1 : 0,
+          summary: candidateBuild.ok ? `${candidateBuild.command} succeeded in ${Math.round(candidateBuild.durationMs / 1000)}s`
+            : baselineBroken ? `build fails, but it already failed before this change (pre-existing); not charged to the candidate`
+            : `${candidateBuild.command} failed (exit ${candidateBuild.exitCode}${candidateBuild.timedOut ? ', timed out' : ''})`,
+          findings: candidateBuild.ok ? [] : [{ check: 'BUILD', device: 'build', page: '-', severity: status === 'fail' ? 'fail' : 'warn', message: String(candidateBuild.output || candidateBuild.error || '').slice(0, 4000) }],
+        });
+        if (status === 'fail') verification.ok = false;
       }
       report.verification = verification;
       await tx.setState(TX_STATES.VERIFIED);

@@ -29,6 +29,15 @@ Engine: Playwright + Chromium (global or local install). Modes: `quick` (~17 con
 | CONSOLE-ERRORS | runtime errors | any console error / pageerror / failed local request not in baseline |
 | EXTERNAL-RESOURCES | fonts / CDN | advisory: external resource failed |
 | A11Y-BASICS | landmarks, lang, alt, labels | advisory |
+| BUILD | the project's own production build | `npm run build` fails after the design is written (framework projects only) |
+
+### Production build (BUILD)
+
+A design can compile in a dev server and still break `next build` / `vite build` — the browser matrix cannot
+see that. After Write, the Governor runs the project's own build script (`src/verify/build-check.js`) and
+compares it against a **baseline build of the untouched project**, so a build that was already broken is
+reported as a warning and never charged to the candidate. Skipped for static and unsupported projects, and
+for projects with no `build` script. Disable with `--no-build`.
 
 `*` = governor guarantee: fails regardless of the baseline. Every other check compares against the
 baseline run of the unmodified project: a candidate may never be worse; pre-existing findings are reported as warnings.

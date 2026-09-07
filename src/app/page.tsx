@@ -3,13 +3,17 @@
 
 import { useState, useEffect, useRef } from "react"
 
+type Message = { sender: "system" | "user"; text: string }
+type Scope = { businessName?: string; platforms?: string[]; features?: string[] }
+type Panel = { hosting: string; total: number; agreement: string }
+
 export default function Home() {
   const [stage, setStage] = useState("LOAD")
-  const [scope, setScope] = useState({})
-  const [messages, setMessages] = useState([])
+  const [scope, setScope] = useState<Scope>({})
+  const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState("")
-  const [panel, setPanel] = useState(null)
-  const bottomRef = useRef(null)
+  const [panel, setPanel] = useState<Panel | null>(null)
+  const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -24,7 +28,7 @@ export default function Home() {
     }, 800)
   }, [])
 
-  async function send(text) {
+  async function send(text: string) {
     if (!text) return
 
     let updated = { ...scope }

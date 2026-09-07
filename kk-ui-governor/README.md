@@ -38,7 +38,7 @@ as completion).
 | Tokens | `src/pipeline/tokens.js` | light / dark / high-contrast palettes derived from the brand colour, every text pair auto-corrected to WCAG AA |
 | Adapters | `src/adapters/{html,tailwind,react,nextjs,unsupported}.js` | convert design intent into the target stack; additive-only edits inside marker blocks; unsupported frameworks handled gracefully |
 | Governor core | `src/core/{journal,safety-gates,audit,governor,report}.js` | write-ahead journal, byte-verified backups, atomic writes, 9 safety gates, crash recovery, keep/rollback, HTML/JSON/MD reports |
-| Verification | `src/verify/*` | Playwright device matrix + 21 checks, baseline comparison ("never worse"), Node relay for external resources in sandboxed clouds, static fallback |
+| Verification | `src/verify/*` | Playwright device matrix + 22 checks (including the project's own production build), baseline comparison ("never worse"), Node relay for external resources in sandboxed clouds, static fallback |
 
 See `docs/` for architecture, usage, safety model, vault provenance and verification details.
 

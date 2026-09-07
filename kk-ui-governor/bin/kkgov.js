@@ -43,7 +43,9 @@ Usage: kkgov <command> [options]
       --style --page --platform --theme --density --motion --devices --a11y --components --effects --brand-mode preserve|replace
       --verify quick|standard|full|static     Verification depth (default standard)
       --decide auto|ask|rollback              auto = keep on pass (default); ask = leave pending; rollback = dry run
-      --no-preview --no-baseline --allow-unsupported --max-pages N --vault <dir>
+      --no-preview --no-baseline --no-build --allow-unsupported --max-pages N --vault <dir>
+                                              The project build script runs after Write for framework projects.
+                                              A build that was already broken is a warning, never charged to the candidate.
   verify <dir> [--url <url>] [--verify mode]  Verify the project as it is now (no transaction)
   keep <dir> <txId> | rollback <dir> <txId>   Decide a pending transaction (rollback works on kept ones too)
   status <dir> | recover <dir> | report <dir> <txId>
@@ -92,7 +94,7 @@ try {
       const { Governor } = await import('../src/core/governor.js');
       const { DEFAULT_VAULT_DIR } = await import('../src/vault/index.js');
       const g = new Governor({ projectRoot: path.resolve(positional[0] || '.'), vaultDir: flags.vault || DEFAULT_VAULT_DIR, logger });
-      const r = await g.apply({ selection: selectionFromFlags(), verifyMode: flags.verify || 'standard', decide: flags.decide || 'auto', preview: !flags['no-preview'], baseline: !flags['no-baseline'], allowUnsupported: !!flags['allow-unsupported'], maxPages: flags['max-pages'] ? +flags['max-pages'] : undefined });
+      const r = await g.apply({ selection: selectionFromFlags(), verifyMode: flags.verify || 'standard', decide: flags.decide || 'auto', preview: !flags['no-preview'], baseline: !flags['no-baseline'], build: !flags['no-build'], allowUnsupported: !!flags['allow-unsupported'], maxPages: flags['max-pages'] ? +flags['max-pages'] : undefined });
       json(r);
       process.exit(r.verdict === 'PASS' ? 0 : r.verdict === 'PENDING' ? 2 : 1);
     }

@@ -79,8 +79,25 @@ export function initScript(opts) {
     try { Object.defineProperty(navigator, 'hardwareConcurrency', { get: () => 2 }); Object.defineProperty(navigator, 'deviceMemory', { get: () => 2 }); Object.defineProperty(navigator, 'connection', { get: () => ({ saveData: true, effectiveType: '3g' }) }); } catch {}
   }
   if (opts && opts.fontScale && opts.fontScale !== 1) {
-    const apply = () => { const s = document.createElement('style'); s.id = 'kk-font-scale'; s.textContent = `html { font-size: ${opts.fontScale * 100}% !important; }`; (document.head || document.documentElement).appendChild(s); };
-    if (document.head) apply(); else document.addEventListener('DOMContentLoaded', apply);
+    // A real 200% browser font setting is in effect from the first paint. Injecting it at
+    // DOMContentLoaded would reflow the page after render and score as layout shift that no user
+    // ever sees, so attach the style the instant <html>/<head> exists (during parsing).
+    const css = `html { font-size: ${opts.fontScale * 100}% !important; }`;
+    const apply = () => {
+      if (document.getElementById('kk-font-scale')) return true;
+      const target = document.head || document.documentElement;
+      if (!target) return false;
+      const el = document.createElement('style');
+      el.id = 'kk-font-scale';
+      el.textContent = css;
+      target.appendChild(el);
+      return true;
+    };
+    if (!apply()) {
+      const obs = new MutationObserver(() => { if (apply()) obs.disconnect(); });
+      obs.observe(document, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', apply);
+    }
   }
   window.addEventListener('load', () => { let frames = 0; const t0 = performance.now(); const tick = (t) => { frames++; if (t - t0 < 1000) requestAnimationFrame(tick); else window.__kkFps = Math.round(frames / ((t - t0) / 1000)); }; requestAnimationFrame(tick); });
 }

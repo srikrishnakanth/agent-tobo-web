@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "txId": "20260907-132520-a53d4a",
-  "startedAt": "2026-09-07T13:25:20.575Z",
+  "txId": "20260907-133024-0ac6ba",
+  "startedAt": "2026-09-07T13:30:24.542Z",
   "project": {
     "root": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard",
     "name": "fleet-ops-dashboard"
@@ -22,13 +22,10 @@
         },
         {
           "id": "git-status",
-          "status": "warn",
-          "note": "2 uncommitted change(s) present (governor keeps its own backups regardless)",
+          "status": "pass",
+          "note": "working tree clean",
           "data": {
-            "dirty": [
-              " M src/app/layout.tsx",
-              "?? src/app/kk-design/"
-            ]
+            "dirty": []
           }
         },
         {
@@ -44,7 +41,7 @@
         {
           "id": "disk-space",
           "status": "pass",
-          "note": "29918 MB free"
+          "note": "29927 MB free"
         }
       ]
     },
@@ -148,19 +145,31 @@
           "matchesBackup": false
         },
         {
+          "path": "src/main.jsx",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
+          "path": "src/kk-design/tailwind-bridge.css",
+          "present": true,
+          "matchesWritten": true,
+          "matchesBackup": false
+        },
+        {
           "path": "src/index.css",
           "present": true,
           "matchesWritten": true,
           "matchesBackup": false
         }
       ],
-      "journalEvents": 52,
+      "journalEvents": 57,
       "journalSequential": true
     }
   },
   "stages": {
     "inspect": {
-      "startedAt": "2026-09-07T13:25:20.599Z",
+      "startedAt": "2026-09-07T13:30:24.566Z",
       "status": "done",
       "summary": {
         "framework": "react",
@@ -172,10 +181,10 @@
         "genericPatterns": 4,
         "brand": "#2f6f4e"
       },
-      "finishedAt": "2026-09-07T13:25:20.629Z"
+      "finishedAt": "2026-09-07T13:30:24.592Z"
     },
     "select": {
-      "startedAt": "2026-09-07T13:25:20.630Z",
+      "startedAt": "2026-09-07T13:30:24.593Z",
       "status": "done",
       "summary": {
         "preset": "auto",
@@ -234,35 +243,36 @@
         ],
         "vaultAssets": 11
       },
-      "finishedAt": "2026-09-07T13:25:20.646Z"
+      "finishedAt": "2026-09-07T13:30:24.611Z"
     },
     "adapt": {
-      "startedAt": "2026-09-07T13:25:20.647Z",
+      "startedAt": "2026-09-07T13:30:24.612Z",
       "status": "done",
       "summary": {
         "adapter": "react",
-        "files": 17,
-        "creates": 16,
-        "modifies": 1,
+        "files": 19,
+        "creates": 17,
+        "modifies": 2,
         "notes": [
-          "theme imported from src/index.css (Tailwind v4)"
+          "theme imported from src/main.jsx (after existing imports)",
+          "Tailwind v4 bridge imported from src/index.css"
         ],
         "remediations": 3
       },
-      "finishedAt": "2026-09-07T13:25:20.728Z"
+      "finishedAt": "2026-09-07T13:30:24.691Z"
     },
     "probe": {
-      "startedAt": "2026-09-07T13:25:20.730Z",
+      "startedAt": "2026-09-07T13:30:24.692Z",
       "status": "done",
       "summary": {
         "probeOk": true,
         "probeErrors": 0,
         "gatesFailed": []
       },
-      "finishedAt": "2026-09-07T13:25:21.118Z"
+      "finishedAt": "2026-09-07T13:30:25.138Z"
     },
     "preview": {
-      "startedAt": "2026-09-07T13:25:21.121Z",
+      "startedAt": "2026-09-07T13:30:25.143Z",
       "status": "done",
       "summary": {
         "browser": true,
@@ -292,19 +302,19 @@
           "A11Y-BASICS": 0
         }
       },
-      "finishedAt": "2026-09-07T13:25:48.224Z"
+      "finishedAt": "2026-09-07T13:30:51.465Z"
     },
     "write": {
-      "startedAt": "2026-09-07T13:25:48.235Z",
+      "startedAt": "2026-09-07T13:30:51.469Z",
       "status": "done",
       "summary": {
-        "files": 17,
+        "files": 19,
         "integrity": true
       },
-      "finishedAt": "2026-09-07T13:25:48.282Z"
+      "finishedAt": "2026-09-07T13:30:51.531Z"
     },
     "verify": {
-      "startedAt": "2026-09-07T13:25:48.283Z",
+      "startedAt": "2026-09-07T13:30:51.532Z",
       "status": "done",
       "summary": {
         "ok": true,
@@ -315,24 +325,24 @@
         ],
         "loads": 17
       },
-      "finishedAt": "2026-09-07T13:26:11.077Z"
+      "finishedAt": "2026-09-07T13:31:14.519Z"
     },
     "decide": {
-      "startedAt": "2026-09-07T13:26:11.078Z",
+      "startedAt": "2026-09-07T13:31:14.521Z",
       "status": "done",
       "summary": {
         "decision": "keep",
         "reason": "verification passed on every gate"
       },
-      "finishedAt": "2026-09-07T13:26:11.081Z"
+      "finishedAt": "2026-09-07T13:31:14.523Z"
     }
   },
   "recovered": [],
   "scan": {
     "root": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard",
     "name": "fleet-ops-dashboard",
-    "scannedAt": "2026-09-07T13:25:20.628Z",
-    "durationMs": 28,
+    "scannedAt": "2026-09-07T13:30:24.590Z",
+    "durationMs": 22,
     "packageJson": {
       "name": "fleet-ops-dashboard",
       "version": "0.1.0",
@@ -1109,7 +1119,7 @@
         "path": "src/kk-design/tokens.css",
         "kind": "create",
         "owned": false,
-        "bytes": 25520
+        "bytes": 24619
       },
       {
         "path": "src/kk-design/theme.css",
@@ -1202,14 +1212,27 @@
         "bytes": 897
       },
       {
+        "path": "src/main.jsx",
+        "kind": "modify",
+        "owned": false,
+        "bytes": 305
+      },
+      {
+        "path": "src/kk-design/tailwind-bridge.css",
+        "kind": "create",
+        "owned": false,
+        "bytes": 1166
+      },
+      {
         "path": "src/index.css",
         "kind": "modify",
         "owned": false,
-        "bytes": 389
+        "bytes": 399
       }
     ],
     "notes": [
-      "theme imported from src/index.css (Tailwind v4)"
+      "theme imported from src/main.jsx (after existing imports)",
+      "Tailwind v4 bridge imported from src/index.css"
     ],
     "manualSteps": [
       "Optional: wrap your app in <KkThemeProvider> from src/kk-design to enable the motion runtime and theme toggle (CSS-only behaviour works without it)."
@@ -1370,7 +1393,7 @@
     "errors": [],
     "warnings": [],
     "typescript": true,
-    "filesProbed": 17
+    "filesProbed": 19
   },
   "safetyGates": {
     "ok": true,
@@ -1391,6 +1414,7 @@
         "details": {
           "violations": [],
           "modified": [
+            "src/main.jsx",
             "src/index.css"
           ]
         }
@@ -1448,7 +1472,7 @@
         "name": "candidate-size",
         "status": "pass",
         "details": {
-          "bytes": 71546,
+          "bytes": 72126,
           "limit": 6291456
         }
       },
@@ -1477,34 +1501,34 @@
   },
   "preview": {
     "current": {
-      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/current-1280.jpg",
-      "url": "http://127.0.0.1:37247/",
+      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/preview/current-1280.jpg",
+      "url": "http://127.0.0.1:46669/",
       "width": 1280,
       "height": 800
     },
     "candidate": {
-      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/gallery-1280.jpg",
-      "url": "http://127.0.0.1:44701/gallery.html",
+      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/preview/gallery-1280.jpg",
+      "url": "http://127.0.0.1:37511/gallery.html",
       "width": 1280,
       "height": 900,
       "note": "candidate component gallery (pre-write)"
     },
     "gallery": {
-      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/gallery.html"
+      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/preview/gallery.html"
     },
-    "html": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/preview.html",
+    "html": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/preview/preview.html",
     "notes": [
       "framework project: candidate preview uses the component gallery pre-write; real page screenshots are captured by Verify before the keep/rollback decision"
     ],
     "currentMobile": {
-      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/current-390.jpg",
-      "url": "http://127.0.0.1:37247/",
+      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/preview/current-390.jpg",
+      "url": "http://127.0.0.1:46669/",
       "width": 390,
       "height": 844
     },
     "galleryShot": {
-      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/preview/gallery-1280.jpg",
-      "url": "http://127.0.0.1:44701/gallery.html",
+      "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/preview/gallery-1280.jpg",
+      "url": "http://127.0.0.1:37511/gallery.html",
       "width": 1280,
       "height": 900
     }
@@ -1648,8 +1672,8 @@
       "path": "src/kk-design/tokens.css",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "88a6936256acd60d7fe193ec992ed0f15016c13c712d7c6a432cf9b84c18f456",
-      "bytes": 25520
+      "hashAfter": "12ad6b5f21c654511cc506d9ee8b7d55f77187ecdee3325f8b708b636dc29b74",
+      "bytes": 24619
     },
     {
       "op": "write",
@@ -1680,7 +1704,7 @@
       "path": "src/kk-design/tokens.json",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "bc5bba737fe78f5ce596aa65c892466486f5930fc59dfe64c253176d903524ff",
+      "hashAfter": "432b0aa4e116215083825de383d00199e1febcc971f838b964151a3023d02af9",
       "bytes": 4331
     },
     {
@@ -1773,11 +1797,27 @@
     },
     {
       "op": "write",
+      "path": "src/main.jsx",
+      "kind": "modify",
+      "hashBefore": "3fc145edded57586aa3c67096b7e7cb8933dfbf0c552720904e613faf4afe72a",
+      "hashAfter": "e7dd48faadc4c78a2fd3b6758829eae8f6ac48ba50ea12fd14afe5bbab555be0",
+      "bytes": 305
+    },
+    {
+      "op": "write",
+      "path": "src/kk-design/tailwind-bridge.css",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "6ea3002305a4b0fdbe786f167f34021f185d357a9ffe6cd9c09ae7faf5060dea",
+      "bytes": 1166
+    },
+    {
+      "op": "write",
       "path": "src/index.css",
       "kind": "modify",
       "hashBefore": "9668fc21445a2f60d8b269825e16674db8c8af6b42335b9f3aa9eddda3d6d3fd",
-      "hashAfter": "cb7717b726395459086246523ca1ea8591809753339c6454fb0827a073edc206",
-      "bytes": 389
+      "hashAfter": "7de53339df83be0423bd9a214308be68ee7696b4ab81d785659d830d976fc541",
+      "bytes": 399
     }
   ],
   "verification": {
@@ -1803,7 +1843,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-phone-390.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-phone-390.jpg",
             "label": "home 390×844@3 light touch,portrait"
           }
         ]
@@ -1824,7 +1864,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-fold-closed.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-fold-closed.jpg",
             "label": "home 280×653@3 light touch,foldable,closed"
           }
         ]
@@ -1844,7 +1884,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-tablet-768.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-tablet-768.jpg",
             "label": "home 768×1024@2 light touch,portrait"
           }
         ]
@@ -1863,7 +1903,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-laptop-1280.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-laptop-1280.jpg",
             "label": "home 1280×800@1 light desktop"
           }
         ]
@@ -1883,7 +1923,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-4k-3840.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-4k-3840.jpg",
             "label": "home 3840×2160@1 light desktop,4k"
           }
         ]
@@ -1903,7 +1943,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-dark-desktop.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-dark-desktop.jpg",
             "label": "home 1280×800@1 dark desktop,dark"
           }
         ]
@@ -1922,7 +1962,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-forced-colors.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-forced-colors.jpg",
             "label": "home 1280×800@1 dark forced-colors"
           }
         ]
@@ -1942,7 +1982,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-reduced-motion-phone.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-reduced-motion-phone.jpg",
             "label": "home 390×844@3 light touch,reduced-motion"
           }
         ]
@@ -1962,7 +2002,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-font-200-phone.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-font-200-phone.jpg",
             "label": "home 360×780@3 light touch,font-200"
           }
         ]
@@ -1981,7 +2021,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-240.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-sweep-240.jpg",
             "label": "home 240×800@1 light sweep"
           }
         ]
@@ -2000,7 +2040,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-320.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-sweep-320.jpg",
             "label": "home 320×800@1 light sweep"
           }
         ]
@@ -2019,7 +2059,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-480.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-sweep-480.jpg",
             "label": "home 480×800@1 light sweep"
           }
         ]
@@ -2038,7 +2078,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-653.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-sweep-653.jpg",
             "label": "home 653×800@1 light sweep"
           }
         ]
@@ -2057,7 +2097,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-1024.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-sweep-1024.jpg",
             "label": "home 1024×900@1 light sweep"
           }
         ]
@@ -2076,7 +2116,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-1920.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-sweep-1920.jpg",
             "label": "home 1920×900@1 light sweep"
           }
         ]
@@ -2095,7 +2135,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-2560.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-sweep-2560.jpg",
             "label": "home 2560×900@1 light sweep"
           }
         ]
@@ -2114,7 +2154,7 @@
         "note": "",
         "screenshots": [
           {
-            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-132520-a53d4a/verify/candidate-home-sweep-3840.jpg",
+            "file": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard/.kk-governor/tx/20260907-133024-0ac6ba/verify/candidate-home-sweep-3840.jpg",
             "label": "home 3840×900@1 light sweep"
           }
         ]
@@ -2307,47 +2347,19 @@
         "status": "warn",
         "count": 0,
         "baselineCount": 0,
-        "summary": "5 advisory finding(s)",
+        "summary": "1 advisory finding(s)",
         "findings": [
-          {
-            "check": "A11Y-BASICS",
-            "device": "tablet-768",
-            "page": "/",
-            "severity": "warn",
-            "message": "4 text node(s) below 12px"
-          },
-          {
-            "check": "A11Y-BASICS",
-            "device": "laptop-1280",
-            "page": "/",
-            "severity": "warn",
-            "message": "4 text node(s) below 12px"
-          },
           {
             "check": "A11Y-BASICS",
             "device": "laptop-1280",
             "page": "/",
             "severity": "warn",
             "message": "form control without label: input.border.rounded"
-          },
-          {
-            "check": "A11Y-BASICS",
-            "device": "4k-3840",
-            "page": "/",
-            "severity": "warn",
-            "message": "4 text node(s) below 12px"
-          },
-          {
-            "check": "A11Y-BASICS",
-            "device": "dark-desktop",
-            "page": "/",
-            "severity": "warn",
-            "message": "4 text node(s) below 12px"
           }
         ]
       }
     ],
-    "durationMs": 20890,
+    "durationMs": 21084,
     "loads": 17,
     "errors": 0,
     "counts": {
@@ -2374,7 +2386,7 @@
       "A11Y-BASICS": 0
     }
   },
-  "finishedAt": "2026-09-07T13:26:11.082Z",
+  "finishedAt": "2026-09-07T13:31:14.524Z",
   "decision": "keep",
   "decisionReason": "verification passed on every gate",
   "verdict": "PASS",
@@ -2382,13 +2394,13 @@
   "journal": [
     {
       "seq": 1,
-      "ts": "2026-09-07T13:25:20.593Z",
+      "ts": "2026-09-07T13:30:24.562Z",
       "op": "begin",
       "projectRoot": "/home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard"
     },
     {
       "seq": 2,
-      "ts": "2026-09-07T13:25:20.599Z",
+      "ts": "2026-09-07T13:30:24.567Z",
       "op": "stage",
       "stage": "inspect",
       "status": "running",
@@ -2396,7 +2408,7 @@
     },
     {
       "seq": 3,
-      "ts": "2026-09-07T13:25:20.629Z",
+      "ts": "2026-09-07T13:30:24.592Z",
       "op": "stage",
       "stage": "inspect",
       "status": "done",
@@ -2413,7 +2425,7 @@
     },
     {
       "seq": 4,
-      "ts": "2026-09-07T13:25:20.630Z",
+      "ts": "2026-09-07T13:30:24.593Z",
       "op": "stage",
       "stage": "select",
       "status": "running",
@@ -2421,7 +2433,7 @@
     },
     {
       "seq": 5,
-      "ts": "2026-09-07T13:25:20.646Z",
+      "ts": "2026-09-07T13:30:24.611Z",
       "op": "stage",
       "stage": "select",
       "status": "done",
@@ -2485,7 +2497,7 @@
     },
     {
       "seq": 6,
-      "ts": "2026-09-07T13:25:20.647Z",
+      "ts": "2026-09-07T13:30:24.612Z",
       "op": "stage",
       "stage": "adapt",
       "status": "running",
@@ -2493,24 +2505,25 @@
     },
     {
       "seq": 7,
-      "ts": "2026-09-07T13:25:20.728Z",
+      "ts": "2026-09-07T13:30:24.691Z",
       "op": "stage",
       "stage": "adapt",
       "status": "done",
       "summary": {
         "adapter": "react",
-        "files": 17,
-        "creates": 16,
-        "modifies": 1,
+        "files": 19,
+        "creates": 17,
+        "modifies": 2,
         "notes": [
-          "theme imported from src/index.css (Tailwind v4)"
+          "theme imported from src/main.jsx (after existing imports)",
+          "Tailwind v4 bridge imported from src/index.css"
         ],
         "remediations": 3
       }
     },
     {
       "seq": 8,
-      "ts": "2026-09-07T13:25:20.730Z",
+      "ts": "2026-09-07T13:30:24.692Z",
       "op": "stage",
       "stage": "probe",
       "status": "running",
@@ -2518,7 +2531,7 @@
     },
     {
       "seq": 9,
-      "ts": "2026-09-07T13:25:21.118Z",
+      "ts": "2026-09-07T13:30:25.138Z",
       "op": "stage",
       "stage": "probe",
       "status": "done",
@@ -2530,7 +2543,7 @@
     },
     {
       "seq": 10,
-      "ts": "2026-09-07T13:25:21.121Z",
+      "ts": "2026-09-07T13:30:25.143Z",
       "op": "stage",
       "stage": "preview",
       "status": "running",
@@ -2538,7 +2551,7 @@
     },
     {
       "seq": 11,
-      "ts": "2026-09-07T13:25:48.224Z",
+      "ts": "2026-09-07T13:30:51.465Z",
       "op": "stage",
       "stage": "preview",
       "status": "done",
@@ -2573,13 +2586,13 @@
     },
     {
       "seq": 12,
-      "ts": "2026-09-07T13:25:48.234Z",
+      "ts": "2026-09-07T13:30:51.468Z",
       "op": "state",
       "state": "staged"
     },
     {
       "seq": 13,
-      "ts": "2026-09-07T13:25:48.235Z",
+      "ts": "2026-09-07T13:30:51.469Z",
       "op": "stage",
       "stage": "write",
       "status": "running",
@@ -2587,19 +2600,19 @@
     },
     {
       "seq": 14,
-      "ts": "2026-09-07T13:25:48.236Z",
+      "ts": "2026-09-07T13:30:51.471Z",
       "op": "state",
       "state": "writing"
     },
     {
       "seq": 15,
-      "ts": "2026-09-07T13:25:48.237Z",
+      "ts": "2026-09-07T13:30:51.472Z",
       "op": "mkdir",
       "path": "src/kk-design"
     },
     {
       "seq": 16,
-      "ts": "2026-09-07T13:25:48.238Z",
+      "ts": "2026-09-07T13:30:51.472Z",
       "op": "write_intent",
       "path": "src/kk-design/tokens.css",
       "kind": "create",
@@ -2607,17 +2620,17 @@
     },
     {
       "seq": 17,
-      "ts": "2026-09-07T13:25:48.239Z",
+      "ts": "2026-09-07T13:30:51.474Z",
       "op": "write",
       "path": "src/kk-design/tokens.css",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "88a6936256acd60d7fe193ec992ed0f15016c13c712d7c6a432cf9b84c18f456",
-      "bytes": 25520
+      "hashAfter": "12ad6b5f21c654511cc506d9ee8b7d55f77187ecdee3325f8b708b636dc29b74",
+      "bytes": 24619
     },
     {
       "seq": 18,
-      "ts": "2026-09-07T13:25:48.240Z",
+      "ts": "2026-09-07T13:30:51.475Z",
       "op": "write_intent",
       "path": "src/kk-design/theme.css",
       "kind": "create",
@@ -2625,7 +2638,7 @@
     },
     {
       "seq": 19,
-      "ts": "2026-09-07T13:25:48.241Z",
+      "ts": "2026-09-07T13:30:51.476Z",
       "op": "write",
       "path": "src/kk-design/theme.css",
       "kind": "create",
@@ -2635,7 +2648,7 @@
     },
     {
       "seq": 20,
-      "ts": "2026-09-07T13:25:48.242Z",
+      "ts": "2026-09-07T13:30:51.477Z",
       "op": "write_intent",
       "path": "src/kk-design/motion.js",
       "kind": "create",
@@ -2643,7 +2656,7 @@
     },
     {
       "seq": 21,
-      "ts": "2026-09-07T13:25:48.243Z",
+      "ts": "2026-09-07T13:30:51.479Z",
       "op": "write",
       "path": "src/kk-design/motion.js",
       "kind": "create",
@@ -2653,7 +2666,7 @@
     },
     {
       "seq": 22,
-      "ts": "2026-09-07T13:25:48.244Z",
+      "ts": "2026-09-07T13:30:51.480Z",
       "op": "write_intent",
       "path": "src/kk-design/ATTRIBUTION.md",
       "kind": "create",
@@ -2661,7 +2674,7 @@
     },
     {
       "seq": 23,
-      "ts": "2026-09-07T13:25:48.245Z",
+      "ts": "2026-09-07T13:30:51.482Z",
       "op": "write",
       "path": "src/kk-design/ATTRIBUTION.md",
       "kind": "create",
@@ -2671,7 +2684,7 @@
     },
     {
       "seq": 24,
-      "ts": "2026-09-07T13:25:48.246Z",
+      "ts": "2026-09-07T13:30:51.483Z",
       "op": "write_intent",
       "path": "src/kk-design/tokens.json",
       "kind": "create",
@@ -2679,23 +2692,23 @@
     },
     {
       "seq": 25,
-      "ts": "2026-09-07T13:25:48.247Z",
+      "ts": "2026-09-07T13:30:51.485Z",
       "op": "write",
       "path": "src/kk-design/tokens.json",
       "kind": "create",
       "hashBefore": null,
-      "hashAfter": "bc5bba737fe78f5ce596aa65c892466486f5930fc59dfe64c253176d903524ff",
+      "hashAfter": "432b0aa4e116215083825de383d00199e1febcc971f838b964151a3023d02af9",
       "bytes": 4331
     },
     {
       "seq": 26,
-      "ts": "2026-09-07T13:25:48.248Z",
+      "ts": "2026-09-07T13:30:51.486Z",
       "op": "mkdir",
       "path": "src/kk-design/components"
     },
     {
       "seq": 27,
-      "ts": "2026-09-07T13:25:48.249Z",
+      "ts": "2026-09-07T13:30:51.487Z",
       "op": "write_intent",
       "path": "src/kk-design/components/KkButton.jsx",
       "kind": "create",
@@ -2703,7 +2716,7 @@
     },
     {
       "seq": 28,
-      "ts": "2026-09-07T13:25:48.250Z",
+      "ts": "2026-09-07T13:30:51.488Z",
       "op": "write",
       "path": "src/kk-design/components/KkButton.jsx",
       "kind": "create",
@@ -2713,7 +2726,7 @@
     },
     {
       "seq": 29,
-      "ts": "2026-09-07T13:25:48.251Z",
+      "ts": "2026-09-07T13:30:51.489Z",
       "op": "write_intent",
       "path": "src/kk-design/components/KkCard.jsx",
       "kind": "create",
@@ -2721,7 +2734,7 @@
     },
     {
       "seq": 30,
-      "ts": "2026-09-07T13:25:48.252Z",
+      "ts": "2026-09-07T13:30:51.490Z",
       "op": "write",
       "path": "src/kk-design/components/KkCard.jsx",
       "kind": "create",
@@ -2731,7 +2744,7 @@
     },
     {
       "seq": 31,
-      "ts": "2026-09-07T13:25:48.255Z",
+      "ts": "2026-09-07T13:30:51.492Z",
       "op": "write_intent",
       "path": "src/kk-design/components/KkInput.jsx",
       "kind": "create",
@@ -2739,7 +2752,7 @@
     },
     {
       "seq": 32,
-      "ts": "2026-09-07T13:25:48.256Z",
+      "ts": "2026-09-07T13:30:51.493Z",
       "op": "write",
       "path": "src/kk-design/components/KkInput.jsx",
       "kind": "create",
@@ -2749,7 +2762,7 @@
     },
     {
       "seq": 33,
-      "ts": "2026-09-07T13:25:48.257Z",
+      "ts": "2026-09-07T13:30:51.495Z",
       "op": "write_intent",
       "path": "src/kk-design/components/KkModal.jsx",
       "kind": "create",
@@ -2757,7 +2770,7 @@
     },
     {
       "seq": 34,
-      "ts": "2026-09-07T13:25:48.258Z",
+      "ts": "2026-09-07T13:30:51.496Z",
       "op": "write",
       "path": "src/kk-design/components/KkModal.jsx",
       "kind": "create",
@@ -2767,7 +2780,7 @@
     },
     {
       "seq": 35,
-      "ts": "2026-09-07T13:25:48.259Z",
+      "ts": "2026-09-07T13:30:51.497Z",
       "op": "write_intent",
       "path": "src/kk-design/components/KkTable.jsx",
       "kind": "create",
@@ -2775,7 +2788,7 @@
     },
     {
       "seq": 36,
-      "ts": "2026-09-07T13:25:48.259Z",
+      "ts": "2026-09-07T13:30:51.499Z",
       "op": "write",
       "path": "src/kk-design/components/KkTable.jsx",
       "kind": "create",
@@ -2785,7 +2798,7 @@
     },
     {
       "seq": 37,
-      "ts": "2026-09-07T13:25:48.261Z",
+      "ts": "2026-09-07T13:30:51.500Z",
       "op": "write_intent",
       "path": "src/kk-design/components/KkNav.jsx",
       "kind": "create",
@@ -2793,7 +2806,7 @@
     },
     {
       "seq": 38,
-      "ts": "2026-09-07T13:25:48.262Z",
+      "ts": "2026-09-07T13:30:51.501Z",
       "op": "write",
       "path": "src/kk-design/components/KkNav.jsx",
       "kind": "create",
@@ -2803,7 +2816,7 @@
     },
     {
       "seq": 39,
-      "ts": "2026-09-07T13:25:48.263Z",
+      "ts": "2026-09-07T13:30:51.502Z",
       "op": "write_intent",
       "path": "src/kk-design/components/KkSidebar.jsx",
       "kind": "create",
@@ -2811,7 +2824,7 @@
     },
     {
       "seq": 40,
-      "ts": "2026-09-07T13:25:48.264Z",
+      "ts": "2026-09-07T13:30:51.503Z",
       "op": "write",
       "path": "src/kk-design/components/KkSidebar.jsx",
       "kind": "create",
@@ -2821,7 +2834,7 @@
     },
     {
       "seq": 41,
-      "ts": "2026-09-07T13:25:48.265Z",
+      "ts": "2026-09-07T13:30:51.504Z",
       "op": "write_intent",
       "path": "src/kk-design/components/KkChart.jsx",
       "kind": "create",
@@ -2829,7 +2842,7 @@
     },
     {
       "seq": 42,
-      "ts": "2026-09-07T13:25:48.265Z",
+      "ts": "2026-09-07T13:30:51.505Z",
       "op": "write",
       "path": "src/kk-design/components/KkChart.jsx",
       "kind": "create",
@@ -2839,7 +2852,7 @@
     },
     {
       "seq": 43,
-      "ts": "2026-09-07T13:25:48.266Z",
+      "ts": "2026-09-07T13:30:51.506Z",
       "op": "write_intent",
       "path": "src/kk-design/components/KkCarousel.jsx",
       "kind": "create",
@@ -2847,7 +2860,7 @@
     },
     {
       "seq": 44,
-      "ts": "2026-09-07T13:25:48.267Z",
+      "ts": "2026-09-07T13:30:51.507Z",
       "op": "write",
       "path": "src/kk-design/components/KkCarousel.jsx",
       "kind": "create",
@@ -2857,7 +2870,7 @@
     },
     {
       "seq": 45,
-      "ts": "2026-09-07T13:25:48.268Z",
+      "ts": "2026-09-07T13:30:51.508Z",
       "op": "write_intent",
       "path": "src/kk-design/KkThemeProvider.jsx",
       "kind": "create",
@@ -2865,7 +2878,7 @@
     },
     {
       "seq": 46,
-      "ts": "2026-09-07T13:25:48.269Z",
+      "ts": "2026-09-07T13:30:51.509Z",
       "op": "write",
       "path": "src/kk-design/KkThemeProvider.jsx",
       "kind": "create",
@@ -2875,7 +2888,7 @@
     },
     {
       "seq": 47,
-      "ts": "2026-09-07T13:25:48.270Z",
+      "ts": "2026-09-07T13:30:51.510Z",
       "op": "write_intent",
       "path": "src/kk-design/index.js",
       "kind": "create",
@@ -2883,7 +2896,7 @@
     },
     {
       "seq": 48,
-      "ts": "2026-09-07T13:25:48.271Z",
+      "ts": "2026-09-07T13:30:51.511Z",
       "op": "write",
       "path": "src/kk-design/index.js",
       "kind": "create",
@@ -2893,63 +2906,106 @@
     },
     {
       "seq": 49,
-      "ts": "2026-09-07T13:25:48.273Z",
+      "ts": "2026-09-07T13:30:51.514Z",
+      "op": "backup",
+      "path": "src/main.jsx",
+      "hash": "3fc145edded57586aa3c67096b7e7cb8933dfbf0c552720904e613faf4afe72a"
+    },
+    {
+      "seq": 50,
+      "ts": "2026-09-07T13:30:51.515Z",
+      "op": "write_intent",
+      "path": "src/main.jsx",
+      "kind": "modify",
+      "hashBefore": "3fc145edded57586aa3c67096b7e7cb8933dfbf0c552720904e613faf4afe72a"
+    },
+    {
+      "seq": 51,
+      "ts": "2026-09-07T13:30:51.516Z",
+      "op": "write",
+      "path": "src/main.jsx",
+      "kind": "modify",
+      "hashBefore": "3fc145edded57586aa3c67096b7e7cb8933dfbf0c552720904e613faf4afe72a",
+      "hashAfter": "e7dd48faadc4c78a2fd3b6758829eae8f6ac48ba50ea12fd14afe5bbab555be0",
+      "bytes": 305
+    },
+    {
+      "seq": 52,
+      "ts": "2026-09-07T13:30:51.517Z",
+      "op": "write_intent",
+      "path": "src/kk-design/tailwind-bridge.css",
+      "kind": "create",
+      "hashBefore": null
+    },
+    {
+      "seq": 53,
+      "ts": "2026-09-07T13:30:51.518Z",
+      "op": "write",
+      "path": "src/kk-design/tailwind-bridge.css",
+      "kind": "create",
+      "hashBefore": null,
+      "hashAfter": "6ea3002305a4b0fdbe786f167f34021f185d357a9ffe6cd9c09ae7faf5060dea",
+      "bytes": 1166
+    },
+    {
+      "seq": 54,
+      "ts": "2026-09-07T13:30:51.520Z",
       "op": "backup",
       "path": "src/index.css",
       "hash": "9668fc21445a2f60d8b269825e16674db8c8af6b42335b9f3aa9eddda3d6d3fd"
     },
     {
-      "seq": 50,
-      "ts": "2026-09-07T13:25:48.273Z",
+      "seq": 55,
+      "ts": "2026-09-07T13:30:51.521Z",
       "op": "write_intent",
       "path": "src/index.css",
       "kind": "modify",
       "hashBefore": "9668fc21445a2f60d8b269825e16674db8c8af6b42335b9f3aa9eddda3d6d3fd"
     },
     {
-      "seq": 51,
-      "ts": "2026-09-07T13:25:48.274Z",
+      "seq": 56,
+      "ts": "2026-09-07T13:30:51.522Z",
       "op": "write",
       "path": "src/index.css",
       "kind": "modify",
       "hashBefore": "9668fc21445a2f60d8b269825e16674db8c8af6b42335b9f3aa9eddda3d6d3fd",
-      "hashAfter": "cb7717b726395459086246523ca1ea8591809753339c6454fb0827a073edc206",
-      "bytes": 389
+      "hashAfter": "7de53339df83be0423bd9a214308be68ee7696b4ab81d785659d830d976fc541",
+      "bytes": 399
     },
     {
-      "seq": 52,
-      "ts": "2026-09-07T13:25:48.275Z",
+      "seq": 57,
+      "ts": "2026-09-07T13:30:51.522Z",
       "op": "state",
       "state": "written"
     },
     {
-      "seq": 53,
-      "ts": "2026-09-07T13:25:48.282Z",
+      "seq": 58,
+      "ts": "2026-09-07T13:30:51.531Z",
       "op": "stage",
       "stage": "write",
       "status": "done",
       "summary": {
-        "files": 17,
+        "files": 19,
         "integrity": true
       }
     },
     {
-      "seq": 54,
-      "ts": "2026-09-07T13:25:48.283Z",
+      "seq": 59,
+      "ts": "2026-09-07T13:30:51.532Z",
       "op": "stage",
       "stage": "verify",
       "status": "running",
       "summary": {}
     },
     {
-      "seq": 55,
-      "ts": "2026-09-07T13:26:11.074Z",
+      "seq": 60,
+      "ts": "2026-09-07T13:31:14.518Z",
       "op": "state",
       "state": "verified"
     },
     {
-      "seq": 56,
-      "ts": "2026-09-07T13:26:11.077Z",
+      "seq": 61,
+      "ts": "2026-09-07T13:31:14.520Z",
       "op": "stage",
       "stage": "verify",
       "status": "done",
@@ -2964,28 +3020,28 @@
       }
     },
     {
-      "seq": 57,
-      "ts": "2026-09-07T13:26:11.078Z",
+      "seq": 62,
+      "ts": "2026-09-07T13:31:14.521Z",
       "op": "stage",
       "stage": "decide",
       "status": "running",
       "summary": {}
     },
     {
-      "seq": 58,
-      "ts": "2026-09-07T13:26:11.079Z",
+      "seq": 63,
+      "ts": "2026-09-07T13:31:14.522Z",
       "op": "keep",
       "note": "verification passed"
     },
     {
-      "seq": 59,
-      "ts": "2026-09-07T13:26:11.080Z",
+      "seq": 64,
+      "ts": "2026-09-07T13:31:14.522Z",
       "op": "state",
       "state": "kept"
     },
     {
-      "seq": 60,
-      "ts": "2026-09-07T13:26:11.081Z",
+      "seq": 65,
+      "ts": "2026-09-07T13:31:14.523Z",
       "op": "stage",
       "stage": "decide",
       "status": "done",
@@ -2997,241 +3053,253 @@
   ],
   "log": [
     {
-      "ts": "2026-09-07T13:25:20.598Z",
+      "ts": "2026-09-07T13:30:24.566Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "transaction 20260907-132520-a53d4a opened for /home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard"
+      "msg": "transaction 20260907-133024-0ac6ba opened for /home/user/agent-tobo-web/kk-ui-governor/samples/react-dashboard"
     },
     {
-      "ts": "2026-09-07T13:25:20.600Z",
+      "ts": "2026-09-07T13:30:24.568Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage inspect: running"
     },
     {
-      "ts": "2026-09-07T13:25:20.628Z",
+      "ts": "2026-09-07T13:30:24.590Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "scan: react@18.3.1, css=[tailwind], 1 page(s), 7 UX problem(s), 4 generic pattern(s)"
     },
     {
-      "ts": "2026-09-07T13:25:20.630Z",
+      "ts": "2026-09-07T13:30:24.593Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage inspect: done"
     },
     {
-      "ts": "2026-09-07T13:25:20.631Z",
+      "ts": "2026-09-07T13:30:24.596Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage select: running"
     },
     {
-      "ts": "2026-09-07T13:25:20.647Z",
+      "ts": "2026-09-07T13:30:24.612Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage select: done"
     },
     {
-      "ts": "2026-09-07T13:25:20.648Z",
+      "ts": "2026-09-07T13:30:24.613Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage adapt: running"
     },
     {
-      "ts": "2026-09-07T13:25:20.729Z",
+      "ts": "2026-09-07T13:30:24.692Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage adapt: done"
     },
     {
-      "ts": "2026-09-07T13:25:20.731Z",
+      "ts": "2026-09-07T13:30:24.693Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage probe: running"
     },
     {
-      "ts": "2026-09-07T13:25:21.116Z",
+      "ts": "2026-09-07T13:30:25.137Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "probe: ok"
     },
     {
-      "ts": "2026-09-07T13:25:21.120Z",
+      "ts": "2026-09-07T13:30:25.143Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage probe: done"
     },
     {
-      "ts": "2026-09-07T13:25:21.122Z",
+      "ts": "2026-09-07T13:30:25.144Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage preview: running"
     },
     {
-      "ts": "2026-09-07T13:25:21.535Z",
+      "ts": "2026-09-07T13:30:25.532Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "starting dev server: npx vite --port 37247 --strictPort --host 127.0.0.1 (port 37247)"
+      "msg": "starting dev server: npx vite --port 46669 --strictPort --host 127.0.0.1 (port 46669)"
     },
     {
-      "ts": "2026-09-07T13:25:25.792Z",
+      "ts": "2026-09-07T13:30:29.472Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "starting dev server: npx vite --port 41131 --strictPort --host 127.0.0.1 (port 41131)"
+      "msg": "starting dev server: npx vite --port 42283 --strictPort --host 127.0.0.1 (port 42283)"
     },
     {
-      "ts": "2026-09-07T13:25:47.423Z",
+      "ts": "2026-09-07T13:30:50.663Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "baseline: RESP-SWEEP=3 MOBILE-ORIENT=1 FOLDABLE=1 FONT-200=1 FOCUS-VISIBLE=6 FORCED-COLORS=1 OVERFLOW=4 TOUCH-TARGET=4"
     },
     {
-      "ts": "2026-09-07T13:25:48.234Z",
+      "ts": "2026-09-07T13:30:51.468Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage preview: done"
     },
     {
-      "ts": "2026-09-07T13:25:48.236Z",
+      "ts": "2026-09-07T13:30:51.470Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage write: running"
     },
     {
-      "ts": "2026-09-07T13:25:48.240Z",
+      "ts": "2026-09-07T13:30:51.475Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/tokens.css"
     },
     {
-      "ts": "2026-09-07T13:25:48.242Z",
+      "ts": "2026-09-07T13:30:51.477Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/theme.css"
     },
     {
-      "ts": "2026-09-07T13:25:48.244Z",
+      "ts": "2026-09-07T13:30:51.480Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/motion.js"
     },
     {
-      "ts": "2026-09-07T13:25:48.246Z",
+      "ts": "2026-09-07T13:30:51.483Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/ATTRIBUTION.md"
     },
     {
-      "ts": "2026-09-07T13:25:48.248Z",
+      "ts": "2026-09-07T13:30:51.486Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/tokens.json"
     },
     {
-      "ts": "2026-09-07T13:25:48.251Z",
+      "ts": "2026-09-07T13:30:51.489Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/components/KkButton.jsx"
     },
     {
-      "ts": "2026-09-07T13:25:48.255Z",
+      "ts": "2026-09-07T13:30:51.491Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/components/KkCard.jsx"
     },
     {
-      "ts": "2026-09-07T13:25:48.257Z",
+      "ts": "2026-09-07T13:30:51.494Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/components/KkInput.jsx"
     },
     {
-      "ts": "2026-09-07T13:25:48.258Z",
+      "ts": "2026-09-07T13:30:51.497Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/components/KkModal.jsx"
     },
     {
-      "ts": "2026-09-07T13:25:48.260Z",
+      "ts": "2026-09-07T13:30:51.499Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/components/KkTable.jsx"
     },
     {
-      "ts": "2026-09-07T13:25:48.263Z",
+      "ts": "2026-09-07T13:30:51.502Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/components/KkNav.jsx"
     },
     {
-      "ts": "2026-09-07T13:25:48.264Z",
+      "ts": "2026-09-07T13:30:51.504Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/components/KkSidebar.jsx"
     },
     {
-      "ts": "2026-09-07T13:25:48.266Z",
+      "ts": "2026-09-07T13:30:51.506Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/components/KkChart.jsx"
     },
     {
-      "ts": "2026-09-07T13:25:48.268Z",
+      "ts": "2026-09-07T13:30:51.508Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/components/KkCarousel.jsx"
     },
     {
-      "ts": "2026-09-07T13:25:48.270Z",
+      "ts": "2026-09-07T13:30:51.510Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/KkThemeProvider.jsx"
     },
     {
-      "ts": "2026-09-07T13:25:48.272Z",
+      "ts": "2026-09-07T13:30:51.513Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "create src/kk-design/index.js"
     },
     {
-      "ts": "2026-09-07T13:25:48.275Z",
+      "ts": "2026-09-07T13:30:51.517Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "modify src/main.jsx"
+    },
+    {
+      "ts": "2026-09-07T13:30:51.519Z",
+      "level": "info",
+      "prefix": "kkgov",
+      "msg": "create src/kk-design/tailwind-bridge.css"
+    },
+    {
+      "ts": "2026-09-07T13:30:51.522Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "modify src/index.css"
     },
     {
-      "ts": "2026-09-07T13:25:48.283Z",
+      "ts": "2026-09-07T13:30:51.532Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage write: done"
     },
     {
-      "ts": "2026-09-07T13:25:48.284Z",
+      "ts": "2026-09-07T13:30:51.533Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage verify: running"
     },
     {
-      "ts": "2026-09-07T13:25:48.284Z",
+      "ts": "2026-09-07T13:30:51.534Z",
       "level": "info",
       "prefix": "kkgov",
-      "msg": "starting dev server: npx vite --port 36315 --strictPort --host 127.0.0.1 (port 36315)"
+      "msg": "starting dev server: npx vite --port 34177 --strictPort --host 127.0.0.1 (port 34177)"
     },
     {
-      "ts": "2026-09-07T13:26:11.078Z",
+      "ts": "2026-09-07T13:31:14.521Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage verify: done"
     },
     {
-      "ts": "2026-09-07T13:26:11.079Z",
+      "ts": "2026-09-07T13:31:14.522Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage decide: running"
     },
     {
-      "ts": "2026-09-07T13:26:11.082Z",
+      "ts": "2026-09-07T13:31:14.524Z",
       "level": "info",
       "prefix": "kkgov",
       "msg": "stage decide: done"
