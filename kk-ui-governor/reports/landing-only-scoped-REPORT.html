@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KK-UI-GOVERNOR Report 20260907-142633-68b52c</title>
+<title>KK-UI-GOVERNOR Report 20260907-144141-ea4567</title>
 <style>
 :root{--bg:#0b0d12;--panel:#141824;--line:#232a3a;--text:#e6e9f0;--muted:#9aa3b5;--pass:#22c55e;--fail:#ef4444;--warn:#f59e0b;--skip:#64748b;--accent:#7dd3fc}
 @media (prefers-color-scheme: light){:root{--bg:#f6f7fb;--panel:#fff;--line:#e3e6ee;--text:#111827;--muted:#4b5563}}
@@ -19,13 +19,13 @@ details summary{cursor:pointer;color:var(--accent)}
 <h1>KK-UI-GOVERNOR — Design Transaction Report</h1>
 <div class="panel"><div class="verdict"><span class="badge PASS">PASS</span> <span>PASS</span></div>
 <dl class="kv">
-<dt>Transaction</dt><dd><code>20260907-142633-68b52c</code></dd>
+<dt>Transaction</dt><dd><code>20260907-144141-ea4567</code></dd>
 <dt>Project</dt><dd><code>/home/user/agent-tobo-web/kk-ui-governor/samples/app-with-dashboard</code> — app-with-dashboard</dd>
 <dt>Framework</dt><dd>html  · CSS: plain-css</dd>
 <dt>Adapter</dt><dd>html (supported)</dd>
 <dt>Design direction</dt><dd>premium · landing · neutral-web · theme light · density comfortable · motion subtle</dd>
 <dt>Decision</dt><dd><span class="badge keep">KEEP</span> verification passed on every gate</dd>
-<dt>Started / finished</dt><dd>2026-09-07T14:26:33.671Z → 2026-09-07T14:27:22.205Z</dd>
+<dt>Started / finished</dt><dd>2026-09-07T14:41:41.243Z → 2026-09-07T14:42:29.454Z</dd>
 </dl></div>
 
 <h2>Flow: Inspect → Select → Adapt → Probe → Preview → Write → Verify → Keep / Rollback</h2>
@@ -127,6 +127,7 @@ details summary{cursor:pointer;color:var(--accent)}
   &quot;CONSOLE-ERRORS&quot;: 0,
   &quot;EXTERNAL-RESOURCES&quot;: 0,
   &quot;UNCHANGED-ROUTES&quot;: 0,
+  &quot;SCOPE-ACTIVE&quot;: 0,
   &quot;A11Y-BASICS&quot;: 0
  }
 }</pre></td></tr><tr><td>write</td><td><span class="badge done">DONE</span></td><td><pre>{
@@ -181,7 +182,7 @@ details summary{cursor:pointer;color:var(--accent)}
 }</pre></td></tr><tr><td><b>G6</b> backup-guarantee</td><td><span class="badge pass">PASS</span></td><td><pre>{
  &quot;modificationsWithoutHash&quot;: []
 }</pre></td></tr><tr><td><b>G7</b> candidate-size</td><td><span class="badge pass">PASS</span></td><td><pre>{
- &quot;bytes&quot;: 66313,
+ &quot;bytes&quot;: 70016,
  &quot;limit&quot;: 6291456
 }</pre></td></tr><tr><td><b>G8</b> probe-passed</td><td><span class="badge pass">PASS</span></td><td><pre>{
  &quot;probe&quot;: {
@@ -194,8 +195,8 @@ details summary{cursor:pointer;color:var(--accent)}
 }</pre></td></tr><tr><td><b>G10</b> scope-containment</td><td><span class="badge pass">PASS</span></td><td><pre>{
  &quot;scope&quot;: &quot;[data-kk-scope=\&quot;landing\&quot;]&quot;,
  &quot;rootKind&quot;: &quot;html&quot;,
- &quot;rulesScoped&quot;: 167,
- &quot;inertGlobalTokenBlocks&quot;: 4,
+ &quot;rulesScoped&quot;: 177,
+ &quot;inertGlobalTokenBlocks&quot;: 7,
  &quot;escapingSelectors&quot;: []
 }</pre></td></tr>
 </table></div>
@@ -653,7 +654,7 @@ details summary{cursor:pointer;color:var(--accent)}
   &quot;severity&quot;: &quot;warn&quot;,
   &quot;message&quot;: &quot;1 target(s) between 24 and 44px&quot;
  }
-]</pre></details></td></tr><tr><td><b>PERF</b><br><small>Performance budget (load, fps, long tasks, DOM, transfer)</small></td><td><span class="badge pass">PASS</span></td><td>no findings</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>ANIM-3D-FALLBACK</b><br><small>Animation / 3D degrade on reduced-motion &amp; low-end</small></td><td><span class="badge pass">PASS</span></td><td>no findings</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>CONSOLE-ERRORS</b><br><small>No console / runtime errors</small></td><td><span class="badge pass">PASS</span></td><td>no findings</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>EXTERNAL-RESOURCES</b><br><small>External resources (fonts/CDN) reachable</small></td><td><span class="badge pass">PASS</span></td><td>no findings</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>UNCHANGED-ROUTES</b><br><small>Routes outside the upgraded scope are byte-identical in computed style</small></td><td><span class="badge pass">PASS</span></td><td>4 guard route/device pair(s) identical before and after</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>A11Y-BASICS</b><br><small>Landmarks, lang, alt text, form labels</small></td><td><span class="badge warn">WARN</span></td><td>1 advisory finding(s)</td><td><details><summary>1 finding(s)</summary><pre>[
+]</pre></details></td></tr><tr><td><b>PERF</b><br><small>Performance budget (load, fps, long tasks, DOM, transfer)</small></td><td><span class="badge pass">PASS</span></td><td>no findings</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>ANIM-3D-FALLBACK</b><br><small>Animation / 3D degrade on reduced-motion &amp; low-end</small></td><td><span class="badge pass">PASS</span></td><td>no findings</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>CONSOLE-ERRORS</b><br><small>No console / runtime errors</small></td><td><span class="badge pass">PASS</span></td><td>no findings</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>EXTERNAL-RESOURCES</b><br><small>External resources (fonts/CDN) reachable</small></td><td><span class="badge pass">PASS</span></td><td>no findings</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>UNCHANGED-ROUTES</b><br><small>Routes outside the upgraded scope are byte-identical in computed style</small></td><td><span class="badge pass">PASS</span></td><td>4 guard route/device pair(s) identical before and after</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>SCOPE-ACTIVE</b><br><small>The scoped design is actually applied on the upgraded page</small></td><td><span class="badge pass">PASS</span></td><td>no findings</td><td><details><summary>0 finding(s)</summary><pre>[]</pre></details></td></tr><tr><td><b>A11Y-BASICS</b><br><small>Landmarks, lang, alt text, form labels</small></td><td><span class="badge warn">WARN</span></td><td>1 advisory finding(s)</td><td><details><summary>1 finding(s)</summary><pre>[
  {
   &quot;check&quot;: &quot;A11Y-BASICS&quot;,
   &quot;device&quot;: &quot;laptop-1280&quot;,
@@ -674,7 +675,7 @@ details summary{cursor:pointer;color:var(--accent)}
 
 <h2>Files written</h2>
 <div class="panel"><table><tr><th>Path</th><th>Kind</th><th>Bytes</th><th>SHA-256 before → after</th></tr>
-<tr><td><code>kk-design/tokens.css</code></td><td>create</td><td>23527</td><td><code>— → 9424a10e323a</code></td></tr><tr><td><code>kk-design/theme.css</code></td><td>create</td><td>27261</td><td><code>— → f31f1fe77c13</code></td></tr><tr><td><code>kk-design/motion.js</code></td><td>create</td><td>7521</td><td><code>— → 9b16a21d57d8</code></td></tr><tr><td><code>kk-design/ATTRIBUTION.md</code></td><td>create</td><td>1812</td><td><code>— → ff073072e955</code></td></tr><tr><td><code>kk-design/tokens.json</code></td><td>create</td><td>4345</td><td><code>— → f7b7ec77026c</code></td></tr><tr><td><code>index.html</code></td><td>modify</td><td>1847</td><td><code>51376395f231 → fb38cf494443</code></td></tr>
+<tr><td><code>kk-design/tokens.css</code></td><td>create</td><td>27280</td><td><code>— → a77c0e31e29c</code></td></tr><tr><td><code>kk-design/theme.css</code></td><td>create</td><td>27211</td><td><code>— → 3dd516329565</code></td></tr><tr><td><code>kk-design/motion.js</code></td><td>create</td><td>7521</td><td><code>— → 68ee231de11d</code></td></tr><tr><td><code>kk-design/ATTRIBUTION.md</code></td><td>create</td><td>1812</td><td><code>— → ff073072e955</code></td></tr><tr><td><code>kk-design/tokens.json</code></td><td>create</td><td>4345</td><td><code>— → 5b2b5d79a2c4</code></td></tr><tr><td><code>index.html</code></td><td>modify</td><td>1847</td><td><code>51376395f231 → fb38cf494443</code></td></tr>
 </table></div>
 
 <h2>Design Vault assets &amp; provenance</h2>
@@ -699,39 +700,33 @@ details summary{cursor:pointer;color:var(--accent)}
   {
    &quot;id&quot;: &quot;git-status&quot;,
    &quot;status&quot;: &quot;warn&quot;,
-   &quot;note&quot;: &quot;99 uncommitted change(s) present (governor keeps its own backups regardless)&quot;,
+   &quot;note&quot;: &quot;24 uncommitted change(s) present (governor keeps its own backups regardless)&quot;,
    &quot;data&quot;: {
     &quot;dirty&quot;: [
-     &quot; M kk-ui-governor/DESIGN-VAULT/README.md&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/SETUP-REPORT.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/VAULT-MANIFEST.lock.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/3d/example/threejs-cube-example/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/badge/shadcn-badge/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/button/material-filled-button/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/button/shadcn-button/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/card/shadcn-card/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/carousel/shadcn-carousel/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/carousel/swiper-css/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/chart/chartjs-samples/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/chart/shadcn-chart/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/css/daisyui-components/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/drawer/shadcn-sheet/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/feedback/shadcn-skeleton/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/input/shadcn-input/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/modal/shadcn-dialog/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/navigation/shadcn-navigation-menu/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/select/shadcn-select/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/sidebar/shadcn-sidebar/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/switch/shadcn-switch/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/table/shadcn-table/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/tabs/shadcn-tabs/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/components/tooltip/shadcn-tooltip/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/frameworks/css/modern-normalize/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/frameworks/css/pico-classless/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/icons/heroicons-outline-core/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/icons/lucide-core/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/icons/tabler-outline-core/asset.json&quot;,
-     &quot; M kk-ui-governor/DESIGN-VAULT/assets/motion/keyframes/open-props-animations/asset.json&quot;
+     &quot; M kk-ui-governor/bin/kkgov.js&quot;,
+     &quot; M kk-ui-governor/bootstrap/SETUP-KK-UI-DESIGN-VAULT.ps1&quot;,
+     &quot; M kk-ui-governor/docs/SAFETY.md&quot;,
+     &quot; M kk-ui-governor/docs/USAGE.md&quot;,
+     &quot; M kk-ui-governor/docs/VERIFICATION.md&quot;,
+     &quot; M kk-ui-governor/src/adapters/base.js&quot;,
+     &quot; M kk-ui-governor/src/adapters/html.js&quot;,
+     &quot; M kk-ui-governor/src/adapters/nextjs.js&quot;,
+     &quot; M kk-ui-governor/src/adapters/react.js&quot;,
+     &quot; M kk-ui-governor/src/core/fsutil.js&quot;,
+     &quot; M kk-ui-governor/src/core/governor.js&quot;,
+     &quot; M kk-ui-governor/src/core/journal.js&quot;,
+     &quot; M kk-ui-governor/src/core/report.js&quot;,
+     &quot; M kk-ui-governor/src/pipeline/preview.js&quot;,
+     &quot; M kk-ui-governor/src/pipeline/scope-css.js&quot;,
+     &quot; M kk-ui-governor/src/server/process-server.js&quot;,
+     &quot; M kk-ui-governor/src/verify/browser-probe.js&quot;,
+     &quot; M kk-ui-governor/src/verify/build-check.js&quot;,
+     &quot; M kk-ui-governor/src/verify/runner.js&quot;,
+     &quot; M kk-ui-governor/tests/e2e/flow.test.js&quot;,
+     &quot; M kk-ui-governor/tests/unit/journal.test.js&quot;,
+     &quot;?? kk-ui-governor/docs/LANDING-PAGE-UPGRADE.md&quot;,
+     &quot;?? kk-ui-governor/src/server/spawn-util.js&quot;,
+     &quot;?? kk-ui-governor/tests/unit/spawn.test.js&quot;
     ]
    }
   },
@@ -743,7 +738,7 @@ details summary{cursor:pointer;color:var(--accent)}
   {
    &quot;id&quot;: &quot;disk-space&quot;,
    &quot;status&quot;: &quot;pass&quot;,
-   &quot;note&quot;: &quot;29609 MB free&quot;
+   &quot;note&quot;: &quot;29537 MB free&quot;
   }
  ]
 }</pre></div><div><h3>Post-write</h3><pre>{
@@ -791,73 +786,73 @@ details summary{cursor:pointer;color:var(--accent)}
 }</pre></div></div>
 
 <h2>Transaction journal</h2>
-<div class="panel"><pre>{&quot;seq&quot;:1,&quot;ts&quot;:&quot;2026-09-07T14:26:33.694Z&quot;,&quot;op&quot;:&quot;begin&quot;,&quot;projectRoot&quot;:&quot;/home/user/agent-tobo-web/kk-ui-governor/samples/app-with-dashboard&quot;}
-{&quot;seq&quot;:2,&quot;ts&quot;:&quot;2026-09-07T14:26:33.696Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;inspect&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
-{&quot;seq&quot;:3,&quot;ts&quot;:&quot;2026-09-07T14:26:33.716Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;inspect&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;framework&quot;:&quot;html&quot;,&quot;cssStack&quot;:[&quot;plain-css&quot;],&quot;pages&quot;:3,&quot;uxProblems&quot;:5,&quot;genericPatterns&quot;:0,&quot;brand&quot;:&quot;#1f6feb&quot;}}
-{&quot;seq&quot;:4,&quot;ts&quot;:&quot;2026-09-07T14:26:33.717Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;select&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
-{&quot;seq&quot;:5,&quot;ts&quot;:&quot;2026-09-07T14:26:33.733Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;select&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;preset&quot;:&quot;auto&quot;,&quot;auto&quot;:true,&quot;style&quot;:&quot;premium&quot;,&quot;pageType&quot;:&quot;landing&quot;,&quot;platform&quot;:&quot;neutral-web&quot;,&quot;theme&quot;:&quot;light&quot;,&quot;density&quot;:&quot;comfortable&quot;,&quot;motion&quot;:&quot;subtle&quot;,&quot;devices&quot;:[&quot;mobile&quot;,&quot;foldable&quot;,&quot;tablet&quot;,&quot;laptop&quot;,&quot;desktop&quot;,&quot;ultrawide&quot;,&quot;4k&quot;],&quot;a11y&quot;:[&quot;reduced-motion&quot;,&quot;keyboard&quot;,&quot;forced-colors&quot;,&quot;large-text&quot;,&quot;screen-reader&quot;],&quot;components&quot;:[&quot;navigation&quot;,&quot;buttons&quot;,&quot;cards&quot;,&quot;tables&quot;,&quot;sidebar&quot;,&quot;inputs&quot;],&quot;effects&quot;:[&quot;micro-interactions&quot;],&quot;brandMode&quot;:&quot;preserve&quot;,&quot;scope&quot;:&quot;landing&quot;,&quot;scopeSelector&quot;:&quot;[data-kk-scope=\&quot;landing\&quot;]&quot;,&quot;threeD&quot;:false,&quot;radius&quot;:null,&quot;fontDisplay&quot;:&quot;Plus Jakarta Sans&quot;,&quot;fontBody&quot;:&quot;Plus Jakarta Sans&quot;,&quot;fontMono&quot;:&quot;JetBrains Mono&quot;,&quot;sources&quot;:{&quot;style&quot;:&quot;user&quot;,&quot;pageType&quot;:&quot;user&quot;,&quot;platform&quot;:&quot;auto&quot;,&quot;theme&quot;:&quot;auto&quot;,&quot;density&quot;:&quot;auto&quot;,&quot;motion&quot;:&quot;auto&quot;,&quot;a11y&quot;:&quot;auto&quot;},&quot;adjustments&quot;:[&quot;brand primary #1f6feb preserved (brandMode=preserve)&quot;],&quot;vaultAssets&quot;:10}}
-{&quot;seq&quot;:6,&quot;ts&quot;:&quot;2026-09-07T14:26:33.734Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;adapt&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
-{&quot;seq&quot;:7,&quot;ts&quot;:&quot;2026-09-07T14:26:33.753Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;adapt&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;adapter&quot;:&quot;html&quot;,&quot;files&quot;:6,&quot;creates&quot;:5,&quot;modifies&quot;:1,&quot;notes&quot;:[&quot;scoped run: only index.html is modified; every other page is untouched&quot;],&quot;remediations&quot;:9}}
-{&quot;seq&quot;:8,&quot;ts&quot;:&quot;2026-09-07T14:26:33.754Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;probe&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
-{&quot;seq&quot;:9,&quot;ts&quot;:&quot;2026-09-07T14:26:34.000Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;probe&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;probeOk&quot;:true,&quot;probeErrors&quot;:0,&quot;gatesFailed&quot;:[]}}
-{&quot;seq&quot;:10,&quot;ts&quot;:&quot;2026-09-07T14:26:34.002Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;preview&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
-{&quot;seq&quot;:11,&quot;ts&quot;:&quot;2026-09-07T14:26:58.261Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;preview&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;browser&quot;:true,&quot;current&quot;:true,&quot;candidate&quot;:true,&quot;baseline&quot;:{&quot;LOAD&quot;:0,&quot;RESP-SWEEP&quot;:2,&quot;MOBILE-ORIENT&quot;:0,&quot;FOLDABLE&quot;:1,&quot;DPR&quot;:0,&quot;THEME&quot;:0,&quot;FONT-200&quot;:1,&quot;KEYBOARD-NAV&quot;:0,&quot;FOCUS-VISIBLE&quot;:3,&quot;CONTRAST&quot;:16,&quot;FORCED-COLORS&quot;:0,&quot;REDUCED-MOTION&quot;:0,&quot;OVERFLOW&quot;:2,&quot;LAYOUT-SHIFT&quot;:0,&quot;STICKY-FIXED&quot;:0,&quot;TOUCH-TARGET&quot;:11,&quot;PERF&quot;:0,&quot;ANIM-3D-FALLBACK&quot;:0,&quot;CONSOLE-ERRORS&quot;:0,&quot;EXTERNAL-RESOURCES&quot;:0,&quot;UNCHANGED-ROUTES&quot;:0,&quot;A11Y-BASICS&quot;:0}}}
-{&quot;seq&quot;:12,&quot;ts&quot;:&quot;2026-09-07T14:26:58.264Z&quot;,&quot;op&quot;:&quot;state&quot;,&quot;state&quot;:&quot;staged&quot;}
-{&quot;seq&quot;:13,&quot;ts&quot;:&quot;2026-09-07T14:26:58.265Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;write&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
-{&quot;seq&quot;:14,&quot;ts&quot;:&quot;2026-09-07T14:26:58.266Z&quot;,&quot;op&quot;:&quot;state&quot;,&quot;state&quot;:&quot;writing&quot;}
-{&quot;seq&quot;:15,&quot;ts&quot;:&quot;2026-09-07T14:26:58.268Z&quot;,&quot;op&quot;:&quot;mkdir&quot;,&quot;path&quot;:&quot;kk-design&quot;}
-{&quot;seq&quot;:16,&quot;ts&quot;:&quot;2026-09-07T14:26:58.269Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;kk-design/tokens.css&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null}
-{&quot;seq&quot;:17,&quot;ts&quot;:&quot;2026-09-07T14:26:58.270Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;kk-design/tokens.css&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null,&quot;hashAfter&quot;:&quot;9424a10e323a97699b1a4ebb951d94b3c12ad733d37ea0c0c3cbfc02693e540a&quot;,&quot;bytes&quot;:23527}
-{&quot;seq&quot;:18,&quot;ts&quot;:&quot;2026-09-07T14:26:58.271Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;kk-design/theme.css&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null}
-{&quot;seq&quot;:19,&quot;ts&quot;:&quot;2026-09-07T14:26:58.272Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;kk-design/theme.css&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null,&quot;hashAfter&quot;:&quot;f31f1fe77c136d201a8b89636e197e7fa8dd991e7128c98029fc4e9e603c1bcd&quot;,&quot;bytes&quot;:27261}
-{&quot;seq&quot;:20,&quot;ts&quot;:&quot;2026-09-07T14:26:58.274Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;kk-design/motion.js&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null}
-{&quot;seq&quot;:21,&quot;ts&quot;:&quot;2026-09-07T14:26:58.275Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;kk-design/motion.js&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null,&quot;hashAfter&quot;:&quot;9b16a21d57d83b0b671baa1509ba7fac63446a81e7ccd9d70338f3c4f51f0d8f&quot;,&quot;bytes&quot;:7521}
-{&quot;seq&quot;:22,&quot;ts&quot;:&quot;2026-09-07T14:26:58.276Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;kk-design/ATTRIBUTION.md&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null}
-{&quot;seq&quot;:23,&quot;ts&quot;:&quot;2026-09-07T14:26:58.278Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;kk-design/ATTRIBUTION.md&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null,&quot;hashAfter&quot;:&quot;ff073072e9550d38b4ebf149480d18aa7136614288adece6e8511edab772bea8&quot;,&quot;bytes&quot;:1812}
-{&quot;seq&quot;:24,&quot;ts&quot;:&quot;2026-09-07T14:26:58.279Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;kk-design/tokens.json&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null}
-{&quot;seq&quot;:25,&quot;ts&quot;:&quot;2026-09-07T14:26:58.280Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;kk-design/tokens.json&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null,&quot;hashAfter&quot;:&quot;f7b7ec77026c684233d749adb9048714ec9835d2fda8774100cc641f80d6c7e3&quot;,&quot;bytes&quot;:4345}
-{&quot;seq&quot;:26,&quot;ts&quot;:&quot;2026-09-07T14:26:58.283Z&quot;,&quot;op&quot;:&quot;backup&quot;,&quot;path&quot;:&quot;index.html&quot;,&quot;hash&quot;:&quot;51376395f2316ed10e87a07b45ea3260e65ff117a53ff5259acee61cfb97c204&quot;}
-{&quot;seq&quot;:27,&quot;ts&quot;:&quot;2026-09-07T14:26:58.283Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;index.html&quot;,&quot;kind&quot;:&quot;modify&quot;,&quot;hashBefore&quot;:&quot;51376395f2316ed10e87a07b45ea3260e65ff117a53ff5259acee61cfb97c204&quot;}
-{&quot;seq&quot;:28,&quot;ts&quot;:&quot;2026-09-07T14:26:58.284Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;index.html&quot;,&quot;kind&quot;:&quot;modify&quot;,&quot;hashBefore&quot;:&quot;51376395f2316ed10e87a07b45ea3260e65ff117a53ff5259acee61cfb97c204&quot;,&quot;hashAfter&quot;:&quot;fb38cf4944431054b30b036cd24c52d9bd79624720b330951a2cba2898a054e7&quot;,&quot;bytes&quot;:1847}
-{&quot;seq&quot;:29,&quot;ts&quot;:&quot;2026-09-07T14:26:58.285Z&quot;,&quot;op&quot;:&quot;state&quot;,&quot;state&quot;:&quot;written&quot;}
-{&quot;seq&quot;:30,&quot;ts&quot;:&quot;2026-09-07T14:26:58.288Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;write&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;files&quot;:6,&quot;integrity&quot;:true}}
-{&quot;seq&quot;:31,&quot;ts&quot;:&quot;2026-09-07T14:26:58.289Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;verify&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
-{&quot;seq&quot;:32,&quot;ts&quot;:&quot;2026-09-07T14:27:22.198Z&quot;,&quot;op&quot;:&quot;state&quot;,&quot;state&quot;:&quot;verified&quot;}
-{&quot;seq&quot;:33,&quot;ts&quot;:&quot;2026-09-07T14:27:22.200Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;verify&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;ok&quot;:true,&quot;mode&quot;:&quot;quick&quot;,&quot;failed&quot;:[],&quot;warned&quot;:[&quot;TOUCH-TARGET&quot;,&quot;A11Y-BASICS&quot;],&quot;loads&quot;:17}}
-{&quot;seq&quot;:34,&quot;ts&quot;:&quot;2026-09-07T14:27:22.201Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;decide&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
-{&quot;seq&quot;:35,&quot;ts&quot;:&quot;2026-09-07T14:27:22.202Z&quot;,&quot;op&quot;:&quot;keep&quot;,&quot;note&quot;:&quot;verification passed&quot;}
-{&quot;seq&quot;:36,&quot;ts&quot;:&quot;2026-09-07T14:27:22.203Z&quot;,&quot;op&quot;:&quot;state&quot;,&quot;state&quot;:&quot;kept&quot;}
-{&quot;seq&quot;:37,&quot;ts&quot;:&quot;2026-09-07T14:27:22.203Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;decide&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;decision&quot;:&quot;keep&quot;,&quot;reason&quot;:&quot;verification passed on every gate&quot;}}</pre></div>
+<div class="panel"><pre>{&quot;seq&quot;:1,&quot;ts&quot;:&quot;2026-09-07T14:41:41.260Z&quot;,&quot;op&quot;:&quot;begin&quot;,&quot;projectRoot&quot;:&quot;/home/user/agent-tobo-web/kk-ui-governor/samples/app-with-dashboard&quot;}
+{&quot;seq&quot;:2,&quot;ts&quot;:&quot;2026-09-07T14:41:41.266Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;inspect&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
+{&quot;seq&quot;:3,&quot;ts&quot;:&quot;2026-09-07T14:41:41.288Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;inspect&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;framework&quot;:&quot;html&quot;,&quot;cssStack&quot;:[&quot;plain-css&quot;],&quot;pages&quot;:3,&quot;uxProblems&quot;:5,&quot;genericPatterns&quot;:0,&quot;brand&quot;:&quot;#1f6feb&quot;}}
+{&quot;seq&quot;:4,&quot;ts&quot;:&quot;2026-09-07T14:41:41.289Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;select&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
+{&quot;seq&quot;:5,&quot;ts&quot;:&quot;2026-09-07T14:41:41.307Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;select&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;preset&quot;:&quot;auto&quot;,&quot;auto&quot;:true,&quot;style&quot;:&quot;premium&quot;,&quot;pageType&quot;:&quot;landing&quot;,&quot;platform&quot;:&quot;neutral-web&quot;,&quot;theme&quot;:&quot;light&quot;,&quot;density&quot;:&quot;comfortable&quot;,&quot;motion&quot;:&quot;subtle&quot;,&quot;devices&quot;:[&quot;mobile&quot;,&quot;foldable&quot;,&quot;tablet&quot;,&quot;laptop&quot;,&quot;desktop&quot;,&quot;ultrawide&quot;,&quot;4k&quot;],&quot;a11y&quot;:[&quot;reduced-motion&quot;,&quot;keyboard&quot;,&quot;forced-colors&quot;,&quot;large-text&quot;,&quot;screen-reader&quot;],&quot;components&quot;:[&quot;navigation&quot;,&quot;buttons&quot;,&quot;cards&quot;,&quot;tables&quot;,&quot;sidebar&quot;,&quot;inputs&quot;],&quot;effects&quot;:[&quot;micro-interactions&quot;],&quot;brandMode&quot;:&quot;preserve&quot;,&quot;scope&quot;:&quot;landing&quot;,&quot;scopeSelector&quot;:&quot;[data-kk-scope=\&quot;landing\&quot;]&quot;,&quot;threeD&quot;:false,&quot;radius&quot;:null,&quot;fontDisplay&quot;:&quot;Plus Jakarta Sans&quot;,&quot;fontBody&quot;:&quot;Plus Jakarta Sans&quot;,&quot;fontMono&quot;:&quot;JetBrains Mono&quot;,&quot;sources&quot;:{&quot;style&quot;:&quot;user&quot;,&quot;pageType&quot;:&quot;user&quot;,&quot;platform&quot;:&quot;auto&quot;,&quot;theme&quot;:&quot;auto&quot;,&quot;density&quot;:&quot;auto&quot;,&quot;motion&quot;:&quot;auto&quot;,&quot;a11y&quot;:&quot;auto&quot;},&quot;adjustments&quot;:[&quot;brand primary #1f6feb preserved (brandMode=preserve)&quot;],&quot;vaultAssets&quot;:10}}
+{&quot;seq&quot;:6,&quot;ts&quot;:&quot;2026-09-07T14:41:41.309Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;adapt&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
+{&quot;seq&quot;:7,&quot;ts&quot;:&quot;2026-09-07T14:41:41.332Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;adapt&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;adapter&quot;:&quot;html&quot;,&quot;files&quot;:6,&quot;creates&quot;:5,&quot;modifies&quot;:1,&quot;notes&quot;:[&quot;scoped run: only index.html is modified; every other page is untouched&quot;],&quot;remediations&quot;:9}}
+{&quot;seq&quot;:8,&quot;ts&quot;:&quot;2026-09-07T14:41:41.334Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;probe&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
+{&quot;seq&quot;:9,&quot;ts&quot;:&quot;2026-09-07T14:41:41.588Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;probe&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;probeOk&quot;:true,&quot;probeErrors&quot;:0,&quot;gatesFailed&quot;:[]}}
+{&quot;seq&quot;:10,&quot;ts&quot;:&quot;2026-09-07T14:41:41.591Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;preview&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
+{&quot;seq&quot;:11,&quot;ts&quot;:&quot;2026-09-07T14:42:06.061Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;preview&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;browser&quot;:true,&quot;current&quot;:true,&quot;candidate&quot;:true,&quot;baseline&quot;:{&quot;LOAD&quot;:0,&quot;RESP-SWEEP&quot;:2,&quot;MOBILE-ORIENT&quot;:0,&quot;FOLDABLE&quot;:1,&quot;DPR&quot;:0,&quot;THEME&quot;:0,&quot;FONT-200&quot;:1,&quot;KEYBOARD-NAV&quot;:0,&quot;FOCUS-VISIBLE&quot;:3,&quot;CONTRAST&quot;:16,&quot;FORCED-COLORS&quot;:0,&quot;REDUCED-MOTION&quot;:0,&quot;OVERFLOW&quot;:2,&quot;LAYOUT-SHIFT&quot;:0,&quot;STICKY-FIXED&quot;:0,&quot;TOUCH-TARGET&quot;:11,&quot;PERF&quot;:0,&quot;ANIM-3D-FALLBACK&quot;:0,&quot;CONSOLE-ERRORS&quot;:0,&quot;EXTERNAL-RESOURCES&quot;:0,&quot;UNCHANGED-ROUTES&quot;:0,&quot;SCOPE-ACTIVE&quot;:0,&quot;A11Y-BASICS&quot;:0}}}
+{&quot;seq&quot;:12,&quot;ts&quot;:&quot;2026-09-07T14:42:06.063Z&quot;,&quot;op&quot;:&quot;state&quot;,&quot;state&quot;:&quot;staged&quot;}
+{&quot;seq&quot;:13,&quot;ts&quot;:&quot;2026-09-07T14:42:06.065Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;write&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
+{&quot;seq&quot;:14,&quot;ts&quot;:&quot;2026-09-07T14:42:06.068Z&quot;,&quot;op&quot;:&quot;state&quot;,&quot;state&quot;:&quot;writing&quot;}
+{&quot;seq&quot;:15,&quot;ts&quot;:&quot;2026-09-07T14:42:06.080Z&quot;,&quot;op&quot;:&quot;mkdir&quot;,&quot;path&quot;:&quot;kk-design&quot;}
+{&quot;seq&quot;:16,&quot;ts&quot;:&quot;2026-09-07T14:42:06.080Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;kk-design/tokens.css&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null}
+{&quot;seq&quot;:17,&quot;ts&quot;:&quot;2026-09-07T14:42:06.084Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;kk-design/tokens.css&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null,&quot;hashAfter&quot;:&quot;a77c0e31e29c7367e304a1eec1a7a94579914dd6e6e029ce90bcf3808941c96a&quot;,&quot;bytes&quot;:27280}
+{&quot;seq&quot;:18,&quot;ts&quot;:&quot;2026-09-07T14:42:06.085Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;kk-design/theme.css&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null}
+{&quot;seq&quot;:19,&quot;ts&quot;:&quot;2026-09-07T14:42:06.087Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;kk-design/theme.css&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null,&quot;hashAfter&quot;:&quot;3dd516329565df6e750256f17ea7e13c7c633ea6322bb7b7994f12c4c3009753&quot;,&quot;bytes&quot;:27211}
+{&quot;seq&quot;:20,&quot;ts&quot;:&quot;2026-09-07T14:42:06.088Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;kk-design/motion.js&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null}
+{&quot;seq&quot;:21,&quot;ts&quot;:&quot;2026-09-07T14:42:06.090Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;kk-design/motion.js&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null,&quot;hashAfter&quot;:&quot;68ee231de11d3c77c6100ed9db36ee75d561bc8b445abd9b8a0a5a7b84378337&quot;,&quot;bytes&quot;:7521}
+{&quot;seq&quot;:22,&quot;ts&quot;:&quot;2026-09-07T14:42:06.094Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;kk-design/ATTRIBUTION.md&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null}
+{&quot;seq&quot;:23,&quot;ts&quot;:&quot;2026-09-07T14:42:06.096Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;kk-design/ATTRIBUTION.md&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null,&quot;hashAfter&quot;:&quot;ff073072e9550d38b4ebf149480d18aa7136614288adece6e8511edab772bea8&quot;,&quot;bytes&quot;:1812}
+{&quot;seq&quot;:24,&quot;ts&quot;:&quot;2026-09-07T14:42:06.097Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;kk-design/tokens.json&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null}
+{&quot;seq&quot;:25,&quot;ts&quot;:&quot;2026-09-07T14:42:06.100Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;kk-design/tokens.json&quot;,&quot;kind&quot;:&quot;create&quot;,&quot;hashBefore&quot;:null,&quot;hashAfter&quot;:&quot;5b2b5d79a2c43d3f7ef2b0738d29f2e6c54332f8f5d153de3664bcc7a082354a&quot;,&quot;bytes&quot;:4345}
+{&quot;seq&quot;:26,&quot;ts&quot;:&quot;2026-09-07T14:42:06.102Z&quot;,&quot;op&quot;:&quot;backup&quot;,&quot;path&quot;:&quot;index.html&quot;,&quot;hash&quot;:&quot;51376395f2316ed10e87a07b45ea3260e65ff117a53ff5259acee61cfb97c204&quot;}
+{&quot;seq&quot;:27,&quot;ts&quot;:&quot;2026-09-07T14:42:06.102Z&quot;,&quot;op&quot;:&quot;write_intent&quot;,&quot;path&quot;:&quot;index.html&quot;,&quot;kind&quot;:&quot;modify&quot;,&quot;hashBefore&quot;:&quot;51376395f2316ed10e87a07b45ea3260e65ff117a53ff5259acee61cfb97c204&quot;}
+{&quot;seq&quot;:28,&quot;ts&quot;:&quot;2026-09-07T14:42:06.103Z&quot;,&quot;op&quot;:&quot;write&quot;,&quot;path&quot;:&quot;index.html&quot;,&quot;kind&quot;:&quot;modify&quot;,&quot;hashBefore&quot;:&quot;51376395f2316ed10e87a07b45ea3260e65ff117a53ff5259acee61cfb97c204&quot;,&quot;hashAfter&quot;:&quot;fb38cf4944431054b30b036cd24c52d9bd79624720b330951a2cba2898a054e7&quot;,&quot;bytes&quot;:1847}
+{&quot;seq&quot;:29,&quot;ts&quot;:&quot;2026-09-07T14:42:06.105Z&quot;,&quot;op&quot;:&quot;state&quot;,&quot;state&quot;:&quot;written&quot;}
+{&quot;seq&quot;:30,&quot;ts&quot;:&quot;2026-09-07T14:42:06.108Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;write&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;files&quot;:6,&quot;integrity&quot;:true}}
+{&quot;seq&quot;:31,&quot;ts&quot;:&quot;2026-09-07T14:42:06.109Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;verify&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
+{&quot;seq&quot;:32,&quot;ts&quot;:&quot;2026-09-07T14:42:29.445Z&quot;,&quot;op&quot;:&quot;state&quot;,&quot;state&quot;:&quot;verified&quot;}
+{&quot;seq&quot;:33,&quot;ts&quot;:&quot;2026-09-07T14:42:29.448Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;verify&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;ok&quot;:true,&quot;mode&quot;:&quot;quick&quot;,&quot;failed&quot;:[],&quot;warned&quot;:[&quot;TOUCH-TARGET&quot;,&quot;A11Y-BASICS&quot;],&quot;loads&quot;:17}}
+{&quot;seq&quot;:34,&quot;ts&quot;:&quot;2026-09-07T14:42:29.450Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;decide&quot;,&quot;status&quot;:&quot;running&quot;,&quot;summary&quot;:{}}
+{&quot;seq&quot;:35,&quot;ts&quot;:&quot;2026-09-07T14:42:29.452Z&quot;,&quot;op&quot;:&quot;keep&quot;,&quot;note&quot;:&quot;verification passed&quot;}
+{&quot;seq&quot;:36,&quot;ts&quot;:&quot;2026-09-07T14:42:29.452Z&quot;,&quot;op&quot;:&quot;state&quot;,&quot;state&quot;:&quot;kept&quot;}
+{&quot;seq&quot;:37,&quot;ts&quot;:&quot;2026-09-07T14:42:29.453Z&quot;,&quot;op&quot;:&quot;stage&quot;,&quot;stage&quot;:&quot;decide&quot;,&quot;status&quot;:&quot;done&quot;,&quot;summary&quot;:{&quot;decision&quot;:&quot;keep&quot;,&quot;reason&quot;:&quot;verification passed on every gate&quot;}}</pre></div>
 
 <h2>Log</h2>
-<div class="panel"><pre>2026-09-07T14:26:33.696Z INFO kkgov transaction 20260907-142633-68b52c opened for /home/user/agent-tobo-web/kk-ui-governor/samples/app-with-dashboard
-2026-09-07T14:26:33.698Z INFO kkgov stage inspect: running
-2026-09-07T14:26:33.715Z INFO kkgov scan: html, css=[plain-css], 3 page(s), 5 UX problem(s), 0 generic pattern(s)
-2026-09-07T14:26:33.717Z INFO kkgov stage inspect: done
-2026-09-07T14:26:33.718Z INFO kkgov stage select: running
-2026-09-07T14:26:33.734Z INFO kkgov stage select: done
-2026-09-07T14:26:33.735Z INFO kkgov stage adapt: running
-2026-09-07T14:26:33.754Z INFO kkgov stage adapt: done
-2026-09-07T14:26:33.754Z INFO kkgov stage probe: running
-2026-09-07T14:26:33.998Z INFO kkgov probe: ok
-2026-09-07T14:26:34.002Z INFO kkgov stage probe: done
-2026-09-07T14:26:34.003Z INFO kkgov stage preview: running
-2026-09-07T14:26:34.003Z INFO kkgov scoped run: guarding 2 route(s) against any visual change: /settings.html, /dashboard.html
-2026-09-07T14:26:58.237Z INFO kkgov captured style signatures for 2 guard route(s)
-2026-09-07T14:26:58.260Z INFO kkgov baseline: RESP-SWEEP=2 FOLDABLE=1 FONT-200=1 FOCUS-VISIBLE=3 CONTRAST=16 OVERFLOW=2 TOUCH-TARGET=11
-2026-09-07T14:26:58.264Z INFO kkgov stage preview: done
-2026-09-07T14:26:58.266Z INFO kkgov stage write: running
-2026-09-07T14:26:58.271Z INFO kkgov create kk-design/tokens.css
-2026-09-07T14:26:58.274Z INFO kkgov create kk-design/theme.css
-2026-09-07T14:26:58.276Z INFO kkgov create kk-design/motion.js
-2026-09-07T14:26:58.279Z INFO kkgov create kk-design/ATTRIBUTION.md
-2026-09-07T14:26:58.281Z INFO kkgov create kk-design/tokens.json
-2026-09-07T14:26:58.285Z INFO kkgov modify index.html
-2026-09-07T14:26:58.289Z INFO kkgov stage write: done
-2026-09-07T14:26:58.290Z INFO kkgov stage verify: running
-2026-09-07T14:27:22.163Z INFO kkgov captured style signatures for 2 guard route(s)
-2026-09-07T14:27:22.201Z INFO kkgov stage verify: done
-2026-09-07T14:27:22.202Z INFO kkgov stage decide: running
-2026-09-07T14:27:22.204Z INFO kkgov stage decide: done</pre></div>
-<p style="color:var(--muted)">Generated by KK-UI-GOVERNOR 1.0.0 · 2026-09-07T14:27:22.215Z</p>
+<div class="panel"><pre>2026-09-07T14:41:41.265Z INFO kkgov transaction 20260907-144141-ea4567 opened for /home/user/agent-tobo-web/kk-ui-governor/samples/app-with-dashboard
+2026-09-07T14:41:41.268Z INFO kkgov stage inspect: running
+2026-09-07T14:41:41.287Z INFO kkgov scan: html, css=[plain-css], 3 page(s), 5 UX problem(s), 0 generic pattern(s)
+2026-09-07T14:41:41.289Z INFO kkgov stage inspect: done
+2026-09-07T14:41:41.291Z INFO kkgov stage select: running
+2026-09-07T14:41:41.309Z INFO kkgov stage select: done
+2026-09-07T14:41:41.310Z INFO kkgov stage adapt: running
+2026-09-07T14:41:41.334Z INFO kkgov stage adapt: done
+2026-09-07T14:41:41.336Z INFO kkgov stage probe: running
+2026-09-07T14:41:41.586Z INFO kkgov probe: ok
+2026-09-07T14:41:41.591Z INFO kkgov stage probe: done
+2026-09-07T14:41:41.592Z INFO kkgov stage preview: running
+2026-09-07T14:41:41.592Z INFO kkgov scoped run: guarding 2 route(s) against any visual change: /settings.html, /dashboard.html
+2026-09-07T14:42:06.037Z INFO kkgov captured style signatures for 2 guard route(s)
+2026-09-07T14:42:06.061Z INFO kkgov baseline: RESP-SWEEP=2 FOLDABLE=1 FONT-200=1 FOCUS-VISIBLE=3 CONTRAST=16 OVERFLOW=2 TOUCH-TARGET=11
+2026-09-07T14:42:06.063Z INFO kkgov stage preview: done
+2026-09-07T14:42:06.067Z INFO kkgov stage write: running
+2026-09-07T14:42:06.085Z INFO kkgov create kk-design/tokens.css
+2026-09-07T14:42:06.088Z INFO kkgov create kk-design/theme.css
+2026-09-07T14:42:06.093Z INFO kkgov create kk-design/motion.js
+2026-09-07T14:42:06.097Z INFO kkgov create kk-design/ATTRIBUTION.md
+2026-09-07T14:42:06.101Z INFO kkgov create kk-design/tokens.json
+2026-09-07T14:42:06.105Z INFO kkgov modify index.html
+2026-09-07T14:42:06.109Z INFO kkgov stage write: done
+2026-09-07T14:42:06.110Z INFO kkgov stage verify: running
+2026-09-07T14:42:29.428Z INFO kkgov captured style signatures for 2 guard route(s)
+2026-09-07T14:42:29.450Z INFO kkgov stage verify: done
+2026-09-07T14:42:29.451Z INFO kkgov stage decide: running
+2026-09-07T14:42:29.454Z INFO kkgov stage decide: done</pre></div>
+<p style="color:var(--muted)">Generated by KK-UI-GOVERNOR 1.0.0 · 2026-09-07T14:42:29.465Z</p>
 </main></body></html>
