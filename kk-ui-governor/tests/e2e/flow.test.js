@@ -94,11 +94,24 @@ test('decide=ask leaves the transaction pending; keep then finalises it', { time
   if (!(await browserAvailable())) { t.skip('no Chromium available'); return; }
   const { root } = await freshSample();
   const g = new Governor({ projectRoot: root, vaultDir: vault, logger: new Logger({ level: 'error', prefix: 'e2e' }) });
-  const r = await g.apply({ selection: { preset: 'minimal-docs' }, verifyMode: 'quick', decide: 'ask', preview: false, baseline: false });
-  assert.equal(r.verdict, 'PENDING');
+  // The baseline stays on: it is what makes "never worse" meaningful. Without it every pre-existing
+  // finding in the project is charged to the candidate, which is the conservative behaviour asserted below.
+  const r = await g.apply({ selection: { preset: 'minimal-docs' }, verifyMode: 'quick', decide: 'ask', preview: false });
+  assert.equal(r.verdict, 'PENDING', JSON.stringify(r.verification));
   assert.equal(r.state, 'pending');
   const k = await g.keep(r.txId);
   assert.equal(k.state, 'kept');
   const list = await g.status();
   assert.equal(list.find((m) => m.id === r.txId).state, 'kept');
+});
+
+test('without a baseline the candidate is judged strictly: pre-existing findings are charged to it', { timeout: 15 * 60 * 1000 }, async (t) => {
+  if (!(await browserAvailable())) { t.skip('no Chromium available'); return; }
+  const { root, hashes } = await freshSample();
+  const g = new Governor({ projectRoot: root, vaultDir: vault, logger: new Logger({ level: 'error', prefix: 'e2e' }) });
+  const r = await g.apply({ selection: { preset: 'minimal-docs' }, verifyMode: 'quick', decide: 'auto', preview: false, baseline: false });
+  assert.equal(r.verdict, 'FAIL', 'no baseline means the sample own pre-existing problems fail the run');
+  assert.equal(r.state, 'rolled_back');
+  const restored = await snapshot(root);
+  for (const [f, h] of Object.entries(hashes)) assert.equal(restored[f], h, f);
 });

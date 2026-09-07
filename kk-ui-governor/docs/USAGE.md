@@ -27,7 +27,10 @@ Everything is selectable; anything left unset is auto-recommended from the scan.
 ```
 --verify quick|standard|full|static     depth of verification (static never yields PASS)
 --decide auto|ask|rollback              auto keeps on pass; ask leaves the transaction pending; rollback = dry run
---no-preview --no-baseline --allow-unsupported --max-pages N
+--no-preview --no-baseline --no-build --allow-unsupported --max-pages N
+                                        --no-baseline makes verification strict: with nothing to compare against,
+                                        the project's own pre-existing findings are charged to the candidate.
+                                        --no-build skips the project's production build check (framework projects).
 kkgov status <project>                  list transactions
 kkgov keep|rollback <project> <txId>    decide / undo (rollback also undoes kept transactions)
 kkgov recover <project>                 roll back anything interrupted by a crash
