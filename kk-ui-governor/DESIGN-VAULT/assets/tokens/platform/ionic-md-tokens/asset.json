@@ -1,0 +1,58 @@
+{
+  "id": "ionic-md-tokens",
+  "category": "tokens/platform",
+  "designStyle": [
+    "native-app"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "android-material"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "sass"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "mobile",
+    "foldable",
+    "tablet"
+  ],
+  "performanceCost": "none",
+  "accessibility": "n/a",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5874331e96cbad080c41220a740a8fffd1a9699b",
+  "upstream": {
+    "repo": "ionic-team/ionic-framework",
+    "commit": "5874331e96cbad080c41220a740a8fffd1a9699b",
+    "url": "https://github.com/ionic-team/ionic-framework/tree/5874331e96cbad080c41220a740a8fffd1a9699b",
+    "path": "core/src/themes/ionic.globals.md.scss"
+  },
+  "files": [
+    {
+      "path": "core/src/themes/ionic.globals.md.scss",
+      "sha256": "4cb99b3e9948507ce0e16bce92939bbaf4c510dfbac34d1867e8ffc74c4d6e3f",
+      "bytes": 108,
+      "vaultPath": "assets/tokens/platform/ionic-md-tokens/files/core/src/themes/ionic.globals.md.scss"
+    },
+    {
+      "path": "core/src/themes/ionic.theme.default.md.scss",
+      "sha256": "e75d4e251230026f311fb2b573c409f39903bcf73cccd925c5d1dcff74922d63",
+      "bytes": 2652,
+      "vaultPath": "assets/tokens/platform/ionic-md-tokens/files/core/src/themes/ionic.theme.default.md.scss"
+    },
+    {
+      "path": "core/src/components/button/button.md.vars.scss",
+      "sha256": "48d292bf8d0b42e1e5a8cb06f4f70a3252578aec39c49e8927e4d2f829e5a61d",
+      "bytes": 4495,
+      "vaultPath": "assets/tokens/platform/ionic-md-tokens/files/core/src/components/button/button.md.vars.scss"
+    }
+  ],
+  "licenseNotice": "sources/ionic/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

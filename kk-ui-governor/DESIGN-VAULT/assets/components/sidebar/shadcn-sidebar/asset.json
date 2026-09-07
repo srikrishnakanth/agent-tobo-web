@@ -1,0 +1,58 @@
+{
+  "id": "shadcn-sidebar",
+  "category": "components/sidebar",
+  "designStyle": [
+    "enterprise",
+    "modern",
+    "data-dense"
+  ],
+  "pageType": [
+    "dashboard",
+    "admin",
+    "crm",
+    "inbox",
+    "settings",
+    "docs"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "deviceSuitability": [
+    "tablet",
+    "desktop",
+    "ultrawide"
+  ],
+  "performanceCost": "medium",
+  "accessibility": "keyboard shortcut, collapsible with aria",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/sidebar.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/sidebar.tsx",
+      "sha256": "2ba1a9b9422f4172373f4cd0587b675d2331a41f4fa68f65dab2b23ca98fd9d2",
+      "bytes": 21713,
+      "vaultPath": "assets/components/sidebar/shadcn-sidebar/files/apps/v4/registry/new-york-v4/ui/sidebar.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

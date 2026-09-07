@@ -1,0 +1,44 @@
+{
+  "id": "open-props-borders",
+  "category": "tokens/radius",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "n/a",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+  "upstream": {
+    "repo": "argyleink/open-props",
+    "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "path": "src/props.borders.css"
+  },
+  "files": [
+    {
+      "path": "src/props.borders.css",
+      "sha256": "90a7d2cc5664647983d80d5c25fea69bc8b0a57ad9898ecd2c22f33cb742fda6",
+      "bytes": 1439,
+      "vaultPath": "assets/tokens/radius/open-props-borders/files/src/props.borders.css"
+    }
+  ],
+  "licenseNotice": "sources/open-props/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

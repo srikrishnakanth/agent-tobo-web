@@ -1,0 +1,89 @@
+{
+  "id": "material-tokens",
+  "category": "tokens/platform",
+  "designStyle": [
+    "native-app",
+    "modern"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "android-material"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "mobile",
+    "foldable",
+    "tablet"
+  ],
+  "performanceCost": "none",
+  "accessibility": "Material 3 tonal palettes with on-colour pairs",
+  "darkMode": true,
+  "license": "Apache-2.0",
+  "sourceCommit": "c05b4b23485c803f68ff31cde52506cea5cc555a",
+  "upstream": {
+    "repo": "material-components/material-web",
+    "commit": "c05b4b23485c803f68ff31cde52506cea5cc555a",
+    "url": "https://github.com/material-components/material-web/tree/c05b4b23485c803f68ff31cde52506cea5cc555a",
+    "path": "tokens/_md-sys-color.scss"
+  },
+  "files": [
+    {
+      "path": "tokens/_md-sys-color.scss",
+      "sha256": "5014a3850f0cc2edecfb35b9b451f835163b005d7be66661abda231ce29ae344",
+      "bytes": 2533,
+      "vaultPath": "assets/tokens/platform/material-tokens/files/tokens/_md-sys-color.scss"
+    },
+    {
+      "path": "tokens/_md-sys-typescale.scss",
+      "sha256": "47adbaed382734b22179d48a49f41f2d814b20ca52dee48f2efd5a171d1a1a29",
+      "bytes": 3426,
+      "vaultPath": "assets/tokens/platform/material-tokens/files/tokens/_md-sys-typescale.scss"
+    },
+    {
+      "path": "tokens/_md-sys-shape.scss",
+      "sha256": "09945a1d4abda485cc8d2562276967870f5bc5491358c55b47ebdec4d3489d87",
+      "bytes": 2744,
+      "vaultPath": "assets/tokens/platform/material-tokens/files/tokens/_md-sys-shape.scss"
+    },
+    {
+      "path": "tokens/_md-sys-motion.scss",
+      "sha256": "75e8f3c3dbf442f6b4509298215208924125d4bc4a90a6e71d10b89a926642a7",
+      "bytes": 274,
+      "vaultPath": "assets/tokens/platform/material-tokens/files/tokens/_md-sys-motion.scss"
+    },
+    {
+      "path": "tokens/_md-sys-elevation.scss",
+      "sha256": "aa454b036b392b62e9d917a6de15827e788d09b87ea4f35e5cec8cac71b42b0d",
+      "bytes": 932,
+      "vaultPath": "assets/tokens/platform/material-tokens/files/tokens/_md-sys-elevation.scss"
+    },
+    {
+      "path": "tokens/_md-sys-state.scss",
+      "sha256": "b8b968727668f56b4ed27db119215e2272bdac9556a5e601753b5d1f141d1f36",
+      "bytes": 272,
+      "vaultPath": "assets/tokens/platform/material-tokens/files/tokens/_md-sys-state.scss"
+    },
+    {
+      "path": "tokens/_md-ref-palette.scss",
+      "sha256": "092b2c721e1aa239944379e6aec3b008e29083eb460f40986593126f4ad67923",
+      "bytes": 1916,
+      "vaultPath": "assets/tokens/platform/material-tokens/files/tokens/_md-ref-palette.scss"
+    },
+    {
+      "path": "tokens/_md-ref-typeface.scss",
+      "sha256": "f6ddc09b6490d92f4e91a56ef67c0cca3b32e5bc45ed7792d6326a100d276c56",
+      "bytes": 976,
+      "vaultPath": "assets/tokens/platform/material-tokens/files/tokens/_md-ref-typeface.scss"
+    }
+  ],
+  "licenseNotice": "sources/material-web/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "shadcn-switch",
+  "category": "components/switch",
+  "designStyle": [
+    "modern",
+    "native-app",
+    "minimal"
+  ],
+  "pageType": [
+    "settings",
+    "onboarding"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "@radix-ui/react-switch"
+  ],
+  "deviceSuitability": [
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
+  "performanceCost": "low",
+  "accessibility": "role=switch (Radix)",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/switch.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/switch.tsx",
+      "sha256": "743676f33f823ffa8008bbd5eb94cb68e227599447d60e132a202291a395f8e4",
+      "bytes": 1398,
+      "vaultPath": "assets/components/switch/shadcn-switch/files/apps/v4/registry/new-york-v4/ui/switch.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

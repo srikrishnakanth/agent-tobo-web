@@ -1,0 +1,53 @@
+{
+  "id": "font-syne",
+  "category": "typography/font",
+  "designStyle": [
+    "creative",
+    "3d"
+  ],
+  "pageType": [
+    "landing"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "headings only",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Syne",
+  "role": "display",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/syne/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/syne/OFL.txt",
+      "sha256": "cc43cdce6f91c57989af8459341c276655e34224e954fa69c2ad700831a742d8",
+      "bytes": 4402,
+      "vaultPath": "assets/typography/font/font-syne/files/ofl/syne/OFL.txt"
+    },
+    {
+      "path": "ofl/syne/METADATA.pb",
+      "sha256": "ed8e42eac65f684ca698aaa4f918b3985c932a7a12d57e55183184fe8dcaadb7",
+      "bytes": 924,
+      "vaultPath": "assets/typography/font/font-syne/files/ofl/syne/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

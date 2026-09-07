@@ -1,0 +1,60 @@
+{
+  "id": "daisyui-themes",
+  "category": "tokens/theme",
+  "designStyle": [
+    "modern",
+    "creative",
+    "visual-rich"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "daisyui"
+  ],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "theme colour pairs (content colours) designed for contrast",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "1435c6598bf6b93bf59c5b99e6669cf2720f5e81",
+  "upstream": {
+    "repo": "saadeghi/daisyui",
+    "commit": "1435c6598bf6b93bf59c5b99e6669cf2720f5e81",
+    "url": "https://github.com/saadeghi/daisyui/tree/1435c6598bf6b93bf59c5b99e6669cf2720f5e81",
+    "path": "packages/daisyui/src/themes/light.css"
+  },
+  "files": [
+    {
+      "path": "packages/daisyui/src/themes/light.css",
+      "sha256": "6384d462b607629485ba26fa7d65af21b50bd1f844d4e5733bae2dd4f56201f2",
+      "bytes": 1070,
+      "vaultPath": "assets/tokens/theme/daisyui-themes/files/packages/daisyui/src/themes/light.css"
+    },
+    {
+      "path": "packages/daisyui/src/themes/dark.css",
+      "sha256": "832bfbb806b81e5bac0355c42b389c7ff1321589e70292eb1cb037e248b490d1",
+      "bytes": 1108,
+      "vaultPath": "assets/tokens/theme/daisyui-themes/files/packages/daisyui/src/themes/dark.css"
+    },
+    {
+      "path": "packages/daisyui/src/base/properties.css",
+      "sha256": "b67e8db645419f074c5dc044b841fc854bae06f82427c1538de5075bbc9574cd",
+      "bytes": 187,
+      "vaultPath": "assets/tokens/theme/daisyui-themes/files/packages/daisyui/src/base/properties.css"
+    }
+  ],
+  "licenseNotice": "sources/daisyui/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

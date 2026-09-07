@@ -1,0 +1,46 @@
+{
+  "id": "open-props-gradients",
+  "category": "tokens/gradient",
+  "designStyle": [
+    "creative",
+    "visual-rich",
+    "luxury"
+  ],
+  "pageType": [
+    "landing"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "check text contrast over gradients",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+  "upstream": {
+    "repo": "argyleink/open-props",
+    "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "path": "src/props.gradients.css"
+  },
+  "files": [
+    {
+      "path": "src/props.gradients.css",
+      "sha256": "15643c50e9bb668b11e320d1f7ead5712444afbbe50486dd7de2b4dbf4faa520",
+      "bytes": 6393,
+      "vaultPath": "assets/tokens/gradient/open-props-gradients/files/src/props.gradients.css"
+    }
+  ],
+  "licenseNotice": "sources/open-props/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

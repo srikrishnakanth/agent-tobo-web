@@ -1,0 +1,55 @@
+{
+  "id": "font-source-serif-4",
+  "category": "typography/font",
+  "designStyle": [
+    "luxury",
+    "enterprise",
+    "docs"
+  ],
+  "pageType": [
+    "docs",
+    "landing"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "body serif",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Source Serif 4",
+  "role": "serif",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/sourceserif4/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/sourceserif4/OFL.txt",
+      "sha256": "5f94c3fd3a23131a417ab5a0c8452de57e70c3cfb9f604d88241f7065ebf9fd9",
+      "bytes": 4400,
+      "vaultPath": "assets/typography/font/font-source-serif-4/files/ofl/sourceserif4/OFL.txt"
+    },
+    {
+      "path": "ofl/sourceserif4/METADATA.pb",
+      "sha256": "f7b88902c1d2f41839a3f7bf6723d1e64044c7c183b82871ce770a95f24b84e3",
+      "bytes": 1132,
+      "vaultPath": "assets/typography/font/font-source-serif-4/files/ofl/sourceserif4/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

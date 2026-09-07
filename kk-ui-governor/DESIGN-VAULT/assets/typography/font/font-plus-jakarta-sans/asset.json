@@ -1,0 +1,54 @@
+{
+  "id": "font-plus-jakarta-sans",
+  "category": "typography/font",
+  "designStyle": [
+    "premium",
+    "modern",
+    "native-app"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "clear letterforms",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Plus Jakarta Sans",
+  "role": "sans",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/plusjakartasans/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/plusjakartasans/OFL.txt",
+      "sha256": "995c7199cab65954f545996326755daee7b63cc6b42b06c13da1f9502ab08a99",
+      "bytes": 4402,
+      "vaultPath": "assets/typography/font/font-plus-jakarta-sans/files/ofl/plusjakartasans/OFL.txt"
+    },
+    {
+      "path": "ofl/plusjakartasans/METADATA.pb",
+      "sha256": "e7953d66e52a1e09235d75fc7aef7139c2733c0b5507afcf6e9afbe0fcef1de6",
+      "bytes": 1396,
+      "vaultPath": "assets/typography/font/font-plus-jakarta-sans/files/ofl/plusjakartasans/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

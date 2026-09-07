@@ -1,0 +1,54 @@
+{
+  "id": "font-ibm-plex-mono",
+  "category": "typography/font",
+  "designStyle": [
+    "enterprise",
+    "data-dense"
+  ],
+  "pageType": [
+    "dashboard",
+    "docs"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "tabular figures",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "IBM Plex Mono",
+  "role": "mono",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/ibmplexmono/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/ibmplexmono/OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "bytes": 4456,
+      "vaultPath": "assets/typography/font/font-ibm-plex-mono/files/ofl/ibmplexmono/OFL.txt"
+    },
+    {
+      "path": "ofl/ibmplexmono/METADATA.pb",
+      "sha256": "2eb58f75e032cc5e021887aa7b02bf11bf548710fc5b6f23eb19c440df101a0b",
+      "bytes": 6309,
+      "vaultPath": "assets/typography/font/font-ibm-plex-mono/files/ofl/ibmplexmono/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

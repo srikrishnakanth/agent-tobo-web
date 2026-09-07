@@ -1,0 +1,137 @@
+{
+  "id": "heroicons-outline-core",
+  "category": "icons",
+  "designStyle": [
+    "modern",
+    "minimal",
+    "enterprise",
+    "premium"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "inline SVG; add aria-hidden or a title",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+  "upstream": {
+    "repo": "tailwindlabs/heroicons",
+    "commit": "616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+    "url": "https://github.com/tailwindlabs/heroicons/tree/616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+    "path": "optimized/24/outline/bars-3.svg"
+  },
+  "files": [
+    {
+      "path": "optimized/24/outline/bars-3.svg",
+      "sha256": "0e76cceaeef6685444adf1ccb47d743d791d30e19181289ce19d3fb5e5c7ed74",
+      "bytes": 263,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/bars-3.svg"
+    },
+    {
+      "path": "optimized/24/outline/x-mark.svg",
+      "sha256": "f44f8d4070a779c324f07a199122b4cc8686b5a8d9705727dc38d0cfd3bb27ec",
+      "bytes": 239,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/x-mark.svg"
+    },
+    {
+      "path": "optimized/24/outline/magnifying-glass.svg",
+      "sha256": "3566eaf416d279baea18ebc5ccb5a9500f646a1afd42d1dc04f48581e24797eb",
+      "bytes": 296,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/magnifying-glass.svg"
+    },
+    {
+      "path": "optimized/24/outline/chevron-down.svg",
+      "sha256": "2eacb6cecd8f1ab845a2a8417074b0dab9fd9612cdf56d76be45b82adb2933f5",
+      "bytes": 245,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/chevron-down.svg"
+    },
+    {
+      "path": "optimized/24/outline/sun.svg",
+      "sha256": "e55df00558e838b63e6aeebc4af511b37a427f739ce1c4a63a8116a558b1b12e",
+      "bytes": 412,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/sun.svg"
+    },
+    {
+      "path": "optimized/24/outline/moon.svg",
+      "sha256": "4dfd046e7cc6747a64b7656d5eec90907fe1eec8e7a1d3467ca25f6e599d3908",
+      "bytes": 399,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/moon.svg"
+    },
+    {
+      "path": "optimized/24/outline/user.svg",
+      "sha256": "73fa969e35b58fdf764fb90fce1f848c4ca4c4b20184ce8bf9bd442700456356",
+      "bytes": 370,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/user.svg"
+    },
+    {
+      "path": "optimized/24/outline/cog-6-tooth.svg",
+      "sha256": "aee6f966b9491c2a8aed12bdc20193affe259964930ae6e2e264f0dc26e163fb",
+      "bytes": 1315,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/cog-6-tooth.svg"
+    },
+    {
+      "path": "optimized/24/outline/bell.svg",
+      "sha256": "d83055fd6fd4a9ed31fdbfb87f4c1dbf58eefd307acbfce6ccb44dc7b298c8b0",
+      "bytes": 433,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/bell.svg"
+    },
+    {
+      "path": "optimized/24/outline/home.svg",
+      "sha256": "bf22818e3638f217e824ff26c8ffaf2ef014803982ca7c430e6c3c20915b185a",
+      "bytes": 453,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/home.svg"
+    },
+    {
+      "path": "optimized/24/outline/chart-bar.svg",
+      "sha256": "544fcc117350dcd26a3c8cc7388e791aa4b8f5b810b8f028229dcc9698ef6325",
+      "bytes": 667,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/chart-bar.svg"
+    },
+    {
+      "path": "optimized/24/outline/shopping-cart.svg",
+      "sha256": "c732af619e4d2ccc83f1bacc046170e42b61d91275eec5d3dc0ccb27e17be57a",
+      "bytes": 494,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/shopping-cart.svg"
+    },
+    {
+      "path": "optimized/24/outline/inbox.svg",
+      "sha256": "b8403f003a21d927fd0be3217626f53bd47fdaa1e6b519586aba963325cba9f5",
+      "bytes": 584,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/inbox.svg"
+    },
+    {
+      "path": "optimized/24/outline/arrow-right.svg",
+      "sha256": "2602a360312e14dc92da066780fed8e0b5eaf65e196b7d82b0e7cb5aed817015",
+      "bytes": 254,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/arrow-right.svg"
+    },
+    {
+      "path": "optimized/24/outline/check.svg",
+      "sha256": "a38b003121485ad864240dd3145324deae133485f3ed28a8a9d99747912c5f18",
+      "bytes": 240,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/check.svg"
+    },
+    {
+      "path": "optimized/24/outline/exclamation-triangle.svg",
+      "sha256": "3952df551d6c3b81b236831a5457931d9df1d8e5d9112e8f5de01b5c61e3144d",
+      "bytes": 395,
+      "vaultPath": "assets/icons/heroicons-outline-core/files/optimized/24/outline/exclamation-triangle.svg"
+    }
+  ],
+  "licenseNotice": "sources/heroicons/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

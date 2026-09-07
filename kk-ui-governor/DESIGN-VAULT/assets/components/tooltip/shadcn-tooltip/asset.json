@@ -1,0 +1,48 @@
+{
+  "id": "shadcn-tooltip",
+  "category": "components/tooltip",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "@radix-ui/react-tooltip"
+  ],
+  "deviceSuitability": [
+    "desktop",
+    "ultrawide"
+  ],
+  "performanceCost": "low",
+  "accessibility": "hover-only affordance; not for essential info on touch",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/tooltip.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/tooltip.tsx",
+      "sha256": "611e4305879b2773eafe76bf3c5caa69d8e47367fd97887a71634a27828f4433",
+      "bytes": 1820,
+      "vaultPath": "assets/components/tooltip/shadcn-tooltip/files/apps/v4/registry/new-york-v4/ui/tooltip.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

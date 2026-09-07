@@ -1,0 +1,615 @@
+{
+  "manifestVersion": "1.0.0",
+  "generatedAt": "2026-09-07T14:20:27.163Z",
+  "sources": {
+    "shadcn-ui": {
+      "repo": "shadcn-ui/ui",
+      "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+      "license": "MIT",
+      "licenseSha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+      "licenseOk": true
+    },
+    "radix-colors": {
+      "repo": "radix-ui/colors",
+      "commit": "dbdb85470547c7d34b9001f48fddb08ded335979",
+      "license": "MIT",
+      "licenseSha256": "d981bc30e0d78b9ffc8f279fcaa274ea0444ff51d983548a609397d5c8a42dc2",
+      "licenseOk": true
+    },
+    "heroicons": {
+      "repo": "tailwindlabs/heroicons",
+      "commit": "616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+      "license": "MIT",
+      "licenseSha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985",
+      "licenseOk": true
+    },
+    "lucide": {
+      "repo": "lucide-icons/lucide",
+      "commit": "3859eb20fabe7fd95652fcd4395843b6c0bcdd01",
+      "license": "ISC",
+      "licenseSha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57",
+      "licenseOk": true
+    },
+    "tabler-icons": {
+      "repo": "tabler/tabler-icons",
+      "commit": "55f87a73f45cf1d9eaf16d7da705065483a9e4f9",
+      "license": "MIT",
+      "licenseSha256": "b740a1d46122672da62833e97f7e7c8a13fa85cbc7445b584b297cc00dde93db",
+      "licenseOk": true
+    },
+    "open-props": {
+      "repo": "argyleink/open-props",
+      "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+      "license": "MIT",
+      "licenseSha256": "fed3aa342094f6bb33701d09133c159a4c124e509ede255a889dd2c28ec3ab6e",
+      "licenseOk": true
+    },
+    "pico": {
+      "repo": "picocss/pico",
+      "commit": "1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+      "license": "MIT",
+      "licenseSha256": "afaff063e044233f917b7807dccab022f09dca474f92b642846bee4850655bbf",
+      "licenseOk": true
+    },
+    "daisyui": {
+      "repo": "saadeghi/daisyui",
+      "commit": "1435c6598bf6b93bf59c5b99e6669cf2720f5e81",
+      "license": "MIT",
+      "licenseSha256": "8709e3ac65c84637c422dc8082b893d9997fce093751c77b2f1983bf29dbf9ea",
+      "licenseOk": true
+    },
+    "fluentui-tokens": {
+      "repo": "microsoft/fluentui",
+      "commit": "6d627faf68c5b5a3f3cd9c97ea96b520c5b87f06",
+      "license": "MIT",
+      "licenseSha256": "8189edb8b17032b0fa631dc776cc363080a51e8650821c8faad43ec22a303685",
+      "licenseOk": true
+    },
+    "material-web": {
+      "repo": "material-components/material-web",
+      "commit": "c05b4b23485c803f68ff31cde52506cea5cc555a",
+      "license": "Apache-2.0",
+      "licenseSha256": "295cdb4364b782931c914f5ca8c47fac87c732fa7e448b788a47aa5b25728212",
+      "licenseOk": true
+    },
+    "ionic": {
+      "repo": "ionic-team/ionic-framework",
+      "commit": "5874331e96cbad080c41220a740a8fffd1a9699b",
+      "license": "MIT",
+      "licenseSha256": "4862ae1846439cae0cc097120a14e93a142d36016a9fc609b5d23959e3ff041f",
+      "licenseOk": true
+    },
+    "swiper": {
+      "repo": "nolimits4web/swiper",
+      "commit": "b3786674f458f0fd53af461a5300e552b145014f",
+      "license": "MIT",
+      "licenseSha256": "99f08e3e3ee0799fe1488fcbcb41dc933b14873e9556693209daf9e1007601d6",
+      "licenseOk": true
+    },
+    "threejs": {
+      "repo": "mrdoob/three.js",
+      "commit": "2016416a4dc443c4511fa9c0e762301eb0ca759b",
+      "license": "MIT",
+      "licenseSha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "licenseOk": true
+    },
+    "motion": {
+      "repo": "motiondivision/motion",
+      "commit": "e871ba7f175d0609cef84f416f984e8e84be8333",
+      "license": "MIT",
+      "licenseSha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "licenseOk": true
+    },
+    "chartjs": {
+      "repo": "chartjs/Chart.js",
+      "commit": "cb02e1d207bd4c4c40b20c259017f85f26f1e30a",
+      "license": "MIT",
+      "licenseSha256": "41a84aa2caba645f966a18d9c2056b73e6d3a81d80bc0046bc0011a2634d4cce",
+      "licenseOk": true
+    },
+    "google-fonts": {
+      "repo": "google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "license": "OFL-1.1",
+      "licenseSha256": "e01b637272e0cbdfb240184dd98ea5cc671556d9894dae2668d92ab2c906787c",
+      "licenseOk": true
+    },
+    "modern-normalize": {
+      "repo": "sindresorhus/modern-normalize",
+      "commit": "27c3f5fe3109b4041a835a0fa569e09c77022bf8",
+      "license": "MIT",
+      "licenseSha256": "52390989c3437957416a692ac5fd2fbe08d8c7dcb725ef5f43d1c817640c04ae",
+      "licenseOk": true
+    }
+  },
+  "assets": [
+    {
+      "id": "shadcn-button",
+      "files": [
+        "79dd6f75f8136394442202d6b8b922fb269eaad0a5dba579397c9d5b41f893bb"
+      ]
+    },
+    {
+      "id": "shadcn-card",
+      "files": [
+        "ef8305b12c3112dab42a4708b41b1ebcc042fa5ab4c20f039da8d45b09ed5059"
+      ]
+    },
+    {
+      "id": "shadcn-input",
+      "files": [
+        "0c9457181f6ddc80969bcf854e92c362903a55b6e889fbef3fd85343ecc4af5b"
+      ]
+    },
+    {
+      "id": "shadcn-table",
+      "files": [
+        "bd1a9fc83a5a2149e504038e274bb7e5a0351af59f6896df52ac4d5b439695ac"
+      ]
+    },
+    {
+      "id": "shadcn-dialog",
+      "files": [
+        "2ade6074e5fad0a4eb171ead44c43d3301a3c83d186d7236fb1fdbea80ee556b"
+      ]
+    },
+    {
+      "id": "shadcn-sheet",
+      "files": [
+        "ea473d38a26a9b0b879e5a13139899ad45e9782e896b3fa205c7763a6c506876"
+      ]
+    },
+    {
+      "id": "shadcn-sidebar",
+      "files": [
+        "2ba1a9b9422f4172373f4cd0587b675d2331a41f4fa68f65dab2b23ca98fd9d2"
+      ]
+    },
+    {
+      "id": "shadcn-navigation-menu",
+      "files": [
+        "fbe81d7c358df0d21e49b03174ef53be7d66226a3dce1a97ff3d4a260ed833a3"
+      ]
+    },
+    {
+      "id": "shadcn-tabs",
+      "files": [
+        "e1df6e2f95ece373ca909c1d54b8ba8cf4c47dd425c1784bbb9a01c38dd0936b"
+      ]
+    },
+    {
+      "id": "shadcn-chart",
+      "files": [
+        "35e2fa755465ef8eb8ff8b483d493204d452152e7a8863474b1a69f5d44484db"
+      ]
+    },
+    {
+      "id": "shadcn-badge",
+      "files": [
+        "13a9380dfff853ee730c14a52df49f22aecd31f40f2998d7c1e7ec458b6e1650"
+      ]
+    },
+    {
+      "id": "shadcn-carousel",
+      "files": [
+        "70ba30941a3adb448166ddcf8557c97734b7be09f6fd69512a6e444084365557"
+      ]
+    },
+    {
+      "id": "shadcn-skeleton",
+      "files": [
+        "f51ce0fcd31e5c31437382e80ea0af94b4fc3d64221d27091d36824546780a43"
+      ]
+    },
+    {
+      "id": "shadcn-select",
+      "files": [
+        "962830436bd0b7ee50e556f0747e277d6a86869ed27d167516346b15f26309d8"
+      ]
+    },
+    {
+      "id": "shadcn-switch",
+      "files": [
+        "743676f33f823ffa8008bbd5eb94cb68e227599447d60e132a202291a395f8e4"
+      ]
+    },
+    {
+      "id": "shadcn-tooltip",
+      "files": [
+        "611e4305879b2773eafe76bf3c5caa69d8e47367fd97887a71634a27828f4433"
+      ]
+    },
+    {
+      "id": "radix-colors-light",
+      "files": [
+        "1a9725486609d36b469caa3b84b8de4348b7f2f05d45905127637b988329acbd"
+      ]
+    },
+    {
+      "id": "radix-colors-dark",
+      "files": [
+        "d8599fe69a4454340b2bc82e003a210caa6b79082be9a1b7f13429ff03826c68"
+      ]
+    },
+    {
+      "id": "open-props-shadows",
+      "files": [
+        "188e84bdc985e4b779b7566dfcf9458f81ddd1217fe21b8c02a5a2a8a12b57cb"
+      ]
+    },
+    {
+      "id": "open-props-easing",
+      "files": [
+        "0767db9d3c7a630d21cd399cf9797357713a4b675e48c8281af62cddd8f01ee0"
+      ]
+    },
+    {
+      "id": "open-props-animations",
+      "files": [
+        "edf87abfb326ebaf56bdbbbde57b090723481875c238b9a54ec598c033a53042"
+      ]
+    },
+    {
+      "id": "open-props-sizes",
+      "files": [
+        "9df4d9369105ef74288efcf9c0261d2ef9893e09669f25637e46a87f8109d583"
+      ]
+    },
+    {
+      "id": "open-props-borders",
+      "files": [
+        "90a7d2cc5664647983d80d5c25fea69bc8b0a57ad9898ecd2c22f33cb742fda6"
+      ]
+    },
+    {
+      "id": "open-props-fonts",
+      "files": [
+        "ba041962ded7cb37a69021fc8ebb84ca586269bb36e6a4a8b4de34630068727b"
+      ]
+    },
+    {
+      "id": "open-props-media",
+      "files": [
+        "d898e8904fb72caf3ffc08b1a5d8b06712ccbcafde0e59c8717647fa170280b1"
+      ]
+    },
+    {
+      "id": "open-props-gradients",
+      "files": [
+        "15643c50e9bb668b11e320d1f7ead5712444afbbe50486dd7de2b4dbf4faa520"
+      ]
+    },
+    {
+      "id": "open-props-zindex",
+      "files": [
+        "400f20403f34f8f9790cba958942f728588a22315f68163e67e3686cefbca6b9"
+      ]
+    },
+    {
+      "id": "pico-settings",
+      "files": [
+        "8ded54795a73e6f690cfd12ca6f02c13fd0faf94aa287aa970b045da68bd5a1d"
+      ]
+    },
+    {
+      "id": "pico-classless",
+      "files": [
+        "76994d55389adc669e0d975a31e33041e81fde36d7d56ad912f3731b222cbdfb"
+      ]
+    },
+    {
+      "id": "daisyui-themes",
+      "files": [
+        "6384d462b607629485ba26fa7d65af21b50bd1f844d4e5733bae2dd4f56201f2",
+        "832bfbb806b81e5bac0355c42b389c7ff1321589e70292eb1cb037e248b490d1",
+        "b67e8db645419f074c5dc044b841fc854bae06f82427c1538de5075bbc9574cd"
+      ]
+    },
+    {
+      "id": "tabler-outline-core",
+      "files": [
+        "a0080a4db00a4168cfea54a74724e4147cbd9d003f65e70fa367ae797b9cfed8",
+        "6b97b0d51512b84eee04c0644fd07059a9c21d537886cdb40ef48485d874abc3",
+        "e579b69a4b978f702908a48b1bef74d9ac73df4679cb1a6074c567bec2748c41",
+        "6d4dc625a54dea6c696e8320c35fcf7e235dc039f512ef2c30af9b0663a7ab3f",
+        "921d27bb214f2ec714ff4deeffa8a5efc4bb989e367df47f9f58351d2effee00",
+        "fa525ddc80d1df3411fe44685eeb3bd03d1b285581049931efe648450486eaf7",
+        "5fbe60a66fbebaf0a06d4b5bede3af05301d9f580c4f8f7bd65a39077389e4ae",
+        "d71136dfd83ad19efe1777d01768a5d23d7b295de5dde3b1fccc50806809a423",
+        "470d39082cfbf44f0b4b0588d8f9f1fd2c211b09dc60d0304e91a24a3aeef32e",
+        "4aeefe49af9decdd7b348ada73d9ef410b39f3599a2f2d38abb9e9eb3967e272"
+      ]
+    },
+    {
+      "id": "material-filled-button",
+      "files": [
+        "2f16ba5b677f2adb6634c87f39b0631c505e0ef14186bfb6a236641bd7ff4ad1",
+        "92f28fdefbf07e5b74182ac4cec4d3f60963cb8e09464de69d62d9a2c16fb740"
+      ]
+    },
+    {
+      "id": "daisyui-components",
+      "files": [
+        "003bfab25b2f835dadd554aee7762dc86d5702832d9eb0312fde39be7a4d556e",
+        "67f65b2a975d8aa39e971f23904dc0589878ba3218c54b2e71daae2326864a96",
+        "c5696160e670cabaa0597c7d15fef5e8dcdc35cd0d5dd4ad7ace638982b91870",
+        "22055cd8037f3b9574bf71ed97dfcb18d8e52dc92619c16aedd806cccbfd5250",
+        "b27c14877816c6b851cde3713997d0af4920e9dc7e004d30484e75437ec544a5",
+        "5056879ed4123cbb7ccfcd3f2d1bc4c80b711499418b3b932743b6192d679607",
+        "0ba71d658b2727ac1ca6ab5567e12aa517b986afad240493fd87f0f8c919fb61",
+        "c45f043d604721c1c77a50d9b642096ae919d1e21123835700ce884c10ae411b"
+      ]
+    },
+    {
+      "id": "fluent-tokens",
+      "files": [
+        "9f25bd8412c3506c1e324c3f3bc9a069c0696e7b08cf74c322038777f8d0ea6b",
+        "0882854a85d8433e530bb5e40adff342e321361c64cd295255127c06fea55a48",
+        "ed15b83e605999aa196ba04ac9d03557cf943a3ba7ce3a3979650992505c2bea",
+        "156bf14d20515100a28356daa7c07c9766a1108a0e4efef86ae171ee8c505f34",
+        "ba5c662e2ec0e216f98ca28433ab439ecb4036d30d2311aa3f7d9c362ddcb2e9",
+        "34ef2eb5444fa422632f5ec1c2033f947d953f96c569e23e0ad8f78a6921f6bf",
+        "e1681eb819b86380e9ef6d52b9821b5fce2382d8d0070a33eef6429c4e0e2a6c",
+        "63a64eba054236a88c80293f3128f89e988f22da90e7b4637a53ad92a89f9c2d",
+        "3bcb25fbea831bab1c06f0ce8c98ba0f671812d9711add1cbd4a441c9f63f59e"
+      ]
+    },
+    {
+      "id": "material-tokens",
+      "files": [
+        "5014a3850f0cc2edecfb35b9b451f835163b005d7be66661abda231ce29ae344",
+        "47adbaed382734b22179d48a49f41f2d814b20ca52dee48f2efd5a171d1a1a29",
+        "09945a1d4abda485cc8d2562276967870f5bc5491358c55b47ebdec4d3489d87",
+        "75e8f3c3dbf442f6b4509298215208924125d4bc4a90a6e71d10b89a926642a7",
+        "aa454b036b392b62e9d917a6de15827e788d09b87ea4f35e5cec8cac71b42b0d",
+        "b8b968727668f56b4ed27db119215e2272bdac9556a5e601753b5d1f141d1f36",
+        "092b2c721e1aa239944379e6aec3b008e29083eb460f40986593126f4ad67923",
+        "f6ddc09b6490d92f4e91a56ef67c0cca3b32e5bc45ed7792d6326a100d276c56"
+      ]
+    },
+    {
+      "id": "ionic-md-tokens",
+      "files": [
+        "4cb99b3e9948507ce0e16bce92939bbaf4c510dfbac34d1867e8ffc74c4d6e3f",
+        "e75d4e251230026f311fb2b573c409f39903bcf73cccd925c5d1dcff74922d63",
+        "48d292bf8d0b42e1e5a8cb06f4f70a3252578aec39c49e8927e4d2f829e5a61d"
+      ]
+    },
+    {
+      "id": "heroicons-outline-core",
+      "files": [
+        "0e76cceaeef6685444adf1ccb47d743d791d30e19181289ce19d3fb5e5c7ed74",
+        "f44f8d4070a779c324f07a199122b4cc8686b5a8d9705727dc38d0cfd3bb27ec",
+        "3566eaf416d279baea18ebc5ccb5a9500f646a1afd42d1dc04f48581e24797eb",
+        "2eacb6cecd8f1ab845a2a8417074b0dab9fd9612cdf56d76be45b82adb2933f5",
+        "e55df00558e838b63e6aeebc4af511b37a427f739ce1c4a63a8116a558b1b12e",
+        "4dfd046e7cc6747a64b7656d5eec90907fe1eec8e7a1d3467ca25f6e599d3908",
+        "73fa969e35b58fdf764fb90fce1f848c4ca4c4b20184ce8bf9bd442700456356",
+        "aee6f966b9491c2a8aed12bdc20193affe259964930ae6e2e264f0dc26e163fb",
+        "d83055fd6fd4a9ed31fdbfb87f4c1dbf58eefd307acbfce6ccb44dc7b298c8b0",
+        "bf22818e3638f217e824ff26c8ffaf2ef014803982ca7c430e6c3c20915b185a",
+        "544fcc117350dcd26a3c8cc7388e791aa4b8f5b810b8f028229dcc9698ef6325",
+        "c732af619e4d2ccc83f1bacc046170e42b61d91275eec5d3dc0ccb27e17be57a",
+        "b8403f003a21d927fd0be3217626f53bd47fdaa1e6b519586aba963325cba9f5",
+        "2602a360312e14dc92da066780fed8e0b5eaf65e196b7d82b0e7cb5aed817015",
+        "a38b003121485ad864240dd3145324deae133485f3ed28a8a9d99747912c5f18",
+        "3952df551d6c3b81b236831a5457931d9df1d8e5d9112e8f5de01b5c61e3144d"
+      ]
+    },
+    {
+      "id": "motion-library",
+      "files": [
+        "a90fad182297a3f6cad8d5b0373f4c05022ae5cd9a7d935d316ea12a3897ef10"
+      ]
+    },
+    {
+      "id": "threejs-cube-example",
+      "files": [
+        "022a3727ba58f70020ab9a48ac27d510e4881426f75db6d5838f044e1ed18430",
+        "f3e07f2d534978888b2ca0b42c8a1220209d7cb4b42c68945fcd1dacdaa92787"
+      ]
+    },
+    {
+      "id": "lucide-core",
+      "files": [
+        "af6491988ac1ba30dc5414f485bc48713e957e1edb0fbef4a0dd8691c3c21598",
+        "4a9cdab38fbb96162e7dace28e33f4ca0e49d8963a6162abc3d4691b7d675117",
+        "283d371c2e433817bb9c0c8310caa6c77fa4177c0f4f1168d9c83b97af7389dc",
+        "66ea878e72ed3488bb3b464c39dfdccee8d1f78e560dccea40e5e12da0e87e87",
+        "a3955c8b0425fcc5c9ba12d2bdd77fe53b2cd5dd05e7742a56f342e996fb2ef8",
+        "205b959e940d5841f0ce1d09c933153da9d9c94130a54d5cc0c68c2af1d403da",
+        "eae3b3b2400031ddd5ec869327d127a96014e5f63aa6e06658dd5d4e90661aa8",
+        "0ae27fd0f81999229e3127ac96c5b32edfea448e291d509e76212b917551d66b",
+        "394889e9631fe3a9a63be9a479a95b451b708e432d895978d21d9130b5ee5dbe",
+        "28216c479005731ef5e382e7d8627eda2b129b019eb1f3d9de9f5915576d448e",
+        "9035a34f1713a781e02af86b5b0d086c44ccb10f985c51a8fa2796211e88597b",
+        "7cdc07053044af9e5fd24fff5e089ce97b2a39ea978933a160c4bbfebf8a167c",
+        "1838482c53d0846badef9be96fdcf7a167064241bd4891efa995c77ebec5f187",
+        "288397fdb73bb4f783cf9eabb726ff47357df1d4e3f1201dd748090579f108b9",
+        "7f33acc9a77a61659531044525fc008edebe215bf4dcf1c789c8674ad3277db0",
+        "4866f38b8560d410f21e3226413e0b77997b6dfbb6931fadfe0a0d5aef9ffeb4",
+        "281ab865b4c04dab32a04023473e448f58be6a7ad90769450ac3349d79dc4aed"
+      ]
+    },
+    {
+      "id": "ionic-ios-tokens",
+      "files": [
+        "1c049b06fbd711953b5131b68ffb3fe70a290b67ebbd03aa2964bd314568b6dc",
+        "eb1e2e44319fc6dc13ba696ab368ac24d86e0b7fe0dabc9502eebfd8b195cef8",
+        "0d970682af423dd70693631c90446d5f43ecbe41332198d08312277c84b72465",
+        "cfc79ff7d5ee1ed053f3fc7822bddac4fbc2ae17d3ac3ef6bf638f4f372b513a",
+        "f0a4d4c280349e4e83e35d7ce22a1d1e1307fc2ed8799cadba430bda8d010c45"
+      ]
+    },
+    {
+      "id": "modern-normalize",
+      "files": [
+        "a3af19dc9751230f9babca01ad939e45aff688379c0ae64cc07321e818c871e3"
+      ]
+    },
+    {
+      "id": "swiper-css",
+      "files": [
+        "792b1094c1cd1b4de612b401ebd0bebdb8aa47cd98f354451fafbfb0150e615d",
+        "7a69d23e622bede0f908892c8b0b11be090d4fc593c1f02bd138e9fc76ee2341",
+        "b89add4a532643d9689243c14f4f19704dd7ecde6fcc2d81b70f5cd137a039f8",
+        "db841cfb6a366b3ede960b718bbf3914b855e6ebd4257bf80f5c921c3c60f9d5"
+      ]
+    },
+    {
+      "id": "chartjs-samples",
+      "files": [
+        "d95ae5e09b810a213390e81d003c15a8e4e23306838270eaad4abece1de8a02f",
+        "ecec80c74b412bab9afee1bc91adbdc077938a7353c60396e00ab462fd852fbd",
+        "1387d9f978eaf4f0273c8a5093e33890fccf487d268791fa42baf4964522a940"
+      ]
+    },
+    {
+      "id": "font-manrope",
+      "files": [
+        "e01b637272e0cbdfb240184dd98ea5cc671556d9894dae2668d92ab2c906787c",
+        "368beda3aa55b0afe90edc142d67cf37e743258c76481d520172afbc148c6cca"
+      ]
+    },
+    {
+      "id": "font-sora",
+      "files": [
+        "ba0b9729c9428ba79a0459ab8ec575791b51509dbec213e383d0316d37fec299",
+        "02662b9eb0e843a22cd88d3574b76a209b152ab90ec6945f406ee36d893401ab"
+      ]
+    },
+    {
+      "id": "font-space-grotesk",
+      "files": [
+        "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72",
+        "3713adf5c1a21affdbede103b6bb23f551d4195771fa8bc1b91ce813bd1623ee"
+      ]
+    },
+    {
+      "id": "font-fraunces",
+      "files": [
+        "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+        "812aeaea90af8021a306b8fbb5490e0a861c27a5291d2253b403d9fc9f37afd5"
+      ]
+    },
+    {
+      "id": "font-dm-sans",
+      "files": [
+        "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+        "55b3697a416f7d08c093918a4019a75cca7186c64bc56b1bb23e197a5d559dee"
+      ]
+    },
+    {
+      "id": "font-plus-jakarta-sans",
+      "files": [
+        "995c7199cab65954f545996326755daee7b63cc6b42b06c13da1f9502ab08a99",
+        "e7953d66e52a1e09235d75fc7aef7139c2733c0b5507afcf6e9afbe0fcef1de6"
+      ]
+    },
+    {
+      "id": "font-ibm-plex-sans",
+      "files": [
+        "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+        "85f7e73668461cfacc4d9ecf94a7b67dd14dc24a71c0ae2cecd36215f0ca856c"
+      ]
+    },
+    {
+      "id": "font-instrument-serif",
+      "files": [
+        "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
+        "9a650bee57af3478f9294c8765292dcea36322082b987b857e29a2ea64861f6a"
+      ]
+    },
+    {
+      "id": "font-jetbrains-mono",
+      "files": [
+        "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "220f22dd4d2a3d9c77183fbbcb250779267725d90d9be673b403dc6bcfada0af"
+      ]
+    },
+    {
+      "id": "font-outfit",
+      "files": [
+        "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416",
+        "4cd9d2154f15495ca97de561060d535eaba9f7007be4a87e40f3b58ea8111cf2"
+      ]
+    },
+    {
+      "id": "font-bricolage-grotesque",
+      "files": [
+        "4b5a7d8f37f5602621c8a8d7358a6a2e71317e6c231c661e15aef0275d3e07ba",
+        "b15e69738219507699f04337a3d6e8f2a22cfac5a81d0a6106c343355cca456c"
+      ]
+    },
+    {
+      "id": "font-newsreader",
+      "files": [
+        "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8",
+        "dc0bcb264c09d663c9a4f559e4f5392fd7d9f62139ad9cbba39253ec43aa315b"
+      ]
+    },
+    {
+      "id": "font-geist",
+      "files": [
+        "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+        "62d302155bfbf778e9c488ef00671a4ad71a8a4cdc808ec66ceb668373afe900"
+      ]
+    },
+    {
+      "id": "font-source-serif-4",
+      "files": [
+        "5f94c3fd3a23131a417ab5a0c8452de57e70c3cfb9f604d88241f7065ebf9fd9",
+        "f7b88902c1d2f41839a3f7bf6723d1e64044c7c183b82871ce770a95f24b84e3"
+      ]
+    },
+    {
+      "id": "font-figtree",
+      "files": [
+        "140d37233e7f3ce7313798befa9600893bcceaf41a55fa0fa5ad52f7f657a268",
+        "0f70233b05de662ffa31a5dc3d310cb4eb047dc3b776046f937219179d79d905"
+      ]
+    },
+    {
+      "id": "font-public-sans",
+      "files": [
+        "157a9e77f7580246e97c769490e2e977ae94399f9d30f4556015c41fe8c28bac",
+        "a6bf37ce312a499068a820ae995601242aaf7c6d92fbcfe1e4c609392c1defb7"
+      ]
+    },
+    {
+      "id": "font-cormorant-garamond",
+      "files": [
+        "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+        "faa16a5e79613ca7cadd599ada1f4cf6891f3cb6731631fbed2a0b18a342e556"
+      ]
+    },
+    {
+      "id": "font-syne",
+      "files": [
+        "cc43cdce6f91c57989af8459341c276655e34224e954fa69c2ad700831a742d8",
+        "ed8e42eac65f684ca698aaa4f918b3985c932a7a12d57e55183184fe8dcaadb7"
+      ]
+    },
+    {
+      "id": "font-ibm-plex-mono",
+      "files": [
+        "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+        "2eb58f75e032cc5e021887aa7b02bf11bf548710fc5b6f23eb19c440df101a0b"
+      ]
+    },
+    {
+      "id": "font-nunito-sans",
+      "files": [
+        "efbb0c9e864cef973982d9a17567e6be5c3d1759695574586f3f18c7ecca064b",
+        "b60c93a2cdadb477316d22d22c8d43fa957899a4e4fe75cbb2b9e39e03c5e96e"
+      ]
+    },
+    {
+      "id": "font-noto-sans",
+      "files": [
+        "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+        "9fd9566184e9833ae3a33b8950e2782a8abb1f0a9d6fb2c51b3fb615f2d78cfe"
+      ]
+    }
+  ]
+}

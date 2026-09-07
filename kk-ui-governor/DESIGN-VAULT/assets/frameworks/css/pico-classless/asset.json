@@ -1,0 +1,50 @@
+{
+  "id": "pico-classless",
+  "category": "frameworks/css",
+  "designStyle": [
+    "minimal",
+    "modern"
+  ],
+  "pageType": [
+    "docs",
+    "landing",
+    "auth",
+    "settings"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "html"
+  ],
+  "cssStack": [
+    "plain"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
+  "performanceCost": "low",
+  "accessibility": "semantic HTML styling with accessible defaults",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+  "upstream": {
+    "repo": "picocss/pico",
+    "commit": "1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+    "url": "https://github.com/picocss/pico/tree/1039a4788d6abc368d5485ae6bac84a8f0e3096f",
+    "path": "css/pico.classless.css"
+  },
+  "files": [
+    {
+      "path": "css/pico.classless.css",
+      "sha256": "76994d55389adc669e0d975a31e33041e81fde36d7d56ad912f3731b222cbdfb",
+      "bytes": 79697,
+      "vaultPath": "assets/frameworks/css/pico-classless/files/css/pico.classless.css"
+    }
+  ],
+  "licenseNotice": "sources/pico/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

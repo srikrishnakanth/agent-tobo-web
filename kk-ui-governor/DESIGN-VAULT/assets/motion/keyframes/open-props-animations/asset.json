@@ -1,0 +1,48 @@
+{
+  "id": "open-props-animations",
+  "category": "motion/keyframes",
+  "designStyle": [
+    "creative",
+    "visual-rich",
+    "modern"
+  ],
+  "pageType": [
+    "landing",
+    "onboarding",
+    "ai-ui"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "must be wrapped in prefers-reduced-motion guard",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+  "upstream": {
+    "repo": "argyleink/open-props",
+    "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "path": "src/props.animations.css"
+  },
+  "files": [
+    {
+      "path": "src/props.animations.css",
+      "sha256": "edf87abfb326ebaf56bdbbbde57b090723481875c238b9a54ec598c033a53042",
+      "bytes": 4040,
+      "vaultPath": "assets/motion/keyframes/open-props-animations/files/src/props.animations.css"
+    }
+  ],
+  "licenseNotice": "sources/open-props/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

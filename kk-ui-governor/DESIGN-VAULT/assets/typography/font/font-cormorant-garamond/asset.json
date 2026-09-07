@@ -1,0 +1,53 @@
+{
+  "id": "font-cormorant-garamond",
+  "category": "typography/font",
+  "designStyle": [
+    "luxury"
+  ],
+  "pageType": [
+    "landing",
+    "ecommerce"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "thin hairlines; display sizes ≥ 28px only",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Cormorant Garamond",
+  "role": "display",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/cormorantgaramond/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/cormorantgaramond/OFL.txt",
+      "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+      "bytes": 4387,
+      "vaultPath": "assets/typography/font/font-cormorant-garamond/files/ofl/cormorantgaramond/OFL.txt"
+    },
+    {
+      "path": "ofl/cormorantgaramond/METADATA.pb",
+      "sha256": "faa16a5e79613ca7cadd599ada1f4cf6891f3cb6731631fbed2a0b18a342e556",
+      "bytes": 1426,
+      "vaultPath": "assets/typography/font/font-cormorant-garamond/files/ofl/cormorantgaramond/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

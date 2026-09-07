@@ -1,0 +1,53 @@
+{
+  "id": "shadcn-tabs",
+  "category": "components/tabs",
+  "designStyle": [
+    "modern",
+    "minimal",
+    "enterprise"
+  ],
+  "pageType": [
+    "settings",
+    "dashboard",
+    "docs"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "@radix-ui/react-tabs"
+  ],
+  "deviceSuitability": [
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
+  "performanceCost": "low",
+  "accessibility": "tablist/tab/tabpanel roles (Radix)",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/tabs.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/tabs.tsx",
+      "sha256": "e1df6e2f95ece373ca909c1d54b8ba8cf4c47dd425c1784bbb9a01c38dd0936b",
+      "bytes": 3772,
+      "vaultPath": "assets/components/tabs/shadcn-tabs/files/apps/v4/registry/new-york-v4/ui/tabs.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

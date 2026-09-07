@@ -1,0 +1,53 @@
+{
+  "id": "shadcn-input",
+  "category": "components/input",
+  "designStyle": [
+    "modern",
+    "minimal",
+    "enterprise"
+  ],
+  "pageType": [
+    "auth",
+    "settings",
+    "onboarding",
+    "crm",
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
+  "performanceCost": "low",
+  "accessibility": "aria-invalid styling, focus ring",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/input.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/input.tsx",
+      "sha256": "0c9457181f6ddc80969bcf854e92c362903a55b6e889fbef3fd85343ecc4af5b",
+      "bytes": 952,
+      "vaultPath": "assets/components/input/shadcn-input/files/apps/v4/registry/new-york-v4/ui/input.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

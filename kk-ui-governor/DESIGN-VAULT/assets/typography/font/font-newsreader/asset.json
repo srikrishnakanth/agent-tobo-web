@@ -1,0 +1,54 @@
+{
+  "id": "font-newsreader",
+  "category": "typography/font",
+  "designStyle": [
+    "luxury",
+    "docs"
+  ],
+  "pageType": [
+    "docs",
+    "landing"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "optical sizes for body text",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Newsreader",
+  "role": "serif",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/newsreader/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/newsreader/OFL.txt",
+      "sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8",
+      "bytes": 4394,
+      "vaultPath": "assets/typography/font/font-newsreader/files/ofl/newsreader/OFL.txt"
+    },
+    {
+      "path": "ofl/newsreader/METADATA.pb",
+      "sha256": "dc0bcb264c09d663c9a4f559e4f5392fd7d9f62139ad9cbba39253ec43aa315b",
+      "bytes": 7076,
+      "vaultPath": "assets/typography/font/font-newsreader/files/ofl/newsreader/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

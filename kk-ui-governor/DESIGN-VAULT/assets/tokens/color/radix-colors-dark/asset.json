@@ -1,0 +1,44 @@
+{
+  "id": "radix-colors-dark",
+  "category": "tokens/color",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "dark 12-step scales",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "dbdb85470547c7d34b9001f48fddb08ded335979",
+  "upstream": {
+    "repo": "radix-ui/colors",
+    "commit": "dbdb85470547c7d34b9001f48fddb08ded335979",
+    "url": "https://github.com/radix-ui/colors/tree/dbdb85470547c7d34b9001f48fddb08ded335979",
+    "path": "src/dark.ts"
+  },
+  "files": [
+    {
+      "path": "src/dark.ts",
+      "sha256": "d8599fe69a4454340b2bc82e003a210caa6b79082be9a1b7f13429ff03826c68",
+      "bytes": 58393,
+      "vaultPath": "assets/tokens/color/radix-colors-dark/files/src/dark.ts"
+    }
+  ],
+  "licenseNotice": "sources/radix-colors/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

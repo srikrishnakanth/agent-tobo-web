@@ -1,0 +1,55 @@
+{
+  "id": "font-nunito-sans",
+  "category": "typography/font",
+  "designStyle": [
+    "modern",
+    "native-app"
+  ],
+  "pageType": [
+    "onboarding",
+    "settings",
+    "landing"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "rounded, friendly",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Nunito Sans",
+  "role": "sans",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/nunitosans/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/nunitosans/OFL.txt",
+      "sha256": "efbb0c9e864cef973982d9a17567e6be5c3d1759695574586f3f18c7ecca064b",
+      "bytes": 4393,
+      "vaultPath": "assets/typography/font/font-nunito-sans/files/ofl/nunitosans/OFL.txt"
+    },
+    {
+      "path": "ofl/nunitosans/METADATA.pb",
+      "sha256": "b60c93a2cdadb477316d22d22c8d43fa957899a4e4fe75cbb2b9e39e03c5e96e",
+      "bytes": 1758,
+      "vaultPath": "assets/typography/font/font-nunito-sans/files/ofl/nunitosans/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

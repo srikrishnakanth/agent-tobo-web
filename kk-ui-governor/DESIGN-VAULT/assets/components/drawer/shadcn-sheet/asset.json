@@ -1,0 +1,54 @@
+{
+  "id": "shadcn-sheet",
+  "category": "components/drawer",
+  "designStyle": [
+    "modern",
+    "native-app",
+    "enterprise"
+  ],
+  "pageType": [
+    "dashboard",
+    "admin",
+    "inbox",
+    "ecommerce"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "@radix-ui/react-dialog",
+    "lucide-react"
+  ],
+  "deviceSuitability": [
+    "mobile",
+    "tablet"
+  ],
+  "performanceCost": "low",
+  "accessibility": "focus trap (Radix)",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/sheet.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/sheet.tsx",
+      "sha256": "ea473d38a26a9b0b879e5a13139899ad45e9782e896b3fa205c7763a6c506876",
+      "bytes": 4178,
+      "vaultPath": "assets/components/drawer/shadcn-sheet/files/apps/v4/registry/new-york-v4/ui/sheet.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

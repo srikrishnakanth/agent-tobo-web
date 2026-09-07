@@ -1,0 +1,69 @@
+{
+  "id": "swiper-css",
+  "category": "components/carousel",
+  "designStyle": [
+    "visual-rich",
+    "creative",
+    "ecommerce"
+  ],
+  "pageType": [
+    "landing",
+    "ecommerce"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [
+    "swiper"
+  ],
+  "deviceSuitability": [
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
+  "performanceCost": "medium",
+  "accessibility": "a11y module required; the governor substitutes a scroll-snap carousel when swiper is absent",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "b3786674f458f0fd53af461a5300e552b145014f",
+  "upstream": {
+    "repo": "nolimits4web/swiper",
+    "commit": "b3786674f458f0fd53af461a5300e552b145014f",
+    "url": "https://github.com/nolimits4web/swiper/tree/b3786674f458f0fd53af461a5300e552b145014f",
+    "path": "src/swiper.css"
+  },
+  "files": [
+    {
+      "path": "src/swiper.css",
+      "sha256": "792b1094c1cd1b4de612b401ebd0bebdb8aa47cd98f354451fafbfb0150e615d",
+      "bytes": 5704,
+      "vaultPath": "assets/components/carousel/swiper-css/files/src/swiper.css"
+    },
+    {
+      "path": "src/modules/navigation/navigation.css",
+      "sha256": "7a69d23e622bede0f908892c8b0b11be090d4fc593c1f02bd138e9fc76ee2341",
+      "bytes": 3243,
+      "vaultPath": "assets/components/carousel/swiper-css/files/src/modules/navigation/navigation.css"
+    },
+    {
+      "path": "src/modules/pagination/pagination.css",
+      "sha256": "b89add4a532643d9689243c14f4f19704dd7ecde6fcc2d81b70f5cd137a039f8",
+      "bytes": 5266,
+      "vaultPath": "assets/components/carousel/swiper-css/files/src/modules/pagination/pagination.css"
+    },
+    {
+      "path": "package.json",
+      "sha256": "db841cfb6a366b3ede960b718bbf3914b855e6ebd4257bf80f5c921c3c60f9d5",
+      "bytes": 3851,
+      "vaultPath": "assets/components/carousel/swiper-css/files/package.json"
+    }
+  ],
+  "licenseNotice": "sources/swiper/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

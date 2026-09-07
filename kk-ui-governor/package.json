@@ -1,0 +1,27 @@
+{
+  "name": "kk-ui-governor",
+  "version": "1.0.0",
+  "description": "KK-UI-GOVERNOR Design OS: project-aware frontend design operating system with transaction-protected design application and multi-device verification.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "kkgov": "./bin/kkgov.js"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "test": "node --test \"tests/unit/**/*.test.js\"",
+    "test:e2e": "node --test \"tests/e2e/**/*.test.js\"",
+    "test:all": "node --test \"tests/unit/**/*.test.js\" \"tests/e2e/**/*.test.js\"",
+    "vault:setup": "node bootstrap/setup-vault.mjs",
+    "vault:verify": "node bin/kkgov.js vault verify",
+    "e2e:html": "node bin/kkgov.js apply samples/html-landing --auto --verify standard --decide auto",
+    "e2e:next": "node bin/kkgov.js apply .. --auto --verify standard --decide auto"
+  },
+  "dependencies": {},
+  "optionalDependencies": {},
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}

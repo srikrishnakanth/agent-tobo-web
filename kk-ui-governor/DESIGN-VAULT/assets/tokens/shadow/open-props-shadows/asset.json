@@ -1,0 +1,44 @@
+{
+  "id": "open-props-shadows",
+  "category": "tokens/shadow",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "n/a",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+  "upstream": {
+    "repo": "argyleink/open-props",
+    "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "path": "src/props.shadows.css"
+  },
+  "files": [
+    {
+      "path": "src/props.shadows.css",
+      "sha256": "188e84bdc985e4b779b7566dfcf9458f81ddd1217fe21b8c02a5a2a8a12b57cb",
+      "bytes": 4346,
+      "vaultPath": "assets/tokens/shadow/open-props-shadows/files/src/props.shadows.css"
+    }
+  ],
+  "licenseNotice": "sources/open-props/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

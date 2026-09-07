@@ -1,0 +1,143 @@
+{
+  "id": "lucide-core",
+  "category": "icons",
+  "designStyle": [
+    "modern",
+    "minimal",
+    "native-app",
+    "creative"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "inline SVG; add aria-hidden or a title",
+  "darkMode": true,
+  "license": "ISC",
+  "sourceCommit": "3859eb20fabe7fd95652fcd4395843b6c0bcdd01",
+  "upstream": {
+    "repo": "lucide-icons/lucide",
+    "commit": "3859eb20fabe7fd95652fcd4395843b6c0bcdd01",
+    "url": "https://github.com/lucide-icons/lucide/tree/3859eb20fabe7fd95652fcd4395843b6c0bcdd01",
+    "path": "icons/menu.svg"
+  },
+  "files": [
+    {
+      "path": "icons/menu.svg",
+      "sha256": "af6491988ac1ba30dc5414f485bc48713e957e1edb0fbef4a0dd8691c3c21598",
+      "bytes": 279,
+      "vaultPath": "assets/icons/lucide-core/files/icons/menu.svg"
+    },
+    {
+      "path": "icons/x.svg",
+      "sha256": "4a9cdab38fbb96162e7dace28e33f4ca0e49d8963a6162abc3d4691b7d675117",
+      "bytes": 260,
+      "vaultPath": "assets/icons/lucide-core/files/icons/x.svg"
+    },
+    {
+      "path": "icons/search.svg",
+      "sha256": "283d371c2e433817bb9c0c8310caa6c77fa4177c0f4f1168d9c83b97af7389dc",
+      "bytes": 275,
+      "vaultPath": "assets/icons/lucide-core/files/icons/search.svg"
+    },
+    {
+      "path": "icons/chevron-down.svg",
+      "sha256": "66ea878e72ed3488bb3b464c39dfdccee8d1f78e560dccea40e5e12da0e87e87",
+      "bytes": 236,
+      "vaultPath": "assets/icons/lucide-core/files/icons/chevron-down.svg"
+    },
+    {
+      "path": "icons/sun.svg",
+      "sha256": "a3955c8b0425fcc5c9ba12d2bdd77fe53b2cd5dd05e7742a56f342e996fb2ef8",
+      "bytes": 485,
+      "vaultPath": "assets/icons/lucide-core/files/icons/sun.svg"
+    },
+    {
+      "path": "icons/moon.svg",
+      "sha256": "205b959e940d5841f0ce1d09c933153da9d9c94130a54d5cc0c68c2af1d403da",
+      "bytes": 334,
+      "vaultPath": "assets/icons/lucide-core/files/icons/moon.svg"
+    },
+    {
+      "path": "icons/user.svg",
+      "sha256": "eae3b3b2400031ddd5ec869327d127a96014e5f63aa6e06658dd5d4e90661aa8",
+      "bytes": 299,
+      "vaultPath": "assets/icons/lucide-core/files/icons/user.svg"
+    },
+    {
+      "path": "icons/settings.svg",
+      "sha256": "0ae27fd0f81999229e3127ac96c5b32edfea448e291d509e76212b917551d66b",
+      "bytes": 586,
+      "vaultPath": "assets/icons/lucide-core/files/icons/settings.svg"
+    },
+    {
+      "path": "icons/bell.svg",
+      "sha256": "394889e9631fe3a9a63be9a479a95b451b708e432d895978d21d9130b5ee5dbe",
+      "bytes": 393,
+      "vaultPath": "assets/icons/lucide-core/files/icons/bell.svg"
+    },
+    {
+      "path": "icons/house.svg",
+      "sha256": "28216c479005731ef5e382e7d8627eda2b129b019eb1f3d9de9f5915576d448e",
+      "bytes": 383,
+      "vaultPath": "assets/icons/lucide-core/files/icons/house.svg"
+    },
+    {
+      "path": "icons/chart-bar.svg",
+      "sha256": "9035a34f1713a781e02af86b5b0d086c44ccb10f985c51a8fa2796211e88597b",
+      "bytes": 317,
+      "vaultPath": "assets/icons/lucide-core/files/icons/chart-bar.svg"
+    },
+    {
+      "path": "icons/shopping-cart.svg",
+      "sha256": "7cdc07053044af9e5fd24fff5e089ce97b2a39ea978933a160c4bbfebf8a167c",
+      "bytes": 457,
+      "vaultPath": "assets/icons/lucide-core/files/icons/shopping-cart.svg"
+    },
+    {
+      "path": "icons/inbox.svg",
+      "sha256": "1838482c53d0846badef9be96fdcf7a167064241bd4891efa995c77ebec5f187",
+      "bytes": 388,
+      "vaultPath": "assets/icons/lucide-core/files/icons/inbox.svg"
+    },
+    {
+      "path": "icons/arrow-right.svg",
+      "sha256": "288397fdb73bb4f783cf9eabb726ff47357df1d4e3f1201dd748090579f108b9",
+      "bytes": 261,
+      "vaultPath": "assets/icons/lucide-core/files/icons/arrow-right.svg"
+    },
+    {
+      "path": "icons/check.svg",
+      "sha256": "7f33acc9a77a61659531044525fc008edebe215bf4dcf1c789c8674ad3277db0",
+      "bytes": 239,
+      "vaultPath": "assets/icons/lucide-core/files/icons/check.svg"
+    },
+    {
+      "path": "icons/triangle-alert.svg",
+      "sha256": "4866f38b8560d410f21e3226413e0b77997b6dfbb6931fadfe0a0d5aef9ffeb4",
+      "bytes": 345,
+      "vaultPath": "assets/icons/lucide-core/files/icons/triangle-alert.svg"
+    },
+    {
+      "path": "icons/layout-dashboard.svg",
+      "sha256": "281ab865b4c04dab32a04023473e448f58be6a7ad90769450ac3349d79dc4aed",
+      "bytes": 416,
+      "vaultPath": "assets/icons/lucide-core/files/icons/layout-dashboard.svg"
+    }
+  ],
+  "licenseNotice": "sources/lucide/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

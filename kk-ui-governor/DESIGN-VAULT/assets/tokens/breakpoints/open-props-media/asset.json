@@ -1,0 +1,44 @@
+{
+  "id": "open-props-media",
+  "category": "tokens/breakpoints",
+  "designStyle": [
+    "*"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "none",
+  "accessibility": "includes motion/contrast media queries",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+  "upstream": {
+    "repo": "argyleink/open-props",
+    "commit": "530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "url": "https://github.com/argyleink/open-props/tree/530682d04327f842f56bb1ec33cf84a3cadb3876",
+    "path": "src/props.media.css"
+  },
+  "files": [
+    {
+      "path": "src/props.media.css",
+      "sha256": "d898e8904fb72caf3ffc08b1a5d8b06712ccbcafde0e59c8717647fa170280b1",
+      "bytes": 2578,
+      "vaultPath": "assets/tokens/breakpoints/open-props-media/files/src/props.media.css"
+    }
+  ],
+  "licenseNotice": "sources/open-props/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

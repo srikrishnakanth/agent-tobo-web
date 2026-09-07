@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // KK-UI-GOVERNOR is a standalone Node ESM package with its own tooling, and its DESIGN-VAULT
+    // holds vendored upstream sources that must never be linted or type-checked as app code.
+    "kk-ui-governor/**",
   ]),
 ]);
 

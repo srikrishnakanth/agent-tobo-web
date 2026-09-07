@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+:root {
+  --brand: #2f6f4e;
+}
+body { font-family: Inter, system-ui, sans-serif; }
+.kpi { @apply rounded-2xl shadow-lg bg-white p-4; }
+.btn-primary { background: var(--brand); color: white; padding: 6px 12px; border-radius: 8px; outline: none; }
+.sidebar-link { font-size: 11px; }

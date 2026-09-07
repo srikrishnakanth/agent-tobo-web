@@ -1,0 +1,53 @@
+{
+  "id": "shadcn-dialog",
+  "category": "components/modal",
+  "designStyle": [
+    "modern",
+    "minimal",
+    "enterprise",
+    "premium"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [
+    "@radix-ui/react-dialog",
+    "lucide-react"
+  ],
+  "deviceSuitability": [
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
+  "performanceCost": "low",
+  "accessibility": "focus trap, aria-modal, escape to close (Radix)",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/dialog.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/dialog.tsx",
+      "sha256": "2ade6074e5fad0a4eb171ead44c43d3301a3c83d186d7236fb1fdbea80ee556b",
+      "bytes": 4304,
+      "vaultPath": "assets/components/modal/shadcn-dialog/files/apps/v4/registry/new-york-v4/ui/dialog.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

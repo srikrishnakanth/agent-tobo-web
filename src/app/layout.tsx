@@ -17,3 +17,9 @@ export default function RootLayout({
     </html>
   )
 }
+
+
+
+// kk-ui-governor:start
+import './kk-design/theme.css';
+// kk-ui-governor:end

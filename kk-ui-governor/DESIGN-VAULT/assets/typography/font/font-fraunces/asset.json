@@ -1,0 +1,55 @@
+{
+  "id": "font-fraunces",
+  "category": "typography/font",
+  "designStyle": [
+    "luxury",
+    "creative",
+    "premium"
+  ],
+  "pageType": [
+    "landing",
+    "ecommerce"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "variable serif; headings",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Fraunces",
+  "role": "display",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/fraunces/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/fraunces/OFL.txt",
+      "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+      "bytes": 4391,
+      "vaultPath": "assets/typography/font/font-fraunces/files/ofl/fraunces/OFL.txt"
+    },
+    {
+      "path": "ofl/fraunces/METADATA.pb",
+      "sha256": "812aeaea90af8021a306b8fbb5490e0a861c27a5291d2253b403d9fc9f37afd5",
+      "bytes": 1197,
+      "vaultPath": "assets/typography/font/font-fraunces/files/ofl/fraunces/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

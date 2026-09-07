@@ -1,0 +1,11 @@
+{
+  "id": "ionic",
+  "repo": "ionic-team/ionic-framework",
+  "url": "https://github.com/ionic-team/ionic-framework/tree/5874331e96cbad080c41220a740a8fffd1a9699b",
+  "commit": "5874331e96cbad080c41220a740a8fffd1a9699b",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "licenseSha256": "4862ae1846439cae0cc097120a14e93a142d36016a9fc609b5d23959e3ff041f",
+  "homepage": "https://ionicframework.com",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "shadcn-table",
+  "category": "components/table",
+  "designStyle": [
+    "enterprise",
+    "data-dense",
+    "modern"
+  ],
+  "pageType": [
+    "dashboard",
+    "admin",
+    "crm",
+    "inbox"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "tablet",
+    "desktop",
+    "ultrawide"
+  ],
+  "performanceCost": "low",
+  "accessibility": "native table semantics; horizontal scroll container",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/table.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/table.tsx",
+      "sha256": "bd1a9fc83a5a2149e504038e274bb7e5a0351af59f6896df52ac4d5b439695ac",
+      "bytes": 2468,
+      "vaultPath": "assets/components/table/shadcn-table/files/apps/v4/registry/new-york-v4/ui/table.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

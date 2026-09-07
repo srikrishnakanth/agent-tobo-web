@@ -1,0 +1,54 @@
+{
+  "id": "font-geist",
+  "category": "typography/font",
+  "designStyle": [
+    "minimal",
+    "modern",
+    "ai-ui"
+  ],
+  "pageType": [
+    "*"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "clear at UI sizes",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Geist",
+  "role": "sans",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/geist/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/geist/OFL.txt",
+      "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+      "bytes": 4387,
+      "vaultPath": "assets/typography/font/font-geist/files/ofl/geist/OFL.txt"
+    },
+    {
+      "path": "ofl/geist/METADATA.pb",
+      "sha256": "62d302155bfbf778e9c488ef00671a4ad71a8a4cdc808ec66ceb668373afe900",
+      "bytes": 1348,
+      "vaultPath": "assets/typography/font/font-geist/files/ofl/geist/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

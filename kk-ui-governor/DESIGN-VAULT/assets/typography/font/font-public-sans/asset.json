@@ -1,0 +1,57 @@
+{
+  "id": "font-public-sans",
+  "category": "typography/font",
+  "designStyle": [
+    "enterprise",
+    "neutral-web",
+    "data-dense"
+  ],
+  "pageType": [
+    "admin",
+    "settings",
+    "crm",
+    "dashboard"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "US Web Design System body face",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Public Sans",
+  "role": "sans",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/publicsans/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/publicsans/OFL.txt",
+      "sha256": "157a9e77f7580246e97c769490e2e977ae94399f9d30f4556015c41fe8c28bac",
+      "bytes": 4390,
+      "vaultPath": "assets/typography/font/font-public-sans/files/ofl/publicsans/OFL.txt"
+    },
+    {
+      "path": "ofl/publicsans/METADATA.pb",
+      "sha256": "a6bf37ce312a499068a820ae995601242aaf7c6d92fbcfe1e4c609392c1defb7",
+      "bytes": 1330,
+      "vaultPath": "assets/typography/font/font-public-sans/files/ofl/publicsans/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

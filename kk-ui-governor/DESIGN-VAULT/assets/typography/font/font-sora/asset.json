@@ -1,0 +1,55 @@
+{
+  "id": "font-sora",
+  "category": "typography/font",
+  "designStyle": [
+    "modern",
+    "ai-ui",
+    "creative"
+  ],
+  "pageType": [
+    "landing",
+    "ai-ui"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "*"
+  ],
+  "cssStack": [
+    "*"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "*"
+  ],
+  "performanceCost": "low",
+  "accessibility": "geometric display; use ≥ 20px",
+  "darkMode": true,
+  "license": "OFL-1.1",
+  "sourceCommit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+  "family": "Sora",
+  "role": "display",
+  "upstream": {
+    "repo": "google/fonts",
+    "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "url": "https://github.com/google/fonts/tree/5e35378e6bda803962ee6fd257e444a7d459660d",
+    "path": "ofl/sora/OFL.txt"
+  },
+  "files": [
+    {
+      "path": "ofl/sora/OFL.txt",
+      "sha256": "ba0b9729c9428ba79a0459ab8ec575791b51509dbec213e383d0316d37fec299",
+      "bytes": 4385,
+      "vaultPath": "assets/typography/font/font-sora/files/ofl/sora/OFL.txt"
+    },
+    {
+      "path": "ofl/sora/METADATA.pb",
+      "sha256": "02662b9eb0e843a22cd88d3574b76a209b152ab90ec6945f406ee36d893401ab",
+      "bytes": 605,
+      "vaultPath": "assets/typography/font/font-sora/files/ofl/sora/METADATA.pb"
+    }
+  ],
+  "licenseNotice": "sources/google-fonts/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

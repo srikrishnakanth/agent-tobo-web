@@ -1,0 +1,11 @@
+{
+  "id": "radix-colors",
+  "repo": "radix-ui/colors",
+  "url": "https://github.com/radix-ui/colors/tree/dbdb85470547c7d34b9001f48fddb08ded335979",
+  "commit": "dbdb85470547c7d34b9001f48fddb08ded335979",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "licenseSha256": "d981bc30e0d78b9ffc8f279fcaa274ea0444ff51d983548a609397d5c8a42dc2",
+  "homepage": "https://www.radix-ui.com/colors",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}

@@ -1,0 +1,54 @@
+{
+  "id": "shadcn-card",
+  "category": "components/card",
+  "designStyle": [
+    "modern",
+    "minimal",
+    "enterprise",
+    "premium"
+  ],
+  "pageType": [
+    "dashboard",
+    "landing",
+    "settings",
+    "crm",
+    "admin"
+  ],
+  "platform": [
+    "*"
+  ],
+  "framework": [
+    "react",
+    "nextjs"
+  ],
+  "cssStack": [
+    "tailwind"
+  ],
+  "dependencies": [],
+  "deviceSuitability": [
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
+  "performanceCost": "low",
+  "accessibility": "semantic sectioning via data-slot",
+  "darkMode": true,
+  "license": "MIT",
+  "sourceCommit": "5c7072da672b0048bc6771e3204063a2537df91a",
+  "upstream": {
+    "repo": "shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "url": "https://github.com/shadcn-ui/ui/tree/5c7072da672b0048bc6771e3204063a2537df91a",
+    "path": "apps/v4/registry/new-york-v4/ui/card.tsx"
+  },
+  "files": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/card.tsx",
+      "sha256": "ef8305b12c3112dab42a4708b41b1ebcc042fa5ab4c20f039da8d45b09ed5059",
+      "bytes": 1977,
+      "vaultPath": "assets/components/card/shadcn-card/files/apps/v4/registry/new-york-v4/ui/card.tsx"
+    }
+  ],
+  "licenseNotice": "sources/shadcn-ui/LICENSE",
+  "fetchedAt": "2026-09-07T14:20:27.163Z"
+}
