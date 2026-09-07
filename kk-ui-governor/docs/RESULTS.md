@@ -5,11 +5,17 @@ All figures below come from the archived `REPORT.json` files in `../reports/`.
 
 ## Unit tests
 
-`npm test` — **27 passing, 0 failing**. Coverage: transaction journal (backup, atomic write, byte-exact
+`npm test` — **32 passing, 0 failing**. Coverage: transaction journal (backup, atomic write, byte-exact
 rollback, crash recovery, plan/reality mismatch, path traversal), all 9 safety gates, SPDX policy and
 license-text detection, colour math, scanner detections, recommendation coherence, token contrast across
 every style × platform × preset, vault manifest/catalog/integrity, adapters (HTML additive injection,
-Next.js client directives, unsupported handling), device-matrix coverage.
+Next.js client directives, unsupported handling), device-matrix coverage, and the production build check
+(skip rules, success, failure, timeout, log extraction).
+
+`npm run test:e2e` — **4 passing, 0 failing**: the full flow on the HTML sample, the forced-failure
+rollback proof, the `decide=ask` pending/keep path, and strict no-baseline mode.
+
+`kkgov vault verify` — 65 assets, 0 integrity problems.
 
 ## End-to-end proof runs
 
@@ -21,6 +27,7 @@ Each run executes the full flow: **Inspect → Select → Adapt → Probe → Pr
 | `samples/react-dashboard` (Vite + React + Tailwind v4) | react | quick | 17 loads | PASS (kept) | RESP-SWEEP 3, MOBILE-ORIENT 1, FOLDABLE 1, FONT-200 1, FOCUS-VISIBLE 6, FORCED-COLORS 1, OVERFLOW 4, TOUCH-TARGET 4 |
 | host repo (Next.js 14 app router + Tailwind v4) | nextjs | standard | 41 loads / 41 devices | PASS (kept) | RESP-SWEEP 2, MOBILE-ORIENT 1, FOLDABLE 1, FOCUS-VISIBLE 14, FORCED-COLORS 1, OVERFLOW 2 |
 | host repo, second run over its own output | nextjs | quick | 17 loads | PASS (kept) | baseline already clean; 16 governor-owned files replaced, no user file touched |
+| host repo, with the BUILD gate active | nextjs | quick | 17 loads + 2 builds | PASS (kept) | baseline build 13s pass, candidate build 13s pass |
 
 Every run ends with all 22 verification checks at `pass` or `warn`; no check may regress against the
 project's own baseline, and the four governor guarantees (FOCUS-VISIBLE, REDUCED-MOTION, FORCED-COLORS,
